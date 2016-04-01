@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <title>AS path visualization</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<div>
+
+
+<h2>Control plane (upper row)</h2>
+<h2>Data plane (bottom row)</h2>
+
+<group id='astree_ok_1772722'></group>
+<script type='text/javascript' src='js/libs/jquery-2.2.2.min.js'></script>
+<script src="js/libs/d3.min.js" charset="utf-8"></script>
+
+
+<group id='astree_ok_1772723'></group>
+<script type='text/javascript' src='js/libs/jquery-2.2.2.min.js'></script>
+<script src="js/libs/d3.min.js" charset="utf-8"></script>
+
+<group id='astree_ok_1772724'></group>
+<script type='text/javascript' src='js/libs/jquery-2.2.2.min.js'></script>
+<script src="js/libs/d3.min.js" charset="utf-8"></script>
+
+<group id='astree_ok_1772725'></group>
+<script type='text/javascript' src='js/libs/jquery-2.2.2.min.js'></script>
+<script src="js/libs/d3.min.js" charset="utf-8"></script>
+
+</div>
+
+<script type='text/javascript'>
+// adapted from http://www.webreference.com/programming/javascript/mk/column2/index.html
+// needed to capture mouse-position. Probably best to not set 'onmousemove' but to append ot onmousemove
+document.onmousemove = mouseMove;
+function mouseMove(ev){
+   ev           = ev || window.event;
+   document._mousePos = mouseCoords(ev);
+}
+function mouseCoords(ev){
+   if(ev.pageX || ev.pageY){
+      return {x:ev.pageX, y:ev.pageY};
+   }
+   return {
+      x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+      y:ev.clientY + document.body.scrollTop  - document.body.clientTop
+   };
+}
+
+
+function create_astree( treedata, elt, astree_type ) { // astree_type  'fail' is special
+   var r = 960 / 2;
+
+   var tree = d3.layout.tree()
+    .size([360, r - 120])
+    .separation(function(a, b) { return (a.parent == b.parent ? 10 : 20) / a.depth; });
+
+   var diagonal = d3.svg.diagonal.radial()
+    .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
+
+   // var vis = d3.select("#astree_ok").append("svg")
+   var vis = d3.select( elt ).append("svg")
+    .attr("width", r * 2)
+    .attr("height", r * 2 - 150)
+  .append("g")
+    .attr("transform", "translate(" + r + "," + r + ")");
+
+  var nodes = tree.nodes( treedata );
+
+  var link = vis.selectAll("path.link")
+      .data(tree.links(nodes))
+    .enter().append("path")
+      .attr("class", "link")
+      .attr("d", diagonal);
+   link.classed("rootlink_" + astree_type , function(p) { return p.source.depth == 0 }); // make them hideable
+
+  var node = vis.selectAll("g.node")
+      .data(nodes)
+    .enter().append("g")
+      // .attr("class", function(d) { return d.parent ? "node" : "node rootnode"})
+      .attr("class", function(d) { 
+         if ( d.depth == 0 ) { return "node centernode" }
+         if ( astree_type != 'fail' && d.depth == 1 ) {
+            return "node rootnode"
+         }
+         return "node"
+      })
+      .on("mouseover", nodeMouseover)
+      .on("mouseleave", evt_node_mouseleave)
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+
+  node.append("circle")
+      .attr("r", 3);
+
+  node.append("text")
+      .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
+      .attr("dy", ".31em")
+      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+      .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+      .text(function(d) { return d.name; });
+
+    //@@TODO easier way for next 3:
+    if ( astree_type == 'fail' ) {
+       vis.selectAll(".node circle").classed("tr_results_ok", function(p) { return (p.tr_results == 'ok' && (p.depth > 0) ) });
+       vis.selectAll(".node circle").classed("tr_results_fail", function(p) { return (p.tr_results == 'fail' && (p.depth > 0)) });
+       vis.selectAll(".node circle").classed("tr_results_mix", function(p) { return (p.tr_results == 'mix' && (p.depth > 0)) });
+    } else {
+       vis.selectAll(".node circle").classed("tr_results_ok", function(p) { return (p.tr_results == 'ok' && (p.depth > 1) ) });
+       vis.selectAll(".node circle").classed("tr_results_fail", function(p) { return (p.tr_results == 'fail' && (p.depth > 1)) });
+       vis.selectAll(".node circle").classed("tr_results_mix", function(p) { return (p.tr_results == 'mix' && (p.depth > 1)) });
+    }
+
+   // Highlight the node and connected links on mouseover.
+   function nodeMouseover(d,x) {
+       $('.tooltip').remove();
+       if ( d.depth < 1 ) { // don't work on root-node
+         return;
+       }
+       $('<div class="tooltip">'+  tooltip_content(d) +'</div>').appendTo('body');
+       $('.tooltip').css({'left': document._mousePos.x +'px', 'top': document._mousePos.y +'px'}).hover(
+         function() {},
+         function() { $('.tooltip').hide() }
+       );
+       d3.selectAll(".link").classed("active", function(p) { return p.source === d || p.target === d; });
+       var asname = d.name;
+       // @@TODO select all interesting
+       // see http://bost.ocks.org/mike/hive/
+       /*
+       d3.select(this).append("text")
+         .attr("x", function(d) { return d.x < 180 ? 8 : -8; })
+         .attr("y", ".31em")
+         .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+         .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+         .attr("class","hovertext")
+         .text(function(d) {
+            return d.name;
+         });
+         */
+       d3.select(this).selectAll(".node circle").classed("active", true); // function(p) { return p.name == d.name });
+       d3.selectAll(".node circle").classed("active", function(p) { return p.name == d.name });
+       // info.text(d.node.name);
+   }
+
+   function tooltip_content(d) {
+      var html = '';
+      html += "<a href='http://stat.ripe.net/AS" + d.name +"'><span class='linktext'>" + d.name + "</span></a>";
+      if ( d.desc !== undefined && d.desc != '') {
+         html += "<br>" + d.desc;
+      } 
+      if ( d.nodeid !== undefined && cgi_url !== undefined && msm_id !== undefined && nonce !== undefined ) {
+         html += "<br><div id='tooltip_tracedetail'<a onclick='trace_callback("+ d.nodeid +")'><span class='linktext'>Show traces taking this path</span></a></div>"; 
+      }
+      return html;
+   }
+
+   function evt_node_mouseleave() {
+      m = d3.mouse(this);
+   }
+}
+
+function trace_callback( nodeid ) {
+   var cb_url;
+   if ( nodeid !== undefined && cgi_url !== undefined && msm_id !== undefined && nonce !== undefined ) {
+      cb_url = cgi_url + '?mode=traces;callback=tracehtml;msm_id=' + msm_id + ';nonce='+ nonce +';node_id=' + nodeid;
+      // http://albatross.ripe.net/cgi-bin/demo-area/v6reach.cgi?msm_id=1002520&nonce=alwaysworks111&mode=traces&node_id=7&callback=varname&no_embed=1
+   } else {
+      return;
+   }
+   $.ajax({
+      url: cb_url,
+      async: false,
+      jsonpCallback: 'tracehtml',
+      //jsonp: true,
+      //contentType: 'application/json',
+      dataType: 'jsonp',
+      /*
+      complete: function(xhr, d, e) {
+         if (xhr.responseText) {
+            console.log( xhr.responseText );
+         }
+      },
+      */
+      error: function() {
+         
+      },
+      success: function(json) {
+         if ( json.tracehtml ) {
+            $('#tooltip_tracedetail').html('<pre class="tracedetail">' + json.tracehtml + "</pre>");
+            $('#tooltip_tracedetail').focusout(function() {
+            });
+
+            
+         }
+      }
+   });
+}
+</script>
+
+<script src="../datasets/output-control-noamster.json"></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+    var astreecontrolnoamster;
+    $.getJSON("../datasets/output-control-noamster.json", function (json) {
+        astreecontrolnoamster = json;
+    });
+    create_astree( astreecontrolnoamster, '#astree_ok_1772722' );
+});</script>
+
+<script src="../datasets/output-control-amster.json"></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+create_astree( astreecontrolamster, '#astree_ok_1772723' );
+});</script>
+
+<script src="../datasets/output-data-noamster.json"></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+create_astree( astreedatanoamster, '#astree_ok_1772724' );
+});</script>
+
+<script src="../datasets/output-data-amster.json"></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+create_astree( astreedataamster, '#astree_ok_1772725' );
+});</script>
+
+
+</body>
