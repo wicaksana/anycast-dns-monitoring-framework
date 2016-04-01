@@ -4,6 +4,7 @@
 
 function create_as_tree(tree_data, elt, as_tree_type) { //as-tree 'fail' is special
     var r = 960 / 2;
+
     var tree = d3.layout.tree()
         .size([360, r - 120])
         .separation(function (a, b) {
@@ -46,7 +47,7 @@ function create_as_tree(tree_data, elt, as_tree_type) { //as-tree 'fail' is spec
             return 'node';
         }) //leave out any attribute related to mouse activity for simplicity
         .attr('transform', function (d) {
-            return 'rotate(' + (d.x + 90) + ')translate(' + d.y + ')';
+            return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')';
         });
 
     node.append('circle')
@@ -90,8 +91,26 @@ function create_as_tree(tree_data, elt, as_tree_type) { //as-tree 'fail' is spec
     }
 }
 
-$(document).ready(function() {
-    $.getJSON('../datasets/output-control-noamster.json', function (json) {
+var json_file = [
+    '../datasets/output-control-noamster.json',
+    '../datasets/output-control-amster.json'
+];
+
+var title = [
+    'without Amsterdam instance',
+    'with Amsterdam instance'
+];
+
+var toggle = true;
+
+function myTimer() {
+    $.getJSON(json_file[toggle == true? 0 : 1], function (json) {
         create_as_tree(json, '#astree_ok_1772722');
+        $('#title').text(title[toggle == true ? 0 : 1]);
+        toggle = !toggle;
     });
+}
+
+$(document).ready(function() {
+    var interval = setInterval(myTimer, 1000);
 });
