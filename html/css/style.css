@@ -46,13 +46,13 @@
 }
 
 .centernode circle {
-   fill: black;
+   fill: blue;
    stroke: black;
    opacity: 0;
 }
 
 .rootnode circle {
-  fill: black;
+  fill: red;
   stroke: black;
   opacity: 1;
   stroke-width: 1.5px;
@@ -109,6 +109,13 @@ pre.tracedetail {
    font-size: 60%;
 }
 
-.experimental {
-   background-image: url(http://albatross.ripe.net/demo-area/v6reachability4lirs/experimental-bg.png);
+.title {
+    font-size: 32pt;
+    text-align: center;
+}
+
+svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

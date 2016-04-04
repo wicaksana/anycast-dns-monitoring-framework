@@ -2,28 +2,29 @@
  * Created by arif on 1-4-16.
  */
 
-function create_as_tree(tree_data, elt, as_tree_type) { //as-tree 'fail' is special
-    var r = 960 / 2;
+var r = 960 / 2;
 
-    var tree = d3.layout.tree()
-        .size([360, r - 120])
+var tree = d3.layout.tree()
+        .size([360, r - 60])
         .separation(function (a, b) {
             return (a.parent == b.parent ? 10 : 20) / a.depth;
         });
 
-    var diagonal = d3.svg.diagonal.radial()
+var diagonal = d3.svg.diagonal.radial()
         .projection(function (d) {
             return [d.y, d.x / 180 * Math.PI];
         });
 
-    var vis = d3.select(elt).append('svg')
+var vis = d3.select('.graph').append('svg') //change elt to '#astree_ok_1772722'
         .attr('width', r * 2)
         .attr('height', r * 2 - 150)
         .append('g')
         .attr('transform', 'translate(' + r + ',' + r + ')');
 
+function create_as_tree(tree_data, elt, as_tree_type) { //as-tree 'fail' is special
     var nodes = tree.nodes(tree_data);
 
+    vis.selectAll('path.link').remove(); //remove any link first
     var link = vis.selectAll('path.link')
         .data(tree.links(nodes))
         .enter().append('path')
@@ -34,6 +35,7 @@ function create_as_tree(tree_data, elt, as_tree_type) { //as-tree 'fail' is spec
         return p.source.depth == 0; // make them hideable
     });
 
+    vis.selectAll('g.node').remove(); //remove any node first
     var node = vis.selectAll('g.node')
         .data(nodes)
         .enter().append('g')
@@ -51,7 +53,9 @@ function create_as_tree(tree_data, elt, as_tree_type) { //as-tree 'fail' is spec
         });
 
     node.append('circle')
-        .attr('r', 3);
+        .attr('r', function (d) {
+            return d.depth == 1 ? 6 : 3;
+        });
 
     node.append('text')
         .attr('dx', function (d) {
@@ -104,13 +108,15 @@ var title = [
 var toggle = true;
 
 function myTimer() {
-    $.getJSON(json_file[toggle == true? 0 : 1], function (json) {
+    d3.json(json_file[toggle == true? 0 : 1], function (json) {
         create_as_tree(json, '#astree_ok_1772722');
-        $('#title').text(title[toggle == true ? 0 : 1]);
+        d3.select(".title")
+            .html(title[toggle == true ? 0 : 1]);
         toggle = !toggle;
     });
 }
 
 $(document).ready(function() {
-    var interval = setInterval(myTimer, 1000);
+    myTimer();
+    var interval = setInterval(myTimer, 3000);
 });
