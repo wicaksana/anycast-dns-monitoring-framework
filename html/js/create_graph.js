@@ -1,16 +1,31 @@
 /**
  * Created by arif on 1-4-16.
+ *
+ * References:
+ *  - https://github.com/darkfiberiru/anycast-1     (base of this project)
+ *  - http://bl.ocks.org/syntagmatic/4092944        (radial tree with transition)
+ *  - http://bl.ocks.org/robschmuecker/7880033      (tree sort)
  */
 
+
+
 // radius of the graph
-var r = 960 / 2;
+var diameter = 960;
+var padding = 120;
 
 // initialize the tree
 var tree = d3.layout.tree()
-        .size([360, r - 60])
+        .size([360, diameter - padding])
         .separation(function (a, b) {
-            return (a.parent == b.parent ? 10 : 20) / a.depth;
+            return (a.parent == b.parent ? 1 : 2) / a.depth;
         });
+
+tree.sort(function (a, b) {
+    // return b.name.toLowerCase() < a.name.toLowerCase() ? 1 : -1; //original
+    // a little bit hack: use naturalSort() [https://github.com/overset/javascript-natural-sort]
+    var sort_result = [a.name, b.name].sort(naturalSort);
+    return sort_result[0] == b.name ? 1 : -1;
+});
 
 // define the diagonal
 var diagonal = d3.svg.diagonal.radial()
@@ -20,10 +35,10 @@ var diagonal = d3.svg.diagonal.radial()
 
 // define the SVG of the graph
 var vis = d3.select('.graph').append('svg') //change elt to '#astree_ok_1772722'
-        .attr('width', r * 2)
-        .attr('height', r * 2 - 150)
+        .attr('width', 1.2 * diameter)
+        .attr('height', 1.2 * diameter)
         .append('g')
-        .attr('transform', 'translate(' + r + ',' + r + ')');
+        .attr('transform', 'translate(' + diameter / 2 + ',' + diameter / 2 + ')');
 
 // required
 d3.selection.prototype.moveToFront = function() {
@@ -35,16 +50,16 @@ d3.selection.prototype.moveToFront = function() {
 /**
  * create radial AS tree using JSON data from traceroute
  * @param tree_data JSON data
+ * @param as_tree_type
  */
-function create_as_tree(tree_data) { //as-tree 'fail' is special
+function create_as_tree(tree_data, as_tree_type) { //as-tree 'fail' is special
     var nodes = tree.nodes(tree_data);
     var links = tree.links(nodes);
-    var as_tree_type = undefined;
 
     /******************************
      * create links
      ******************************/
-    var link = vis.selectAll('path.link')
+    var link = vis.selectAll('.link')
         .data(links);
 
     link.transition()
@@ -72,7 +87,7 @@ function create_as_tree(tree_data) { //as-tree 'fail' is special
     /******************************
      * create nodes
      ******************************/
-    var node = vis.selectAll('g.node')
+    var node = vis.selectAll('.node')
         .moveToFront()
         .data(nodes);
 
@@ -141,6 +156,7 @@ function create_as_tree(tree_data) { //as-tree 'fail' is special
         .duration(300)
         .style('opacity' , 1);
 
+    d3.select(self.frameElement).style("height", diameter + "px");
 }
 
 // temporary: use control-plane JSON data (with & without amsterdam instance) to demonstrate the visualization
