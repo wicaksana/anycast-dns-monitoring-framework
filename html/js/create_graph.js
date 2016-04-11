@@ -22,9 +22,25 @@ var diagonal = d3.svg.diagonal.radial()
 
 var svg = d3.select("body").append("svg")
     .attr("width", diameter + padding * 2)
-    .attr("height", diameter)
-    .append("g")
+    .attr("height", diameter);
+
+// animation clip container
+var clip_path = svg.append("clipPath")
+    .attr("id", "clipper")
+    .append("rect")
+    .attr("id", "clip-rect");
+
+// graph container
+var container = svg.append("g")
+    .attr("class", "container")
     .attr("transform", "translate(" + (diameter + padding * 2) / 2 + "," + diameter / 2 + ")"); // put the graph to center
+
+// path animation group
+var animation_group = container.append("g")
+    .attr("clip-path", "url(#clipper)");
+
+// links group
+var link_group = container.append("g");
 
 // move the selection to front or something. I don't really have the idea
 d3.selection.prototype.moveToFront = function() {
@@ -38,17 +54,18 @@ d3.selection.prototype.moveToFront = function() {
  * @param json_data
  */
 function tree_map(json_data) {
-    // clean the JSON data first. Remove the original root node, and assign node '47065' as the root instead
-    var root = json_data.children[0];
-    
-    var nodes = tree.nodes(root),
-        links = tree.links(nodes);
-
     //-----------------------------------------------------------------------------------------------------------------
     // creating paths
     //-----------------------------------------------------------------------------------------------------------------
+    // clean the JSON data first. Remove the original root node, and assign node '47065' as the root instead
+    var root = json_data.children[0];
+
+    var nodes = tree.nodes(root),
+        links = tree.links(nodes);
+
+
     // bind data to the paths
-    var link = svg.selectAll(".link")
+    var link = link_group.selectAll(".link")
         .data(links);
 
     link
@@ -76,7 +93,7 @@ function tree_map(json_data) {
     //-----------------------------------------------------------------------------------------------------------------
     // creating nodes
     //-----------------------------------------------------------------------------------------------------------------
-    var node = svg.selectAll(".node")
+    var node = container.selectAll(".node")
         .moveToFront()
         // .data(nodes, function(d) { return d.name + "-" + (d.parent ? d.parent.name : "root");});
         .data(nodes, function (d, i) {
@@ -142,6 +159,43 @@ function tree_map(json_data) {
         .duration(1000)
         .style("opacity", 1);
 
+
+    //-----------------------------------------------------------------------------------------------------------------
+    // traversed path animation
+    //-----------------------------------------------------------------------------------------------------------------
+    node
+        .on('mouseover', function (d, i) {
+            // change circle color
+            d3.select(this).select("circle").classed("hover", true);
+
+            // show the path
+            var ancestors = [];
+            var parent = d;
+            while(parent != undefined) {
+                ancestors.push(parent);
+                parent = parent.parent;
+            }
+            // get the matched links
+            var matched_links = [];
+            link_group.selectAll('path.link')
+                .filter(function (d, i) {
+                    return _.any(ancestors, function (p) {
+                        return p == d.target;
+                    });
+                })
+                .each(function (d) {
+                    matched_links.push(d);
+                })
+                .classed("selected", true);
+        })
+        .on('mouseout', function (d, i) {
+            d3.select(this).select("circle").classed("hover", false);
+            link_group.selectAll('path.link')
+                .classed('selected', false);
+        })
+        .on('click', function (nd, i) {
+            return;
+        });
 }
 
 d3.select(self.frameElement).style("height", diameter + "px");
@@ -177,5 +231,5 @@ function data_switch() {
 
 $(document).ready(function() {
     data_switch();
-    setInterval(data_switch, 4000); //switch data every 4 seconds
+    setInterval(data_switch, 14000); //switch data every 4 seconds
 });
