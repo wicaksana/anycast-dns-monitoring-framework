@@ -13,84 +13,79 @@
 var diameter = 960;
 var padding = 120;
 
-// initialize the tree
 var tree = d3.layout.tree()
-        .size([360, diameter - padding])
-        .separation(function (a, b) {
-            return (a.parent == b.parent ? 1 : 2) / a.depth;
-        });
+    .size([360, diameter - padding])
+    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 
-tree.sort(function (a, b) {
-    // return b.name.toLowerCase() < a.name.toLowerCase() ? 1 : -1; //original
-    // a little bit hack: use naturalSort() [https://github.com/overset/javascript-natural-sort]
-    var sort_result = [a.name, b.name].sort(naturalSort);
-    return sort_result[0] == b.name ? 1 : -1;
-});
-
-// define the diagonal
 var diagonal = d3.svg.diagonal.radial()
-        .projection(function (d) {
-            return [d.y, d.x / 180 * Math.PI];
-        });
+    .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
 
-// define the SVG of the graph
-var vis = d3.select('.graph').append('svg') //change elt to '#astree_ok_1772722'
-        .attr('width', 1.2 * diameter)
-        .attr('height', 1.2 * diameter)
-        .append('g')
-        .attr('transform', 'translate(' + diameter / 2 + ',' + diameter / 2 + ')');
+var svg = d3.select("body").append("svg")
+    .attr("width", diameter + padding * 2)
+    .attr("height", diameter)
+    .append("g")
+    .attr("transform", "translate(" + (diameter + padding * 2) / 2 + "," + diameter / 2 + ")"); // put the graph to center
 
-// required
+// move the selection to front or something. I don't really have the idea
 d3.selection.prototype.moveToFront = function() {
-        return this.each(function() {
-            this.parentNode.appendChild(this);
-        });
-    };
+    return this.each(function() {
+        this.parentNode.appendChild(this);
+    });
+};
 
 /**
- * create radial AS tree using JSON data from traceroute
- * @param tree_data JSON data
- * @param as_tree_type
+ * create the radial tree. Similar to the one I developed before
+ * @param json_data
  */
-function create_as_tree(tree_data, as_tree_type) { //as-tree 'fail' is special
-    var nodes = tree.nodes(tree_data);
-    var links = tree.links(nodes);
+function tree_map(json_data) {
+    // clean the JSON data first. Remove the original root node, and assign node '47065' as the root instead
+    var root = json_data.children[0];
+    
+    var nodes = tree.nodes(root),
+        links = tree.links(nodes);
 
-    /******************************
-     * create links
-     ******************************/
-    var link = vis.selectAll('.link')
+    //-----------------------------------------------------------------------------------------------------------------
+    // creating paths
+    //-----------------------------------------------------------------------------------------------------------------
+    // bind data to the paths
+    var link = svg.selectAll(".link")
         .data(links);
 
-    link.transition()
-        .duration(600)
+    link
+        .transition() //transition for each datasets refreshment
+        .duration(600) //duration of link transition
         .attr("d", diagonal);
 
-    link.enter()
-        .append('path')
-        .attr('class', 'link')
-        .attr('d', diagonal)
-        .style("opacity",0)
+    // if the quantity of new data is larger than the old one, the surplus data ends up here
+    link
+        .enter().append("path")
+        .attr("class", "link")
+        .attr("d", diagonal)
+        .style("opacity", 0)
         .transition()
-        .duration(300)
+        .duration(300) //duration to display the datasets
         .style("opacity", 1);
 
+    // remove excessive elements ([new_data] < [old_data])
     link.exit()
         .transition()
         .duration(400)
-        .remove();
+        .style("opacity", 0)
+        .remove(); //remove items
 
-    link.classed('rootlink_' + as_tree_type, function (p) {
-        return p.source.depth == 0; // make them hideable
-    });
-
-    /******************************
-     * create nodes
-     ******************************/
-    var node = vis.selectAll('.node')
+    //-----------------------------------------------------------------------------------------------------------------
+    // creating nodes
+    //-----------------------------------------------------------------------------------------------------------------
+    var node = svg.selectAll(".node")
         .moveToFront()
-        .data(nodes);
-
+        // .data(nodes, function(d) { return d.name + "-" + (d.parent ? d.parent.name : "root");});
+        .data(nodes, function (d, i) {
+            i++;
+            if(d.parent) {
+                return d.name + (d.parent.name == d.name ? '-' + i: '');
+            }
+            return d.name;
+        });
 
     node.exit()
         .transition()
@@ -98,7 +93,8 @@ function create_as_tree(tree_data, as_tree_type) { //as-tree 'fail' is special
         .style("opacity", 0)
         .remove();
 
-    node.transition()
+    node
+        .transition()
         .duration(800)
         .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; });
 
@@ -111,53 +107,45 @@ function create_as_tree(tree_data, as_tree_type) { //as-tree 'fail' is special
         .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
         .text(function(d) { return d.name; });
 
-    var g = node.enter()
-        .append('g')
-        .attr('class', function (d) {
+    var g = node
+        .enter().append("g")
+        .attr("class", function (d) {
             if (d.depth == 0) {
                 return "node centernode";
             }
-            if (as_tree_type != 'fail' && d.depth == 1) {
+            if (d.depth == 1) {
                 return 'node rootnode';
             }
             return 'node';
-        }) //leave out any attribute related to mouse activity for simplicity
-        .attr('transform', function (d) {
-            return 'rotate(' + (d.x - 90) + ')translate(' + d.y + ')';
-        });
+        })
+        .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; });
 
-    g.append('circle')
-        .attr('r', function (d) {
+    g.append("circle")
+        .attr("r", function (d) {
             return d.depth == 1 ? 6 : 3;
         })
-        .style("opacity" , 0)
+        .style("opacity", 0)
         .transition()
         .duration(300)
-        .style("opacity" , 1);
+        .style("opacity", 1);
 
-    g.append('text')
-        .attr('dx', function (d) {
-            return d.x < 180 ? 8 : -8;
-        })
-        .attr('dy', '.31em')
-        .attr('font-weight' , 'bold')
-        .attr('fill' , 'black')
-        .attr('text-anchor', function (d) {
-            return d.x < 180 ? 'start' : 'end';
-        })
-        .attr('transform', function (d) {
-            return d.x < 180 ? null : 'rotate(180)';
-        })
-        .text(function (d) {
-            return d.name;
-        })
-        .style('opacity' , 0)
+    g.append("text")
+        .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
+        .attr("dy", ".31em")
+        .attr("font-weight", "bold")
+        .attr("fill", "black")
+        .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+        .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
+        .text(function(d) { return d.name; })
+        .style("opacity", 0)
         .transition()
-        .duration(300)
-        .style('opacity' , 1);
+        .duration(1000)
+        .style("opacity", 1);
 
-    d3.select(self.frameElement).style("height", diameter + "px");
 }
+
+d3.select(self.frameElement).style("height", diameter + "px");
+
 
 // temporary: use control-plane JSON data (with & without amsterdam instance) to demonstrate the visualization
 //            capability of noticing path changes
@@ -178,9 +166,9 @@ var toggle = true;
 /**
  * switch JSON data betwen output-control-noamster.json and output-control-amster.json
  */
-function dataSwitch() {
-    d3.json(json_file[toggle == true? 0 : 1], function (json) {
-        create_as_tree(json, '.graph');
+function data_switch() {
+    d3.json(json_file[toggle == true? 0 : 1], function (json_data) {
+        tree_map(json_data);
         d3.select("#title")
             .html(title[toggle == true ? 0 : 1]);
         toggle = !toggle;
@@ -188,6 +176,6 @@ function dataSwitch() {
 }
 
 $(document).ready(function() {
-    dataSwitch();
-    var interval = setInterval(dataSwitch, 3000); //switch data every 3 seconds
+    data_switch();
+    setInterval(data_switch, 4000); //switch data every 4 seconds
 });
