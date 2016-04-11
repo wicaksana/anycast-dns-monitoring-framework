@@ -231,5 +231,5 @@ function data_switch() {
 
 $(document).ready(function() {
     data_switch();
-    setInterval(data_switch, 14000); //switch data every 4 seconds
+    setInterval(data_switch, 4000); //switch data every 4 seconds
 });
