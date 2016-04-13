@@ -117,7 +117,6 @@ svg {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: lightyellow;
 }
 
 /* hide centernode */
@@ -127,7 +126,7 @@ g.node.centernode {
 
 /* circle hover */
 circle.hover {
-    fill: darkblue;
+    fill: yellow;
 }
 
 /* selected path */
@@ -135,4 +134,24 @@ path.selected {
     stroke: teal;
     fill: none;
     stroke-width: 5px;
+}
+
+/* tooltip */
+div.tooltip {
+    position: absolute;
+    width: 100px;
+    height: 36px;
+    padding: 3px 3px 3px 3px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* hide direct path to center */
+.path-to-center {
+    display: none;
 }

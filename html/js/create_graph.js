@@ -5,6 +5,7 @@
  *  - https://github.com/darkfiberiru/anycast-1     (base of this project)
  *  - http://bl.ocks.org/syntagmatic/4092944        (radial tree with transition)
  *  - http://bl.ocks.org/robschmuecker/7880033      (tree sort)
+ *  - http://bl.ocks.org/d3noob/a22c42db65eb00d4e369    (tooltip)
  */
 
 
@@ -15,7 +16,17 @@ var padding = 120;
 
 var tree = d3.layout.tree()
     .size([360, diameter - padding])
-    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
+    .separation(function(a, b) {
+        // return (a.parent == b.parent ? 1 : 2) / a.depth;
+        if (a.parent == b.parent) {
+            if (a.depth == 1) {
+                return 2 / a.depth;
+            } else {
+                return 1 / a.depth;
+            }
+        }
+        return 2 / a.depth;
+    });
 
 var diagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
@@ -42,12 +53,21 @@ var animation_group = container.append("g")
 // links group
 var link_group = container.append("g");
 
-// move the selection to front or something. I don't really have the idea
+// move the selection to front or something. I don't really have an idea why I should do this
 d3.selection.prototype.moveToFront = function() {
     return this.each(function() {
         this.parentNode.appendChild(this);
     });
 };
+
+//----------------------------------------------------------------------------------------------------------------------
+// needed for animation
+//----------------------------------------------------------------------------------------------------------------------
+// tooltip_
+var tip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
 
 /**
  * create the radial tree. Similar to the one I developed before
@@ -63,6 +83,11 @@ function tree_map(json_data) {
     var nodes = tree.nodes(root),
         links = tree.links(nodes);
 
+    // makes root nodes closer to the center
+    nodes.forEach(function (d) {
+        if(d.depth == 1)
+            d.y = 0.5 * d.y;
+    });
 
     // bind data to the paths
     var link = link_group.selectAll(".link")
@@ -89,6 +114,14 @@ function tree_map(json_data) {
         .duration(400)
         .style("opacity", 0)
         .remove(); //remove items
+
+    // hide links directly connected to center node
+    d3.selectAll('path.link')
+        .filter(function (d) {
+            var source = d.source;
+            return source.source == undefined && d.target.depth == 1; // path source is the center node
+        })
+        .classed("path-to-center", true);
 
     //-----------------------------------------------------------------------------------------------------------------
     // creating nodes
@@ -141,6 +174,19 @@ function tree_map(json_data) {
         .attr("r", function (d) {
             return d.depth == 1 ? 6 : 3;
         })
+        .on("mouseover", function (d) {
+            tip.transition()
+                .duration(200)
+                .style("opacity", .9);
+            tip.html('Node ID: ' + d.nodeid + '<br />' + 'Name: ' + d.name)
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function (d) {
+            tip.transition()
+                .duration(400)
+                .style("opacity", 0);
+        })
         .style("opacity", 0)
         .transition()
         .duration(300)
@@ -159,14 +205,15 @@ function tree_map(json_data) {
         .duration(1000)
         .style("opacity", 1);
 
-
     //-----------------------------------------------------------------------------------------------------------------
     // traversed path animation
     //-----------------------------------------------------------------------------------------------------------------
     node
         .on('mouseover', function (d, i) {
-            // change circle color
-            d3.select(this).select("circle").classed("hover", true);
+            // manipulate the circle
+            d3.select(this).select("circle")
+                .classed("hover", true)
+                .attr("r", 6);
 
             // show the path
             var ancestors = [];
@@ -189,20 +236,23 @@ function tree_map(json_data) {
                 .classed("selected", true);
         })
         .on('mouseout', function (d, i) {
-            d3.select(this).select("circle").classed("hover", false);
+            d3.select(this).select("circle")
+                .classed("hover", false)
+                .attr('r', function (d) {
+                    return d.depth == 1 ? 6 : 3;
+                });
             link_group.selectAll('path.link')
                 .classed('selected', false);
-        })
-        .on('click', function (nd, i) {
-            return;
         });
 }
 
 d3.select(self.frameElement).style("height", diameter + "px");
 
 
+//-----------------------------------------------------------------------------------------------------------------
 // temporary: use control-plane JSON data (with & without amsterdam instance) to demonstrate the visualization
 //            capability of noticing path changes
+//-----------------------------------------------------------------------------------------------------------------
 var json_file = [
     '../datasets/output-control-noamster.json',
     '../datasets/output-control-amster.json'
