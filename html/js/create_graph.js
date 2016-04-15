@@ -15,7 +15,7 @@ var diameter = 960;
 var padding = 120;
 
 var tree = d3.layout.tree()
-    .size([360, diameter - padding])
+    .size([360, diameter - 2 * padding])
     .separation(function(a, b) {
         // return (a.parent == b.parent ? 1 : 2) / a.depth;
         if (a.parent == b.parent) {
@@ -33,18 +33,12 @@ var diagonal = d3.svg.diagonal.radial()
 
 var svg = d3.select("body").append("svg")
     .attr("width", diameter + padding * 2)
-    .attr("height", diameter);
-
-// animation clip container
-var clip_path = svg.append("clipPath")
-    .attr("id", "clipper")
-    .append("rect")
-    .attr("id", "clip-rect");
+    .attr("height", diameter + padding * 2);
 
 // graph container
 var container = svg.append("g")
     .attr("class", "container")
-    .attr("transform", "translate(" + (diameter + padding * 2) / 2 + "," + diameter / 2 + ")"); // put the graph to center
+    .attr("transform", "translate(" + (diameter + padding * 2) / 2 + "," + (diameter + padding * 2) / 2 + ")"); // put the graph to center
 
 // path animation group
 var animation_group = container.append("g")
@@ -116,23 +110,22 @@ function tree_map(json_data) {
         .remove(); //remove items
 
     // hide links directly connected to center node
-    d3.selectAll('path.link')
-        .filter(function (d) {
-            var source = d.source;
-            return source.source == undefined && d.target.depth == 1; // path source is the center node
-        })
-        .classed("path-to-center", true);
+    // d3.selectAll('path.link')
+    //     .filter(function (d) {
+    //         return d.source.depth == 0 && d.target.depth == 1;
+    //     })
+    //     .classed("path-to-center", true);
 
     //-----------------------------------------------------------------------------------------------------------------
     // creating nodes
     //-----------------------------------------------------------------------------------------------------------------
+    var counter = 0;
     var node = container.selectAll(".node")
         .moveToFront()
-        // .data(nodes, function(d) { return d.name + "-" + (d.parent ? d.parent.name : "root");});
         .data(nodes, function (d, i) {
-            i++;
+            counter++;
             if(d.parent) {
-                return d.name + (d.parent.name == d.name ? '-' + i: '');
+                return d.name + (d.parent.name == d.name ? '-' + counter: '-' + d.parent.name);
             }
             return d.name;
         });
@@ -193,12 +186,13 @@ function tree_map(json_data) {
         .style("opacity", 1);
 
     g.append("text")
-        .attr("dx", function(d) { return d.x < 180 ? 8 : -8; })
+        .attr("dx", function(d) { return d.x < 180 ? 1 : -1; })
         .attr("dy", ".31em")
         .attr("font-weight", "bold")
         .attr("fill", "black")
         .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
         .attr("transform", function(d) { return d.x < 180 ? "translate(8)" : "rotate(180)translate(-8)"; })
+        .attr("class", 'small')
         .text(function(d) { return d.name; })
         .style("opacity", 0)
         .transition()
@@ -218,25 +212,34 @@ function tree_map(json_data) {
             // show the path
             var ancestors = [];
             var parent = d;
-            while(parent != undefined) {
+            while(parent.parent.depth > 0) {
                 ancestors.push(parent);
                 parent = parent.parent;
             }
+
+            // enlarge ancestors
+            container.selectAll('g.node')
+                .filter(function (d, i) {
+                    return _.any(ancestors, function (p) {
+                        return p == d && d.depth > 1;
+                    });
+                })
+                .select('circle')
+                .classed("hover", true)
+                .attr("r", 6);
+
             // get the matched links
-            var matched_links = [];
             link_group.selectAll('path.link')
                 .filter(function (d, i) {
                     return _.any(ancestors, function (p) {
                         return p == d.target;
                     });
                 })
-                .each(function (d) {
-                    matched_links.push(d);
-                })
-                .classed("selected", true);
+                .classed("selected", true)
+                .moveToFront();
         })
         .on('mouseout', function (d, i) {
-            d3.select(this).select("circle")
+            d3.selectAll("circle")
                 .classed("hover", false)
                 .attr('r', function (d) {
                     return d.depth == 1 ? 6 : 3;
@@ -281,5 +284,5 @@ function data_switch() {
 
 $(document).ready(function() {
     data_switch();
-    setInterval(data_switch, 4000); //switch data every 4 seconds
+    // setInterval(data_switch, 8000); //switch data every 4 seconds
 });

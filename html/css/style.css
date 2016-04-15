@@ -117,6 +117,7 @@ svg {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
 }
 
 /* hide centernode */
@@ -153,5 +154,6 @@ div.tooltip {
 
 /* hide direct path to center */
 .path-to-center {
-    display: none;
+    /*display: none; */
+    stroke: yellow;
 }
