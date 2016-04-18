@@ -256,10 +256,14 @@ d3.select(self.frameElement).style("height", diameter + "px");
 // temporary: use control-plane JSON data (with & without amsterdam instance) to demonstrate the visualization
 //            capability of noticing path changes
 //-----------------------------------------------------------------------------------------------------------------
-var json_file = [
+var json_file = [[
     '../datasets/output-control-noamster.json',
     '../datasets/output-control-amster.json'
-];
+], [
+    '../datasets/output-data-noamster.json',
+    '../datasets/output-data-amster.json'
+]];
+
 
 // Graph title, notifying the data used (with/without Amsterdam instance)
 var title = [
@@ -274,7 +278,16 @@ var toggle = true;
  * switch JSON data betwen output-control-noamster.json and output-control-amster.json
  */
 function data_switch() {
-    d3.json(json_file[toggle == true? 0 : 1], function (json_data) {
+    var selected_plane = document.getElementById("select-plane");
+    var selected_option = selected_plane.options[selected_plane.selectedIndex].value;
+    var selected_json_file;
+    if (selected_option == 'control') {
+        selected_json_file = json_file[0];
+    } else {
+        selected_json_file = json_file[1];
+    }
+
+    d3.json(selected_json_file[toggle == true? 0 : 1], function (json_data) {
         tree_map(json_data);
         d3.select("#title")
             .html(title[toggle == true ? 0 : 1]);

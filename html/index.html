@@ -8,13 +8,20 @@
     <script type='text/javascript' src='js/libs/jquery-2.2.2.min.js'  charset="utf-8"></script>
     <script type='text/javascript' src="js/libs/d3.min.js" charset="utf-8"></script>
     <script type='text/javascript' src="js/libs/underscore-min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="js/libs/bootstrap.min.js" charset="utf-8"></script>
 </head>
 <body>
 <div><h1 id="title" class="title display-1"></h1></div>
 <div class="container">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 center-block">
-        <button class="btn btn-primary center-block" type="button" onclick="data_switch()">Switch!</button>
+    <div class="col-md-5"></div>
+    <div class="col-md-2 center-block">
+        <select name="select-plane" id="select-plane" class="form-control">
+            <option value="control">Control plane</option>
+            <option value="data">Data plane</option>
+        </select>
+    </div>
+    <div class="col-md-1">
+        <button class="btn btn-primary pull-left" type="button" onclick="data_switch()">Switch!</button>
     </div>
 </div>
 <div class="graph"></div>
