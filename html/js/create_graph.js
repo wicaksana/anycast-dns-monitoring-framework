@@ -31,8 +31,9 @@ var tree = d3.layout.tree()
 var diagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
 
-var svg = d3.select("body").append("svg")
-    .attr("width", diameter + padding * 2)
+var svg = d3.select("div#graph-home.graph").append("svg")
+    // .attr("width", diameter + padding * 2)
+    .attr("width", '100%')
     .attr("height", diameter + padding * 2);
 
 // graph container

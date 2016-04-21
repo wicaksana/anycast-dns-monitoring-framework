@@ -157,3 +157,8 @@ div.tooltip {
     /*display: none; */
     stroke: yellow;
 }
+
+/*date picker*/
+.datepicker {
+    margin: 10px;
+}
