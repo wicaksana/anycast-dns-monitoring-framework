@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import sys
 import os
 import json
@@ -189,8 +187,6 @@ def main():
 
     # print("var astree = " + Encoder().encode(rootlist)[1:-1] + ";")
 
-    json_data = json.loads(Encoder().encode(rootlist)[1:-1])
-    pprint(json_data)
 
 if __name__ == '__main__':
     main()

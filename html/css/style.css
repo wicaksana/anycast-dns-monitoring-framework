@@ -158,7 +158,19 @@ div.tooltip {
     stroke: yellow;
 }
 
-/*date picker*/
-.datepicker {
-    margin: 10px;
+.graph {
+    margin-bottom: 10px;
+    height: 100vh;
+    border-style: dotted;
 }
+
+div.input-group.date {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*svg {*/
+    /*border-style: dashed;*/
+    /*!*width: 100%;*!*/
+    /*!*height: 100%;*!*/
+/*}*/
