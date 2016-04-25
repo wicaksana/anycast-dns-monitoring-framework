@@ -34,9 +34,8 @@ def get_probes_id(asn):
     probes = []
     for key in probe_as:
         # if probe_as[key] == asn and key in probe_list:  # WARNING, the following line does not check whether the probe is present in the probe_List
-        if probe_as[key] == asn and key in probe_list:
+        if probe_as[key] == asn:
             probes.append(key)
-
     return probes
 
 
@@ -81,7 +80,7 @@ def main():
 
     print(Encoder().encode(root_list)[1:-1])
     # json_data = json.loads(Encoder().encode(root_list)[1:-1])
-    # print(json_data)
+    # pprint(json_data)
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
