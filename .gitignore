@@ -1,4 +1,6 @@
 .idea/
 TO-DO.txt
 dojo/
+python_code/__pycache__/
 add-commit-merge-push.sh
+python_code/*.pyc

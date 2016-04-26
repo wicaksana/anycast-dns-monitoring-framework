@@ -128,6 +128,7 @@ g.node.centernode {
 /* circle hover */
 circle.hover {
     fill: yellow;
+    r: 6px;
 }
 
 /* selected path */
@@ -140,8 +141,8 @@ path.selected {
 /* tooltip */
 div.tooltip {
     position: absolute;
-    width: 100px;
-    height: 36px;
+    width: 160px;
+    height: 46px;
     padding: 3px 3px 3px 3px;
     font: 12px sans-serif;
     background: lightsteelblue;
@@ -174,3 +175,9 @@ div.input-group.date {
     /*!*width: 100%;*!*/
     /*!*height: 100%;*!*/
 /*}*/
+
+circle.comparison-clicked {
+    fill: green;
+    stroke: green;
+    r: 8px;
+}

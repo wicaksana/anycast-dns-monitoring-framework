@@ -19,6 +19,7 @@
 
 </head>
 <body>
+<label></label>
 <div class="container">
 <!--<svg width="500" height="200" viewBox="0 0 50 20" style="background: yellow">-->
      <!--<rect x="20" y="10" width="10" height="5"-->
@@ -30,14 +31,15 @@
 <script>
 //    var x = d3.select('svg').style('width');
 //    console.log('value of x: ' + x);
+function factorial(x) {
+  if (x < 0) throw Error("Cannot calculate factorial of a negative number");
+  function iter(i, fact) {
+    return i === 0 ? fact : iter(i-1, i*fact);
+  }
+  return iter(x, 1);
+}
 
-    var create_svg = d3.select('body').append('svg')
-            .attr('width', '200px')
-            .attr('height', '50px');
-
-    var width_create_svg = d3.select('svg').style('width');
-
-    console.log('create_svg: ' + width_create_svg);
+console.log(factorial(6)); // 720
 </script>
 </body>
 </html>

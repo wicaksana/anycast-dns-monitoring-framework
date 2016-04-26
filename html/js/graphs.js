@@ -181,7 +181,9 @@ function tree_map(json_data, tree) {
             tree.tip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tree.tip.html('Node ID: ' + d.nodeid + '<br />' + 'Name: ' + d.name)
+            tree.tip.html('Node ID: ' + d.node_id + '<br />' +
+                          'Name: ' + d.name + '<br />' +
+                          'Probes: ' + d.probes)
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
@@ -261,6 +263,25 @@ function tree_map(json_data, tree) {
 
 // d3.select(self.frameElement).style("height", diameter + "px");
 
+function traverse_json(json_data) {
+    var result = [];
+
+    function traverse(data) {
+        for(var child in data) {
+            if(data[child].probes.length > 0) {
+                // console.log('asn: ' + data[child].name + ' pushed data: ' + data[child].probes);
+                result.push({'as': data[child].name, 'probes': data[child].probes});
+            }
+            if(typeof (data[child].children == 'object')) {
+                traverse(data[child].children);
+            }
+        }
+    }
+
+    traverse(json_data);
+    return result;
+}
+
 /**
  * switch JSON data betwen output-control-noamster.json and output-control-amster.json
  */
@@ -287,8 +308,8 @@ function data_switch(tree) {
 //            capability of noticing path changes
 //-----------------------------------------------------------------------------------------------------------------
 var json_file = [[
-    '../datasets/output-control-noamster.json',
-    '../datasets/output-control-amster.json'
+    '../datasets/output-control-noamster2.json',
+    '../datasets/output-control-amster2.json'
 ], [
     '../datasets/output-data-noamster.json',
     '../datasets/output-data-amster.json'
@@ -305,9 +326,21 @@ var title = [
 var toggle = true;
 
 
+
+
 $(document).ready(function() {
     var tree_main = new Initialize_svg(960, 120, "div#graph-home.graph");
     data_switch(tree_main);
+
+    var tree_compare_before = new Initialize_svg(960, 120, 'div#graph-compare-1.graph.col-md-6');
+    d3.json(json_file[0][0], function (json_data) {
+        tree_map(json_data, tree_compare_before);
+    });
+
+    var tree_compare_after = new Initialize_svg(960, 120, 'div#graph-compare-2.graph.col-md-6');
+    d3.json(json_file[0][1], function (json_data) {
+        tree_map(json_data, tree_compare_after);
+    });
 
     // event listener on button 'switch'
     $('button#btn-switch.btn.btn-primary.pull-left')
@@ -332,13 +365,77 @@ $(document).ready(function() {
             console.log('date#2 changes to: ' + e.date);
         });
 
-    var tree_compare_before = new Initialize_svg(960, 120, 'div#graph-compare-1.graph.col-md-6');
+
     d3.json(json_file[0][0], function (json_data) {
-        tree_map(json_data, tree_compare_before);
+        var results = traverse_json(json_data['children']);
+
+        d3.select('div#stats-comparison.stats.col-md-12')
+            .selectAll('button')
+            .data(results)
+            .enter()
+            .append('span')
+            .attr('class', 'label label-success')
+            .text(function (d) {
+                return d.as;
+            })
+            .on('mouseover', function (d) {
+
+                d3.select('div#graph-compare-1.graph.col-md-6 svg g.container').selectAll('g.node')
+                    .filter(function (e) {
+                        // console.log(e);
+                        return e.name == d.as && _.isEqual(e.probes, d.probes);
+                    })
+                    .call(function (d) {
+                        // have problem here!!!
+                        console.log(this);
+                        var ancestors = [];
+                        var parent = d[0][0];
+                        console.log(parent);
+                        while(parent.parent.depth > 0) {
+                            ancestors.push(parent);
+                            parent = parent.parent;
+                        }
+
+                        // enlarge ancestors
+                        d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node')
+                            .filter(function (d, i) {
+                                return _.any(ancestors, function (p) {
+                                    return p == d && d.depth > 1;
+                                });
+                            })
+                            .select('circle')
+                            .classed('hover', true);
+
+                        // get the matched links
+                        d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
+                            .filter(function (d, i) {
+                                return _.any(ancestors, function (p) {
+                                    return p == d.target;
+                                });
+                            })
+                            .classed("selected", true)
+                            .moveToFront();
+                    })
+                    .select('circle')
+                    .classed('hover', true);
+
+
+                d3.select('div#graph-compare-2.graph.col-md-6 svg g.container').selectAll('g.node')
+                    .filter(function (e) {
+                        // console.log(e);
+                        return e.name == d.as && _.isEqual(e.probes, d.probes);
+                    })
+                    .select('circle')
+                    .classed('hover', true);
+
+            })
+            .on('mouseout', function () {
+                d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node circle.hover')
+                    .classed('hover', false);
+
+                d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node circle.hover')
+                    .classed('hover', false);
+            });
     });
 
-    var tree_compare_after = new Initialize_svg(960, 120, 'div#graph-compare-2.graph.col-md-6');
-    d3.json(json_file[0][1], function (json_data) {
-        tree_map(json_data, tree_compare_after);
-    });
 });

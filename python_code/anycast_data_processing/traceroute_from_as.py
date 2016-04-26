@@ -78,9 +78,9 @@ def main():
                     cur_node = cur_node.add_child(node)
             level += 1
 
-    print(Encoder().encode(root_list)[1:-1])
-    # json_data = json.loads(Encoder().encode(root_list)[1:-1])
-    # pprint(json_data)
+    # print(Encoder().encode(root_list)[1:-1])
+    json_data = json.loads(Encoder().encode(root_list)[1:-1])
+    pprint(json_data)
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
