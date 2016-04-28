@@ -216,10 +216,10 @@ function tree_map(json_data, tree) {
     //-----------------------------------------------------------------------------------------------------------------
     node
         .on('mouseover', function (d, i) {
+
             // manipulate the circle
             d3.select(this).select("circle")
-                .classed("hover", true)
-                .attr("r", 6);
+                .classed("hover", true);
 
             // show the path
             var ancestors = [];
@@ -369,72 +369,102 @@ $(document).ready(function() {
     d3.json(json_file[0][0], function (json_data) {
         var results = traverse_json(json_data['children']);
 
-        d3.select('div#stats-comparison.stats.col-md-12')
-            .selectAll('button')
+        d3.select('div#stats-comparison-complete.stats')
+            .selectAll('span')
             .data(results)
             .enter()
-            .append('span')
-            .attr('class', 'label label-success')
+            .append('code')
             .text(function (d) {
-                return d.as;
+                return d.as + " ";
             })
             .on('mouseover', function (d) {
 
                 d3.select('div#graph-compare-1.graph.col-md-6 svg g.container').selectAll('g.node')
                     .filter(function (e) {
-                        // console.log(e);
                         return e.name == d.as && _.isEqual(e.probes, d.probes);
                     })
                     .call(function (d) {
-                        // have problem here!!!
-                        console.log(this);
-                        var ancestors = [];
-                        var parent = d[0][0];
-                        console.log(parent);
-                        while(parent.parent.depth > 0) {
-                            ancestors.push(parent);
-                            parent = parent.parent;
+                        for (var e in d.data()) {
+                            var ancestors = [];
+                            var parent = d.data()[e];
+                            // console.log(parent);
+                            while(parent.parent.depth > 0) {
+                                ancestors.push(parent);
+                                parent = parent.parent;
+                            }
+                            // enlarge ancestors
+                            d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node')
+                                .filter(function (f, i) {
+                                    return _.any(ancestors, function (p) {
+                                        return p == f && f.depth > 1;
+                                    });
+                                })
+                                .select('circle')
+                                .classed('hover', true);
+
+                            // get the matched links
+                            d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
+                                .filter(function (g, i) {
+                                    return _.any(ancestors, function (p) {
+                                        return p == g.target;
+                                    });
+                                })
+                                .classed("selected", true)
+                                .moveToFront();
                         }
-
-                        // enlarge ancestors
-                        d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node')
-                            .filter(function (d, i) {
-                                return _.any(ancestors, function (p) {
-                                    return p == d && d.depth > 1;
-                                });
-                            })
-                            .select('circle')
-                            .classed('hover', true);
-
-                        // get the matched links
-                        d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
-                            .filter(function (d, i) {
-                                return _.any(ancestors, function (p) {
-                                    return p == d.target;
-                                });
-                            })
-                            .classed("selected", true)
-                            .moveToFront();
                     })
                     .select('circle')
                     .classed('hover', true);
-
 
                 d3.select('div#graph-compare-2.graph.col-md-6 svg g.container').selectAll('g.node')
                     .filter(function (e) {
-                        // console.log(e);
                         return e.name == d.as && _.isEqual(e.probes, d.probes);
+                    })
+                    .call(function (d) {
+                        for (var e in d.data()) {
+                            var ancestors = [];
+                            var parent = d.data()[e];
+                            // console.log(parent);
+                            while(parent.parent.depth > 0) {
+                                ancestors.push(parent);
+                                parent = parent.parent;
+                            }
+                            // enlarge ancestors
+                            d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node')
+                                .filter(function (f, i) {
+                                    return _.any(ancestors, function (p) {
+                                        return p == f && f.depth > 1;
+                                    });
+                                })
+                                .select('circle')
+                                .classed('hover', true);
+
+                            // get the matched links
+                            d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
+                                .filter(function (g, i) {
+                                    return _.any(ancestors, function (p) {
+                                        return p == g.target;
+                                    });
+                                })
+                                .classed("selected", true)
+                                .moveToFront();
+                        }
                     })
                     .select('circle')
                     .classed('hover', true);
-
             })
             .on('mouseout', function () {
                 d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node circle.hover')
                     .classed('hover', false);
 
+                d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
+                    .classed('selected', false);
+
                 d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node circle.hover')
                     .classed('hover', false);
+
+                d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
+                    .classed('selected', false);
             });
     });
 
