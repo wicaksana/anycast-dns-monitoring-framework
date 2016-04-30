@@ -1,6 +1,6 @@
-[] make the tree graph moveable
-[] make the tree graph zoomable
-[] make the tree graph expandable
+
+2016-04-30
+- add zoom and pan features to the tree graph
 
 2016-04-28
 - comparison feature is now working properly (although the CSS needs to be refined)

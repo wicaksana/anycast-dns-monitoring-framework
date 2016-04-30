@@ -28,6 +28,10 @@ function Initialize_svg(diameter, padding, selector) {
     this.diameter = diameter;
     this.padding = padding;
 
+    // translation base coordinate
+    var translate_x = window.innerWidth;
+    var translate_y = window.innerHeight;
+
     this.tree = d3.layout.tree()
         .size([360, diameter - 2 * padding])
         .separation(function(a, b) {
@@ -47,10 +51,8 @@ function Initialize_svg(diameter, padding, selector) {
 
     this.svg = d3.select(selector).append("svg")
         .attr("width", '100%')
-        .attr("height", '100%');
-
-    var translate_x = window.innerWidth;
-    var translate_y = window.innerHeight;
+        .attr("height", '100%')
+        .call(d3.behavior.zoom().scaleExtent([0.5, 3]).on('zoom', zoom));
 
     // if not the main graph, then reduce the size of translate_x
     if(selector.search('graph-home') == -1) {
@@ -69,6 +71,13 @@ function Initialize_svg(diameter, padding, selector) {
     this.tip = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
+
+    // zoom and pan
+    function zoom() {
+        var x = (translate_x + padding) / 2 + d3.event.translate[0];
+        var y = translate_y / 2 + d3.event.translate[1];
+        d3.select(selector + ' svg g.container').attr("transform", "translate(" + x + ","  + y + ")scale(" + d3.event.scale + ")");
+    }
 }
 
 
@@ -261,8 +270,11 @@ function tree_map(json_data, tree) {
         });
 }
 
-// d3.select(self.frameElement).style("height", diameter + "px");
-
+/**
+ * get JSON of as->as_name and probes->list_of_probes from tree data
+ * @param json_data
+ * @returns {Array}
+ */
 function traverse_json(json_data) {
     var result = [];
 
@@ -366,6 +378,7 @@ $(document).ready(function() {
         });
 
 
+    // get comparison data
     d3.json(json_file[0][0], function (json_data) {
         var results = traverse_json(json_data['children']);
 

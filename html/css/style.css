@@ -176,7 +176,20 @@ circle.comparison-clicked {
     r: 8px;
 }
 
+div#graph-compare-1, div#graph-compare-2 {
+    border: 2px solid white;
+    padding: 0px;
+}
+
 div.stats-container {
     height: 200px;
     overflow: auto;
+}
+
+.container {
+    pointer-events: all;
+}
+
+code {
+    margin: 2px;
 }
