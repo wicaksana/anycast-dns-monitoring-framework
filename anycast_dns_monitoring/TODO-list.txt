@@ -1,0 +1,31 @@
+To-do list:
+- connect frontend to backend (done, more or less)
+- main page should use latest measurement result (https://atlas.ripe.net/api/v1/measurement-latest/<measurement-id>/)
+- REST requirements (from front-end):
+    - get measurements for a certain period
+
+- REST requirements (to access other providers):
+    RIPE atlas:
+    - get measurement data
+    - get probe data
+
+- add one page for IPv6
+- put ip prefix -> ASN map into database
+
+Questions:
+- what is the measurement interval?
+    1200 s (20 minutes)
+
+--------------------
+2016-05-02
+- connect front-end with back-end
+- start working with dynamic data
+
+2016-05-01
+- add Flask
+
+2016-04-30
+- add zoom and pan features to the tree graph
+
+2016-04-28
+- comparison feature is now working properly (although the CSS needs to be refined)

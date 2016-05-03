@@ -1,4 +1,5 @@
 .idea/
-TO-DO.txt
-dojo/
+anycast_dns_monitoring/static/js/libs/
+anycast_dns_monitoring/static/css/fonts/
+anycast_dns_monitoring/static/css/libs/
 add-commit-merge-push.sh

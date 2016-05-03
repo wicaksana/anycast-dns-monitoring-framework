@@ -1,0 +1,195 @@
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+.astree_ok_1772723 {
+    position: absolute;
+    left: 50px;
+    top: 10px;
+}
+
+.node {
+    font: 10px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+
+.node circle {
+    fill: #fff;
+    opacity: 1;
+    stroke: grey;
+    stroke-width: 1.5px;
+}
+
+
+.node circle.active {
+    stroke: black;
+    stroke-width: 2px;
+    stroke: black;
+}
+
+.node circle.tr_results_ok {
+    fill: green;
+}
+
+.node circle.tr_results_fail {
+    fill: red;
+}
+
+.node circle.tr_results_mix {
+    fill: orange;
+}
+
+.centernode circle {
+    fill: blue;
+    stroke: black;
+    opacity: 0;
+}
+
+.rootnode circle {
+    fill: red;
+    stroke: black;
+    opacity: 1;
+    stroke-width: 1.5px;
+}
+
+.node {
+    font: 12px sans-serif;
+}
+
+.rootnode {
+    font: 14px sans-serif;
+    fill: black;
+}
+
+.link {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 1px;
+}
+
+.link.active {
+    stroke: black;
+    stroke-width: 2px;
+    stroke-opacity: 1;
+}
+
+.rootlink_undefined {
+    opacity: 0;
+}
+
+.rootlink_fail {
+    stroke-dasharray: 5,5;
+}
+
+.hovertext {
+    stroke: purple;
+    font: 20px sans-serif;
+    overflow-y: scroll;
+    max-height:50%;
+}
+
+.tooltip {
+    position: absolute;
+    background: white;
+    border: 1px black solid
+}
+
+.linktext {
+    color:red;
+    text-decoration:underline;
+}
+
+pre.tracedetail {
+    font-size: 60%;
+}
+
+.title {
+    text-align: center;
+}
+
+svg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+/* hide centernode */
+g.node.centernode {
+    display: none;
+}
+
+/* circle hover */
+circle.hover {
+    fill: yellow;
+    r: 6px;
+}
+
+/* selected path */
+path.selected {
+    stroke: teal;
+    fill: none;
+    stroke-width: 5px;
+}
+
+/* tooltip */
+div.tooltip {
+    position: absolute;
+    width: 160px;
+    height: 46px;
+    padding: 3px 3px 3px 3px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* hide direct path to center */
+.path-to-center {
+    /*display: none; */
+    stroke: yellow;
+}
+
+.graph {
+    margin-bottom: 10px;
+    height: 75vh;
+    background-color: #eee;
+}
+
+div.input-group.date {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+circle.comparison-clicked {
+    fill: green;
+    stroke: green;
+    r: 8px;
+}
+
+div#graph-compare-1, div#graph-compare-2 {
+    border: 2px solid white;
+    padding: 0px;
+}
+
+div.stats-container {
+    height: 200px;
+    overflow: auto;
+}
+
+.container {
+    pointer-events: all;
+}
+
+code {
+    margin: 2px;
+}
