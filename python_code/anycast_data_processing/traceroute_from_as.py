@@ -40,10 +40,10 @@ def get_probes_id(asn):
 
 
 def main():
-    path_file = sys.argv[1]
+    file_path = sys.argv[1]
     hop_list_list = []
 
-    with open(path_file, 'r') as input_file:
+    with open(file_path, 'r') as input_file:
         for line in input_file:
             hop_list = list()
             hop_list.append(" ")

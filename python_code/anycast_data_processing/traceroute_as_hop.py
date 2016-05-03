@@ -178,7 +178,7 @@ def main():
                 node = Node(str(asn))
                 if level == len(as_path) - 1: # probe resides in the last element (ASN) of as_path
                     # node.probes.append(probe_id)
-                    cur_node = cur_node.add_child(node, probe_id)
+                    cur_node = cur_node.add_child(node, probe_id) # probe_id is totally wrong. It should use list of probes in a certain ASN
                 else:
                     cur_node = cur_node.add_child(node)
 
