@@ -186,6 +186,8 @@ def main():
             # print("rootlist: {}, length {}\n".format(rootlist, len(rootlist)))
 
     # print("var astree = " + Encoder().encode(rootlist)[1:-1] + ";")
+    json_data = json.loads(Encoder().encode(rootlist)[1:-1])
+    pprint(json_data)
 
 
 if __name__ == '__main__':
