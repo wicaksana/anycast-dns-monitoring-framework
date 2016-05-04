@@ -11,6 +11,7 @@ To-do list:
 
 - add one page for IPv6
 - put ip prefix -> ASN map into database
+- validate your result
 
 Questions:
 - what is the measurement interval?
