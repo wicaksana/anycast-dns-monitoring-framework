@@ -1,5 +1,4 @@
 To-do list:
-- connect frontend to backend (done, more or less)
 - main page should use latest measurement result (https://atlas.ripe.net/api/v1/measurement-latest/<measurement-id>/)
 - REST requirements (from front-end):
     - get measurements for a certain period
@@ -13,11 +12,12 @@ To-do list:
 - put ip prefix -> ASN map into database
 - validate your result
 
-Questions:
-- what is the measurement interval?
-    1200 s (20 minutes)
-
 --------------------
+2016-05-05
+- mongodb is up and running
+- refactor the code
+- data for data-plane is available, but the format is incorrect (yet)
+
 2016-05-02
 - connect front-end with back-end
 - start working with dynamic data

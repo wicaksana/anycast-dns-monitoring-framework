@@ -1,30 +1,44 @@
 import requests
 import os
 import subprocess
+from anycast_dns_monitoring.data_processing import params
+from anycast_dns_monitoring.data_processing.params import RipeAtlasData
 
 
-def get_probes_id(asn):
-    """
-    get the list of probe IDs in a certain ASN. It expects output of get_probe_list as the input
-    :param asn:
-    :return: list of probe IDs
-    """
-    probe_list = get_probe_list(PROBE_LIST)
-    probe_as = {}
-    if os.path.exists(PROBE_AS_LIST):
-        with open(PROBE_AS_LIST, 'r') as input_file:
-            for line in input_file:
-                probe_as[line.split(' ')[0]] = line.split(' ')[1].strip()
-    else:
-        print("[!] File {} not found!".format(PROBE_AS_LIST))
-        return []
+# def get_msmnt_data(type):
+#     """
+#     get measurement data from RIPE Atlas
+#     :return: measurement data
+#     """
+#     if type == RipeAtlas.traceroute:
+#         uri = '{0}measurement/{1}/result/?start={2}&stop={3}'.format(parameters.base_uri, parameters.measurement_id, int(d) - 1200, d)
+#
+#     print(uri)
+#     results = requests.get(url=uri).json()
 
-    probes = []
-    for key in probe_as:
-        # if probe_as[key] == asn and key in probe_list:  # WARNING, the following line does not check whether the probe is present in the probe_List
-        if probe_as[key] == asn:
-            probes.append(key)
-    return probes
+
+# def get_probes_id(asn):
+#     """
+#     get the list of probe IDs in a certain ASN. It expects output of get_probe_list as the input
+#     :param asn:
+#     :return: list of probe IDs
+#     """
+#     probe_list = get_probe_list(PROBE_LIST)
+#     probe_as = {}
+#     if os.path.exists(PROBE_AS_LIST):
+#         with open(PROBE_AS_LIST, 'r') as input_file:
+#             for line in input_file:
+#                 probe_as[line.split(' ')[0]] = line.split(' ')[1].strip()
+#     else:
+#         print("[!] File {} not found!".format(PROBE_AS_LIST))
+#         return []
+#
+#     probes = []
+#     for key in probe_as:
+#         # if probe_as[key] == asn and key in probe_list:  # WARNING, the following line does not check whether the probe is present in the probe_List
+#         if probe_as[key] == asn:
+#             probes.append(key)
+#     return probes
 
 
 def get_probe_list(measurement_id):

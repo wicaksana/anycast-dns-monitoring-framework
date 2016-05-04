@@ -4,6 +4,7 @@ from anycast_dns_monitoring.data_processing.node import Node
 from anycast_dns_monitoring.data_processing.encoder import Encoder
 from anycast_dns_monitoring.data_processing.helpers import get_probe_list
 from anycast_dns_monitoring.data_processing.helpers import get_prefix_to_asn
+# from anycast_dns_monitoring.data_processing.helpers import get_msmnt_data
 
 
 class TracerouteProcessor:
@@ -11,9 +12,10 @@ class TracerouteProcessor:
     to process traceroute data from RIPE Atlas.
     Intended to replace traceroute_as_hop.py
     """
-    def __init__(self, json_data, msrmnt_id):
-        self.json_data = json_data
-        self.msmrmnt_id = msrmnt_id
+    def __init__(self, d):
+        # self.json_data = json_data # wrong!
+        # self.msmrmnt_id = msrmnt_id # wrong!
+        self.d = d  # datetime of measurement
         self.prefix_to_asn = get_prefix_to_asn()
 
     def get_traceroute_data(self):
@@ -49,6 +51,7 @@ class TracerouteProcessor:
         taken from main() method of traceroute_as_hop.py
         :return:
         """
+        # msrmnt_data = get_msmnt_data()  # get measurement data from RIPE Atlas
         probe_ip_asn = get_probe_list(self.msmrmnt_id)  # should get it from the database, instead of directly call the method
         traceroute_data = self.get_traceroute_data()
 

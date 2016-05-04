@@ -2,11 +2,10 @@ from anycast_dns_monitoring import app
 from flask import render_template
 from flask import jsonify
 import requests
+from anycast_dns_monitoring.data_processing import params
 from anycast_dns_monitoring.data_processing.helpers import get_probe_list
 from anycast_dns_monitoring.data_processing.traceroute_processor import TracerouteProcessor
-
-measurement_id = '2048556'
-base_uri = 'https://atlas.ripe.net/api/v1/'
+from anycast_dns_monitoring.data_processing.ripe_atlas import RipeAtlas
 
 
 @app.route('/')
@@ -26,11 +25,8 @@ def get_measurement(d):
     :param d: the specified time in UNIX timestamp format
     :return: measurement result
     """
-    uri = '{0}measurement/{1}/result/?start={2}&stop={3}'.format(base_uri, measurement_id, int(d) - 1200, d)
-    print(uri)
-    results = requests.get(url=uri).json()
-
-    result = TracerouteProcessor(results)
+    msmnt = RipeAtlas()
+    results = msmnt.tree_data_plane(datetime=d)
 
     return jsonify(result=results)
 
@@ -42,6 +38,6 @@ def get_latest_measurement():
     see: https://atlas.ripe.net/docs/measurement-latest-api/
     :return:
     """
-    uri = '{0}measurement-latest/{1}/'.format(base_uri, measurement_id)
+    uri = '{0}measurement-latest/{1}/'.format(params.measurement_id, params.measurement_id)
     results = requests.get(url=uri)
     return jsonify(results=results.json())

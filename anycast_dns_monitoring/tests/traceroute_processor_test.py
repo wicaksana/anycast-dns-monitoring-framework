@@ -9,7 +9,7 @@ class TracerouteProcessorTest(unittest.TestCase):
         uri = 'https://atlas.ripe.net/api/v1/measurement/2048556/result/?start=1459946820&stop=1459948020'
         data = requests.get(url=uri).json()
         # self.tp = TracerouteProcessor(dummy_msmt_data)
-        self.tp = TracerouteProcessor(data, 2048556)
+        self.tp = TracerouteProcessor(data, 1459948020)
 
     def test_get_traceroute_data(self):
         result = self.tp.get_traceroute_data()

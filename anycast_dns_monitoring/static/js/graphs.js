@@ -374,6 +374,8 @@ $(document).ready(function() {
 
             $.getJSON(dateURI + e.date.unix(), function (data) {
                 json_data1 = data;
+                console.log(json_data1);
+                tree_map(json_data1, tree_compare_before);
             });
         });
 
