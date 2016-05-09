@@ -180,7 +180,9 @@ function tree_map(json_data, tree) {
             }
             return 'node';
         })
-        .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; });
+        .attr("transform", function(d) {
+            return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")";
+        });
 
     g.append("circle")
         .attr("r", function (d) {
@@ -367,27 +369,31 @@ $(document).ready(function() {
     // read http://eonasdan.github.io/bootstrap-datetimepicker/
     $('#compare-datepicker-1')
         .datetimepicker({
-            defaultDate: moment()  // current date-time
+            defaultDate: moment(),  // current date-time
+            maxDate: moment()
         })
         .on('dp.hide', function (e) {
             var dateURI = 'http://0.0.0.0:8080/datetime/';
 
             $.getJSON(dateURI + e.date.unix(), function (data) {
-                json_data1 = data;
-                console.log(json_data1);
-                tree_map(json_data1, tree_compare_before);
+                json_data1 = data['result'];
+                root = JSON.parse(json_data1);
+                tree_map(root, tree_compare_before);
             });
         });
 
     $('#compare-datepicker-2')
         .datetimepicker({
-            defaultDate: moment()  // current date-time
+            defaultDate: moment(),  // current date-time
+            maxDate: moment()
         })
         .on('dp.hide', function (e) {
             var dateURI = 'http://0.0.0.0:8080/datetime/';
 
             $.getJSON(dateURI + e.date.unix(), function (data) {
-                json_data2 = data;
+                json_data2 = data['result'];
+                root = JSON.parse(json_data2);
+                tree_map(root, tree_compare_after);
             });
         });
 

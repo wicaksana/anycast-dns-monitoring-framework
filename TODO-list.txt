@@ -12,11 +12,29 @@ To-do list:
 - put ip prefix -> ASN map into database
 - validate your result
 
+Target:
+- connect control-plane backend to frontend
+
 --------------------
+2016-05-09
+- IPv6 measurement feature
+
+2016-05-06
+- finish ris.py
+Remarks:
+- previously, my idea was to attach probes into ASN nodes in the tree visualization. While it is correct for data-plane,
+  doing so for control-plane is misleading. Firstly, control-plane data is taken from route collector.
+- is it possible to compare two different data-plane data when most of the time traceroute data is incomplete? Of course
+  I can say the path experienced by a certain probe changes, but I can't say that the path is shorter or longer.
+- how is it possible to create data-plane tree that contains few nodes in its 1st level?
+- where can I get time-based looking glass data? RIS only provides recent data only
+- where can I get static IPv6 ASN list?
+
 2016-05-05
 - mongodb is up and running
 - refactor the code
-- data for data-plane is available, but the format is incorrect (yet)
+- data for data-plane is available
+- datetimepicker is restricted to today
 
 2016-05-02
 - connect front-end with back-end

@@ -1,12 +1,10 @@
+/*body {*/
+    /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);*/
+/*}*/
 .node circle {
     fill: #fff;
     stroke: steelblue;
     stroke-width: 1.5px;
-}
-.astree_ok_1772723 {
-    position: absolute;
-    left: 50px;
-    top: 10px;
 }
 
 .node {
@@ -190,6 +188,7 @@ div.stats-container {
     pointer-events: all;
 }
 
+/*labels for comparison*/
 code {
     margin: 2px;
 }

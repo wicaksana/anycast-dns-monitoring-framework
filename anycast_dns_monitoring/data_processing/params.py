@@ -1,8 +1,12 @@
 from enum import Enum
 
-measurement_id = '2048556'
-base_uri = 'https://atlas.ripe.net/api/v1/'
+msmnt_id = '2048556'  # measurement id for IPv4 prefix
+msmnt_id6 = '3787166'  # measurement ID for IPv6 prefix. Not yet decided. use this temporarily
+atlas_uri = 'https://atlas.ripe.net/api/v1/'
+ris_uri = 'https://stat.ripe.net/data/'
 db = 'anycast_monitoring'
+peering_asn = '47065'
+prefix = '140.78.0.0/16'  # anycast prefix. 140.78.0.0/16 is for testing only
 
 class RipeAtlasData(Enum):
     """
@@ -11,3 +15,10 @@ class RipeAtlasData(Enum):
     traceroute = 0
     chaos = 1
     probes = 2
+
+class Version(Enum):
+    """
+    enumeration for ipv4 and ipv6
+    """
+    ipv4 = 0
+    ipv6 = 1

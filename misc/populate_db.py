@@ -42,7 +42,7 @@ def query_maps(queried_db):
 
 if __name__ == '__main__':
     db = initiate_db()
-    probe_list = get_probe_list(params.measurement_id)
+    probe_list = get_probe_list(params.msmnt_id)
 
     # populate probe list
     populate_probes(prb_list=probe_list, used_db=db)
