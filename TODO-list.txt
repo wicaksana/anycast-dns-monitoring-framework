@@ -16,6 +16,9 @@ Target:
 - connect control-plane backend to frontend
 
 --------------------
+2016-05-10
+- updating front-end?
+
 2016-05-09
 - IPv6 measurement feature is finished
 - TODO: check validity of tree data for IPv6 data-plane
