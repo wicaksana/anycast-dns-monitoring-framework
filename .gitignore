@@ -3,7 +3,7 @@ anycast_dns_monitoring/static/js/libs/
 anycast_dns_monitoring/static/css/fonts/
 anycast_dns_monitoring/static/css/libs/
 env/
-
+dashboards/
 ;;extensions to ignore
 *.log
 *.pot

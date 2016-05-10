@@ -22,27 +22,36 @@
 <div class="container">
     <h2>Anycast DNS Monitoring</h2>
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#home">Main</a></li>
-        <li><a data-toggle="tab" href="#compare">Compare</a></li>
-        <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li><a data-toggle="tab" href="#compare">Data Comparison</a></li>
+        <!--<li><a data-toggle="tab" href="#menu1">Menu 1</a></li>-->
     </ul>
     <div class="tab-content">
-        <!-- default menu -->
+        <!-- Home -->
         <div id="home" class="tab-pane fade in active">
             <div class="row">
-                <div><h3 id="title" class="title"></h3></div>
+                <h2 class="text-center">Latest Measurement</h2>
             </div>
-            <div class="row" style="margin-bottom: 10px;">
-                <div class="col-md-5"></div>
-                <div class="col-md-2 center-block">
-                    <select name="select-plane" id="select-plane" class="form-control">
-                        <option value="control">Control plane</option>
-                        <option value="data">Data plane</option>
-                    </select>
+            <div class="row">
+                <h4 class="text-center" id="text-latest">{put measurement date-time here}</h4>
+            </div>
+            <div class="row" style="padding-top: 20px; padding-bottom: 20px">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="col-md-6">
+                        <select name="select-ip-version" id="select-ip" class="form-control">
+                            <option value="ipv4">IPv4</option>
+                            <option value="ipv6">IPv6</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <select name="select-plane" id="select-plane" class="form-control">
+                            <option value="control">Control plane</option>
+                            <option value="data">Data plane</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-md-1">
-                    <button class="btn btn-primary pull-left" type="button" id="btn-switch">Switch!</button>
-                </div>
+
             </div>
 
             <div class="row">
@@ -51,7 +60,7 @@
             <div class="row">
                 <div class="stats"></div>
             </div>
-        </div>
+        </div><!-- /Home -->
 
         <!-- comparing between two different time -->
         <div id="compare" class="tab-pane fade">

@@ -296,62 +296,23 @@ function traverse_json(json_data) {
     return result;
 }
 
-/**
- * switch JSON data betwen output-control-noamster.json and output-control-amster.json
- */
-function data_switch(tree) {
-    var selected_plane = document.getElementById("select-plane");
-    var selected_option = selected_plane.options[selected_plane.selectedIndex].value;
-    var selected_json_file;
-    if (selected_option == 'control') {
-        selected_json_file = json_file[0];
-    } else {
-        selected_json_file = json_file[1];
-    }
-
-    d3.json(selected_json_file[toggle == true? 0 : 1], function (json_data) {
-        tree_map(json_data, tree);
-        d3.select("#title")
-            .html(title[toggle == true ? 0 : 1]);
-        toggle = !toggle;
-    });
-}
-
-//-----------------------------------------------------------------------------------------------------------------
-// temporary: use control-plane JSON data (with & without amsterdam instance) to demonstrate the visualization
-//            capability of noticing path changes
-//-----------------------------------------------------------------------------------------------------------------
-var json_file = [[
-    'static/datasets/output-control-noamster2.json',
-    'static/datasets/output-control-amster2.json'
-], [
-    'static/datasets/output-data-noamster.json',
-    'static/datasets/output-data-amster.json'
-]];
-
-
-// Graph title, notifying the data used (with/without Amsterdam instance)
-var title = [
-    'without Amsterdam instance',
-    'with Amsterdam instance'
-];
-
-// to switch between JSON data above
-var toggle = true;
-
 //-----------------------------------------------------------------------------------------------------------------
 // JSON data container
 //-----------------------------------------------------------------------------------------------------------------
 var json_data1;
 var json_data2;
 
+var json_file = [['a', 'b'],['a','b']];
+
 
 $(document).ready(function() {
+    /*********************************************************************************************
+     * Create tree and initialization
+     *********************************************************************************************/
     var tree_main = new Initialize_svg(960, 120, "div#graph-home.graph");
-    data_switch(tree_main);
 
     var tree_compare_before = new Initialize_svg(960, 120, 'div#graph-compare-1.graph.col-md-6');
-    d3.json(json_file[0][0], function (json_data) {
+    d3.json(json_file[0][0], function (json_data) { //TODO: change json_file to REST call
         tree_map(json_data, tree_compare_before);
     });
 
@@ -360,11 +321,27 @@ $(document).ready(function() {
         tree_map(json_data, tree_compare_after);
     });
 
-    // event listener on button 'switch'
-    $('button#btn-switch.btn.btn-primary.pull-left')
-        .click(function () {
-            data_switch(tree_main);
+    /*********************************************************************************************
+     * Home
+     *********************************************************************************************/
+    // Select IP version
+    $('#select-ip').change(function () {
+        if($(this).find(":selected").val() == 'ipv4') {
+            
+        } else {
+            console.log('what?')
+        }
+    });
+
+    // Select plane
+    $('#select-plane').change(function () {
+        $(this).find(":selected").each(function () {
+            console.log($(this).val());
         });
+    });
+    /*********************************************************************************************
+     * Data comparison
+     *********************************************************************************************/
 
     // read http://eonasdan.github.io/bootstrap-datetimepicker/
     $('#compare-datepicker-1')

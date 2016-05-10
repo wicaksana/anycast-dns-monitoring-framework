@@ -1,5 +1,6 @@
 from anycast_dns_monitoring import app
 from flask import render_template
+from flask import request
 from flask import jsonify
 import requests
 from anycast_dns_monitoring.data_processing import params
@@ -23,6 +24,8 @@ def get_measurement(d):
     :param d: the specified time in UNIX timestamp format
     :return: measurement result
     """
+    args = request.args
+    print(args)
     msmnt = RipeAtlas(Version.ipv4)
     results = msmnt.tree_data_plane(datetime=d)
 

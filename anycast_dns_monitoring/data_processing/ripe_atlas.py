@@ -1,7 +1,5 @@
 import requests
 import ipaddress
-import re
-from pprint import pprint
 from anycast_dns_monitoring.data_processing.node import Node
 from anycast_dns_monitoring.data_processing.encoder import Encoder
 from anycast_dns_monitoring.data_processing import params
