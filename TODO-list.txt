@@ -17,7 +17,8 @@ Target:
 
 --------------------
 2016-05-09
-- IPv6 measurement feature
+- IPv6 measurement feature is finished
+- TODO: check validity of tree data for IPv6 data-plane
 
 2016-05-06
 - finish ris.py

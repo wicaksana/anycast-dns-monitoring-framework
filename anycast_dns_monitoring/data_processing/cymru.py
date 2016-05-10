@@ -1,5 +1,5 @@
 import subprocess
-from pymongo import MongoClient
+import anycast_dns_monitoring.data_processing.params as params
 
 
 def get_asn(prefix):
@@ -31,8 +31,10 @@ def get_bulk_asn(prefix_list):
 
     with open('temp.txt', 'w') as input_file:
         input_file.write('begin\n')
-        for prefix in prefix_list:
-            input_file.write('{}\n'.format(prefix))
+        input_file.write('verbose\n')
+        for ip in prefix_list:
+            if not ip.startswith('::f'):  # ignore link-local address
+                input_file.write('{}\n'.format(ip))
         input_file.write('end\n')
 
     cmd = 'netcat whois.cymru.com 43 < temp.txt'
@@ -44,17 +46,16 @@ def get_bulk_asn(prefix_list):
     for line in lines:
         res = [x.strip() for x in line.split('|')]
         res2 = dict()
+        res2['ip'] = res[1]
         res2['asn'] = res[0]
-        res2['prefix'] = res[1]
-        res2['info'] = res[2]
+        res2['prefix'] = res[2].split('/')[0]
+        res2['info'] = res[6]
         result.append(res2)
 
     return result
 
 
-def _write_to_db(db, maps):
-    anycast = db.anycast_monitoring
-    temp_col = anycast.temp
+def write_to_db(db, data):
+    db.drop_collection(col=params.map6)  # drop first
+    db.insert_many(col=params.map6, data=data)
 
-    for map in maps:
-        temp_col.insert(map)

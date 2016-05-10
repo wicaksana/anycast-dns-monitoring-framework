@@ -1,7 +1,7 @@
 import requests
 import ipaddress
+import re
 from pprint import pprint
-from pymongo import MongoClient
 from anycast_dns_monitoring.data_processing.node import Node
 from anycast_dns_monitoring.data_processing.encoder import Encoder
 from anycast_dns_monitoring.data_processing import params
@@ -9,6 +9,7 @@ from anycast_dns_monitoring.data_processing.params import RipeAtlasData, Version
 from anycast_dns_monitoring.data_processing.params import atlas_uri, msmnt_id, msmnt_id6, peering_asn
 import anycast_dns_monitoring.data_processing.cymru as cymru
 from anycast_dns_monitoring.data_processing.db import Db
+
 
 class RipeAtlas:
     """
@@ -18,18 +19,8 @@ class RipeAtlas:
     """
     #TODO: IP version should be included as class property
     def __init__(self, ip_version):
-        self.db = self._initiate_db()
+        self.db = Db()
         self.ip_version = ip_version
-
-    def _initiate_db(self):
-        """
-        initiate connection to mongodb
-        :return: db
-        """
-        client = MongoClient()
-        db = client[params.db]
-
-        return db
 
     def _get_data(self, data_type, id, datetime=None):
         """
@@ -70,8 +61,12 @@ class RipeAtlas:
         :return:
         """
         # TODO: should support IPv6 ASN
-        query = {'prefix': prefix}
-        result = self.db.prefix_asn_mapping.find_one(query)
+        if self.ip_version is Version.ipv4:
+            query = {'prefix': prefix}
+            result = self.db.find_one(params.map4, query=query)
+        else:
+            query = {'ip': prefix}
+            result = self.db.find_one(params.map6, query=query)
         if result is None:
             return '0'
 
@@ -83,27 +78,34 @@ class RipeAtlas:
         :return:
         """
         query = {'asn4': int(asn)}
-        query_result = self.db.probes.find(query)
+        # query_result = self.db.probes.find(query)
+        query_result = self.db.find(col=params.probes, query=query)
         result = []
         for res in query_result:
             result.append(res['prb_id'])
 
         return result
 
-    def _get_probes_v6_in_asn(self, asn):
+    def _get_probes6_in_asn(self, asn):
         """
         get all probes in a certain ASN from database
         :return:
         """
         query = {'asn6': int(asn)}
-        query_result = self.db.probes.find(query)
+        query_result = self.db.find(col=params.probes, query=query)
+
         result = []
         for res in query_result:
             result.append(res['prb_id'])
-
         return result
 
     def traceroute_data(self, datetime):
+        if self.ip_version is Version.ipv4:
+            return self._traceroute4_data(datetime)
+        else:
+            return self._traceroute6_data(datetime)
+
+    def _traceroute4_data(self, datetime):
         """
         process traceroute data (ipv4 or ipv6) retrieved from RIPE Atlas
         :param datetime end time
@@ -123,29 +125,60 @@ class RipeAtlas:
             for result_per_probe in msmnt['result']:
                 if 'from' in result_per_probe['result'][0]:  # at the moment, take care only the first result of traceroute
                     hop = result_per_probe['result'][0]['from']
-                    hop_prefix = None
-                    hop_prefix_str = None
 
-                    if self.ip_version is Version.ipv4:
-                        hop_prefix = ipaddress.ip_interface(hop + '/24')
-                        hop_prefix_str = str(hop_prefix.network).split('/24')[0]
-
-                    if self.ip_version is Version.ipv6:
-                        hop_prefix = ipaddress.ip_interface(hop + '/48')
-                        hop_prefix_str = str(hop_prefix.network).split('/48')[0]
+                    hop_prefix = ipaddress.ip_interface(hop + '/24')
+                    hop_prefix_str = str(hop_prefix.network).split('/24')[0]
 
                     # if the prefix is a public address and its ASN is not 0
                     if not hop_prefix.is_private:
-                        if self.ip_version is Version.ipv4:
-                            asn = self._get_asn(hop_prefix_str)  # this line queries from db
-                        if self.ip_version is Version.ipv6:
-                            try:
-                                # TODO: should use bulk query
-                                asn = cymru.get_asn(hop_prefix_str)['asn']  # this line queries from cymru
-                            except:
-                                print('error encountered for: {}'.format(hop_prefix_str))
+                        asn = self._get_asn(hop_prefix_str)  # this line queries from db
                         if asn is not '0':
                             path.append(asn)
+            path.append(peering_asn)  # for the sake of the tree
+            path.append(" ")  # for the sake of the tree
+            result.append({})
+            result[index]['prb_id'] = str(msmnt['prb_id'])
+            result[index]['path'] = path
+
+        # return final result
+        return result
+
+    def _traceroute6_data(self, datetime):
+        """
+        process IPv6 traceroute data.
+        It is processed differently because it has to use bulk query to cymru
+        :param datetime:
+        :return:
+        """
+        traceroute_data = self._get_data(data_type=RipeAtlasData.traceroute, id=msmnt_id6, datetime=datetime)
+
+        # store prefix6-ASN maps to database first
+        ip_set = set()
+        for msmnt in traceroute_data:
+            for res in msmnt['result']:
+                if 'from' in res['result'][0]:
+                    ip_set.add(res['result'][0]['from'])
+
+        # query cymru using bulk data, then store in database
+        query_result = cymru.get_bulk_asn(ip_set)
+        cymru.write_to_db(self.db, query_result)
+
+
+        # process traceroute6 data
+        result = []
+
+        for index, msmnt in enumerate(traceroute_data):
+            path = []
+            for result_per_probe in msmnt['result']:
+                if 'from' in result_per_probe['result'][0]:  # at the moment, take care only the first result of traceroute
+                    hop = result_per_probe['result'][0]['from']
+                    hop_prefix = ipaddress.ip_interface(hop + '/64')
+
+                    # if the prefix is a public address and its ASN is not 0 or 'NA'
+                    if not hop_prefix.is_private:
+                        asn = self._get_asn(hop)
+                    if asn is not '0' and asn != 'NA':
+                        path.append(asn)
             path.append(peering_asn)  # for the sake of the tree
             path.append(" ")  # for the sake of the tree
             result.append({})

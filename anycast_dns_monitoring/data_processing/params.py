@@ -4,7 +4,13 @@ msmnt_id = '2048556'  # measurement id for IPv4 prefix
 msmnt_id6 = '3787166'  # measurement ID for IPv6 prefix. Not yet decided. use this temporarily
 atlas_uri = 'https://atlas.ripe.net/api/v1/'
 ris_uri = 'https://stat.ripe.net/data/'
+
+# database-related
 db = 'anycast_monitoring'
+map4 = 'prefix_asn_mapping'
+map6 = 'prefix_asn_mapping6'
+probes = 'probes'
+
 peering_asn = '47065'
 prefix = '140.78.0.0/16'  # anycast prefix. 140.78.0.0/16 is for testing only
 
