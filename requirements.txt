@@ -1,3 +1,5 @@
+pybgpstream == 1.1.0
 Flask == 0.10.1
+networkx == 1.11
 pymongo == 3.2.2
 requests == 2.10.0

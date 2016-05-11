@@ -1,22 +1,24 @@
 import requests
+from _pybgpstream import BGPRecord, BGPStream
 from pymongo import MongoClient
 from anycast_dns_monitoring.data_processing import params
 from anycast_dns_monitoring.data_processing.node import Node
 from anycast_dns_monitoring.data_processing.encoder import Encoder
 
+
 class Ris:
     """
-    get control-plane data
-    https://stat.ripe.net/docs/data_api
-    ?? https://stat.ripe.net/data/looking-glass/data.json?resource=140.78.0.0/16
+    get control-plane data from RIS. For the latest data, use the REST service directly since it is much faster.
+    For historical data, use BGPStream
     """
-    def __init__(self):
+    def __init__(self, ip_version):
         self.db = self._initiate_db()
+        self.ip_version = ip_version
 
     def _initiate_db(self):
         """
         initiate connection to mongodb
-        :return: db
+        :return: database instance
         """
         client = MongoClient()
         db = client[params.db]
@@ -35,13 +37,44 @@ class Ris:
 
         return result
 
-    def get_data(self, par):
+    def _get_data(self, prefix, datetime):
         """
-        output example: [{'as_path': ['15547', '8220', '1853', '1205'], 'rrc': 'RRC04'}]
-        :param par:
+        output example: [['15547', '8220', '1853', '1205'],[..another AS path..]]
+        :param prefix:
+        :param datetime: end interval
+        :return: list of AS paths
+        """
+        start = datetime - 15000  # 15000 second seems to be the shortest interval to get data from BGPstream
+        stop = datetime
+        result = []
+
+        stream = BGPStream()
+        rec = BGPRecord()
+
+        stream.add_filter('prefix', prefix)
+        stream.add_filter('record-type', 'ribs')
+        stream.add_filter('project', 'ris')
+        stream.add_interval_filter(start, stop)
+
+        stream.start()
+
+        while stream.get_next_record(rec):
+            if rec.status == "valid":
+                elem = rec.get_next_elem()
+                while elem:
+                    as_path = elem.fields['as-path'].split()
+                    as_path.append(' ')  # for tree creation
+                    result.append(as_path)
+                    elem = rec.get_next_elem()
+
+        return result
+
+    def _get_latest_data(self, prefix):
+        """
+        to get the latest data, use data directly from RIS to speed things up
         :return:
         """
-        uri = '{0}looking-glass/data.json?resource={1}'.format(params.ris_uri, par)
+        uri = '{0}looking-glass/data.json?resource={1}'.format(params.ris_uri, prefix)
         data = requests.get(uri).json()['data']
         result = []
 
@@ -52,12 +85,18 @@ class Ris:
                 result.append(path)
         return result
 
-    def tree_control_plane(self):
+    def tree_control_plane(self, datetime=None):
         """
         send data for control-plane tree visualization
+        :param datetime
         :return:
         """
-        data = self.get_data(params.prefix)
+        if datetime is None:
+            data = self._get_latest_data(params.prefix)  # get the latest control-plane data
+        else:
+            datetime = int(datetime)
+            data = self._get_data(params.prefix, datetime)  # fetch data using BGPstream
+
         root_list = []
 
         for as_path in data:
@@ -89,4 +128,5 @@ class Ris:
                 level += 1
 
         result = Encoder().encode(root_list)[1:-1]
+        print(result)
         return result

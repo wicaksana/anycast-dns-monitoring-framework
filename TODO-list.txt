@@ -1,21 +1,13 @@
 To-do list:
-- main page should use latest measurement result (https://atlas.ripe.net/api/v1/measurement-latest/<measurement-id>/)
-- REST requirements (from front-end):
-    - get measurements for a certain period
-
-- REST requirements (to access other providers):
-    RIPE atlas:
-    - get measurement data
-    - get probe data
-
-- add one page for IPv6
-- put ip prefix -> ASN map into database
 - validate your result
 
 Target:
 - connect control-plane backend to frontend
 
 --------------------
+2016-05-11
+- incorporating BGPStream into ris.py for historical control-plane data
+
 2016-05-10
 - updating front-end?
 

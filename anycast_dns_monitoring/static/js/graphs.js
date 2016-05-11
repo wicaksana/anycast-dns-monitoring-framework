@@ -8,6 +8,7 @@
  *  - http://bl.ocks.org/d3noob/a22c42db65eb00d4e369    (tooltip)
  */
 
+progress = 0;
 
 // move the selection to front or something. I don't really have any idea why I should do this
 d3.selection.prototype.moveToFront = function() {
@@ -91,6 +92,7 @@ function tree_map(json_data, tree) {
     // creating paths
     //-----------------------------------------------------------------------------------------------------------------
     // clean the JSON data first. Remove the original root node, and assign node '47065' as the root instead
+    console.log(json_data);
     var root = json_data.children[0];
 
     var nodes = tree.tree.nodes(root),
@@ -296,27 +298,40 @@ function traverse_json(json_data) {
     return result;
 }
 
+/**
+ * 
+ */
+function initialize_main_tree(tree) {
+    // http://bl.ocks.org/mbostock/3750941
+    d3.json('http://localhost:8080/control-plane/ipv4/latest', function (json_data) {
+        var data = JSON.stringify(json_data['result']);
+        console.log(data);
+        tree_map(json_data, tree);
+    });
+}
+
 //-----------------------------------------------------------------------------------------------------------------
 // JSON data container
 //-----------------------------------------------------------------------------------------------------------------
 var json_data1;
 var json_data2;
 
-var json_file = [['a', 'b'],['a','b']];
+var json_file = [['a', 'b'],['a','b']]; // temporary
 
 
 $(document).ready(function() {
     /*********************************************************************************************
      * Create tree and initialization
      *********************************************************************************************/
-    var tree_main = new Initialize_svg(960, 120, "div#graph-home.graph");
+    var tree_main = new Initialize_svg(960, 120, "div#graph-home");
+    initialize_main_tree(tree_main);
 
-    var tree_compare_before = new Initialize_svg(960, 120, 'div#graph-compare-1.graph.col-md-6');
+    var tree_compare_before = new Initialize_svg(960, 120, 'div#graph-compare-1');
     d3.json(json_file[0][0], function (json_data) { //TODO: change json_file to REST call
         tree_map(json_data, tree_compare_before);
     });
 
-    var tree_compare_after = new Initialize_svg(960, 120, 'div#graph-compare-2.graph.col-md-6');
+    var tree_compare_after = new Initialize_svg(960, 120, 'div#graph-compare-2');
     d3.json(json_file[0][1], function (json_data) {
         tree_map(json_data, tree_compare_after);
     });

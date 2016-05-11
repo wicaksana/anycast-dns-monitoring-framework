@@ -1,5 +1,6 @@
 import requests
 import ipaddress
+import time
 from anycast_dns_monitoring.data_processing.node import Node
 from anycast_dns_monitoring.data_processing.encoder import Encoder
 from anycast_dns_monitoring.data_processing import params
@@ -15,7 +16,6 @@ class RipeAtlas:
     currently, data related to probes are pre-populated. It should be updated daily, or if there is any changes, this
     should support immediate update (add method to do that)
     """
-    #TODO: IP version should be included as class property
     def __init__(self, ip_version):
         self.db = Db()
         self.ip_version = ip_version
@@ -58,7 +58,6 @@ class RipeAtlas:
         :param prefix:
         :return:
         """
-        # TODO: should support IPv6 ASN
         if self.ip_version is Version.ipv4:
             query = {'prefix': prefix}
             result = self.db.find_one(params.map4, query=query)
@@ -186,11 +185,17 @@ class RipeAtlas:
         # return final result
         return result
 
-    def tree_data_plane(self, datetime):
+    def tree_data_plane(self, datetime=None):
         """
         get traceroute measurement for a certain time
+        :param datetime
         :return:
         """
+        if datetime is None:
+            datetime = int(time.time())
+        else:
+            datetime = int(datetime)
+
         data = self.traceroute_data(datetime=datetime)
 
         root_list = []

@@ -56,6 +56,12 @@ def get_bulk_asn(prefix_list):
 
 
 def write_to_db(db, data):
+    """
+    write data to database
+    :param db:
+    :param data:
+    :return: None
+    """
     db.drop_collection(col=params.map6)  # drop first
     db.insert_many(col=params.map6, data=data)
 

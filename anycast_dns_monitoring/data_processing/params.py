@@ -13,6 +13,8 @@ probes = 'probes'
 
 peering_asn = '47065'
 prefix = '140.78.0.0/16'  # anycast prefix. 140.78.0.0/16 is for testing only
+prefix6 = '2001:608::/32'  # anycast IPv6 prefix. for testing only
+
 
 class RipeAtlasData(Enum):
     """
@@ -21,6 +23,7 @@ class RipeAtlasData(Enum):
     traceroute = 0
     chaos = 1
     probes = 2
+
 
 class Version(Enum):
     """
