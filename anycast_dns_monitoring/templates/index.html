@@ -33,7 +33,7 @@
                 <h2 class="text-center">Latest Measurement</h2>
             </div>
             <div class="row">
-                <h4 class="text-center" id="text-latest">{put measurement date-time here}</h4>
+                <h4 class="text-center" id="text-latest"></h4>
             </div>
             <div class="row" style="padding-top: 20px; padding-bottom: 20px">
                 <div class="col-md-4"></div>
@@ -51,7 +51,6 @@
                         </select>
                     </div>
                 </div>
-
             </div>
 
             <div class="row">
@@ -64,6 +63,25 @@
 
         <!-- comparing between two different time -->
         <div id="compare" class="tab-pane fade">
+            <!-- IP version and plane selector -->
+            <div class="row" style="padding-top: 10px">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="col-md-6">
+                        <select name="select-ip-version" id="select-compare-ip" class="form-control">
+                            <option value="ipv4">IPv4</option>
+                            <option value="ipv6">IPv6</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <select name="select-plane" id="select-compare-plane" class="form-control">
+                            <option value="control">Control plane</option>
+                            <option value="data">Data plane</option>
+                        </select>
+                    </div>
+                </div>
+            </div><!-- /IP version and plane selector -->
+            <!-- date pickers -->
             <div class="row">
                 <!-- date picker: date #1 -->
                 <div class="col-md-6">
@@ -91,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><!-- /date pickers -->
             <!--graph comparison-->
             <div class="row">
                 <!-- graph #1 -->

@@ -64,4 +64,3 @@ def write_to_db(db, data):
     """
     db.drop_collection(col=params.map6)  # drop first
     db.insert_many(col=params.map6, data=data)
-

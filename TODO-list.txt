@@ -1,10 +1,29 @@
 To-do list:
 - validate your result
-
-Target:
-- connect control-plane backend to frontend
-
 --------------------
+2016-05-12
+- finish connecting backend to frontend. Data is plotted fine. The only thing is, it takes so long to load data using
+  BGPStream.
+
+ Remarks:
+- Now, focus on analyzing the (potential) difference between IPv4 and IPv6 catchment areas:
+    - the idea: is there any difference between catchment areas of IPv4 and IPv6 DNS services? If there is (I hope so),
+      what would be the cause? Can this tool detect that? Is there any difference between control and data-plane?
+    - use built-in measurement. Start from root servers with small numbers of instances first. Let say, C.
+    - Start familiarize and working with CHAOS
+    - can I create geographical visualization based on this?
+
+- about the tool in general:
+    Back-end:
+    - change it to use built-in measurement against a certain root server, instead of just using random measurement ID
+
+    Visualization:
+    - finish working on statistics widgets
+    - use better template
+    - TODO: there is possibility that measurement data retrieved from RIS is empty. Add a handler for this condition in
+            database helper (db.py), especially in bulk write method, because it generates exception for empty data
+    - hovering an AS node should provide information about the respective ASN (the organization, description, etc.)
+
 2016-05-11
 - incorporating BGPStream into ris.py for historical control-plane data
 

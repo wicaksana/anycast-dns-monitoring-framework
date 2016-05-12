@@ -5,7 +5,7 @@ from anycast_dns_monitoring.data_processing.node import Node
 from anycast_dns_monitoring.data_processing.encoder import Encoder
 from anycast_dns_monitoring.data_processing import params
 from anycast_dns_monitoring.data_processing.params import RipeAtlasData, Version
-from anycast_dns_monitoring.data_processing.params import atlas_uri, msmnt_id, msmnt_id6, peering_asn
+from anycast_dns_monitoring.data_processing.params import atlas_uri, traceroute_id, traceroute6_id, root_asn
 import anycast_dns_monitoring.data_processing.cymru as cymru
 from anycast_dns_monitoring.data_processing.db import Db
 
@@ -37,6 +37,7 @@ class RipeAtlas:
             else:
                 uri = '{0}measurement/{1}/result/?start={2}&stop={3}' \
                     .format(atlas_uri, id, int(datetime) - 300, datetime)
+                print('_get_data() ipv6 uri: {}'.format(uri))
         results = requests.get(url=uri).json()
 
         return results
@@ -108,11 +109,7 @@ class RipeAtlas:
         :param datetime end time
         :return:
         """
-        traceroute_data = list()
-        if self.ip_version is Version.ipv4:
-            traceroute_data = self._get_data(data_type=RipeAtlasData.traceroute, id=msmnt_id, datetime=datetime)
-        if self.ip_version is Version.ipv6:
-            traceroute_data = self._get_data(data_type=RipeAtlasData.traceroute, id=msmnt_id6, datetime=datetime)
+        traceroute_data = self._get_data(data_type=RipeAtlasData.traceroute, id=traceroute_id, datetime=datetime)
 
         result = []
 
@@ -131,7 +128,7 @@ class RipeAtlas:
                         asn = self._get_asn(hop_prefix_str)  # this line queries from db
                         if asn is not '0':
                             path.append(asn)
-            path.append(peering_asn)  # for the sake of the tree
+            path.append(root_asn)  # for the sake of the tree
             path.append(" ")  # for the sake of the tree
             result.append({})
             result[index]['prb_id'] = str(msmnt['prb_id'])
@@ -147,7 +144,7 @@ class RipeAtlas:
         :param datetime:
         :return:
         """
-        traceroute_data = self._get_data(data_type=RipeAtlasData.traceroute, id=msmnt_id6, datetime=datetime)
+        traceroute_data = self._get_data(data_type=RipeAtlasData.traceroute, id=traceroute6_id, datetime=datetime)
 
         # store prefix6-ASN maps to database first
         ip_set = set()
@@ -176,7 +173,7 @@ class RipeAtlas:
                         asn = self._get_asn(hop)
                     if asn is not '0' and asn != 'NA':
                         path.append(asn)
-            path.append(peering_asn)  # for the sake of the tree
+            path.append(root_asn)  # for the sake of the tree
             path.append(" ")  # for the sake of the tree
             result.append({})
             result[index]['prb_id'] = str(msmnt['prb_id'])
@@ -230,5 +227,5 @@ class RipeAtlas:
                 level += 1
 
         result = Encoder().encode(root_list)[1:-1]
-        print(result)
+        print('data-plane result: {}'.format(result))
         return result

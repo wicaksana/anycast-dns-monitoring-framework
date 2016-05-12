@@ -14,6 +14,7 @@ class Ris:
     def __init__(self, ip_version):
         self.db = self._initiate_db()
         self.ip_version = ip_version
+        print('Ris object initiated, using {}'.format(self.ip_version))
 
     def _initiate_db(self):
         """
@@ -44,8 +45,8 @@ class Ris:
         :param datetime: end interval
         :return: list of AS paths
         """
-        start = datetime - 15000  # 15000 second seems to be the shortest interval to get data from BGPstream
-        stop = datetime
+        start = int(datetime) - 15000  # 15000 second seems to be the shortest interval to get data from BGPstream
+        stop = int(datetime)
         result = []
 
         stream = BGPStream()
@@ -91,11 +92,16 @@ class Ris:
         :param datetime
         :return:
         """
-        if datetime is None:
-            data = self._get_latest_data(params.prefix)  # get the latest control-plane data
+        if datetime is None and self.ip_version is params.Version.ipv4:
+            data = self._get_latest_data(params.prefix)  # get the latest IPv4 control-plane data
+        elif datetime is None and self.ip_version is params.Version.ipv6:
+            data = self._get_latest_data(params.prefix6)  # get the latest IPv6 ontrol-plane data
+        elif datetime is not None and self.ip_version is params.Version.ipv4:
+            data = self._get_data(params.prefix, datetime)  # get the latest IPv6 ontrol-plane data
+        elif datetime is not None and self.ip_version is params.Version.ipv6:
+            data = self._get_data(params.prefix6, datetime)  # get the latest IPv6 ontrol-plane data
         else:
-            datetime = int(datetime)
-            data = self._get_data(params.prefix, datetime)  # fetch data using BGPstream
+            print('something wrong with the input variables of tree_control_plane()!')
 
         root_list = []
 
@@ -128,5 +134,5 @@ class Ris:
                 level += 1
 
         result = Encoder().encode(root_list)[1:-1]
-        print(result)
+        print('control-plane tree: {}'.format(result))
         return result

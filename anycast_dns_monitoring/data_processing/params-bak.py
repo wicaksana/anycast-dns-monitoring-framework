@@ -1,13 +1,14 @@
 from enum import Enum
 
-traceroute_id = '2048556'  # random
-traceroute6_id = '3787166'  # random
+# traceroute and CHAOS measurement IDs for C-Root, both for IPv4 and IPv6
+traceroute_id = '5011'
+traceroute6_id = '6011'
 chaos_id = '10511'
 chaos6_id = '11411'
 
-root_asn = '47065'
-prefix = '140.78.0.0/16'  # random
-prefix6 = '2001:608::/32'  # random
+root_asn = '2149'  # C-Root ASN
+prefix = '192.33.4.12/24'  # C-Root
+prefix6 = '2001:500:2::c/32'  # C-Root
 
 atlas_uri = 'https://atlas.ripe.net/api/v1/'
 ris_uri = 'https://stat.ripe.net/data/'

@@ -9,8 +9,8 @@
  */
 
 progress = 0;
+server = 'http://127.0.0.1:8080/';
 
-// move the selection to front or something. I don't really have any idea why I should do this
 d3.selection.prototype.moveToFront = function() {
     return this.each(function() {
         this.parentNode.appendChild(this);
@@ -24,7 +24,7 @@ d3.selection.prototype.moveToFront = function() {
  * @param: padding
  * @param: selector - CSS selector
  */
-function Initialize_svg(diameter, padding, selector) {
+function InitializeSvg(diameter, padding, selector) {
     // radius of the graph
     this.diameter = diameter;
     this.padding = padding;
@@ -87,12 +87,11 @@ function Initialize_svg(diameter, padding, selector) {
  * @param tree
  * @param json_data
  */
-function tree_map(json_data, tree) {
+function treeMap(json_data, tree) {
     //-----------------------------------------------------------------------------------------------------------------
     // creating paths
     //-----------------------------------------------------------------------------------------------------------------
     // clean the JSON data first. Remove the original root node, and assign node '47065' as the root instead
-    console.log(json_data);
     var root = json_data.children[0];
 
     var nodes = tree.tree.nodes(root),
@@ -279,7 +278,7 @@ function tree_map(json_data, tree) {
  * @param json_data
  * @returns {Array}
  */
-function traverse_json(json_data) {
+function traverseJson(json_data) {
     var result = [];
 
     function traverse(data) {
@@ -299,60 +298,103 @@ function traverse_json(json_data) {
 }
 
 /**
- * 
+ * update datetime information in the main page using current datetime
  */
-function initialize_main_tree(tree) {
+function dateLatest() {
+    var currentDate = new Date();
+    var dateTime = currentDate.getDate() + "/"
+        + currentDate.getMonth() + "/"
+        + currentDate.getFullYear() + " "
+        + currentDate.getHours() + ":"
+        + currentDate.getMinutes() + ":"
+        + currentDate.getSeconds();
+
+    d3.select('#text-latest')
+        .html(dateTime);
+}
+
+/**
+ * draw tree visualization
+ * @param tree
+ * @param url
+ */
+function drawTree(tree, url) {
     // http://bl.ocks.org/mbostock/3750941
-    d3.json('http://localhost:8080/control-plane/ipv4/latest', function (json_data) {
-        var data = JSON.stringify(json_data['result']);
-        console.log(data);
-        tree_map(json_data, tree);
+    d3.json(url, function (json_data) {
+        var data = JSON.parse(json_data['result']);
+        treeMap(data, tree);
+
+        dateLatest();
+    });
+}
+
+/**
+ * draw initial trees that uses latest IPv4 control-plane data
+ * @param trees array of trees
+ */
+function drawInitialTree(trees) {
+    d3.json(server + 'control-plane/ipv4/latest', function (json_data) {
+        var data = JSON.parse(json_data['result']);
+        trees.forEach(function (tree) {
+            treeMap(data, tree);
+        });
+        dateLatest();
     });
 }
 
 //-----------------------------------------------------------------------------------------------------------------
 // JSON data container
 //-----------------------------------------------------------------------------------------------------------------
-var json_data1;
-var json_data2;
+var jsonData1;
+var jsonData2;
 
-var json_file = [['a', 'b'],['a','b']]; // temporary
+var json_file = [['a', 'b'],['c','d']]; // temporary
 
 
 $(document).ready(function() {
     /*********************************************************************************************
      * Create tree and initialization
      *********************************************************************************************/
-    var tree_main = new Initialize_svg(960, 120, "div#graph-home");
-    initialize_main_tree(tree_main);
+    var treeMain = new InitializeSvg(960, 120, "div#graph-home");
+    var treeCompareBefore = new InitializeSvg(960, 120, 'div#graph-compare-1');
+    var treeCompareAfter = new InitializeSvg(960, 120, 'div#graph-compare-2');
 
-    var tree_compare_before = new Initialize_svg(960, 120, 'div#graph-compare-1');
-    d3.json(json_file[0][0], function (json_data) { //TODO: change json_file to REST call
-        tree_map(json_data, tree_compare_before);
-    });
-
-    var tree_compare_after = new Initialize_svg(960, 120, 'div#graph-compare-2');
-    d3.json(json_file[0][1], function (json_data) {
-        tree_map(json_data, tree_compare_after);
-    });
+    drawInitialTree([treeMain, treeCompareBefore, treeCompareAfter]);
 
     /*********************************************************************************************
      * Home
      *********************************************************************************************/
     // Select IP version
     $('#select-ip').change(function () {
-        if($(this).find(":selected").val() == 'ipv4') {
-            
-        } else {
-            console.log('what?')
+        if($(this).find(":selected").val() == 'ipv4' && $('#select-plane').find(":selected").val() == 'control') {
+            drawTree(treeMain, server + 'control-plane/ipv4/latest');
         }
+        else if($(this).find(":selected").val() == 'ipv4' && $('#select-plane').find(":selected").val() == 'data') {
+            drawTree(treeMain, server + 'data-plane/ipv4/latest');
+        }
+        else if($(this).find(":selected").val() == 'ipv6' && $('#select-plane').find(":selected").val() == 'control') {
+            drawTree(treeMain, server + 'control-plane/ipv6/latest');
+        }
+        else if($(this).find(":selected").val() == 'ipv6' && $('#select-plane').find(":selected").val() == 'data') {
+            drawTree(treeMain, server + 'data-plane/ipv6/latest');
+        }
+
     });
 
     // Select plane
     $('#select-plane').change(function () {
-        $(this).find(":selected").each(function () {
-            console.log($(this).val());
-        });
+        if($(this).find(":selected").val() == 'control' && $('#select-ip').find(":selected").val() == 'ipv4') {
+            drawTree(treeMain, server + 'control-plane/ipv4/latest');
+        }
+        else if($(this).find(":selected").val() == 'control' && $('#select-ip').find(":selected").val() == 'ipv6') {
+            drawTree(treeMain, server + 'control-plane/ipv6/latest');
+        }
+        else if($(this).find(":selected").val() == 'data' && $('#select-ip').find(":selected").val() == 'ipv4') {
+            drawTree(treeMain, server + 'data-plane/ipv4/latest');
+        }
+        else if($(this).find(":selected").val() == 'data' && $('#select-ip').find(":selected").val() == 'ipv6') {
+            drawTree(treeMain, server + 'data-plane/ipv6/latest');
+        }
     });
     /*********************************************************************************************
      * Data comparison
@@ -365,12 +407,15 @@ $(document).ready(function() {
             maxDate: moment()
         })
         .on('dp.hide', function (e) {
-            var dateURI = 'http://0.0.0.0:8080/datetime/';
+            var selected_version = $('#select-compare-ip').find(':selected').val() == 'ipv4'? 'ipv4' : 'ipv6';
+            var selected_plane = $('#select-compare-plane').find(':selected').val() == 'control' ? 'control-plane' :'data-plane';
 
-            $.getJSON(dateURI + e.date.unix(), function (data) {
-                json_data1 = data['result'];
-                root = JSON.parse(json_data1);
-                tree_map(root, tree_compare_before);
+            var url = server + selected_plane + '/' + selected_version + '/' + e.date.unix();
+
+            d3.json(url, function (json_data) {
+                jsonData1 = JSON.parse(json_data['result']);
+                treeMap(jsonData1, treeCompareBefore);
+                console.log('* compare before finished');
             });
         });
 
@@ -380,118 +425,123 @@ $(document).ready(function() {
             maxDate: moment()
         })
         .on('dp.hide', function (e) {
-            var dateURI = 'http://0.0.0.0:8080/datetime/';
+            var selected_version = $('#select-compare-ip').find(':selected').val() == 'ipv4'? 'ipv4' : 'ipv6';
+            var selected_plane = $('#select-compare-plane').find(':selected').val() == 'control' ? 'control-plane' :'data-plane';
 
-            $.getJSON(dateURI + e.date.unix(), function (data) {
-                json_data2 = data['result'];
-                root = JSON.parse(json_data2);
-                tree_map(root, tree_compare_after);
+            var url = server + selected_plane + '/' + selected_version + '/' + e.date.unix();
+
+            d3.json(url, function (json_data) {
+                jsonData2 = JSON.parse(json_data['result']);
+                treeMap(jsonData2, treeCompareAfter);
+                console.log('* compare after finished');
             });
         });
 
 
     // get comparison data:
-    // TODO: do something with json_data1 and json_data2
-    d3.json(json_file[0][0], function (json_data) {
-        var results = traverse_json(json_data['children']);
-
-        d3.select('div#stats-comparison-complete.stats')
-            .selectAll('span')
-            .data(results)
-            .enter()
-            .append('code')
-            .text(function (d) {
-                return d.as + " ";
-            })
-            .on('mouseover', function (d) {
-
-                d3.select('div#graph-compare-1.graph.col-md-6 svg g.container').selectAll('g.node')
-                    .filter(function (e) {
-                        return e.name == d.as && _.isEqual(e.probes, d.probes);
-                    })
-                    .call(function (d) {
-                        for (var e in d.data()) {
-                            var ancestors = [];
-                            var parent = d.data()[e];
-                            // console.log(parent);
-                            while(parent.parent.depth > 0) {
-                                ancestors.push(parent);
-                                parent = parent.parent;
-                            }
-                            // enlarge ancestors
-                            d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node')
-                                .filter(function (f, i) {
-                                    return _.any(ancestors, function (p) {
-                                        return p == f && f.depth > 1;
-                                    });
-                                })
-                                .select('circle')
-                                .classed('hover', true);
-
-                            // get the matched links
-                            d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
-                                .filter(function (g, i) {
-                                    return _.any(ancestors, function (p) {
-                                        return p == g.target;
-                                    });
-                                })
-                                .classed("selected", true)
-                                .moveToFront();
-                        }
-                    })
-                    .select('circle')
-                    .classed('hover', true);
-
-                d3.select('div#graph-compare-2.graph.col-md-6 svg g.container').selectAll('g.node')
-                    .filter(function (e) {
-                        return e.name == d.as && _.isEqual(e.probes, d.probes);
-                    })
-                    .call(function (d) {
-                        for (var e in d.data()) {
-                            var ancestors = [];
-                            var parent = d.data()[e];
-                            // console.log(parent);
-                            while(parent.parent.depth > 0) {
-                                ancestors.push(parent);
-                                parent = parent.parent;
-                            }
-                            // enlarge ancestors
-                            d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node')
-                                .filter(function (f, i) {
-                                    return _.any(ancestors, function (p) {
-                                        return p == f && f.depth > 1;
-                                    });
-                                })
-                                .select('circle')
-                                .classed('hover', true);
-
-                            // get the matched links
-                            d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
-                                .filter(function (g, i) {
-                                    return _.any(ancestors, function (p) {
-                                        return p == g.target;
-                                    });
-                                })
-                                .classed("selected", true)
-                                .moveToFront();
-                        }
-                    })
-                    .select('circle')
-                    .classed('hover', true);
-            })
-            .on('mouseout', function () {
-                d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node circle.hover')
-                    .classed('hover', false);
-
-                d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
-                    .classed('selected', false);
-
-                d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node circle.hover')
-                    .classed('hover', false);
-
-                d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
-                    .classed('selected', false);
-            });
-    });
+    // TODO: do something with jsonData1 and jsonData2
+    // d3.json(json_file[0][0], function (error, json_data) {
+    //     if(error) return console.warn(error);
+    //
+    //     var results = traverseJson(json_data['children']);
+    //
+    //     d3.select('div#stats-comparison-complete.stats')
+    //         .selectAll('span')
+    //         .data(results)
+    //         .enter()
+    //         .append('code')
+    //         .text(function (d) {
+    //             return d.as + " ";
+    //         })
+    //         .on('mouseover', function (d) {
+    //
+    //             d3.select('div#graph-compare-1.graph.col-md-6 svg g.container').selectAll('g.node')
+    //                 .filter(function (e) {
+    //                     return e.name == d.as && _.isEqual(e.probes, d.probes);
+    //                 })
+    //                 .call(function (d) {
+    //                     for (var e in d.data()) {
+    //                         var ancestors = [];
+    //                         var parent = d.data()[e];
+    //                         // console.log(parent);
+    //                         while(parent.parent.depth > 0) {
+    //                             ancestors.push(parent);
+    //                             parent = parent.parent;
+    //                         }
+    //                         // enlarge ancestors
+    //                         d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node')
+    //                             .filter(function (f, i) {
+    //                                 return _.any(ancestors, function (p) {
+    //                                     return p == f && f.depth > 1;
+    //                                 });
+    //                             })
+    //                             .select('circle')
+    //                             .classed('hover', true);
+    //
+    //                         // get the matched links
+    //                         d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
+    //                             .filter(function (g, i) {
+    //                                 return _.any(ancestors, function (p) {
+    //                                     return p == g.target;
+    //                                 });
+    //                             })
+    //                             .classed("selected", true)
+    //                             .moveToFront();
+    //                     }
+    //                 })
+    //                 .select('circle')
+    //                 .classed('hover', true);
+    //
+    //             d3.select('div#graph-compare-2.graph.col-md-6 svg g.container').selectAll('g.node')
+    //                 .filter(function (e) {
+    //                     return e.name == d.as && _.isEqual(e.probes, d.probes);
+    //                 })
+    //                 .call(function (d) {
+    //                     for (var e in d.data()) {
+    //                         var ancestors = [];
+    //                         var parent = d.data()[e];
+    //                         // console.log(parent);
+    //                         while(parent.parent.depth > 0) {
+    //                             ancestors.push(parent);
+    //                             parent = parent.parent;
+    //                         }
+    //                         // enlarge ancestors
+    //                         d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node')
+    //                             .filter(function (f, i) {
+    //                                 return _.any(ancestors, function (p) {
+    //                                     return p == f && f.depth > 1;
+    //                                 });
+    //                             })
+    //                             .select('circle')
+    //                             .classed('hover', true);
+    //
+    //                         // get the matched links
+    //                         d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
+    //                             .filter(function (g, i) {
+    //                                 return _.any(ancestors, function (p) {
+    //                                     return p == g.target;
+    //                                 });
+    //                             })
+    //                             .classed("selected", true)
+    //                             .moveToFront();
+    //                     }
+    //                 })
+    //                 .select('circle')
+    //                 .classed('hover', true);
+    //         })
+    //         .on('mouseout', function () {
+    //             d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node circle.hover')
+    //                 .classed('hover', false);
+    //
+    //             d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
+    //                 .classed('selected', false);
+    //
+    //             d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node circle.hover')
+    //                 .classed('hover', false);
+    //
+    //             d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
+    //                 .classed('selected', false);
+    //         });
+    // });
 
 });

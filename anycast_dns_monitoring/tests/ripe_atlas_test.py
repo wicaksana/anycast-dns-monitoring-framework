@@ -15,11 +15,11 @@ class RipeAtlasTest(unittest.TestCase):
     def test_get_data(self):
         # IPv4
         print('ipv4: ')
-        print(self.ra._get_data(id=params.msmnt_id, data_type=RipeAtlasData.traceroute, datetime=self.datetime))
+        print(self.ra._get_data(id=params.traceroute_id, data_type=RipeAtlasData.traceroute, datetime=self.datetime))
 
         # IPv6
         print('ipv6: ')
-        pprint(self.ra._get_data(id=params.msmnt_id6, data_type=RipeAtlasData.traceroute, datetime=1462797042))
+        pprint(self.ra._get_data(id=params.traceroute6_id, data_type=RipeAtlasData.traceroute, datetime=1462797042))
 
     def test_get_asn(self):
         self.assertEqual(self.ra._get_asn('50.196.164.0'), '33651')
