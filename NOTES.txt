@@ -1,0 +1,2 @@
+Bgpstream is slow because it has to download and process BGP dump files for each route collector. For RIBs, the dump file size could
+reach around 60 MB. Thus, it is almost impossible to develop interactive application based on this.

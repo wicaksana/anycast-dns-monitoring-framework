@@ -1,3 +1,4 @@
+import sys
 import requests
 from _pybgpstream import BGPRecord, BGPStream
 from pymongo import MongoClient
@@ -81,7 +82,8 @@ class Ris:
 
         for rrc in data['rrcs']:
             for peer in data['rrcs'][rrc]['entries']:
-                path = peer['as_path'].strip().split(' ')
+                # path = peer['as_path'].strip().split(' ')
+                path = peer['as_path'].strip().split(',')[0].split(' ')  # split by comma is to anticipate aggregration info
                 path.append(' ') # for the sake of tree creation code
                 result.append(path)
         return result
@@ -102,6 +104,7 @@ class Ris:
             data = self._get_data(params.prefix6, datetime)  # get the latest IPv6 ontrol-plane data
         else:
             print('something wrong with the input variables of tree_control_plane()!')
+            sys.exit(1)
 
         root_list = []
 

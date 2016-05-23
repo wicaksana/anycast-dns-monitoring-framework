@@ -19,6 +19,7 @@ class RipeAtlas:
     def __init__(self, ip_version):
         self.db = Db()
         self.ip_version = ip_version
+        print('RipeAtlas object initiated, using {}'.format(self.ip_version))
 
     def _get_data(self, data_type, id, datetime=None):
         """
@@ -32,11 +33,10 @@ class RipeAtlas:
         if data_type == RipeAtlasData.traceroute:
             if self.ip_version is Version.ipv4:
                 uri = '{0}measurement/{1}/result/?start={2}&stop={3}'\
-                    .format(atlas_uri, id, int(datetime) - 1200, datetime)
-            # TEMPORARY!! only because I use random measurement that use interval 300s
+                    .format(atlas_uri, id, int(datetime) - 1800, datetime)
             else:
                 uri = '{0}measurement/{1}/result/?start={2}&stop={3}' \
-                    .format(atlas_uri, id, int(datetime) - 300, datetime)
+                    .format(atlas_uri, id, int(datetime) - 1800, datetime)
                 print('_get_data() ipv6 uri: {}'.format(uri))
         results = requests.get(url=uri).json()
 
@@ -150,13 +150,13 @@ class RipeAtlas:
         ip_set = set()
         for msmnt in traceroute_data:
             for res in msmnt['result']:
-                if 'from' in res['result'][0]:
-                    ip_set.add(res['result'][0]['from'])
+                if 'result' in res:
+                    if 'from' in res['result'][0]:
+                        ip_set.add(res['result'][0]['from'])
 
         # query cymru using bulk data, then store in database
         query_result = cymru.get_bulk_asn(ip_set)
         cymru.write_to_db(self.db, query_result)
-
 
         # process traceroute6 data
         result = []
@@ -164,15 +164,20 @@ class RipeAtlas:
         for index, msmnt in enumerate(traceroute_data):
             path = []
             for result_per_probe in msmnt['result']:
-                if 'from' in result_per_probe['result'][0]:  # at the moment, take care only the first result of traceroute
-                    hop = result_per_probe['result'][0]['from']
-                    hop_prefix = ipaddress.ip_interface(hop + '/64')
+                try:
+                    if 'result' in result_per_probe:
+                        if 'from' in result_per_probe['result'][0]:  # at the moment, take care only the first result of traceroute
+                            hop = result_per_probe['result'][0]['from']
+                            hop_prefix = ipaddress.ip_interface(hop + '/64')
 
-                    # if the prefix is a public address and its ASN is not 0 or 'NA'
-                    if not hop_prefix.is_private:
-                        asn = self._get_asn(hop)
-                    if asn is not '0' and asn != 'NA':
-                        path.append(asn)
+                            # if the prefix is a public address and its ASN is not 0 or 'NA'
+                            if not hop_prefix.is_private:
+                                asn = self._get_asn(hop)
+                            if asn is not '0' and asn != 'NA':
+                                path.append(asn)
+                except KeyError:
+                    print('result_per_probe: {}'.format(result_per_probe))
+
             path.append(root_asn)  # for the sake of the tree
             path.append(" ")  # for the sake of the tree
             result.append({})

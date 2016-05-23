@@ -1,17 +1,37 @@
 To-do list:
+- add logging capabilities
 - validate your result
+- select representative probes for data-plane measurements (/api/v1/measurement/1000192/result/?start=1356994800&stop=1357081200&prb_id=270,579)
+    - Should select probes located near to RIS route collectors
 --------------------
+2016-05-23
+- selecting probes close to route collectors
+    - RIPE Atlas only provides coordinates, not the address. Need to map GPS coord. into its address. I use geopy.
+    - create the list of countries where RRs reside. I put all probes in that countries into my db.
+    - todo: get the address of those probes using geopy later!
+        - done partially
+    - todo: switch back to python3! use pybgpstream directly from github
+
+
+2016-05-13
+- fix populate_db.py
+- fix problem caused by 'aggregation' text in RIS data (see method _get_latest_data() from ris.py)
+
+  Remarks:
+  - why BGP community is crucial, so that it is included in RIS data?
+
 2016-05-12
 - finish connecting backend to frontend. Data is plotted fine. The only thing is, it takes so long to load data using
   BGPStream.
 
  Remarks:
-- Now, focus on analyzing the (potential) difference between IPv4 and IPv6 catchment areas:
+    - Now, focus on analyzing the (potential) difference between IPv4 and IPv6 catchment areas:
     - the idea: is there any difference between catchment areas of IPv4 and IPv6 DNS services? If there is (I hope so),
       what would be the cause? Can this tool detect that? Is there any difference between control and data-plane?
     - use built-in measurement. Start from root servers with small numbers of instances first. Let say, C.
     - Start familiarize and working with CHAOS
     - can I create geographical visualization based on this?
+    - don't forget to update probe data in db
 
 - about the tool in general:
     Back-end:
