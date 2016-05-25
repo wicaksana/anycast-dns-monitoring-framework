@@ -1,5 +1,6 @@
 import sys
 import requests
+from requests.exceptions import SSLError
 from _pybgpstream import BGPRecord, BGPStream
 from pymongo import MongoClient
 from anycast_dns_monitoring.data_processing import params
@@ -15,7 +16,7 @@ class Ris:
     def __init__(self, ip_version):
         self.db = self._initiate_db()
         self.ip_version = ip_version
-        print('Ris object initiated, using {}'.format(self.ip_version))
+        print('[*] ris.py: Ris object initiated, using {}'.format(self.ip_version))
 
     def _initiate_db(self):
         """
@@ -46,7 +47,9 @@ class Ris:
         :param datetime: end interval
         :return: list of AS paths
         """
-        start = int(datetime) - 15000  # 15000 second seems to be the shortest interval to get data from BGPstream
+        print('[*] ris.py: _get_data() called')
+        print('[*] ris.py: _get_data() prefix: {}'.format(prefix))
+        start = int(datetime) - 20000  # 20000 second seems to be the shortest interval to get data from BGPstream
         stop = int(datetime)
         result = []
 
@@ -68,7 +71,7 @@ class Ris:
                     as_path.append(' ')  # for tree creation
                     result.append(as_path)
                     elem = rec.get_next_elem()
-
+        print('[*] ris.py: _get_data() finished.')
         return result
 
     def _get_latest_data(self, prefix):
@@ -77,15 +80,19 @@ class Ris:
         :return:
         """
         uri = '{0}looking-glass/data.json?resource={1}'.format(params.ris_uri, prefix)
-        data = requests.get(uri).json()['data']
         result = []
+        try:
+            data = requests.get(uri, verify=False).json()['data']
+            for rrc in data['rrcs']:
+                for peer in data['rrcs'][rrc]['entries']:
+                    # path = peer['as_path'].strip().split(' ')
+                    path = peer['as_path'].strip().split(',')[0].split(
+                        ' ')  # split by comma is to anticipate aggregration info
+                    path.append(' ')  # for the sake of tree creation code
+                    result.append(path)
+        except SSLError, e:
+            print('[!] Get error: {}'.format(e))
 
-        for rrc in data['rrcs']:
-            for peer in data['rrcs'][rrc]['entries']:
-                # path = peer['as_path'].strip().split(' ')
-                path = peer['as_path'].strip().split(',')[0].split(' ')  # split by comma is to anticipate aggregration info
-                path.append(' ') # for the sake of tree creation code
-                result.append(path)
         return result
 
     def tree_control_plane(self, datetime=None):
@@ -94,17 +101,29 @@ class Ris:
         :param datetime
         :return:
         """
+        print('[*] ris.py: datetime: {}'.format(datetime))
+
         if datetime is None and self.ip_version is params.Version.ipv4:
+            print('[*] ris.py: call self._get_latest_data(params.prefix) ')
             data = self._get_latest_data(params.prefix)  # get the latest IPv4 control-plane data
+
         elif datetime is None and self.ip_version is params.Version.ipv6:
-            data = self._get_latest_data(params.prefix6)  # get the latest IPv6 ontrol-plane data
+            print('[*] ris.py: call self._get_latest_data(params.prefix6) ')
+            data = self._get_latest_data(params.prefix6)  # get the latest IPv6 control-plane data
+
         elif datetime is not None and self.ip_version is params.Version.ipv4:
-            data = self._get_data(params.prefix, datetime)  # get the latest IPv6 ontrol-plane data
+            print('[*] ris.py: call self._get_data(params.prefix, datetime) ')
+            data = self._get_data(params.prefix, datetime)  # get IPv4 control-plane data
+
         elif datetime is not None and self.ip_version is params.Version.ipv6:
-            data = self._get_data(params.prefix6, datetime)  # get the latest IPv6 ontrol-plane data
+            print('[*] ris.py: call self._get_data(params.prefix6, datetime) ')
+            data = self._get_data(params.prefix6, datetime)  # get IPv6 control-plane data
+
         else:
             print('something wrong with the input variables of tree_control_plane()!')
             sys.exit(1)
+
+        print('[*] ris.py: data: {}'.format(data))
 
         root_list = []
 

@@ -5,7 +5,7 @@ Route collectors:
 - rrc03     Amsterdam AIX, NL
 - rrc04     Geneva,
 - rrc05     Vienna
-- rrc06     Japan
+- rrc06     Tokyo, Japan
 - rrc07     Stockholm
 - rrc08     San Jose, USA
 - rrc09     Zurich
@@ -26,14 +26,32 @@ possible addition (http://www.routeviews.org/):
 - route-views.telxatl.routeviews.org    Atalanta
 - route-views.perth
 - route-views.sg
-- route-views.isc
+- route-views.isc                       palo alto
 - route-views.eqix                      Ashburn, VA
 - route-views.sydney
 - route-views.sfmix                     San Fransisco
 - route-views.jinx                      johannesburg, SA
 - route-views.soxrs                     belgrade, Serbia
 
-Country list: NL, GB, FR, CH, AT, JP, SE, US, IT, DE, RU, BR, AU, KE, SG, ZA, RS
+Country list:
+    NL, Amsterdam
+    GB, London
+    FR, Paris
+    CH, Geneva, Zurich
+    AT, Vienna
+    JP, Tokyo
+    SE, Stockholm
+    US, San Jose, New York, Palo Alto, Miami, Oregon, Atalanta, Ashburn, San Fransisco
+    IT, Milan
+    DE, Frankfurt
+    RU, Moscow,
+    BR, Sao Paulo
+    AU, Perth, Sydney
+    KE, Nairobi
+    SG, Singapore
+    ZA, Johannesburg
+    RS, belgrade
+
 
 probe list:
 ~~~~~~~~~~~

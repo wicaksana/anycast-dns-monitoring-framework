@@ -10,6 +10,21 @@
 
 progress = 0;
 server = 'http://127.0.0.1:8080/';
+var jsonData1;
+var jsonData2;
+
+// for merging non-duplicate two arrays of objects
+Array.prototype.unique = function() {
+    var a = this.concat();
+    for(var i=0; i<a.length; ++i) {
+        for(var j=i+1; j<a.length; ++j) {
+            if(a[i].as === a[j].as)
+                a.splice(j--, 1);
+        }
+    }
+
+    return a;
+};
 
 d3.selection.prototype.moveToFront = function() {
     return this.each(function() {
@@ -274,7 +289,7 @@ function treeMap(json_data, tree) {
 }
 
 /**
- * get JSON of as->as_name and probes->list_of_probes from tree data
+ * returns JSON of as->as_name and probes->list_of_probes from tree data
  * @param json_data
  * @returns {Array}
  */
@@ -285,8 +300,30 @@ function traverseJson(json_data) {
         for(var child in data) {
             if(data[child].probes.length > 0) {
                 // console.log('asn: ' + data[child].name + ' pushed data: ' + data[child].probes);
-                result.push({'as': data[child].name, 'probes': data[child].probes});
+                // result.push({'as': data[child].name, 'probes': data[child].probes});
+                result.push({'as': data[child].name});
             }
+            if(typeof (data[child].children == 'object')) {
+                traverse(data[child].children);
+            }
+        }
+    }
+
+    traverse(json_data);
+    return result;
+}
+
+/**
+ * slightly different version of traverseJson().
+ * What it does: get all ASNs,
+ * @param json_data
+ */
+function traverseJson2(json_data) {
+    var result = [];
+
+    function traverse(data) {
+        for(var child in data) {
+            result.push({'as': data[child].name});
             if(typeof (data[child].children == 'object')) {
                 traverse(data[child].children);
             }
@@ -338,17 +375,124 @@ function drawInitialTree(trees) {
         trees.forEach(function (tree) {
             treeMap(data, tree);
         });
+        jsonData1 = JSON.parse(json_data['result']); // initially, jsonData1 is json_data from initial tree
+        jsonData2 = jsonData1; // initially, jsonData2 is json_data from initial tree
+
+        updateStats();
         dateLatest();
     });
 }
 
-//-----------------------------------------------------------------------------------------------------------------
-// JSON data container
-//-----------------------------------------------------------------------------------------------------------------
-var jsonData1;
-var jsonData2;
+/**
+ * update graph-comparison statistics 
+ */
+function updateStats() {
+    var result1 = traverseJson2(jsonData1['children']);
+    var result2 = traverseJson2(jsonData2['children']);
 
-var json_file = [['a', 'b'],['c','d']]; // temporary
+    var result = result1.concat(result2).unique();
+
+    d3.select('div#stats-comparison-complete.stats')
+        .selectAll('span')
+        .data(result)
+        .enter()
+        .append('code')
+        .text(function (d) {
+            return d.as + ' ';
+        })
+        .on('mouseover', function (d) {
+            d3.select('div#graph-compare-1').selectAll('g.node')
+                .filter(function (e) {
+                    return e.name == d.as;
+                })
+                .call(function (f) {
+                    for (var e in f.data()) {
+                        if (f.data().hasOwnProperty(e)) {
+                            var ancestors = [];
+                            var parent = f.data()[e];
+
+                            while(parent.parent.depth > 0) {
+                                ancestors.push(parent);
+                                parent = parent.parent;
+                            }
+                            // enlarge ancestors
+                            d3.selectAll('div#graph-compare-1 g.node')
+                                .filter(function (f, i) {
+                                    return _.any(ancestors, function (p) {
+                                        return p == f && f.depth > 1;
+                                    });
+                                })
+                                .select('circle')
+                                .classed('hover', true);
+
+                            // get the matched links
+                            d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
+                                .filter(function (g, i) {
+                                    return _.any(ancestors, function (p) {
+                                        return p == g.target;
+                                    });
+                                })
+                                .classed("selected", true)
+                                .moveToFront();
+                        }
+                    }
+                })
+                .select('circle')
+                .classed('hover', true);
+
+            d3.select('div#graph-compare-2').selectAll('g.node')
+                .filter(function (e) {
+                    return e.name == d.as;
+                })
+                .call(function (f) {
+                    for (var e in f.data()) {
+                        if (f.data().hasOwnProperty(e)) {
+                            var ancestors = [];
+                            var parent = f.data()[e];
+                            // console.log(parent);
+                            while(parent.parent.depth > 0) {
+                                ancestors.push(parent);
+                                parent = parent.parent;
+                            }
+                            // enlarge ancestors
+                            d3.selectAll('div#graph-compare-2.graph g.node')
+                                .filter(function (f, i) {
+                                    return _.any(ancestors, function (p) {
+                                        return p == f && f.depth > 1;
+                                    });
+                                })
+                                .select('circle')
+                                .classed('hover', true);
+
+                            // get the matched links
+                            d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
+                                .filter(function (g, i) {
+                                    return _.any(ancestors, function (p) {
+                                        return p == g.target;
+                                    });
+                                })
+                                .classed("selected", true)
+                                .moveToFront();
+                        }
+                    }
+                })
+                .select('circle')
+                .classed('hover', true);
+        })
+        .on('mouseout', function () {
+                d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node circle.hover')
+                    .classed('hover', false);
+
+                d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
+                    .classed('selected', false);
+
+                d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node circle.hover')
+                    .classed('hover', false);
+
+                d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
+                    .classed('selected', false);
+            });
+}
 
 
 $(document).ready(function() {
@@ -396,10 +540,13 @@ $(document).ready(function() {
             drawTree(treeMain, server + 'data-plane/ipv6/latest');
         }
     });
+
     /*********************************************************************************************
      * Data comparison
      *********************************************************************************************/
-
+    /*~~~~~~~~~~~~~~~~
+     * Graph comparison
+     ~~~~~~~~~~~~~~~~~*/
     // read http://eonasdan.github.io/bootstrap-datetimepicker/
     $('#compare-datepicker-1')
         .datetimepicker({
@@ -411,11 +558,17 @@ $(document).ready(function() {
             var selected_plane = $('#select-compare-plane').find(':selected').val() == 'control' ? 'control-plane' :'data-plane';
 
             var url = server + selected_plane + '/' + selected_version + '/' + e.date.unix();
+            console.log('url: ' + url);
 
             d3.json(url, function (json_data) {
+                console.log(json_data);
                 jsonData1 = JSON.parse(json_data['result']);
                 treeMap(jsonData1, treeCompareBefore);
-                console.log('* compare before finished');
+                console.log('* compare-before finished');
+                console.log('jsonData1: ');
+                console.log(jsonData1);
+
+                updateStats();
             });
         });
 
@@ -433,115 +586,18 @@ $(document).ready(function() {
             d3.json(url, function (json_data) {
                 jsonData2 = JSON.parse(json_data['result']);
                 treeMap(jsonData2, treeCompareAfter);
-                console.log('* compare after finished');
+                console.log('* compare-after finished');
+                console.log('jsonData2: ');
+                console.log(jsonData2);
+                
+                updateStats();
             });
         });
 
-
+    /*~~~~~~~~~~~~~~~~~~~
+     * AS list (complete)
+     *~~~~~~~~~~~~~~~~~~~*/
     // get comparison data:
     // TODO: do something with jsonData1 and jsonData2
-    // d3.json(json_file[0][0], function (error, json_data) {
-    //     if(error) return console.warn(error);
-    //
-    //     var results = traverseJson(json_data['children']);
-    //
-    //     d3.select('div#stats-comparison-complete.stats')
-    //         .selectAll('span')
-    //         .data(results)
-    //         .enter()
-    //         .append('code')
-    //         .text(function (d) {
-    //             return d.as + " ";
-    //         })
-    //         .on('mouseover', function (d) {
-    //
-    //             d3.select('div#graph-compare-1.graph.col-md-6 svg g.container').selectAll('g.node')
-    //                 .filter(function (e) {
-    //                     return e.name == d.as && _.isEqual(e.probes, d.probes);
-    //                 })
-    //                 .call(function (d) {
-    //                     for (var e in d.data()) {
-    //                         var ancestors = [];
-    //                         var parent = d.data()[e];
-    //                         // console.log(parent);
-    //                         while(parent.parent.depth > 0) {
-    //                             ancestors.push(parent);
-    //                             parent = parent.parent;
-    //                         }
-    //                         // enlarge ancestors
-    //                         d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node')
-    //                             .filter(function (f, i) {
-    //                                 return _.any(ancestors, function (p) {
-    //                                     return p == f && f.depth > 1;
-    //                                 });
-    //                             })
-    //                             .select('circle')
-    //                             .classed('hover', true);
-    //
-    //                         // get the matched links
-    //                         d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
-    //                             .filter(function (g, i) {
-    //                                 return _.any(ancestors, function (p) {
-    //                                     return p == g.target;
-    //                                 });
-    //                             })
-    //                             .classed("selected", true)
-    //                             .moveToFront();
-    //                     }
-    //                 })
-    //                 .select('circle')
-    //                 .classed('hover', true);
-    //
-    //             d3.select('div#graph-compare-2.graph.col-md-6 svg g.container').selectAll('g.node')
-    //                 .filter(function (e) {
-    //                     return e.name == d.as && _.isEqual(e.probes, d.probes);
-    //                 })
-    //                 .call(function (d) {
-    //                     for (var e in d.data()) {
-    //                         var ancestors = [];
-    //                         var parent = d.data()[e];
-    //                         // console.log(parent);
-    //                         while(parent.parent.depth > 0) {
-    //                             ancestors.push(parent);
-    //                             parent = parent.parent;
-    //                         }
-    //                         // enlarge ancestors
-    //                         d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node')
-    //                             .filter(function (f, i) {
-    //                                 return _.any(ancestors, function (p) {
-    //                                     return p == f && f.depth > 1;
-    //                                 });
-    //                             })
-    //                             .select('circle')
-    //                             .classed('hover', true);
-    //
-    //                         // get the matched links
-    //                         d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
-    //                             .filter(function (g, i) {
-    //                                 return _.any(ancestors, function (p) {
-    //                                     return p == g.target;
-    //                                 });
-    //                             })
-    //                             .classed("selected", true)
-    //                             .moveToFront();
-    //                     }
-    //                 })
-    //                 .select('circle')
-    //                 .classed('hover', true);
-    //         })
-    //         .on('mouseout', function () {
-    //             d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g.node circle.hover')
-    //                 .classed('hover', false);
-    //
-    //             d3.selectAll('div#graph-compare-1.graph.col-md-6 svg g.container g path.link')
-    //                 .classed('selected', false);
-    //
-    //             d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g.node circle.hover')
-    //                 .classed('hover', false);
-    //
-    //             d3.selectAll('div#graph-compare-2.graph.col-md-6 svg g.container g path.link')
-    //                 .classed('selected', false);
-    //         });
-    // });
 
 });

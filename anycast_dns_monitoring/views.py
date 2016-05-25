@@ -50,6 +50,9 @@ def index():
 class ControlPlane(Resource):
     # TODO: add exception handler
     def get(self, version, datetime):
+        print('version: {}'.format(version))
+        print('datetime: {}'.format(datetime))
+        msmnt = None
         if version == 'ipv4':
             msmnt = Ris(Version.ipv4)
         elif version == 'ipv6':
