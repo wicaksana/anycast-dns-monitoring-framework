@@ -2,10 +2,40 @@ To-do list:
 - add logging capabilities
 - validate your result
 
-BIG PROBLEM:
-- bgpstream does not return dump data for arbitrary time interval. Currently known working time period:
-    - 3 april 2016 11:49 (interval 20000 second)
 --------------------
+2016-05-30
+- Some potential questions (found in paper 'characterizing IPv6 control':
+    - to study the frequency of routing changes towards the certain IPv4 and IPv6 prefix (on what basis? monthly? weekly?)
+    - is there correlations between routing instability in IPv4 and IPv6?
+    (IPv6 AS relation)
+    - which ASN is the more dominant in AS path towards anycast AS in interest?
+    - how is the evolution of anycast prefix announcement/routing (?)?
+    - which connects faster: IPv4 or IPv6? there is already paper discuss about it. But does it also apply for anycast?
+    - can you tell something about the effect of AS-prepending on anycast service?
+- getting more familiar with bgpstream
+- use Neo4j?
+    Neo4j & D3 --> http://blog.ashokalella.com/neo4j/d3/2015/04/27/neo4j-and-d3/
+- Questions:
+    - What is MRT format? How can I process it?
+
+
+2016-05-28
+- official change of directions: write later
+- additional references:
+    Characterizing IPv6 control and data plane stability
+        study their methodology
+    IPv6 AS Relationships, Cliques, and Congruence [!]
+    AS Relationships, Customer Cones, and Validation
+    Traceroute Probe Method and Forward IP Path Inference
+    Measuring the Evolution of Internet Peering Agreements
+    Measuring the Deployment of IPv6: Topology, Routing and Performance [!]
+    IPv4 versus IPv6 - who connects faster? [!]
+    Dissecting the Largest National Ecosystem of Public Internet eXchange Points in Brazil [!]
+    BGP Route Leaks Analysis
+- possible RQs:
+    - which connects faster: IPv4 or IPv6?
+        there is already paper discuss about it. But does it also apply for anycast?
+
 2016-95-26
 - todo: improve the UI
 - todo: reselect the probes to those which have dual-stack capability!
