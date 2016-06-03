@@ -51,7 +51,7 @@ def get_data(timestamp):
         if rec.status == "valid":
             elem = rec.get_next_elem()
             while elem:
-                print rec.collector, elem.type, elem.peer_address, elem.peer_asn, elem.fields
+                print('{} {} {} {} {}'.format(rec.collector, elem.type, elem.peer_address, elem.peer_asn, elem.fields))
                 as_path = elem.fields['as-path'].split()
                 as_path.reverse()
                 prefix = elem.fields['prefix']
