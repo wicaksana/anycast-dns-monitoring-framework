@@ -1,5 +1,5 @@
-from _pybgpstream import BGPStream, BGPElem, BGPRecord
-from py2neo import Graph, Node, Relationship
+from _pybgpstream import BGPStream, BGPRecord
+from py2neo import Graph
 from datetime import datetime
 import pytz
 import time
@@ -12,6 +12,7 @@ def get_data(timestamp):
     rec = BGPRecord()
     rec_time = None
 
+    # IPv4
     stream.add_filter('prefix', '198.41.0.0/24')  # A-root
     stream.add_filter('prefix', '192.33.4.0/24')  # C-root
     stream.add_filter('prefix', '199.7.91.0/24')  # D-root
@@ -72,14 +73,12 @@ def get_data(timestamp):
             counter_as_prepend = 0
             for index, asn in enumerate(path):
                 cur_node = asn
-                searched_node = graph.run('match(n:asn) where n.name="{0}" return n'.format(asn))
-                if not searched_node.forward():  # there is already existing node
-                    graph.create(Node('asn', name=str(asn), label=str(asn)))
+                graph.run('MERGE(s:asn{{name:"{0}", label:"{0}"}})'.format(asn))  # create new node if not exist.
                 if index > 0:
                     if cur_node != prev_node:
                         query = 'MATCH (s:asn),(d:asn) ' \
                                 'WHERE s.name="{0}" AND d.name="{1}" ' \
-                                'CREATE (s)-[r:TO {{prefix: "{3}", time: {2}, prepended: {4}}}]->(d)'\
+                                'MERGE (s)-[r:TO {{prefix: "{3}", time: {2}, prepended: {4}}}]->(d)'\
                             .format(cur_node, prev_node, rec_time, prefix, counter_as_prepend)
                         graph.run(query)
                         if counter_as_prepend > 0:
@@ -91,12 +90,12 @@ def get_data(timestamp):
 
 def main():
     utc = pytz.utc
-    for month in range(1, 3):
-        dt = datetime(2015, month, 1, 1, 0, 0)
-        utc_dt = utc.localize(dt)
-        timestamp = int(time.mktime(utc_dt.timetuple()))
-
-        get_data(timestamp)
+    for year in range(2010, 2016):
+        for month in range(1, 13):
+            dt = datetime(year, month, 1, 1, 0, 0)  # I use 1:00 AM because my local time is UTC+1. Adjust it to your TZ
+            utc_dt = utc.localize(dt)
+            timestamp = int(time.mktime(utc_dt.timetuple()))
+            get_data(timestamp)
 
 
 if __name__ == '__main__':
