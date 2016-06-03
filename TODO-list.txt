@@ -3,15 +3,35 @@ To-do list:
 - validate your result
 
 --------------------
+2016-06-01
+- create bgp historical data
+
+2016-05-31
+- study Neo4j --> done
+- should use D3's force graph, instead of radial tree
+- the challenge: how to convert BGP path from MRT file into Neo4j data?
+    - it seems the best way is to iteratively process certain prefix over a period of time and store it on Neo4j
+
+TODO:
+- learn about neo4j time model
+    https://github.com/SocioPatterns/neo4j-dynagraph/wiki/Representing-time-dependent-graphs-in-Neo4j
+    http://neo4j.com/graphgists/
+    http://graphaware.com/neo4j/2014/08/20/graphaware-neo4j-timetree.html
+    http://neo4j.com/blog/visualize-time-based-graphs-neo4j/ [!!good one]
+    https://dzone.com/articles/neo4j-modeling-%E2%80%98series%E2%80%99-events
+
 2016-05-30
 - Some potential questions (found in paper 'characterizing IPv6 control':
     - to study the frequency of routing changes towards the certain IPv4 and IPv6 prefix (on what basis? monthly? weekly?)
     - is there correlations between routing instability in IPv4 and IPv6?
     (IPv6 AS relation)
-    - which ASN is the more dominant in AS path towards anycast AS in interest?
+    - which ASN is the more dominant in AS path towards anycast AS in interest? (For example: HE in IPv6 routing data)
     - how is the evolution of anycast prefix announcement/routing (?)?
+        - AS path length, with/without AS prepending
     - which connects faster: IPv4 or IPv6? there is already paper discuss about it. But does it also apply for anycast?
     - can you tell something about the effect of AS-prepending on anycast service?
+    - something to do with country-level?
+    - ASes which have more than one path to reach the service
 - getting more familiar with bgpstream
 - use Neo4j?
     Neo4j & D3 --> http://blog.ashokalella.com/neo4j/d3/2015/04/27/neo4j-and-d3/
