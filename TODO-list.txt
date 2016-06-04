@@ -32,6 +32,8 @@ TODO:
     - can you tell something about the effect of AS-prepending on anycast service?
     - something to do with country-level?
     - ASes which have more than one path to reach the service
+    - How is the consequence of BGP communities on anycast service?
+
 - getting more familiar with bgpstream
 - use Neo4j?
     Neo4j & D3 --> http://blog.ashokalella.com/neo4j/d3/2015/04/27/neo4j-and-d3/
