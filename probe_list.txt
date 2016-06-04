@@ -1,0 +1,1170 @@
+3806	Central Administrative Okrug, Moscow, Russia
+19219	Central Administrative Okrug, Moscow, Russia
+1227	Moscow, Russia, 117461
+1250	Moscow, Russia, 123056
+2872	Moscow, Russia, 117393
+3098	Moscow, Russia, 117587
+3396	Moscow, Russia, 111250
+3672	Moscow, Russia, 115035
+3694	Moscow, Russia, 123308
+3721	Moscow, Russia, 119072
+3053	Moscow, Russia, 101000
+3757	Moscow, Russia, 111397
+3768	Moscow, Russia, 109012
+3780	Moscow, Russia, 107258
+3854	Moscow, Russia, 119072
+3861	Moscow, Russia, 109469
+3869	Moscow, Russia, 109147
+3872	Moscow, Russia, 117218
+3881	Moscow, Russia, 115580
+3888	Moscow, Russia, 109012
+3945	Moscow, Russia, 115230
+4003	Moscow, Russia, 129337
+4383	Moscow, Russia, 127322
+3820	Moscow, Russia, 119415
+4889	Moscow, Russia, 127206
+10215	Moscow, Russia, 111024
+3798	Moscow, Russia, 115446
+11013	Moscow, Russia, 121614
+3841	Moscow, Russia, 111020
+11063	Moscow, Russia, 119311
+11341	Moscow, Russia, 115580
+11448	Moscow, Russia, 115201
+11510	Moscow, Russia, 105120
+11715	Moscow, Russia, 119072
+11716	Moscow, Russia, 127015
+14755	Moscow, Russia, 125363
+3871	Moscow, Russia
+3880	Moscow, Russia, 111394
+17584	Moscow, Russia, 117393
+17744	Moscow, Russia, 123022
+10865	Moscow, Russia, 115035
+11661	Moscow, Russia, 115516
+13533	Moscow, Russia, 109029
+11390	Moscow, Russia, 115035
+17781	Moscow, Russia, 109012
+652	Moscow, Russia
+3845	Moscow, Russia, 127549
+244	Moscow, Russia, 123308
+965	Moscow, Russia
+2194	Moscow, Russia
+21113	Moscow, Russia, 125009
+13321	Moscow, Russia
+17619	Moscow, Russia
+17692	Moscow, Russia
+10872	Moscow, Russia
+3807	Central Administrative Okrug, Moscow, Russia
+17724	Moscow, Russia
+3887	Moscow, Russia, 127287
+3809	Moscow, Russia, 105094
+17764	Moscow, Russia, 127287
+3832	Moscow, Russia
+12638	Moscow, Russia
+3611	Moscow, Russia
+12137	Moscow, Russia, 109652
+16388	Moscow, Russia, 109012
+6064	Moscow, Russia, 109012
+16143	Moscow, Russia, 119071
+19157	Moscow, Russia, 117587
+11429	Moscow, Russia
+20705	Moscow, Russia
+2165	Moscow, Russia, 117186
+224	Moscow, Russia
+10096	Moscow, Russia
+3834	Moscow, Russia
+12582	Moscow, Russia
+12642	Moscow, Russia
+3763	Moscow, Russia, 109388
+17679	Moscow, Russia, 111141
+4903	Moscow, Russia
+241	Moscow, Russia
+3827	Moscow, Russia
+3804	Moscow, Russia
+11622	Moscow, Russia, 125009
+6046	Moscow, Russia
+3934	Moscow, Russia
+3879	Moscow, Russia
+401	Moscow, Russia
+3811	Moscow, Russia
+18806	Moscow, Russia, 125057
+17716	Moscow, Russia, 115184
+3885	Moscow, Russia, 115035
+3696	Moscow, Russia, 119017
+728	Moscow, Russia, 119021
+11070	Moscow, Russia, 123557
+254	Moscow, Russia, 123308
+162	Moscow, Russia, 115280
+3891	Moscow, Russia, 129337
+23050	Moscow, Russia, 123182
+2915	Moscow, Russia, 119072
+15706	Moscow, Russia, 123007
+22777	Moscow, Russia, 109428
+12066	Moscow, Russia, 129515
+21815	Moscow, Russia, 115280
+3894	Moscow, Russia, 127486
+21710	Moscow, Russia, 115580
+20955	Moscow, Russia, 123007
+17649	Moscow, Russia
+17706	Moscow, Russia, 127486
+3825	Moscow, Russia, 109652
+19308	Moscow, Russia, 125319
+19106	Moscow, Russia, 123007
+18873	Moscow, Russia, 109544
+17666	Moscow, Russia, 125438
+14723	Moscow, Russia, 127566
+16950	Moscow, Russia, 121248
+16393	Moscow, Russia, 129323
+15229	Moscow, Russia, 125009
+12630	Moscow, Russia, 129323
+10868	Moscow, Russia, 127566
+12591	Moscow, Russia, 109012
+23847	19, Rue de Ponthieu, Quartier du Faubourg-du-Roule, 8e, Paris, Île-de-France, France métropolitaine, 75008, France
+23865	160, Boulevard Masséna, Butte aux Cailles, Maison-Blanche, 13e, Paris, Île-de-France, France métropolitaine, 75013, France
+23289	Joffre-Suffren, 19, Place Joffre, Gros-Caillou, 7e, Paris, Île-de-France, France métropolitaine, 75007, France
+24460	18, Rue du Docteur Magnan, Gare, 13e, Paris, Île-de-France, France métropolitaine, 75013, France
+26352	31, Rue du Commandeur, Petit-Montrouge, 14e, Paris, Île-de-France, France métropolitaine, 75014, France
+27278	26, Rue Rochebrune, St-Ambroise, 11e, Paris, Île-de-France, France métropolitaine, 75011, France
+24902	8b, Passage Lisa, Roquette, 11e, Paris, Île-de-France, France métropolitaine, 75011, France
+439	75020 Paris, France
+27308	Forum les Halles, Place Basse, Quartier des Halles, Les Halles, 1er, Paris, Île-de-France, France métropolitaine, 75001, France
+898	75014 Paris, France
+2403	75013 Paris, France
+23940	40b, Rue Boissière, Chaillot, 16e, Paris, Île-de-France, France métropolitaine, 75016;75116, France
+2448	75012 Paris, France
+2587	75004 Paris, France
+2848	75014 Paris, France
+24400	Jardin des Champs-Elysées, Allée Marcel Proust, Champs-Élysées, 8e, Paris, Île-de-France, France métropolitaine, 75008, France
+3699	75018 Paris, France
+4045	75012 Paris, France
+12007	75001 Paris, France
+23167	A1U3D0, Avenue de Paris, Montreuil, Versailles, Yvelines, Île-de-France, France métropolitaine, 78000, France
+12878	75011 Paris, France
+12892	75010 Paris, France
+13469	75011 Paris, France
+28269	Opéra Bastille, Rue de Lyon, 12e Arrondissement (urbain), Quinze-Vingts, 12e, Paris, Île-de-France, France métropolitaine, 75012, France
+13842	75013 Paris, France
+14368	75010 Paris, France
+17106	75009 Paris, France
+16985	75004 Paris, France
+15973	75018 Paris, France
+16820	75014 Paris, France
+26696	29, Passage des Panoramas, Vivienne, 2e, Paris, Île-de-France, France métropolitaine, 75002, France
+2451	75004 Paris, France
+16986	75004 Paris, France
+14040	Paris, France
+14218	Paris, France
+21209	Paris, France
+16878	Paris, France
+17289	75006 Paris, France
+17525	75010 Paris, France
+22872	Paris, France
+12919	1st arrondissement, 75001 Paris, France
+22275	75004 Paris, France
+6004	Paris, France
+16091	75010 Paris, France
+3980	Paris, France
+2833	Paris, France
+3538	75011 Paris, France
+22370	Paris, France
+22341	Paris, France
+16873	75010 Paris, France
+17146	75004 Paris, France
+18299	Paris, France
+17566	Paris, France
+1268	75020 Paris, France
+17560	Paris, France
+22984	75018 Paris, France
+10797	75010 Paris, France
+2474	75004 Paris, France
+4157	Paris, France
+1507	75015 Paris, France
+6118	1st arrondissement, 75001 Paris, France
+17046	75018 Paris, France
+22999	75014 Paris, France
+22065	75018 Paris, France
+2892	75011 Paris, France
+18384	75011 Paris, France
+21244	75004 Paris, France
+20619	75011 Paris, France
+16748	75009 Paris, France
+17161	75004 Paris, France
+20419	75116 Paris, France
+18601	75008 Paris, France
+17330	75014 Paris, France
+10645	15th arrondissement of Paris, 75015 Paris, France
+2472	Paris, France
+22898	75011 Paris, France
+17713	75011 Paris, France
+17155	75013 Paris, France
+17124	75015 Paris, France
+16919	75011 Paris, France
+13631	75116 Paris, France
+17038	75014 Paris, France
+16938	75018 Paris, France
+3831	1205 Geneva, Switzerland
+12787	1205 Geneva, Switzerland
+20458	Geneva, Switzerland
+1315	Geneva, Switzerland
+15635	Geneva, Switzerland
+2415	Geneva, Switzerland
+20329	1205 Geneva, Switzerland
+2542	Geneva, Switzerland
+4832	Geneva, Switzerland
+23945	Sala Thai, 1, Alte Landstrasse, Ruusser, Höchsteg, Männedorf, Bezirk Meilen, Zürich, 8708, Schweiz, Suisse, Svizzera, Svizra
+23636	Stars & Stripes, 9, Wright-Strasse, Glattpark, Opfikon, Bezirk Bülach, Zürich, 8050, Schweiz, Suisse, Svizzera, Svizra
+23953	Socar, 40, Schaffhauserstrasse, Glattpark, Opfikon, Bezirk Bülach, Zürich, 8152, Schweiz, Suisse, Svizzera, Svizra
+24394	9, Wisshaldenstrasse, Lochrüti, Feissi, Bubikon, Bezirk Hinwil, Zürich, 8633, Schweiz, Suisse, Svizzera, Svizra
+23853	Schilfweg, Neumoos, Embrach, Bezirk Bülach, Zürich, 8424, Schweiz, Suisse, Svizzera, Svizra
+962	8003 Zürich, Switzerland
+2039	8005 Zürich, Switzerland
+6005	8001 Zürich, Switzerland
+6015	8006 Zürich, Switzerland
+10195	8008 Zürich, Switzerland
+11400	8002 Zürich, Switzerland
+12888	8052 Zürich, Switzerland
+16258	8005 Zürich, Switzerland
+16676	8048 Zürich, Switzerland
+19809	8037 Zürich, Switzerland
+20402	8005 Zürich, Switzerland
+20828	8057 Zürich, Switzerland
+21264	8003 Zürich, Switzerland
+21432	8047 Zürich, Switzerland
+21437	8005 Zürich, Switzerland
+22023	8051 Zürich, Switzerland
+22105	8047 Zürich, Switzerland
+2367	8004 Zürich, Switzerland
+3151	8002 Zürich, Switzerland
+15139	8048 Zürich, Switzerland
+12071	8046 Zürich, Switzerland
+13835	8001 Zürich, Switzerland
+16557	8045 Zürich, Switzerland
+471	Zurich, Switzerland
+1355	Zurich, Switzerland
+1443	8002 Zürich, Switzerland
+10928	Zurich, Switzerland
+20071	Zurich, Switzerland
+19393	Zurich, Switzerland
+526	8046 Zürich, Switzerland
+22018	Zurich, Switzerland
+22093	Zurich, Switzerland
+16320	Zürich, Switzerland
+22132	Zurich, Switzerland
+2225	8046 Zürich, Switzerland
+19650	Zurich, Switzerland
+27360	40, Holderbachweg, Affoltern, Kreis 11, Zürich, Bezirk Zürich, Zürich, 8046, Schweiz, Suisse, Svizzera, Svizra
+951	Zürich, Switzerland
+12235	Zurich, Switzerland
+22136	Zurich, Switzerland
+21442	Zurich, Switzerland
+12898	Zürich, Switzerland
+21482	Zurich, Switzerland
+11394	Zurich, Switzerland
+141	8005 Zürich, Switzerland
+17421	Zürich, Switzerland
+2212	Zurich, Switzerland
+1501	8049 Zürich, Switzerland
+19598	Zurich, Switzerland
+3422	Zurich, Switzerland
+12855	Zurich, Switzerland
+24179	tamedia, Stauffacherquai, Werd, Aussersihl, Zürich, Bezirk Zürich, Zürich, 8090, Schweiz, Suisse, Svizzera, Svizra
+21235	8050 Zürich, Switzerland
+24542	ETH CNB, Spöndlistrasse, Oberstrass, Kreis 6, Zürich, Bezirk Zürich, Zürich, 8092, Schweiz, Suisse, Svizzera, Svizra
+24132	Snipes, Passage Gessnerallee, City, Altstadt, Zürich, Bezirk Zürich, Zürich, CH-8005, Schweiz, Suisse, Svizzera, Svizra
+2952	Zurich, Switzerland
+13855	8050 Zürich, Switzerland
+20452	8006 Zürich, Switzerland
+10756	Zurich, Switzerland
+20681	Zurich, Switzerland
+18835	Zurich, Switzerland
+720	Zurich, Switzerland
+19276	Zurich, Switzerland
+21228	Zürich, Switzerland
+18823	Zurich, Switzerland
+13444	8048 Zürich, Switzerland
+18297	Zurich, Switzerland
+17998	Zürich, Switzerland
+2098	Zürich District, Switzerland
+17246	Zürich, Switzerland
+20491	Zurich, Switzerland
+14640	Zurich, Switzerland
+1404	8047 Zürich, Switzerland
+14122	Zurich, Switzerland
+6115	Zurich, Switzerland
+12750	Zürich, Switzerland
+12998	Zurich, Switzerland
+1433	Zurich, Switzerland
+2922	Zurich, Switzerland
+26510	209, Aemtlerstrasse, Sihlfeld, Wiedikon, Zürich, Bezirk Zürich, Zürich, 8040, Schweiz, Suisse, Svizzera, Svizra
+12596	Zürich, Switzerland
+1511	8002 Zürich, Switzerland
+1304	8050 Zürich, Switzerland
+21471	Zurich, Switzerland
+11202	Zurich, Switzerland
+26400	2, Munnikstraat, Koog aan de Zaan, Zaanstad, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1541LW, Nederland
+26161	15, Sjeesstraat, Purmer-Noord, Purmerend, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1445NT, Nederland
+237	1012 CK Amsterdam, Netherlands
+2114	1062 CP Amsterdam, Netherlands
+2116	1042 AE Amsterdam, Netherlands
+4636	1024 NC Amsterdam, Netherlands
+6031	1017 CZ Amsterdam, Netherlands
+10001	1013 AV Amsterdam, Netherlands
+10004	1012 CK Amsterdam, Netherlands
+10035	1101 Amsterdam-Zuidoost, Netherlands
+13832	1021 HJ Amsterdam, Netherlands
+10611	1011 HX Amsterdam, Netherlands
+18585	1066 XK Amsterdam, Netherlands
+20056	1066 AB Amsterdam, Netherlands
+20368	1043 AC Amsterdam, Netherlands
+3237	1101 AN Amsterdam-Zuidoost, Netherlands
+20674	1043 AC Amsterdam, Netherlands
+22815	1099 CW Amsterdam, Netherlands
+10003	1011 JL Amsterdam, Netherlands
+22844	1011 HN Amsterdam, Netherlands
+1	1013 AV Amsterdam, Netherlands
+631	1057 AK Amsterdam, Netherlands
+10016	1012 AA Amsterdam, Netherlands
+10020	1057 AK Amsterdam, Netherlands
+27603	A9, Badhoevedorp, Haarlemmermeer, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1171PP, Nederland
+10105	1012 CK Amsterdam, Netherlands
+12493	1011 NX Amsterdam, Netherlands
+2425	1011 HN Amsterdam, Netherlands
+12911	1011 HX Amsterdam, Netherlands
+14004	1012 CK Amsterdam, Netherlands
+14025	1011 HN Amsterdam, Netherlands
+14	Centrum, Amsterdam, Netherlands
+15	Centrum, Amsterdam, Netherlands
+26	1058 Amsterdam, Netherlands
+13177	Amsterdam, Netherlands
+20534	1011 HN Amsterdam, Netherlands
+11690	Amsterdam, Netherlands
+6088	Amsterdam, Netherlands
+16	1062 BL Amsterdam, Netherlands
+19312	Amsterdam, Netherlands
+4639	Amsterdam, Netherlands
+28431	G-Star Raw, Ringweg Zuid, Amstel Business Park, Amsterdam-Duivendrecht, Ouder-Amstel, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1114AN, Nederland
+2063	1011 NX Amsterdam, Netherlands
+24669	36A, Lemelerbergweg, Amstel III, Amsterdam, Zuidoost, Amsterdam, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1101AH, Nederland
+34	Amsterdam, Netherlands
+19881	Amsterdam, Netherlands
+2048	Amsterdam-Oost, Amsterdam, Netherlands
+12857	Amsterdam-Oost, Amsterdam, Netherlands
+2797	Amsterdam-Zuid, Amsterdam, Netherlands
+18	Amsterdam, Netherlands
+22217	Amsterdam, Netherlands
+3045	1011 HN Amsterdam, Netherlands
+6012	Amsterdam, Netherlands
+24469	36A, Lemelerbergweg, Amstel III, Amsterdam, Zuidoost, Amsterdam, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1101AH, Nederland
+14743	Amsterdam, Netherlands
+6	Amsterdam, Netherlands
+2980	Amsterdam, Netherlands
+21210	Amsterdam, Netherlands
+6001	Amsterdam, Netherlands
+6079	Amsterdam-Zuid, Amsterdam, Netherlands
+26477	17, Gyroscoopweg, Sloterdijk, Amsterdam, Westpoort, Amsterdam, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1042AC, Nederland
+13491	Amsterdam, Netherlands
+2296	Centrum, Amsterdam, Netherlands
+16802	1011 JL Amsterdam, Netherlands
+24028	773, Sloterweg, Sloterpolder, Amsterdam, Nieuw-West, Amsterdam, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1066 CA, Nederland
+6019	1101 AK Amsterdam-Zuidoost, Netherlands
+3	Amsterdam, Netherlands
+2009	Centrum, Amsterdam, Netherlands
+24532	32, Verversstraat, Nieuwmarktbuurt, Amsterdam, Centrum, Amsterdam, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1011JA, Nederland
+28447	58, Westerweg, Purmer-Noord, Purmerend, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1445AD, Nederland
+4860	1011 PN Amsterdam, Netherlands
+2	1102 Amsterdam-Zuidoost, Netherlands
+2002	1011 JL Amsterdam, Netherlands
+21285	Amsterdam-Oost, Amsterdam, Netherlands
+17616	Amsterdam, Netherlands
+3070	Watergraafsmeer, Amsterdam, Netherlands
+12343	1011 HS Amsterdam, Netherlands
+10890	Amsterdam, Netherlands
+17419	1101 AK Amsterdam-Zuidoost, Netherlands
+3019	Amsterdam, Netherlands
+2293	Amsterdam, Netherlands
+1334	1011 HN Amsterdam, Netherlands
+475	Amsterdam, Netherlands
+14028	Amsterdam, Netherlands
+167	Amsterdam, Netherlands
+11740	Centrum, Amsterdam, Netherlands
+20126	Zeeburg, Amsterdam, Netherlands
+6194	1099 Amsterdam, Netherlands
+4609	Amsterdam, Netherlands
+26142	A9, Bullewijk, Amsterdam, Zuidoost, Amsterdam, MRA, Stadsregio Amsterdam, Noord-Holland, Nederland, 1101, Nederland
+6137	Centrum, Amsterdam, Netherlands
+11643	Amsterdam-Oost, Amsterdam, Netherlands
+6082	1066 AS Amsterdam, Netherlands
+2527	Zuideramstel, Amsterdam, Netherlands
+13121	Sojpal Building, Tubman Rd, Nairobi, Kenya
+25210	Soccer, Processional Way, Madaraka Estate, Nairobi, 00100, Kenya
+13771	City Square, Nairobi, Kenya
+27313	Prestige Plaza, Mugo Kibiru Drive, Kibera, Nairobi, 00100, Kenya
+13218	Nairobi, Kenya
+13779	Nairobi, Kenya
+23459	Good Shepherd, Ngong Road, Hurlingham, Nairobi, 00100, Kenya
+13299	Central Business District, Nairobi, Kenya
+14950	Nairobi, Kenya
+2815	City of Belgrade, Serbia
+18613	City of Belgrade, Serbia
+18859	City of Belgrade, Serbia
+2816	City of Belgrade, Serbia
+22363	City of Belgrade, Serbia
+6030	Belgrade, Serbia
+20066	City of Belgrade, Serbia
+22467	Belgrade, Serbia
+24977	Neues Rathaus (Südbau), Rathaushof, Innenstadt, Altstadt, Frankfurt, Regierungsbezirk Darmstadt, Hessen, 60311, Deutschland
+24084	33, Rebstöcker Straße, Europaviertel, Gallus, Frankfurt, Regierungsbezirk Darmstadt, Hessen, 60326, Deutschland
+25270	92, Kleyerstraße, Europaviertel, Gallus, Frankfurt, Regierungsbezirk Darmstadt, Hessen, 60326, Deutschland
+26755	3, Buchgasse, Innenstadt, Altstadt, Frankfurt, Regierungsbezirk Darmstadt, Hessen, 60311, Deutschland
+26925	11, Friesstraße, Seckbach, Frankfurt, Regierungsbezirk Darmstadt, Hessen, 60388, Deutschland
+156	60314 Frankfurt, Germany
+213	60314 Frankfurt, Germany
+402	60320 Frankfurt, Germany
+1430	60327 Frankfurt, Germany
+25341	23, Grethenweg, Sachsenhausen Süd, Frankfurt, Regierungsbezirk Darmstadt, Hessen, 60598, Deutschland
+1451	60314 Frankfurt, Germany
+23665	54, Solmsstraße, Bockenheim, Frankfurt, Regierungsbezirk Darmstadt, Hessen, 60486, Deutschland
+2026	60388 Frankfurt, Germany
+3146	60433 Frankfurt, Germany
+2478	60311 Frankfurt, Germany
+3391	60388 Frankfurt, Germany
+3413	60528 Frankfurt, Germany
+3575	60326 Frankfurt, Germany
+3622	60528 Frankfurt, Germany
+4660	60528 Frankfurt, Germany
+6141	60311 Frankfurt, Germany
+20277	Innenstadt, Frankfurt am Main, Germany
+407	60329 Frankfurt, Germany
+14932	60314 Frankfurt, Germany
+2325	60311 Frankfurt, Germany
+21995	Frankfurt, Germany
+4798	60314 Frankfurt, Germany
+21994	60489 Frankfurt, Germany
+15143	60325 Frankfurt, Germany
+6134	Frankfurt, Germany
+14752	60311 Frankfurt, Germany
+20012	60314 Frankfurt, Germany
+22256	60489 Frankfurt, Germany
+13198	60528 Frankfurt, Germany
+2196	Frankfurt, Germany
+16555	60326 Frankfurt, Germany
+4146	60326 Frankfurt, Germany
+21931	60596 Frankfurt, Germany
+381	60314 Frankfurt, Germany
+2707	Frankfurt, Germany
+14397	Frankfurt, Germany
+10028	60329 Frankfurt, Germany
+20715	60314 Frankfurt, Germany
+21321	60320 Frankfurt, Germany
+13190	60529 Frankfurt, Germany
+4784	60329 Frankfurt, Germany
+21959	60489 Frankfurt, Germany
+4147	60311 Frankfurt, Germany
+2748	60311 Frankfurt, Germany
+20589	65933 Frankfurt, Germany
+13124	60314 Frankfurt, Germany
+1481	60594 Frankfurt, Germany
+13660	60437 Frankfurt, Germany
+18304	60388 Frankfurt, Germany
+23836	49, Auerhahnstraße, Griesheim, Frankfurt, Regierungsbezirk Darmstadt, Hessen, 65933, Deutschland
+16530	60311 Frankfurt, Germany
+6105	60314 Frankfurt, Germany
+16505	60389 Frankfurt, Germany
+15772	60326 Frankfurt, Germany
+15573	60327 Frankfurt, Germany
+4063	60326 Frankfurt, Germany
+20130	60326 Frankfurt, Germany
+137	60314 Frankfurt, Germany
+14942	60388 Frankfurt, Germany
+3632	60327 Frankfurt, Germany
+2551	60314 Frankfurt, Germany
+11851	60326 Frankfurt, Germany
+10051	60314 Frankfurt, Germany
+10502	60322 Frankfurt, Germany
+6152	60311 Frankfurt, Germany
+6060	60329 Frankfurt, Germany
+3231	60311 Frankfurt, Germany
+6023	60314 Frankfurt, Germany
+14393	Japan, 〒103-0012 Tōkyō-to, Chūō-ku, Nihonbashihoridomechō, 2 Chome−8 日本橋コアビル
+2891	2 Chome Chūō, Edogawa-ku, Tōkyō-to 132-0021, Japan
+13289	Taito, Tokyo, Japan
+14360	Suginami, Tokyo, Japan
+14912	Minato, Tokyo, Japan
+12782	Koto, Tokyo, Japan
+14806	Shibuya, Tokyo, Japan
+3457	Yamatocho, Nakano, Tokyo 165-0034, Japan
+19895	Koto, Tokyo, Japan
+13364	Meguro, Tokyo, Japan
+20450	Meguro, Tokyo, Japan
+2277	1 Chome Taitō, Taitō-ku, Tōkyō-to 110-0016, Japan
+13539	Nakano, Tokyo, Japan
+13531	Tokyo, Tokyo, Japan
+20495	Tokyo, Tokyo, Japan
+4754	Japan, 〒101-0047 Tōkyō-to, Chiyoda-ku, Uchikanda, 3 Chome−2−15 藤本科学（株）
+13821	Higashicho, Koganei, Tokyo 184-0011, Japan
+12791	Shinjuku, Tokyo, Japan
+3491	Chofu, Tokyo, Japan
+3405	Shinagawa, Tokyo, Japan
+234	Iidabashi, Chiyoda, Tokyo 102-0072, Japan
+19515	Tokyo, Tokyo, Japan
+14115	Kita, Tokyo, Japan
+13404	Dogenzaka, Shibuya, Tokyo 150-0043, Japan
+6158	Tokyo, Tokyo, Japan
+3682	Chuo, Tokyo, Japan
+2299	5 Chome Honchō, Koganei-shi, Tōkyō-to 184-0004, Japan
+12790	Japan, 〒112-0003 Tōkyō-to, Bunkyō-ku, Kasuga, 1 Chome−2−3 後楽園駅
+14824	Ota, Tokyo, Japan
+14268	Toneri, Adachi, Tokyo 121-0831, Japan
+11261	Iidabashi, Chiyoda, Tokyo 102-0072, Japan
+11292	Edogawa, Tokyo, Japan
+21127	Ota, Tokyo, Japan
+14352	Futaba, Shinagawa, Tokyo 142-0043, Japan
+12810	Katsushika, Tokyo, Japan
+307	Meguro, Tokyo, Japan
+3727	Koto, Tokyo, Japan
+22452	Heiwajima, Ota, Tokyo 143-0006, Japan
+3450	Koto, Tokyo, Japan
+3709	Shibuya, Tokyo, Japan
+19054	Nishikasai, Edogawa, Tokyo 134-0088, Japan
+333	Minato, Tokyo, Japan
+22336	Kitashinjuku, Shinjuku, Tokyo 169-0074, Japan
+3730	Nishishinjuku, Shinjuku, Tokyo 160-0023, Japan
+15616	Toyo, Koto, Tokyo 135-0016, Japan
+14889	2 Chome Kajichō, Chiyoda-ku, Tōkyō-to 101-0044, Japan
+11539	Okusawa, Setagaya, Tokyo 158-0083, Japan
+14815	Shinagawa, Tokyo, Japan
+11267	Suido, Bunkyo, Tokyo 112-0005, Japan
+17176	Shiba, Minato, Tokyo 105-0014, Japan
+6033	Nishishinjuku, Shinjuku, Tokyo 160-0023, Japan
+4722	Daizawa, Setagaya, Tokyo 155-0032, Japan
+142	Metropolitan City of Milan, Italy
+2318	Milan, Italy
+19507	Milan, Italy
+13815	20161 Milan, Italy
+14292	Milan, Italy
+16019	Metropolitan City of Milan, Italy
+19315	Milan, Italy
+861	Milan, Metropolitan City of Milan, Italy
+20678	Milan, Metropolitan City of Milan, Italy
+12773	Milan, Metropolitan City of Milan, Italy
+19532	Milan, Metropolitan City of Milan, Italy
+3284	Metropolitan City of Milan, Italy
+22516	Milan, Metropolitan City of Milan, Italy
+22899	Metropolitan City of Milan, Italy
+22979	Metropolitan City of Milan, Italy
+13816	Metropolitan City of Milan, Italy
+19303	Metropolitan City of Milan, Italy
+20745	Metropolitan City of Milan, Italy
+19249	Metropolitan City of Milan, Italy
+11530	Metropolitan City of Milan, Italy
+15095	Metropolitan City of Milan, Italy
+6094	Metropolitan City of Milan, Italy
+1240	Metropolitan City of Milan, Italy
+27003	Sakura Crossing Apartments, San Pedro Street, Little Tokyo, Little Tokyo Historic District, LA, Los Angeles County, California, 90013, United States of America
+28529	San Francisco Community College District, 33, Gough Street, Western Addition, SF, California, 94103, United States of America
+24914	999, Magnolia Court, Mulford, San Leandro, Alameda County, California, 94577, United States of America
+25156	Anderson Hall, Atchley Walkway, Stockton, San Joaquin County, California, 95211, United States of America
+1196	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+17797	South of Market, San Francisco, CA, USA
+6074	San Francisco County, CA, USA
+6156	San Francisco, CA 94103, USA
+10415	San Francisco County, CA, USA
+10663	San Francisco, CA 94117, USA
+18247	Outer Mission, San Francisco, CA, USA
+12984	San Francisco County, CA, USA
+14277	San Francisco, CA 94117, USA
+15020	San Francisco, CA 94103, USA
+15617	San Leandro, CA 94577, USA
+17822	San Francisco, CA 94103, USA
+18275	San Francisco, CA 94103, USA
+10457	San Francisco, CA 94107, USA
+19246	San Francisco, CA 94107, USA
+19253	San Francisco, CA 94114, USA
+13536	San Francisco, CA, USA
+6095	San Francisco County, CA, USA
+26488	1514, 7th Avenue, Hillcrest, San Diego, San Diego County, California, 92101, United States of America
+24	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+12579	San Jose, CA 95112, USA
+19076	San Francisco, CA 94103, USA
+125	Downtown, San Diego, CA, USA
+14583	San Jose, CA, USA
+19152	San Francisco, CA, USA
+22447	San Francisco, CA 94103, USA
+345	East San Jose, San Jose, CA, USA
+20740	San Jose, CA, USA
+12671	Central San Jose, San Jose, CA, USA
+14227	San Jose, CA, USA
+19172	San Jose, CA, USA
+19164	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+10770	San Jose, CA 95112, USA
+13526	San Francisco, CA, USA
+13561	San Jose, CA 95134, USA
+16862	San Francisco, CA 94114, USA
+1171	San Mateo County, CA, USA
+10668	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+1116	San Francisco, CA 94103, USA
+4304	San Jose, CA 95128, USA
+13521	San Francisco, CA, USA
+16641	San Jose, CA 95127, USA
+17315	San Francisco, CA 94103, USA
+19785	San Diego, CA, USA
+22379	San Jose, CA 95112, USA
+1186	San Francisco, CA, USA
+13528	San Francisco, CA 94104, USA
+4111	San Jose, CA, USA
+12300	San Jose, CA 95110, USA
+23033	San Diego, CA, USA
+21806	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+13056	San Francisco, CA 94103, USA
+6122	San Jose, CA, USA
+19148	San Francisco, CA, USA
+17993	San Francisco, CA, USA
+10284	San Francisco County, CA, USA
+17582	San Francisco County, CA, USA
+2836	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+15718	San Francisco, CA 94112, USA
+16182	San Diego, CA 92104, USA
+26529	San Francisco Community College District, 33, Gough Street, Western Addition, SF, California, 94103, United States of America
+16155	San Francisco, CA 94115, USA
+13585	San Francisco, CA 94158, USA
+13565	San Francisco, CA 94105, USA
+13070	San Francisco County, CA, USA
+12154	San Diego, CA 92108, USA
+10381	San Mateo, CA 94402, USA
+4825	San Francisco, CA 94103, USA
+32	San Diego County, CA, USA
+11528	San Jose, CA, USA
+1053	San Francisco County, CA, USA
+10419	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+14367	San Jose, CA, USA
+21600	San Francisco, CA 94103, USA
+26518	381, Viscount Drive, Ridgeland, Henrietta Town, Monroe County, New York, 14623, United States of America
+22608	Manhattan, New York, NY, USA
+23036	New York, NY, USA
+4412	New York, NY, USA
+13127	New York, NY, USA
+12012	New Jersey, USA
+13692	New York, NY, USA
+6024	New York, NY, USA
+3280	New York, NY, USA
+27020	146, Anderson Avenue, Rochester, Monroe County, New York, 14607, United States of America
+10599	New Jersey, USA
+18951	New York, NY, USA
+18239	New Jersey, USA
+11500	New Jersey, USA
+26153	Equitable Building, 120, Broadway, Battery Park City, Manhattan, New York County, NYC, New York, 10003, United States of America
+25989	217, Broadway, Tribeca, Manhattan, New York County, NYC, New York, 10007, United States of America
+24731	1 Wall Street, 1, Wall Street, Battery Park City, Manhattan, New York County, NYC, New York, 10005, United States of America
+13396	New Jersey, USA
+15387	New York, NY, USA
+16410	Lower Manhattan, New York, NY, USA
+13838	New Jersey, USA
+19915	New Jersey, USA
+11996	New Jersey, USA
+16103	New Jersey, USA
+11171	New Jersey, USA
+16165	New Jersey, USA
+11090	New Jersey, USA
+26101	2122, Atco Avenue, Waterford Township, Camden County, New Jersey, 08004, United States of America
+6127	New York-Newark-Jersey City, NY-NJ-PA Metropolitan Statistical Area, USA
+16599	New York, NY, USA
+12115	New Jersey, USA
+22869	Midtown, New York, NY, USA
+17736	Manhattan, New York, NY, USA
+25805	Henderson Avenue, Princeton Township, Mercer County, New Jersey, 08540, United States of America
+1144	Manhattan, New York, NY, USA
+19096	New Downtown, Los Angeles, CA, USA
+12515	Greenwich Village, New York, NY, USA
+19437	Cortlandt St, New York, NY 10007, USA
+12563	New Jersey, USA
+24994	530, Natchez Street, French Quarter, New Orleans, Orleans Parish, Louisiana, 70130, United States of America
+426	Cortlandt St, New York, NY 10007, USA
+1134	New York, NY, USA
+11203	New Jersey, USA
+27017	5, Rodenbeck Place, Rochester, Monroe County, New York, 14620, United States of America
+26865	344, Clifton Avenue, Berkeley Township, Ocean County, New Jersey, 08721, United States of America
+10371	New Jersey, USA
+12297	New Jersey, USA
+3503	New Jersey, USA
+12686	New York-Newark-Jersey City, NY-NJ-PA Metropolitan Statistical Area, USA
+25232	33, New Montgomery Street, Financial District, SF, California, 94105, United States of America
+22723	New York-Newark-Jersey City, NY-NJ-PA Metropolitan Statistical Area, USA
+3663	Palo Alto, CA 94303, USA
+6045	Palo Alto, CA 94302, USA
+13004	Palo Alto, CA 94306, USA
+6021	Palo Alto, CA, USA
+6062	Miami-Dade County, FL, USA
+6147	Miami, FL 33132, USA
+23993	Highway Christian Church of Christ of the Apostolic Faith, Northwest 14th Street, Wynwood, Miami, Miami-Dade County, Florida, 33125, United States of America
+18439	Oregon, USA
+19131	Oregon, USA
+19163	Oregon, USA
+19336	Oregon, USA
+3540	Oregon, USA
+21863	Oregon, USA
+24908	Oregon Coast Highway, Dew Valley, Coos County, Oregon, United States of America
+24867	44498, Chilum Place, Ashburn, Loudoun County, Virginia, 20147, United States of America
+26532	Waxpool Road, Ashburn, Loudoun County, Virginia, 20103, United States of America
+24968	20747, Ashburn Station Place, Ashburn, Loudoun County, Virginia, 20147, United States of America
+28529	San Francisco Community College District, 33, Gough Street, Western Addition, SF, California, 94103, United States of America
+24914	999, Magnolia Court, Mulford, San Leandro, Alameda County, California, 94577, United States of America
+25156	Anderson Hall, Atchley Walkway, Stockton, San Joaquin County, California, 95211, United States of America
+1196	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+17797	South of Market, San Francisco, CA, USA
+6074	San Francisco County, CA, USA
+6156	San Francisco, CA 94103, USA
+10415	San Francisco County, CA, USA
+10663	San Francisco, CA 94117, USA
+19164	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+10770	San Jose, CA 95112, USA
+24	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+12579	San Jose, CA 95112, USA
+18247	Outer Mission, San Francisco, CA, USA
+12984	San Francisco County, CA, USA
+14277	San Francisco, CA 94117, USA
+15020	San Francisco, CA 94103, USA
+13521	San Francisco, CA, USA
+4304	San Jose, CA 95128, USA
+125	Downtown, San Diego, CA, USA
+14583	San Jose, CA, USA
+19172	San Jose, CA, USA
+21806	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+13056	San Francisco, CA 94103, USA
+6122	San Jose, CA, USA
+19148	San Francisco, CA, USA
+16641	San Jose, CA 95127, USA
+20740	San Jose, CA, USA
+345	East San Jose, San Jose, CA, USA
+18275	San Francisco, CA 94103, USA
+26488	1514, 7th Avenue, Hillcrest, San Diego, San Diego County, California, 92101, United States of America
+10284	San Francisco County, CA, USA
+17582	San Francisco County, CA, USA
+6095	San Francisco County, CA, USA
+22379	San Jose, CA 95112, USA
+1186	San Francisco, CA, USA
+13528	San Francisco, CA 94104, USA
+14227	San Jose, CA, USA
+12671	Central San Jose, San Jose, CA, USA
+19152	San Francisco, CA, USA
+22447	San Francisco, CA 94103, USA
+4111	San Jose, CA, USA
+13536	San Francisco, CA, USA
+17993	San Francisco, CA, USA
+13526	San Francisco, CA, USA
+13561	San Jose, CA 95134, USA
+16862	San Francisco, CA 94114, USA
+1171	San Mateo County, CA, USA
+12300	San Jose, CA 95110, USA
+23033	San Diego, CA, USA
+19785	San Diego, CA, USA
+17315	San Francisco, CA 94103, USA
+2836	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+15718	San Francisco, CA 94112, USA
+16182	San Diego, CA 92104, USA
+26529	San Francisco Community College District, 33, Gough Street, Western Addition, SF, California, 94103, United States of America
+16155	San Francisco, CA 94115, USA
+13585	San Francisco, CA 94158, USA
+19253	San Francisco, CA 94114, USA
+13565	San Francisco, CA 94105, USA
+13070	San Francisco County, CA, USA
+12154	San Diego, CA 92108, USA
+10381	San Mateo, CA 94402, USA
+4825	San Francisco, CA 94103, USA
+10668	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+1116	San Francisco, CA 94103, USA
+32	San Diego County, CA, USA
+11528	San Jose, CA, USA
+1053	San Francisco County, CA, USA
+10419	San Francisco-Oakland-Hayward, CA Metropolitan Statistical Area, CA, USA
+14367	San Jose, CA, USA
+21600	San Francisco, CA 94103, USA
+10457	San Francisco, CA 94107, USA
+19246	San Francisco, CA 94107, USA
+15617	San Leandro, CA 94577, USA
+17822	San Francisco, CA 94103, USA
+19076	San Francisco, CA 94103, USA
+3480	Greater Johannesburg Metropolitan Area, South Africa
+6053	Greater Johannesburg Metropolitan Area, South Africa
+6179	Greater Johannesburg Metropolitan Area, South Africa
+473	Greater Johannesburg Metropolitan Area, South Africa
+19390	Johannesburg, 2038, South Africa
+10967	Greater Johannesburg Metropolitan Area, South Africa
+4075	Greater Johannesburg Metropolitan Area, South Africa
+18195	Greater Johannesburg Metropolitan Area, South Africa
+18131	Greater Johannesburg Metropolitan Area, South Africa
+4088	Johannesburg, 2001, South Africa
+16438	City of Johannesburg Metropolitan Municipality, South Africa
+868	Greater Johannesburg Metropolitan Area, South Africa
+11113	Greater Johannesburg Metropolitan Area, South Africa
+1072	Eastern Suburbs, Perth WA, Australia
+3037	Northern Suburbs, Perth WA, Australia
+14956	Northern Suburbs, Perth WA, Australia
+11734	Perth WA 6000, Australia
+12326	Northern Suburbs, Perth WA, Australia
+2129	Perth WA 6003, Australia
+25208	Alexandria Town Hall, 73, Garden Street, Alexandria, Sydney, New South Wales, 2015, Australia
+23442	Avanti Apartments, 90, George Street, Hornsby, Sydney, Hornsby, New South Wales, 2077, Australia
+25195	Horwood Place, Adventist Aged Care, Kings Langley, Sydney, New South Wales, 2768, Australia
+24230	Officeworks Pitt Street, 242, Pitt Street, Sydney, New South Wales, 2000, Australia
+23479	Lusty Street, Wolli Creek, Sydney, Rockdale, New South Wales, 2205, Australia
+23713	Fullarton Street, Telopea, Sydney, Parramatta, New South Wales, 2117, Australia
+3741	North West & Ryde, Sydney NSW, Australia
+19103	Sydney CBD, Sydney NSW, Australia
+10200	North West & Ryde, Sydney NSW, Australia
+12412	Sydney CBD, Sydney NSW, Australia
+12302	Sydney CBD, Sydney NSW, Australia
+23460	1, Pyrmont, Sydney, New South Wales, 2009, Australia
+20279	Sydney NSW 2015, Australia
+25043	128, Castlereagh Street, Sydney, New South Wales, 2000, Australia
+12430	South West Sydney, Sydney NSW, Australia
+1075	Inner West, Sydney NSW, Australia
+10266	Sydney NSW 2113, Australia
+23461	Jannali Crescent, Jannali, Sydney, Sutherland, New South Wales, 2225, Australia
+689	The Hills District, Sydney NSW, Australia
+20253	Inner West, Sydney NSW, Australia
+14537	Inner West, Sydney NSW, Australia
+16074	Lambeth Palace Rd, Lambeth, London SE1 7EW, UK
+16130	High St, Barnet, Greater London EN5 5TD, UK
+13091	Great Peter St, Westminster, London SW1P 3LR, UK
+10189	137 Leman St, London E1 8EY, UK
+20336	Blackwall Way, Poplar, London E14 9GB, UK
+4640	Dickenson's Pl, London SE25 5HL, UK
+10501	St. James's, London SW1Y 5BF, UK
+12748	Denys House, London EC1N 7SR, UK
+20651	Peyton Pl, London SE10 8RS, UK
+209	Ballards Ln, London N3 2HA, UK
+2110	St. James's, London SW1Y 5BF, UK
+2132	Suffolk Pl, London SW1Y 4HX, UK
+13085	Blackstock Rd, London N5 2LL, UK
+20702	Isle of Dogs, London E14 9LL, UK
+13199	Royal Borough of Greenwich, Greater London, UK
+425	Poplar, London E14 2AB, UK
+18642	Whitcomb St, London WC2H 7HA, UK
+2060	Moorgate, London EC2R 6BH, UK
+3147	City of Westminster, Greater London, UK
+3210	Hampton, Greater London TW12, UK
+4013	Poplar, London E14 2AB, UK
+10210	Sebastian St, London EC1V 0JA, UK
+12461	City of Westminster, Greater London, UK
+18309	Wardour St, London W1D 6PZ, UK
+15813	Poplar, London E14 2AB, UK
+2825	Poplar, London E14 2AB, UK
+14585	Westminster, London SW1P 3PP, UK
+16814	City of Westminster, Greater London, UK
+558	London SE1 7BF, UK
+2018	London WC2E 8HB, UK
+14645	Hayes, Greater London, UK
+15168	London SW1A 2AE, UK
+20479	Uxbridge, Greater London UB8 3PQ, UK
+17442	London E1W 1AQ, UK
+19685	Bromley, Greater London, UK
+20394	Richmond, Greater London, UK
+2698	Mitcham, Greater London, UK
+12350	London WC2N 6NU, UK
+12359	London WC2E 8AB, UK
+14639	Kennington Park Rd, London SE11 4PW, UK
+157	London Borough of Hammersmith and Fulham, Greater London, UK
+21398	London Borough of Tower Hamlets, Greater London, UK
+22028	London Borough of Wandsworth, Greater London, UK
+2014	London Borough of Brent, Greater London, UK
+856	Twickenham, Greater London, UK
+22036	London Borough of Newham, Greater London, UK
+365	London Borough of Ealing, Greater London, UK
+814	London Borough of Brent, Greater London, UK
+19727	London Borough of Tower Hamlets, Greater London, UK
+2122	Teddington, Greater London TW11, UK
+18795	London E14, UK
+2134	Panton St, London SW1Y 4EA, UK
+19533	Harrow, Greater London HA2, UK
+14266	London Borough of Brent, Greater London, UK
+20466	London Borough of Lewisham, Greater London, UK
+4376	London N1, UK
+14928	London Borough of Tower Hamlets, Greater London, UK
+23067	Chiswick Fire Station, Heathfield Gardens, London Borough of Hounslow, London, Greater London, England, W4 4LZ, UK
+25061	Snakes Lane West, Woodford, London Borough of Redbridge, London, Greater London, England, IG8 0BZ, UK
+26819	51, Springbank Road, Blackheath Vale, Hither Green, London Borough of Lewisham, London, Greater London, England, SE13 6ER, UK
+25225	The Town Wharf, Swan Street, Isleworth, London Borough of Hounslow, London, Greater London, England, TW10, UK
+13580	London Borough of Southwark, Greater London, UK
+24301	Courtenay Square, Kennington, London Borough of Lambeth, London, Greater London, England, SE11 5DP, UK
+4481	London Borough of Tower Hamlets, Greater London, UK
+25067	Switch House, Blackwall Way, Blackwall, London Borough of Tower Hamlets, London, Greater London, England, E14 2ED, UK
+10134	London Borough of Barnet, Greater London, UK
+6174	London SE7, UK
+14611	London SW20, UK
+4532	London E14, UK
+4378	London E14, UK
+24658	Arabian House, Ernest Street, Ocean Estate, Stepney, London Borough of Tower Hamlets, London, Greater London, England, E1 3FE, UK
+888	Preston's Rd, London E14 9LZ, UK
+14631	London Borough of Brent, Greater London, UK
+26961	Cumberland Place, Downham, London Borough of Lewisham, London, Greater London, England, SE12, UK
+1421	Jamestown Way, Poplar, London E14 2DD, UK
+27217	Raeburn Street, Stockwell, London Borough of Lambeth, London, Greater London, England, SW2, UK
+25101	Masthouse Terrace Pier, Maritime Quay, Millwall, London Borough of Tower Hamlets, London, Greater London, England, E14 3TA, UK
+12488	Strand, London WC2R 1JD, UK
+15890	Greater London, UK
+12366	London EC1Y 4SG, UK
+3425	Bromley, Greater London, UK
+11280	Erith, Greater London, UK
+10120	London Borough of Hackney, Greater London, UK
+18314	London Borough of Wandsworth, Greater London, UK
+2073	London Borough of Islington, Greater London, UK
+27067	London Fields East Side, Hackney, London Borough of Hackney, London, Greater London, England, E8 3SB, UK
+13900	London Borough of Wandsworth, Greater London, UK
+15717	London SE8, UK
+15831	Western Gateway, London E16 1BT, UK
+23357	The Green Man, Eastern Avenue, Upper Walthamstow, Leytonstone, London Borough of Waltham Forest, London, Greater London, England, E11 1HP, UK
+26597	The Catholic Church of the Resurrection of Our Lord, Sydenham Park, Sydenham, London Borough of Lewisham, London, Greater London, England, SE26 4RA, UK
+12364	London Borough of Merton, Greater London, UK
+11211	London WC2N, UK
+18280	Isle of Dogs, London E14 3JP, UK
+10108	London Borough of Hackney, Greater London, UK
+21526	London Borough of Haringey, Greater London, UK
+2033	Poplar, London E14 2AB, UK
+17551	London Borough of Lewisham, Greater London, UK
+16945	London Borough of Hammersmith and Fulham, Greater London, UK
+25318	Thames Quay, Isle of Dogs, London Borough of Tower Hamlets, London, Greater London, England, E14 9FJ, UK
+2972	London E14, UK
+16928	London Borough of Southwark, Greater London, UK
+17515	London Borough of Camden, Greater London, UK
+25137	KFC, Coventry Street, St. James's, City of Westminster, London, Greater London, England, W1, UK
+2107	London, UK
+3408	London N22, UK
+753	London E14, UK
+14543	London, UK
+2826	London, UK
+19117	London, UK
+6098	London E14, UK
+21358	London SW1A 2AE, UK
+22026	London Borough of Lambeth, Greater London, UK
+14934	London, UK
+371	London SE27, UK
+13335	London, UK
+11179	London, UK
+19210	London E14, UK
+16587	London EC4V 4GG, UK
+1464	London, UK
+16651	London SE1, UK
+752	London E14, UK
+353	London SE1, UK
+4509	London E14, UK
+1187	London E14, UK
+21350	London E14, UK
+10027	Royal Borough of Greenwich, Greater London, UK
+15724	Panton St, London SW1Y 4EA, UK
+20561	Greater London, UK
+14023	W Smithfield, London EC1A 9JX, UK
+19144	London E1, UK
+22437	Appold St, London EC2A 2AF, UK
+14205	Twickenham, Greater London, UK
+858	London E14, UK
+14670	London Borough of Hammersmith and Fulham, Greater London, UK
+24866	Broadgate Court, Primrose Street, City of London, Greater London, England, EC2A 2HA, UK
+17511	London E14, UK
+15667	London SE10, UK
+15658	London SW6, UK
+15022	London E14, UK
+10089	London Borough of Islington, Greater London, UK
+14083	London E14, UK
+10660	London E14, UK
+28800	Holly Lodge Gardens, London Borough of Camden, London, Greater London, England, N19, UK
+14651	Greater London, UK
+10006	London W6, UK
+6189	London E14, UK
+20636	Appold St, London EC2A 2AF, UK
+6091	London SE1, UK
+6070	Greater London, UK
+48	London W4, UK
+3446	London WC2H, UK
+3573	London Borough of Tower Hamlets, Greater London, UK
+65	London W5, UK
+11938	Centro, São Caetano do Sul - SP, 09510-300, Brazil
+21895	Tatuapé, São Paulo - State of São Paulo, 03066-065, Brazil
+10487	Centro, São Paulo - State of São Paulo, 01007-010, Brazil
+10349	Consolacao, São Paulo - State of São Paulo, 01050-020, Brazil
+10866	Tatuapé, São Paulo - State of São Paulo, 03065-040, Brazil
+16735	São Paulo - State of São Paulo, Brazil
+17008	Centro, São Paulo - State of São Paulo, 01016-040, Brazil
+22702	Bela Vista, São Paulo - State of São Paulo, Brazil
+1190	Alto da Lapa, São Paulo - State of São Paulo, 05083-030, Brazil
+19734	São Paulo, São Paulo - State of São Paulo, Brazil
+21170	São Paulo - State of São Paulo, Brazil
+132	São Paulo, São Paulo - State of São Paulo, Brazil
+21704	Vila Mariana, São Paulo - State of São Paulo, Brazil
+25002	Rua Cônego Eugênio Leite, Pinheiros, SP, Microrregião de São Paulo, RMSP, Mesorregião Metropolitana de São Paulo, SP, Região Sudeste, 05414-020, Brasil
+19069	Jardim Europa, São Paulo - State of São Paulo, 01448-060, Brazil
+25552	Albergue Cirineu, 216, Rua Santo Amaro, República, SP, Microrregião de São Paulo, RMSP, Mesorregião Metropolitana de São Paulo, SP, Região Sudeste, 01319-900, Brasil
+16730	Vila Guarani, São Paulo - State of São Paulo, 04310-020, Brazil
+24628	E.E. Sinhá Pantoja, Rua Simão de Lemos, Jardim São Luís, SP, Microrregião de São Paulo, RMSP, Mesorregião Metropolitana de São Paulo, SP, Região Sudeste, 05816220, Brasil
+16689	Parque America, São Paulo - SP, 04841-140, Brazil
+6149	114 Windsor Park Rd, Singapore 574178
+19041	Tanjong Pagar Terminal Rd J, Singapore
+21848	114 Windsor Park Rd, Singapore 574178
+4124	38 Island Club Rd, Singapore 578773
+4721	36 Lornie Rd, Singapore 298735
+17912	57 Cove Way, Singapore 098308
+16060	6 Bayfront Ave, Singapore 018974
+19970	315 Sembawang Vista, Singapore 750315
+21833	20 Nanyang Green, Singapore 637715
+18385	11 Canberra Rd, Singapore
+14183	West Coast Rd, Singapore
+19704	Simei Ave, Singapore
+20151	Opp GEMPLUS, Singapore
+21888	Unnamed Road, Singapore
+14076	Singapore 455666
+20621	Singapore 310232
+18761	Upper East Coast Rd, Singapore
+15934	Singapore 466289
+6096	21 Biopolis Rd, Singapore 138670
+25155	MacRitchie Nature Trail, Sin Ming, Singapore, Central Singapore Community Development Council, 574408, Singapura
+4800	Old Jurong Rd, Singapore
+19299	Singapore
+26815	Syonan Jinja, Sin Ming, Singapore, Central Singapore Community Development Council, Singapura
+4430	Singapore 629856
+3191	Singapore
+19961	Singapore 530534
+14623	Singapore, Singapore
+19989	206 Aljunied Rd, Singapore
+27056	MacRitchie Nature Trail, Sin Ming, Singapore, Central Singapore Community Development Council, 574408, Singapura
+23706	Parkview Square, 600, North Bridge Road, Clarke Quay, Bugis, Singapore, Central Singapore Community Development Council, 188778, Singapura
+11311	Singapore, Singapore
+26507	Syonan Jinja, Sin Ming, Singapore, Central Singapore Community Development Council, Singapura
+10074	Singapore
+22393	Nicoll Hwy, Singapore
+14042	Singapore 307844
+1013	Singapore
+19721	Singapore
+15984	Singapore
+1037	Singapore 039801
+27343	Unity Tower Two, 4, Shenton Way, Chinatown, Shenton Way, Singapore, Central Singapore Community Development Council, 068804, Singapura
+19642	Singapore 510564
+6139	Singapore 128409
+14220	Singapore
+10807	Singapore 139301
+24422	Syonan Jinja, Sin Ming, Singapore, Central Singapore Community Development Council, Singapura
+18166	Singapore 537035
+18784	TPE, Singapore
+16085	Singapore 541126
+25117	Syonan Jinja, Sin Ming, Singapore, Central Singapore Community Development Council, Singapura
+14776	Singapore 530558
+14742	Singapore 068806
+14200	Singapore 688995
+22724	Singapore 510569
+14202	Singapore 328517
+19930	Singapore 541225
+14075	Singapore 068803
+12163	Singapore
+20526	Singapore 069543
+19062	Singapore 530552
+19554	Singapore 128009
+14215	Singapore 680621
+15097	Singapore 400036
+6157	114 Windsor Park Rd, Singapore 574178
+14772	Singapore 530552
+22798	Unnamed Road, Singapore
+14622	Singapore, Singapore
+14672	Singapore 118259
+6077	11 Pioneer Turn, Singapore
+14626	Singapore 652622
+14350	Singapore 150082
+16104	Singapore 499617
+10676	Singapore
+14184	Singapore 560632
+10510	36 Lornie Rd, Singapore 298735
+13807	Singapore 371028
+14171	Singapore 730646
+40	111 60 Stockholm, Sweden
+428	113 62 Stockholm, Sweden
+2866	117 32 Stockholm, Sweden
+3968	113 22 Stockholm, Sweden
+13988	Stockholm, Sweden
+2455	111 52 Stockholm, Sweden
+17609	113 57 Stockholm, Sweden
+24831	Riksdagshuset, Södra Helgeandstrappan, Gamla stan, Södermalms stadsdelsområde, Sthlm, Stockholm, Landskapet Södermanland, Stockholms län, Svealand, 11127, Sverige
+25964	Operahuset, Jakobs Torg, Norrmalm, Norrmalms stadsdelsområde, Sthlm, Stockholm, Landskapet Uppland, Stockholms län, Svealand, 111 52, Sverige
+23214	29, Holländargatan, Sibirien, Vasastan, Norrmalms stadsdelsområde, Sthlm, Stockholm, Landskapet Uppland, Stockholms län, Svealand, 11359, Sverige
+6037	112 60 Stockholm, Sweden
+14154	Stockholm, Sweden
+23160	Västberga Allé, Älvsjö stadsdelsområde, Sthlm, Stockholm, Landskapet Södermanland, Stockholms län, Svealand, 12546, Sverige
+118	116 39 Stockholm, Sweden
+24893	Baron Rålambs väg, Ruddammen, Norra Djurgården, Östermalms stadsdelsområde, Sthlm, Stockholm, Landskapet Uppland, Stockholms län, Svealand, 10691, Sverige
+20106	114 28 Stockholm, Sweden
+6049	Stockholm, Sweden
+21609	Stockholm, Sweden
+16123	111 60 Stockholm, Sweden
+1305	Stockholm, Sweden
+2331	Södermalm, Stockholm, Sweden
+22155	116 64 Stockholm, Sweden
+14926	112 52 Stockholm, Sweden
+14751	113 47 Stockholm, Sweden
+13987	118 58 Stockholm, Sweden
+11820	113 46 Stockholm, Sweden
+4320	1220 Vienna, Austria
+12152	1030 Vienna, Austria
+13919	1230 Vienna, Austria
+14946	1010 Vienna, Austria
+6009	1010 Vienna, Austria
+14966	1200 Vienna, Austria
+16061	1190 Vienna, Austria
+18279	1210 Vienna, Austria
+21408	1030 Vienna, Austria
+21434	1030 Vienna, Austria
+21950	1030 Vienna, Austria
+22392	1120 Vienna, Austria
+248	1010 Vienna, Austria
+675	1010 Vienna, Austria
+2743	1100 Vienna, Austria
+11226	1010 Vienna, Austria
+18606	Vienna, Austria
+12306	1140 Vienna, Austria
+18300	Vienna, Austria
+20430	Vienna, Austria
+1484	Vienna, Austria
+21782	Vienna, Austria
+3411	Vienna, Austria
+14854	Vienna, Austria
+466	1080 Vienna, Austria
+11141	Vienna, Austria
+11824	Vienna, Austria
+2178	1190 Vienna, Austria
+1494	1010 Vienna, Austria
+21504	1220 Vienna, Austria
+549	Vienna, Austria
+11240	Vienna, Austria
+20170	Vienna, Austria
+11119	Vienna, Austria
+19313	Vienna, Austria
+21998	Vienna, Austria
+18931	1090 Vienna, Austria
+566	Vienna, Austria
+11140	Vienna, Austria
+11110	Vienna, Austria
+19233	Vienna, Austria
+22895	1220 Vienna, Austria
+414	Vienna, Austria
+21277	Vienna, Austria
+4330	Vienna, Austria
+2050	Vienna, Austria
+18398	Vienna, Austria
+19258	1140 Vienna, Austria
+11237	1010 Vienna, Austria
+15054	Vienna, Austria
+14653	Vienna, Austria
+357	Vienna, Austria
+13862	Vienna, Austria
+1281	1090 Vienna, Austria
+16135	Vienna, Austria
+11605	Vienna, Austria
+22258	Vienna, Austria
+19634	Vienna, Austria
+3111	Vienna, Austria
+6173	Vienna, Austria
+20356	1010 Vienna, Austria
+2027	1100 Vienna, Austria
+4335	Vienna, Austria
+6042	Vienna, Austria
+33	Vienna, Austria
+4179	1030 Vienna, Austria
+3543	Vienna, Austria
+11163	1010 Vienna, Austria
+792	Vienna, Austria
+2886	Vienna, Austria
+22373	1010 Vienna, Austria

@@ -4,3 +4,11 @@ python_code/__pycache__/
 html/.idea/
 add-commit-merge-push.sh
 python_code/*.pyc
+anycast_dns_monitoring/static/js/libs/
+anycast_dns_monitoring/static/css/fonts/
+anycast_dns_monitoring/static/css/libs/
+env/
+;;extensions to ignore
+*.log
+*.pot
+*.pyc

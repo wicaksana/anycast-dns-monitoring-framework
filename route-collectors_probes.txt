@@ -1,0 +1,59 @@
+Route collectors:
+- rrc00     Amsterdam RIPE NCC, NL
+- rrc01     London, UK
+- rrc02     Paris, FR
+- rrc03     Amsterdam AIX, NL
+- rrc04     Geneva,
+- rrc05     Vienna
+- rrc06     Tokyo, Japan
+- rrc07     Stockholm
+- rrc08     San Jose, USA
+- rrc09     Zurich
+- rrc10     Milan
+- rrc11     New York
+- rrc12     Frankfurt
+- rrc13     Moscow
+- rrc14     Palo Alto
+- rrc15     Sao Paulo
+- rrc16     Miami
+
+problem: too focused on European region.
+
+possible addition (http://www.routeviews.org/):
+- route-views4.routeviews.org           Oregon, US
+- route-views.kixp.routeviews.org       Nairobi, Kenya  (only IPv4)
+- route-views.wide.routeviews.org       Tokyo, JP
+- route-views.telxatl.routeviews.org    Atalanta
+- route-views.perth
+- route-views.sg
+- route-views.isc                       palo alto
+- route-views.eqix                      Ashburn, VA
+- route-views.sydney
+- route-views.sfmix                     San Fransisco
+- route-views.jinx                      johannesburg, SA
+- route-views.soxrs                     belgrade, Serbia
+
+Country list:
+    NL, Amsterdam
+    GB, London
+    FR, Paris
+    CH, Geneva, Zurich
+    AT, Vienna
+    JP, Tokyo
+    SE, Stockholm
+    US, San Jose, New York, Palo Alto, Miami, Oregon, Atalanta, Ashburn, San Fransisco
+    IT, Milan
+    DE, Frankfurt
+    RU, Moscow,
+    BR, Sao Paulo
+    AU, Perth, Sydney
+    KE, Nairobi
+    SG, Singapore
+    ZA, Johannesburg
+    RS, belgrade
+
+
+probe list:
+~~~~~~~~~~~
+
+country list: country list: [u'BD', u'BE', u'BF', u'BG', u'BA', u'BM', u'BN', u'BO', u'JP', u'BI', u'BJ', u'BT', u'JM', u'BW', u'WS', u'BR', u'JE', u'BY', u'RU', u'RW', u'RS', u'RE', u'TM', u'TJ', u'RO', u'GU', u'GT', u'GR', u'GP', u'BH', u'GY', u'GG', u'GF', u'GE', u'GD', u'GB', u'SV', u'GM', u'GL', u'PH', u'GI', u'GH', u'OM', u'TN', u'JO', u'HR', u'HU', u'HK', u'HN', u'AD', u'PR', u'PS', u'PW', u'PT', u'KR', u'PY', u'PF', u'PG', u'PE', u'PK', u'AT', u'PL', u'ZM', u'EE', u'EG', u'ZA', u'EC', u'AL', u'AO', u'ET', u'ZW', u'KY', u'ES', u'ME', u'MD', u'MG', u'UY', u'UZ', u'MN', u'MH', u'US', u'MU', u'MT', u'MW', u'MV', u'IM', u'UG', u'MY', u'MX', u'IL', u'FR', u'MA', u'FI', u'FJ', u'FM', u'FO', u'NI', u'NL', u'NO', u'NA', u'NC', u'NG', u'NZ', u'NP', u'NU', u'CK', u'CI', u'CH', u'CO', u'CN', u'CM', u'CL', u'CA', u'CG', u'CD', u'CZ', u'CY', u'CR', u'CW', u'CV', u'CU', u'SZ', u'SY', u'KG', u'KE', u'SS', u'SR', u'KN', u'KM', u'SK', u'SJ', u'SI', u'KW', u'SN', u'SM', u'SC', u'KZ', u'SA', u'SG', u'SE', u'SD', u'DO', u'DK', u'DE', u'DZ', u'MK', u'LB', u'LC', u'TW', u'TT', u'TR', u'LK', u'LI', u'LV', u'TO', u'LT', u'LU', u'LR', u'LS', u'TH', u'TG', u'LY', u'VC', u'AE', u'VE', u'IQ', u'VI', u'IS', u'IR', u'AM', u'IT', u'VN', u'AS', u'AR', u'AU', u'VU', u'IN', u'TZ', u'AZ', u'IE', u'ID', u'UA', u'QA', u'MZ']
