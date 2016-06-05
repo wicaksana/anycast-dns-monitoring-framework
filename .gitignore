@@ -7,6 +7,7 @@ python_code/*.pyc
 anycast_dns_monitoring/static/js/libs/
 anycast_dns_monitoring/static/css/fonts/
 anycast_dns_monitoring/static/css/libs/
+anycast_dns_monitoring/data_processing/__pycache__/
 env/
 ;;extensions to ignore
 *.log
