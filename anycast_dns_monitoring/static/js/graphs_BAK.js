@@ -1,9 +1,11 @@
-var width = 765;
+var width = 531;
 var height = 588;
 var min_zoom = 0.1;
 var max_zoom = 7;
 
-var color = d3.scale.category20();
+// var color = d3.scale.category20();
+var zoom = d3.behavior.zoom()
+    .scaleExtent([min_zoom, max_zoom]);
 
 var force = d3.layout.force()
     .charge(-750)
@@ -12,23 +14,17 @@ var force = d3.layout.force()
 
 var svg = d3.select("div#graph-main").append("svg")
     .attr("width", width)
-    .attr("height", height)
-    .call(d3.behavior.zoom().scaleExtent([min_zoom, max_zoom]).on('zoom', zoom));
-
-var g = svg.append('g')
-    .attr('id', 'container');
-
-svg.style('cursor', 'move');
+    .attr("height", height);
 
 d3.json("/graph", function(error, graph) {
     if (error) throw error;
-    console.log(graph);
+    // console.log(graph);
     force
         .nodes(graph.nodes)
         .links(graph.links)
         .start();
 
-    var link = g.selectAll(".link")
+    var link = svg.selectAll(".link")
         .data(graph.links)
         .enter().append("line")
         .attr("class", "link")
@@ -36,7 +32,7 @@ d3.json("/graph", function(error, graph) {
             return d.prepended * 3 + 1;
         });
 
-    var node = g.selectAll(".node")
+    var node = svg.selectAll(".node")
         .data(graph.nodes)
         .enter().append("g")
         .attr("class", "node")
@@ -45,13 +41,9 @@ d3.json("/graph", function(error, graph) {
         .call(force.drag);
 
     node.append('circle')
-        .attr('r', function (d) {
-            if(d.degree == 0) { return 12; }
-            else { return 8; }
-        })
-        .style('fill', function (d) {
-            return color(d.degree);
-        });
+        // .attr("cx", function(d) { return d.x; })
+        // .attr("cy", function(d) { return d.y; })
+        .attr('r', 8);
 
     node.append("text")
       .attr('x', 12)
@@ -69,23 +61,17 @@ d3.json("/graph", function(error, graph) {
       node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
     });
 
+    var dcx =
 
     function mouseover() {
         d3.select(this).select('circle').transition()
-            .duration(300)
+            .duration(500)
             .attr('r', 12);
     }
 
     function mouseout() {
         d3.select(this).select('circle').transition()
-            .duration(300)
-            .attr('r', function (d) {
-            if(d.degree == 0) { return 12; }
-            else { return 8; }
-        });
+            .duration(500)
+            .attr('r', 8);
     }
 });
-
-function zoom() {
-    g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-}

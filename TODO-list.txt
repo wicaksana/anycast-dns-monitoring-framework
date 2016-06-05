@@ -3,6 +3,13 @@ To-do list:
 - validate your result
 
 --------------------
+2016-06-04
+- fill in BGP data from 2005 to 2015 (monthly)
+- use new dashboard from KeenIO
+- develop forced-layout graph, instead of  radial tree
+    - Read this: http://jsfiddle.net/VividD/2g5T9/
+http://bl.ocks.org/mbostock/996370
+
 2016-06-01
 - create bgp historical data
 

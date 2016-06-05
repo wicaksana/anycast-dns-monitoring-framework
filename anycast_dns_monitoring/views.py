@@ -1,12 +1,17 @@
 from anycast_dns_monitoring import app, api
 from flask import render_template
-from flask import request
 from flask import jsonify
+from flask import send_from_directory
 from flask_restful import Resource
-import requests
-from anycast_dns_monitoring.data_processing import params
+from py2neo import Graph
+
 from anycast_dns_monitoring.data_processing.ris import Ris
 from anycast_dns_monitoring.data_processing.ripe_atlas import RipeAtlas, Version
+
+# graph initialization
+graph = Graph(password='neo4jneo4j')
+prefix = '2001:7fe::/33'
+timestamp = 1422748800
 
 
 @app.route('/')
@@ -18,33 +23,58 @@ def index():
     return render_template('index.html')
 
 
-# @app.route('/datetime/<int:d>', methods=['GET'])
-# def get_measurement(d):
-#     """
-#     get measurement result for a certain time. Use the measurement from the last 20 minutes (1200 seconds) from the
-#     specified time to get exactly one measurement result (measurement interval is 20 minutes)
-#     :param d: the specified time in UNIX timestamp format
-#     :return: measurement result
-#     """
-#     args = request.args
-#     print(args)
-#     msmnt = RipeAtlas(Version.ipv4)
-#     results = msmnt.tree_data_plane(datetime=d)
-#
-#     return jsonify(result=results)
-#
-#
-# @app.route('/latest/', methods=['GET'])
-# def get_latest_measurement():
-#     """
-#     get the latest measurement. Should be used in the main page.
-#     see: https://atlas.ripe.net/docs/measurement-latest-api/
-#     :return:
-#     """
-#     uri = '{0}measurement-latest/{1}/'.format(params.atlas_uri, params.msmnt_id)
-#     print(uri)
-#     results = requests.get(url=uri)
-#     return jsonify(results=results.json())
+@app.route('/json/<path:path>')
+def get_json(path):
+    return send_from_directory('static/json', path)
+
+
+@app.route('/graph')
+def get_graph():
+    results = graph.run(
+        'MATCH (d:asn)<-[r:TO]-(s:asn) '
+        'WHERE r.time={0} AND r.prefix="{1}" '
+        'RETURN d.name as asn_a, s.name as asn_b, r.prepended as prepended '.format(timestamp, prefix)
+    )
+
+    origin_as = None
+    origin = graph.run(
+        'MATCH (:asn)-[:TO{{time:{0}, prefix:"{1}"}}]->(d:asn) '
+        'WHERE NOT (d)-[:TO{{time:{0}, prefix:"{1}"}}]->() '
+        'RETURN d.name as origin'.format(timestamp, prefix)
+    )
+
+    for ori in origin:
+        origin_as = ori['origin']
+
+    degrees = graph.run(
+        'MATCH p=(d:asn{{name:"{0}"}})<-[r:TO*{{time:{1}, prefix:"{2}"}}]-(s:asn)'
+        'RETURN s.name as asn, length(p) as degree'.format(origin_as, timestamp, prefix)
+    )
+
+    nodes = []
+    rels = []
+    for asn_a, asn_b, prepended in results:
+        try:
+            target = nodes.index({'title': asn_a})
+        except ValueError:
+            nodes.append({'title': asn_a})
+            target = nodes.index({'title': asn_a})
+        src_asn = {'title': asn_b}
+        try:
+            src = nodes.index(src_asn)
+        except ValueError:
+            nodes.append(src_asn)
+            src = nodes.index(src_asn)
+        rels.append({'source': src, 'target': target, 'prepended': prepended})
+
+    # attach AS degrees
+    for asn, degree in degrees:
+        nodes[nodes.index({'title': asn})]['degree'] = degree
+
+    # origin AS
+    nodes[nodes.index({'title': origin_as})]['degree'] = 0
+
+    return jsonify({'nodes':nodes, 'links': rels})
 
 
 class ControlPlane(Resource):

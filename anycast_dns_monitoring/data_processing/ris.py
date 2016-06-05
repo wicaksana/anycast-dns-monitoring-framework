@@ -90,7 +90,7 @@ class Ris:
                         ' ')  # split by comma is to anticipate aggregration info
                     path.append(' ')  # for the sake of tree creation code
                     result.append(path)
-        except SSLError, e:
+        except SSLError as e:
             print('[!] Get error: {}'.format(e))
 
         return result
