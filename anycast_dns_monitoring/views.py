@@ -1,3 +1,4 @@
+from datetime import datetime
 from anycast_dns_monitoring import app, api
 from flask import render_template
 from flask import jsonify
@@ -5,13 +6,15 @@ from flask import send_from_directory
 from flask_restful import Resource
 from py2neo import Graph
 
+import time
+import pytz
+
 from anycast_dns_monitoring.data_processing.ris import Ris
 from anycast_dns_monitoring.data_processing.ripe_atlas import RipeAtlas, Version
+from anycast_dns_monitoring.data_processing.params import root_prefix, root_prefix6
 
 # graph initialization
 graph = Graph(password='neo4jneo4j')
-prefix = '2001:7fe::/33'
-timestamp = 1422748800
 
 
 @app.route('/')
@@ -23,13 +26,26 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/json/<path:path>')
-def get_json(path):
-    return send_from_directory('static/json', path)
+# @app.route('/json/<path:path>')
+# def get_json(path):
+#     return send_from_directory('static/json', path)
 
 
-@app.route('/graph')
-def get_graph():
+@app.route('/graph/<string:root>/<string:version>/<ts>')
+def get_graph(root, version, ts):
+    month, year = ts.split('-')
+    dt = datetime(int(year), int(month), 1, 1, 0, 0)  # day 1 of each month 01:00 AM (UTC+1)
+    utc = pytz.utc
+    utc_dt = utc.localize(dt)
+    timestamp = int(time.mktime(utc_dt.timetuple()))
+
+    if version == '4':
+        prefix = root_prefix[root]
+    elif version == '6':
+        prefix = root_prefix6[root]
+    else:
+        prefix = ''
+
     results = graph.run(
         'MATCH (d:asn)<-[r:TO]-(s:asn) '
         'WHERE r.time={0} AND r.prefix="{1}" '
@@ -72,9 +88,13 @@ def get_graph():
         nodes[nodes.index({'title': asn})]['degree'] = degree
 
     # origin AS
-    nodes[nodes.index({'title': origin_as})]['degree'] = 0
+    # todo: add exception handler: ValueError: {'title': None} is not in list
+    try:
+        nodes[nodes.index({'title': origin_as})]['degree'] = 0
+    except ValueError as e:
+        print('[!] {0}'.format(e))
 
-    return jsonify({'nodes':nodes, 'links': rels})
+    return jsonify({'nodes': nodes, 'links': rels})
 
 
 class ControlPlane(Resource):
@@ -82,7 +102,7 @@ class ControlPlane(Resource):
     def get(self, version, datetime):
         print('version: {}'.format(version))
         print('datetime: {}'.format(datetime))
-        msmnt = None
+
         if version == 'ipv4':
             msmnt = Ris(Version.ipv4)
         elif version == 'ipv6':

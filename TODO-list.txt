@@ -1,8 +1,30 @@
-To-do list:
-- add logging capabilities
-- validate your result
+http://jsfiddle.net/wsodjsyv/
+http://www.d3noob.org/2013/03/directional-force-layout-diagram.html
 
+Features:
+- hover on AS, display pop-up information
+
+Methodology:
+- compare each leaf AS path, both for IPv4 and IPv6. Find which ASNs that have different value, and find out why
+- on congruity between IPv4 and IPv6:
+    - explore the trends:
+        - calculate the fraction of AS paths from a given VP toward origin ASes that are identical in IPv4 and IPv6. If there
+          are multiple IPv4 or IPv6 AS paths available between a given VP and an origin AS, report it for having an identical
+          AS path if any of the paths are the same. If they differ, dissect the differences, in terms of which ASes are
+          added and removed from those paths.
+- Find out:
+    - Identical AS paths in IPv4 and IPv6
+    - different ASes in IPv4 and IPv6 AS paths
+        - to what degree?
+- how many hops needed to reach the root AS?
+- which AS present both in IPv4 and IPv6, and which that only present in IPv6 topology?
+- what is the common set of AS links between the IPv4 and IPv6 topologies?
 --------------------
+2016-06-5
+- finish preliminary brand-new visualization. Ready to extend it for all Root Servers and for predetermined intervals
+- http://bl.ocks.org/tnightingale/4718717
+- how to get AS information?
+
 2016-06-04
 - fill in BGP data from 2005 to 2015 (monthly)
 - use new dashboard from KeenIO
@@ -38,7 +60,10 @@ TODO:
     - which connects faster: IPv4 or IPv6? there is already paper discuss about it. But does it also apply for anycast?
     - can you tell something about the effect of AS-prepending on anycast service?
     - something to do with country-level?
-    - ASes which have more than one path to reach the service
+    - ASes which have more than one path to reach the service?
+    - Should we also analyse the anycast ASN dynamics? (but it needs to download BGP updates)?
+    - Dhamdhere et al. stated that there are trends of congruity between IPv4 and IPv6 paths. Does it also apply to anycast?
+
 - getting more familiar with bgpstream
 - use Neo4j?
     Neo4j & D3 --> http://blog.ashokalella.com/neo4j/d3/2015/04/27/neo4j-and-d3/

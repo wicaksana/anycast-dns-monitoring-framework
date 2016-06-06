@@ -13,18 +13,18 @@ def get_data(timestamp):
     rec_time = None
 
     # IPv4
-    # stream.add_filter('prefix', '198.41.0.0/24')  # A-root
-    # stream.add_filter('prefix', '192.33.4.0/24')  # C-root
-    # stream.add_filter('prefix', '199.7.91.0/24')  # D-root
-    # stream.add_filter('prefix', '192.203.230.0/24')  # E-root, IPv4 only
-    # stream.add_filter('prefix', '192.5.5.0/24')  # F-root
-    # stream.add_filter('prefix', '192.112.36.0/24')  # G-root, IPv4 only
-    # stream.add_filter('prefix', '198.97.190.0/24')  # H-root
-    # stream.add_filter('prefix', '192.36.148.0/24')  # I-root
-    # stream.add_filter('prefix', '192.58.128.0/24')  # J-root
-    # stream.add_filter('prefix', '193.0.14.0/24')  # K-root
-    # stream.add_filter('prefix', '199.7.83.0/24')  # L-root
-    # stream.add_filter('prefix', '202.12.27.0/24')  # M-root
+    stream.add_filter('prefix', '198.41.0.0/24')  # A-root
+    stream.add_filter('prefix', '192.33.4.0/24')  # C-root
+    stream.add_filter('prefix', '199.7.91.0/24')  # D-root
+    stream.add_filter('prefix', '192.203.230.0/24')  # E-root, IPv4 only
+    stream.add_filter('prefix', '192.5.5.0/24')  # F-root
+    stream.add_filter('prefix', '192.112.36.0/24')  # G-root, IPv4 only
+    stream.add_filter('prefix', '198.97.190.0/24')  # H-root
+    stream.add_filter('prefix', '192.36.148.0/24')  # I-root
+    stream.add_filter('prefix', '192.58.128.0/24')  # J-root
+    stream.add_filter('prefix', '193.0.14.0/24')  # K-root
+    stream.add_filter('prefix', '199.7.83.0/24')  # L-root
+    stream.add_filter('prefix', '202.12.27.0/24')  # M-root
 
     # IPv6
     stream.add_filter('prefix', '2001:503:ba3e::/48')  # A

@@ -4,6 +4,8 @@
     <title>Layouts &raquo; Split-Columns</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/keen-dashboards.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -41,12 +43,55 @@
                     <div class="col-sm-12">
                         <div class="chart-wrapper">
                             <div class="chart-title">
-                                Statistics#1
+                                Root Servers
                             </div>
                             <div class="chart-stage">
-                                <div id="chart-01">
-                                    <!--TBA-->
-                                </div>
+                                <form class="form-inline" role="form">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="select-root-servers">Root servers: </label>
+                                            <select name="select-root-servers" class="form-control" id="select-root-servers">
+                                                <option value="a">A</option>
+                                                <option value="c">C</option>
+                                                <option value="d">D</option>
+                                                <option value="e">E</option>
+                                                <option value="f">F</option>
+                                                <option value="g">G</option>
+                                                <option value="h">H</option>
+                                                <option value="i">I</option>
+                                                <option value="j">J</option>
+                                                <option value="k">K</option>
+                                                <option value="l">L</option>
+                                                <option value="m">M</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="select-ip-version">Version: </label>
+                                            <select name="select-ip-version" class="form-control" id="select-ip-version">
+                                                <option value="4">IPv4</option>
+                                                <option value="6">IPv6</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="select-time">Time: </label>
+                                                <div class="col-sm-8 input-group date" data-provide="datepicker" id="datepicker">
+                                                    <input type="text" class="form-control" name="date" id="select-time"/>
+                                                    <div class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-th"></span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <span>
+                                            <button type="button" class="btn btn-primary" id="btn-update">Update</button>
+                                        </span>
+                                    </div>
+                                </form>
                             </div>
                             <div class="chart-notes">
                                 This is for statistics #1
@@ -112,7 +157,7 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
     <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
     <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/libs/holder.js') }}"></script>
