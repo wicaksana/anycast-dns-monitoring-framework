@@ -40,7 +40,7 @@ function zoom() {
 
 function updateGraph(rootServer, version, timestamp) {
     var url = '/graph/' + rootServer + '/' + version + '/' + timestamp;
-    console.log('url: ' + url);
+
 
     d3.json(url, function (error, graph) {
         if(error) throw error;
@@ -91,6 +91,8 @@ function updateGraph(rootServer, version, timestamp) {
           node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
         });
     });
+
+    $('#chart-title').text('Catchment area: ' + rootServer.toUpperCase() + '-Root server IPv' + version + ' 01-' + timestamp);
 }
 
 /***********************************************************************************************************************
@@ -116,5 +118,4 @@ $(document).ready(function () {
             var timestamp = $('#select-time').val();
             updateGraph(rootServer, version, timestamp);
         });
-
 });

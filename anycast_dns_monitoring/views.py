@@ -46,26 +46,26 @@ def get_graph(root, version, ts):
     else:
         prefix = ''
 
-    results = graph.run(
-        'MATCH (d:asn)<-[r:TO]-(s:asn) '
-        'WHERE r.time={0} AND r.prefix="{1}" '
-        'RETURN d.name as asn_a, s.name as asn_b, r.prepended as prepended '.format(timestamp, prefix)
-    )
+    query = 'MATCH (d:asn)<-[r:TO]-(s:asn) ' \
+            'WHERE r.time={0} AND r.prefix="{1}" ' \
+            'RETURN d.name as asn_a, s.name as asn_b, r.prepended as prepended '.format(timestamp, prefix)
+    print('query: {}'.format(query))
+    results = graph.run(query)
 
     origin_as = None
-    origin = graph.run(
-        'MATCH (:asn)-[:TO{{time:{0}, prefix:"{1}"}}]->(d:asn) '
-        'WHERE NOT (d)-[:TO{{time:{0}, prefix:"{1}"}}]->() '
-        'RETURN d.name as origin'.format(timestamp, prefix)
-    )
+    query = 'MATCH (:asn)-[:TO{{time:{0}, prefix:"{1}"}}]->(d:asn) ' \
+            'WHERE NOT (d)-[:TO{{time:{0}, prefix:"{1}"}}]->() ' \
+            'RETURN DISTINCT d.name as origin'.format(timestamp, prefix)
+    origin = graph.run(query)
+    print('query: {}'.format(query))
 
     for ori in origin:
         origin_as = ori['origin']
 
-    degrees = graph.run(
-        'MATCH p=(d:asn{{name:"{0}"}})<-[r:TO*{{time:{1}, prefix:"{2}"}}]-(s:asn)'
-        'RETURN s.name as asn, length(p) as degree'.format(origin_as, timestamp, prefix)
-    )
+    query = 'MATCH p=(d:asn{{name:"{0}"}})<-[r:TO*{{time:{1}, prefix:"{2}"}}]-(s:asn) ' \
+            'RETURN DISTINCT s.name as asn, length(p) as degree'.format(origin_as, timestamp, prefix)
+    degrees = graph.run(query)
+    print('query: {}'.format(query))
 
     nodes = []
     rels = []

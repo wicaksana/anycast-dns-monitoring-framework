@@ -1,5 +1,7 @@
 http://jsfiddle.net/wsodjsyv/
 http://www.d3noob.org/2013/03/directional-force-layout-diagram.html
+http://stackoverflow.com/questions/11932767/zoomable-google-finance-style-time-series-graph-in-d3-or-rickshaw
+https://bost.ocks.org/mike/chart/
 
 Features:
 - hover on AS, display pop-up information
