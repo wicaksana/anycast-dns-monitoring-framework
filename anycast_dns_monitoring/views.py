@@ -48,27 +48,34 @@ def get_graph(root, version, ts):
 
     query = 'MATCH (d:asn)<-[r:TO]-(s:asn) ' \
             'WHERE r.time={0} AND r.prefix="{1}" ' \
-            'RETURN d.name as asn_a, s.name as asn_b, r.prepended as prepended '.format(timestamp, prefix)
+            'RETURN DISTINCT d.name as asn_a, s.name as asn_b, r.prepended as prepended '.format(timestamp, prefix)
     print('query: {}'.format(query))
     results = graph.run(query)
 
-    origin_as = None
+    if not results:
+        print('Empty result.')
+        return jsonify({'nodes': [], 'links': []})
+
+    origin_as = []
     query = 'MATCH (:asn)-[:TO{{time:{0}, prefix:"{1}"}}]->(d:asn) ' \
             'WHERE NOT (d)-[:TO{{time:{0}, prefix:"{1}"}}]->() ' \
             'RETURN DISTINCT d.name as origin'.format(timestamp, prefix)
     origin = graph.run(query)
-    print('query: {}'.format(query))
+    print('query origin: {}'.format(query))
 
     for ori in origin:
-        origin_as = ori['origin']
+        origin_as.append(ori['origin'])
 
-    query = 'MATCH p=(d:asn{{name:"{0}"}})<-[r:TO*{{time:{1}, prefix:"{2}"}}]-(s:asn) ' \
-            'RETURN DISTINCT s.name as asn, length(p) as degree'.format(origin_as, timestamp, prefix)
-    degrees = graph.run(query)
-    print('query: {}'.format(query))
+    print(origin_as)
+
+    # query = 'MATCH p=(d:asn{{name:"{0}"}})<-[r:TO*{{time:{1}, prefix:"{2}"}}]-(s:asn) ' \
+    #         'RETURN DISTINCT s.name as asn, length(p) as degree'.format(origin_as, timestamp, prefix)
+    # degrees = graph.run(query)
+    # print('query degrees: {}'.format(query))
 
     nodes = []
     rels = []
+
     for asn_a, asn_b, prepended in results:
         try:
             target = nodes.index({'title': asn_a})
@@ -83,16 +90,24 @@ def get_graph(root, version, ts):
             src = nodes.index(src_asn)
         rels.append({'source': src, 'target': target, 'prepended': prepended})
 
-    # attach AS degrees
-    for asn, degree in degrees:
-        nodes[nodes.index({'title': asn})]['degree'] = degree
-
     # origin AS
-    # todo: add exception handler: ValueError: {'title': None} is not in list
-    try:
-        nodes[nodes.index({'title': origin_as})]['degree'] = 0
-    except ValueError as e:
-        print('[!] {0}'.format(e))
+    for origin in origin_as:
+        try:
+            nodes[nodes.index({'title': origin})]['degree'] = 0
+            query = 'MATCH p=(d:asn{{name:"{0}"}})<-[r:TO*{{time:{1}, prefix:"{2}"}}]-(s:asn) ' \
+                    'RETURN DISTINCT s.name as asn, length(p) as degree'.format(origin, timestamp, prefix)
+            degrees = graph.run(query)
+            print('query degrees: {}'.format(query))
+
+            for asn, degree in degrees:
+                try:
+                    nodes[nodes.index({'title': asn})]['degree'] = degree
+                except ValueError as e:  # it means the node has already appended with degree information
+                    # print('[!] error attaching as degree: {}'.format(e))
+                    pass
+
+        except ValueError as e:
+            print('[!] {0}'.format(e))
 
     return jsonify({'nodes': nodes, 'links': rels})
 

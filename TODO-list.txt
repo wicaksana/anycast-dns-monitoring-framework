@@ -2,6 +2,8 @@ http://jsfiddle.net/wsodjsyv/
 http://www.d3noob.org/2013/03/directional-force-layout-diagram.html
 http://stackoverflow.com/questions/11932767/zoomable-google-finance-style-time-series-graph-in-d3-or-rickshaw
 https://bost.ocks.org/mike/chart/
+http://stackoverflow.com/questions/9539294/adding-new-nodes-to-force-directed-layout
+http://www.mzan.com/article/36185522-d3-force-layout-hover-on-arrow.shtml
 
 Features:
 - hover on AS, display pop-up information

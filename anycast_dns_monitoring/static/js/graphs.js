@@ -1,7 +1,9 @@
 var width = 765;
 var height = 588;
-var min_zoom = 0.1;
-var max_zoom = 7;
+var minZoom = 0.1;
+var maxZoom = 7;
+var prevRoot = '';
+var curRoot = '';
 
 var color = d3.scale.category20();
 
@@ -11,21 +13,28 @@ var force = d3.layout.force()
     .size([width, height]);
 
 var svg = d3.select("div#graph-main").append("svg")
+    .attr("id", "svg-main-graph")
     .attr("width", width)
     .attr("height", height)
-    .call(d3.behavior.zoom().scaleExtent([min_zoom, max_zoom]).on('zoom', zoom));
+    .call(d3.behavior.zoom().scaleExtent([minZoom, maxZoom]).on('zoom', zoom));
 
 var g = svg.append('g')
     .attr('id', 'container');
 
 svg.style('cursor', 'move');
 
+/**
+ * on mouse over
+ */
 function mouseover() {
     d3.select(this).select('circle').transition()
         .duration(300)
         .attr('r', 12);
 }
 
+/**
+ * on mouse out
+ */
 function mouseout() {
     d3.select(this).select('circle').transition()
         .duration(300)
@@ -34,13 +43,31 @@ function mouseout() {
             else { return 8; }});
 }
 
+/**
+ * zoom and panning features
+ */
 function zoom() {
     g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+}
+
+/**
+ * if previous graph and current graph display different Root Server's catchment area, then clean all contents of <g>
+ */
+function resetGraph() {
+    g.selectAll('*').remove();
 }
 
 function updateGraph(rootServer, version, timestamp) {
     var url = '/graph/' + rootServer + '/' + version + '/' + timestamp;
 
+    prevRoot = curRoot;
+    curRoot = rootServer;
+    //
+    // console.log('prevRoot:' + prevRoot + ' curRoot: ' + curRoot);
+    // if(prevRoot != curRoot) {
+    //     resetGraph();
+    // }
+    resetGraph();
 
     d3.json(url, function (error, graph) {
         if(error) throw error;
@@ -48,19 +75,32 @@ function updateGraph(rootServer, version, timestamp) {
         force
             .nodes(graph.nodes)
             .links(graph.links)
-            .start();
+            .on('tick', function () {
+                link
+                    .attr("x1", function(d) { return d.source.x; })
+                    .attr("y1", function(d) { return d.source.y; })
+                    .attr("x2", function(d) { return d.target.x; })
+                    .attr("y2", function(d) { return d.target.y; });
+                node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+            });
 
-        var link = g.selectAll(".link")
-            .data(graph.links)
-            .enter().append("line")
+        var link = g.selectAll(".link");
+
+        link = link.data(graph.links);
+        link.enter()
+            .insert("line")
             .attr("class", "link")
             .style("stroke-width", function(d) {
                 return d.prepended * 3 + 1;
             });
 
+        link.exit().remove();
+
+
         var node = g.selectAll(".node")
-            .data(graph.nodes)
-            .enter().append("g")
+            .data(graph.nodes);
+
+        node.enter().append("g")
             .attr("class", "node")
             .on('mouseover', mouseover)
             .on('mouseout', mouseout)
@@ -76,23 +116,22 @@ function updateGraph(rootServer, version, timestamp) {
             });
 
         node.append("text")
-          .attr('x', 12)
-          .attr('dy', '.35em')
-          .style('stroke', 'none')
-          .text(function(d) { return d.title; });
+            .attr('x', 12)
+            .attr('dy', '.35em')
+            .style('stroke', 'none')
+            .text(function(d) { return d.title; })
+            .style('font-size', function (d) {
+                if(d.degree == 0) { return 14; }
+                else { return 12; }
+            });
 
-        force.on("tick", function() {
-            link
-                .attr("x1", function(d) { return d.source.x; })
-                .attr("y1", function(d) { return d.source.y; })
-                .attr("x2", function(d) { return d.target.x; })
-                .attr("y2", function(d) { return d.target.y; });
+        node.exit().remove();
 
-          node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-        });
+        force.start();
+
     });
 
-    $('#chart-title').text('Catchment area: ' + rootServer.toUpperCase() + '-Root server IPv' + version + ' 01-' + timestamp);
+    $('#chart-title').text('Catchment area: ' + rootServer.toUpperCase() + '-Root server (IPv' + version + ') 01-' + timestamp);
 }
 
 /***********************************************************************************************************************
@@ -106,8 +145,17 @@ $(document).ready(function () {
             format: "mm-yyyy",
             startView: "months",
             minViewMode: "months",
-            startDate: new Date(2004, 12)
-            // endDate TBA
+            startDate: new Date(2004, 12),
+            endDate: new Date(2016, 7)
+        });
+
+    $('#datepicker-common-peers')
+        .datepicker({
+            format: "mm-yyyy",
+            startView: "months",
+            minViewMode: "months",
+            startDate: new Date(2004, 12),
+            endDate: new Date(2016, 7)
         });
 
     // event listener for btn-update
