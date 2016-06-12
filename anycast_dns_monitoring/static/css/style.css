@@ -24,3 +24,7 @@
   stroke: #fff;
   stroke-width: 1.5px;
 }
+
+code {
+    margin: 2px;
+}

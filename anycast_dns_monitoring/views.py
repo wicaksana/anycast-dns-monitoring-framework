@@ -1,20 +1,22 @@
 from datetime import datetime
-from anycast_dns_monitoring import app, api
+from anycast_dns_monitoring import app
 from flask import render_template
 from flask import jsonify
-from flask import send_from_directory
-from flask_restful import Resource
 from py2neo import Graph
-
+from pymongo import MongoClient
 import time
 import pytz
+import requests
 
-from anycast_dns_monitoring.data_processing.ris import Ris
-from anycast_dns_monitoring.data_processing.ripe_atlas import RipeAtlas, Version
 from anycast_dns_monitoring.data_processing.params import root_prefix, root_prefix6
 
 # graph initialization
 graph = Graph(password='neo4jneo4j')
+
+# mongodb initialization
+client = MongoClient()
+anycast = client.anycast_monitoring
+peer_data = anycast.peer_data
 
 
 @app.route('/')
@@ -26,30 +28,22 @@ def index():
     return render_template('index.html')
 
 
-# @app.route('/json/<path:path>')
-# def get_json(path):
-#     return send_from_directory('static/json', path)
-
-
 @app.route('/graph/<string:root>/<string:version>/<ts>')
 def get_graph(root, version, ts):
-    month, year = ts.split('-')
-    dt = datetime(int(year), int(month), 1, 1, 0, 0)  # day 1 of each month 01:00 AM (UTC+1)
-    utc = pytz.utc
-    utc_dt = utc.localize(dt)
-    timestamp = int(time.mktime(utc_dt.timetuple()))
+    timestamp = convert_timestamp(ts)
 
     if version == '4':
-        prefix = root_prefix[root]
+        prefix = root_prefix(root, timestamp)
     elif version == '6':
-        prefix = root_prefix6[root]
+        prefix = root_prefix6(root, timestamp)
     else:
         prefix = ''
 
+    # Get all nodes for tree graph
     query = 'MATCH (d:asn)<-[r:TO]-(s:asn) ' \
             'WHERE r.time={0} AND r.prefix="{1}" ' \
             'RETURN DISTINCT d.name as asn_a, s.name as asn_b, r.prepended as prepended '.format(timestamp, prefix)
-    print('query: {}'.format(query))
+    print('query tree: {}'.format(query))
     results = graph.run(query)
 
     if not results:
@@ -57,6 +51,7 @@ def get_graph(root, version, ts):
         return jsonify({'nodes': [], 'links': []})
 
     origin_as = []
+    # get origin AS
     query = 'MATCH (:asn)-[:TO{{time:{0}, prefix:"{1}"}}]->(d:asn) ' \
             'WHERE NOT (d)-[:TO{{time:{0}, prefix:"{1}"}}]->() ' \
             'RETURN DISTINCT d.name as origin'.format(timestamp, prefix)
@@ -65,13 +60,6 @@ def get_graph(root, version, ts):
 
     for ori in origin:
         origin_as.append(ori['origin'])
-
-    print(origin_as)
-
-    # query = 'MATCH p=(d:asn{{name:"{0}"}})<-[r:TO*{{time:{1}, prefix:"{2}"}}]-(s:asn) ' \
-    #         'RETURN DISTINCT s.name as asn, length(p) as degree'.format(origin_as, timestamp, prefix)
-    # degrees = graph.run(query)
-    # print('query degrees: {}'.format(query))
 
     nodes = []
     rels = []
@@ -94,6 +82,7 @@ def get_graph(root, version, ts):
     for origin in origin_as:
         try:
             nodes[nodes.index({'title': origin})]['degree'] = 0
+            # get nodes degree
             query = 'MATCH p=(d:asn{{name:"{0}"}})<-[r:TO*{{time:{1}, prefix:"{2}"}}]-(s:asn) ' \
                     'RETURN DISTINCT s.name as asn, length(p) as degree'.format(origin, timestamp, prefix)
             degrees = graph.run(query)
@@ -102,53 +91,107 @@ def get_graph(root, version, ts):
             for asn, degree in degrees:
                 try:
                     nodes[nodes.index({'title': asn})]['degree'] = degree
-                except ValueError as e:  # it means the node has already appended with degree information
+                except ValueError:  # it means the node has already appended with degree information
                     # print('[!] error attaching as degree: {}'.format(e))
                     pass
-
         except ValueError as e:
             print('[!] {0}'.format(e))
 
     return jsonify({'nodes': nodes, 'links': rels})
 
 
-class ControlPlane(Resource):
-    # TODO: add exception handler
-    def get(self, version, datetime):
-        print('version: {}'.format(version))
-        print('datetime: {}'.format(datetime))
+@app.route('/mutual_peers/<string:root>/<ts>')
+def get_mutual_peers(root, ts):
+    timestamp = convert_timestamp(ts)
+    prefix4 = root_prefix(root, timestamp)
+    prefix6 = root_prefix6(root, timestamp)
 
-        if version == 'ipv4':
-            msmnt = Ris(Version.ipv4)
-        elif version == 'ipv6':
-            msmnt = Ris(Version.ipv6)
-        else:
-            return 'IP version is incorrect'
+    bgp_state4, peer4 = get_peers(prefix4, timestamp)
+    bgp_state6, peer6 = get_peers(prefix6, timestamp)
 
-        if datetime == 'latest':
-            result = msmnt.tree_control_plane()
-        else:
-            result = msmnt.tree_control_plane(datetime=datetime)
+    mutual_peers = list(set(peer4) & set(peer6))
 
-        return jsonify(result=result)
+    mutual_peers_stat = get_peers_stat(mutual_peers, bgp_state4, bgp_state6)
 
+    return jsonify({'peers': mutual_peers_stat})
 
-class DataPlane(Resource):
-    def get(self, version, datetime):
-        if version == 'ipv4':
-            msmnt = RipeAtlas(Version.ipv4)
-        elif version == 'ipv6':
-            msmnt = RipeAtlas(Version.ipv6)
-        else:
-            return 'IP version is incorrect'
-
-        if datetime == 'latest':
-            result = msmnt.tree_data_plane()
-        else:
-            result = msmnt.tree_data_plane(datetime=datetime)
-
-        return jsonify(result=result)
+########################################################################################################################
+# Helper methods
+########################################################################################################################
 
 
-api.add_resource(ControlPlane, '/control-plane/<string:version>/<string:datetime>')
-api.add_resource(DataPlane, '/data-plane/<string:version>/<string:datetime>')
+def convert_timestamp(ts):
+    """
+    convert timestamp from js app to unix timestamp
+    :param ts: MM/YYYY
+    :return: unix timestamp
+    """
+    month, year = ts.split('-')
+    dt = datetime(int(year), int(month), 1, 1, 0, 0)  # day 1 of each month 01:00 AM (UTC+1)
+    utc = pytz.utc
+    utc_dt = utc.localize(dt)
+    timestamp = int(time.mktime(utc_dt.timetuple()))
+
+    return timestamp
+
+
+def get_peers(prefix, timestamp):
+    """
+    helper method to extract peers from RIPE RIS' bgp_data
+    :return:
+    """
+    url = 'https://stat.ripe.net/data/bgp-state/data.json?resource={0}&timestamp={1}'.format(prefix, timestamp)
+    print('get_peers {}'.format(url))
+    data = requests.get(url).json()
+    data = data['data']['bgp_state']
+
+    bgp_state = []
+    if data:
+        for item in data:
+            route_info = {
+                'peer': item['path'][0],
+                'root': item['path'][-1],
+                'as_path': list(deduplicate(item['path']))
+            }
+            bgp_state.append(route_info)
+
+    peer = [item['peer'] for item in bgp_state]
+
+    return bgp_state, peer
+
+
+def get_peers_stat(peers, bgp_state4, bgp_state6):
+    """
+    get mutual peers statistics
+    :param peers:
+    :param bgp_state4:
+    :param bgp_state6:
+    :return:
+    """
+    result = []
+    for peer in sorted(peers):
+        path4 = [d['as_path'] for d in bgp_state4 if d['peer'] == peer][0]
+        path6 = [d['as_path'] for d in bgp_state6 if d['peer'] == peer][0]
+        similar = 1 if path4 == path6 else 0
+        temp_res = {
+            'peer': peer,
+            'similar': similar,
+            'path4': path4,
+            'path6': path6
+        }
+        result.append(temp_res)
+
+    return result
+
+
+def deduplicate(items):
+    """
+    to remove AS prepending
+    :param items:
+    :return: deduplicate AS path
+    """
+    seen = set()
+    for item in items:
+        if item not in seen:
+            yield item
+            seen.add(item)

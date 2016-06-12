@@ -57,16 +57,18 @@ function resetGraph() {
     g.selectAll('*').remove();
 }
 
+/**
+ * update main graph
+ * @param rootServer
+ * @param version
+ * @param timestamp
+ */
 function updateGraph(rootServer, version, timestamp) {
     var url = '/graph/' + rootServer + '/' + version + '/' + timestamp;
 
     prevRoot = curRoot;
     curRoot = rootServer;
-    //
-    // console.log('prevRoot:' + prevRoot + ' curRoot: ' + curRoot);
-    // if(prevRoot != curRoot) {
-    //     resetGraph();
-    // }
+
     resetGraph();
 
     d3.json(url, function (error, graph) {
@@ -134,22 +136,104 @@ function updateGraph(rootServer, version, timestamp) {
     $('#chart-title').text('Catchment area: ' + rootServer.toUpperCase() + '-Root server (IPv' + version + ') 01-' + timestamp);
 }
 
+/**
+ *
+ * @param rootServer
+ * @param timestamp
+ */
+function mutualPeers(rootServer, timestamp) {
+    var url = '/mutual_peers/' + rootServer + '/' + timestamp;
+    
+    d3.json(url, function (error, data) {
+        if(error) throw error;
+
+        console.log(data);
+        
+        d3.select('#result-common-peers').selectAll('code').remove();
+        d3.select('#result-common-comp-similar').selectAll('code').remove();
+        d3.select('#result-common-comp-inequal').selectAll('code').remove();
+        d3.select('#result-common-comp-v4longer').selectAll('code').remove();
+        d3.select('#result-common-comp-v4shorter').selectAll('code').remove();
+
+        var peers = [];
+        data['peers'].forEach(function (d) {
+            peers.push(d.peer);
+        });
+
+        d3.select('#result-common-peers')
+            .selectAll('span')
+            .data(peers)
+            .enter()
+            .append('code')
+            .text(function (d) {
+                return d + " ";
+            });
+
+        var similar = [];
+        var equalButDifferent = [];
+        var ipv4Longer = [];
+        var ipv4Shorter = [];
+
+        data['peers'].forEach(function (peer) {
+            if(peer.similar == 1) {
+                similar.push(peer.peer);
+            } else if (peer.similar == 0 && peer.path4.length == peer.path6.length) {
+                equalButDifferent.push(peer.peer);
+            } else if (peer.path4.length > peer.path6.length) {
+                ipv4Longer.push(peer.peer);
+            } else {
+                ipv4Shorter.push(peer.peer);
+            }
+        });
+
+        d3.select('#result-common-comp-similar')
+            .selectAll('span')
+            .data(similar)
+            .enter()
+            .append('code')
+            .text(function (d) {
+                return d + " ";
+            });
+
+        d3.select('#result-common-comp-inequal')
+            .selectAll('span')
+            .data(equalButDifferent)
+            .enter()
+            .append('code')
+            .text(function (d) {
+                return d + " ";
+            });
+
+        d3.select('#result-common-comp-v4longer')
+            .selectAll('span')
+            .data(ipv4Longer)
+            .enter()
+            .append('code')
+            .text(function (d) {
+                return d + " ";
+            });
+
+        d3.select('#result-common-comp-v4shorter')
+            .selectAll('span')
+            .data(ipv4Shorter)
+            .enter()
+            .append('code')
+            .text(function (d) {
+                return d + " ";
+            });
+    });
+}
+
 /***********************************************************************************************************************
  * sort of main function :|
  **********************************************************************************************************************/
 $(document).ready(function () {
     updateGraph('i', '6', '02-2015');
 
+    //****************************************************
+    // Main graph
+    //****************************************************
     $('#datepicker')
-        .datepicker({
-            format: "mm-yyyy",
-            startView: "months",
-            minViewMode: "months",
-            startDate: new Date(2004, 12),
-            endDate: new Date(2016, 7)
-        });
-
-    $('#datepicker-common-peers')
         .datepicker({
             format: "mm-yyyy",
             startView: "months",
@@ -166,4 +250,25 @@ $(document).ready(function () {
             var timestamp = $('#select-time').val();
             updateGraph(rootServer, version, timestamp);
         });
+
+    //****************************************************
+    // common peers
+    //****************************************************
+    $('#datepicker-common-peers')
+        .datepicker({
+            format: "mm-yyyy",
+            startView: "months",
+            minViewMode: "months",
+            startDate: new Date(2004, 12),
+            endDate: new Date(2016, 7)
+        });
+    
+    // event listener for btn-common-peers
+    $('#btn-common-peers')
+        .click(function () {
+            var rootServer = $('#select-root-servers-common').val();
+            var timestamp = $('#select-time-common-peers').val();
+            mutualPeers(rootServer, timestamp);
+        });
+
 });
