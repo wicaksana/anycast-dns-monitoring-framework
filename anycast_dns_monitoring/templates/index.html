@@ -28,6 +28,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/for_science">For science</a></li>
                     <li><a href="https://github.com/wicaksana/anycast-dns-monitoring-framework">Source</a></li>
                 </ul>
             </div>
@@ -37,7 +38,7 @@
     <div class="container-fluid">
         <div class="row">
             <!--Statistics-->
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="row">
                     <!--Statistics #1-->
                     <div class="col-sm-12">
@@ -49,7 +50,7 @@
                                 <form class="form-inline" role="form">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="select-root-servers">Root servers: </label>
+{#                                            <label for="select-root-servers">Root servers: </label>#}
                                             <select name="select-root-servers" class="form-control" id="select-root-servers">
                                                 <option value="a">A</option>
                                                 <option value="c">C</option>
@@ -67,7 +68,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="select-ip-version">Version: </label>
+{#                                            <label for="select-ip-version">Version: </label>#}
                                             <select name="select-ip-version" class="form-control" id="select-ip-version">
                                                 <option value="4">IPv4</option>
                                                 <option value="6">IPv6</option>
@@ -76,8 +77,9 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="select-time">Time: </label>
-                                                <div class="col-sm-8 input-group date" data-provide="datepicker" id="datepicker">
+{#                                            <label for="select-time">Time: </label>#}
+{#                                                <div class="col-sm-8 input-group date" data-provide="datepicker" id="datepicker">#}
+                                                <div class="input-group date" data-provide="datepicker" id="datepicker">
                                                     <input type="text" class="form-control" name="date" id="select-time"/>
                                                     <div class="input-group-addon">
                                                         <span class="glyphicon glyphicon-th"></span>
@@ -104,15 +106,14 @@
                             </div>
                             <div class="chart-stage">
                                 <form class="form-inline" role="form">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="select-root-servers">Root servers: </label>
+{#                                            <label for="select-root-servers">Root servers: </label>#}
                                             <select name="select-root-servers" class="form-control" id="select-root-servers-common">
                                                 <option value="a">A</option>
                                                 <option value="c">C</option>
                                                 <option value="d">D</option>
                                                 <option value="f">F</option>
-                                                <option value="g">G</option>
                                                 <option value="i">I</option>
                                                 <option value="j">J</option>
                                                 <option value="k">K</option>
@@ -121,10 +122,11 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-md-3"></div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="select-time">Time: </label>
+{#                                            <label for="select-time">Time: </label>#}
                                                 <div class="input-group date" data-provide="datepicker" id="datepicker-common-peers">
                                                     <input type="text" class="form-control" name="date" id="select-time-common-peers"/>
                                                     <div class="input-group-addon">
@@ -141,6 +143,10 @@
                                 </form>
                             </div>
                             <div class="chart-notes">
+                                <div class="chart-stage"></div>
+                                <div id="result-common-bar" style="width: 100%">
+                                </div>
+                                <div class="chart-stage"><span>Mutual peers</span></div>
                                 <div id="result-common-peers">
                                 </div>
                                 <div class="chart-stage"><span>Mutual peers with identical AS path</span></div>
@@ -254,7 +260,7 @@
             </div> <!--End of statistics-->
 
             <!--Main graph-->
-            <div class="col-sm-6" id="div-main-graph">
+            <div class="col-sm-8" id="div-main-graph">
                 <div class="chart-wrapper">
                     <div class="chart-title" id="chart-title">
                         Catchment Area
@@ -279,6 +285,7 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
     <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="https://cdn.plot.ly/plotly-1.8.0.min.js" charset="utf-8"></script>
     <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/libs/holder.js') }}"></script>
     <script>

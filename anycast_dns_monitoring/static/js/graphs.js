@@ -1,4 +1,5 @@
-var width = 765;
+// var width = 765;
+var width = 1024;
 var height = 588;
 var minZoom = 0.1;
 var maxZoom = 7;
@@ -9,7 +10,7 @@ var color = d3.scale.category20();
 
 var force = d3.layout.force()
     .charge(-750)
-    .linkDistance(30)
+    .linkDistance(3)
     .size([width, height]);
 
 var svg = d3.select("div#graph-main").append("svg")
@@ -147,7 +148,7 @@ function mutualPeers(rootServer, timestamp) {
     d3.json(url, function (error, data) {
         if(error) throw error;
 
-        console.log(data);
+        // console.log(data);
         
         d3.select('#result-common-peers').selectAll('code').remove();
         d3.select('#result-common-comp-similar').selectAll('code').remove();
@@ -155,40 +156,18 @@ function mutualPeers(rootServer, timestamp) {
         d3.select('#result-common-comp-v4longer').selectAll('code').remove();
         d3.select('#result-common-comp-v4shorter').selectAll('code').remove();
 
-        var peers = [];
-        data['peers'].forEach(function (d) {
-            peers.push(d.peer);
-        });
-
         d3.select('#result-common-peers')
             .selectAll('span')
-            .data(peers)
+            .data(data['peers_mutual'])
             .enter()
             .append('code')
             .text(function (d) {
                 return d + " ";
             });
 
-        var similar = [];
-        var equalButDifferent = [];
-        var ipv4Longer = [];
-        var ipv4Shorter = [];
-
-        data['peers'].forEach(function (peer) {
-            if(peer.similar == 1) {
-                similar.push(peer.peer);
-            } else if (peer.similar == 0 && peer.path4.length == peer.path6.length) {
-                equalButDifferent.push(peer.peer);
-            } else if (peer.path4.length > peer.path6.length) {
-                ipv4Longer.push(peer.peer);
-            } else {
-                ipv4Shorter.push(peer.peer);
-            }
-        });
-
         d3.select('#result-common-comp-similar')
             .selectAll('span')
-            .data(similar)
+            .data(data['peers_identical'])
             .enter()
             .append('code')
             .text(function (d) {
@@ -197,7 +176,7 @@ function mutualPeers(rootServer, timestamp) {
 
         d3.select('#result-common-comp-inequal')
             .selectAll('span')
-            .data(equalButDifferent)
+            .data(data['peers_diff_path'])
             .enter()
             .append('code')
             .text(function (d) {
@@ -206,7 +185,7 @@ function mutualPeers(rootServer, timestamp) {
 
         d3.select('#result-common-comp-v4longer')
             .selectAll('span')
-            .data(ipv4Longer)
+            .data(data['peers_v4_longer'])
             .enter()
             .append('code')
             .text(function (d) {
@@ -215,12 +194,66 @@ function mutualPeers(rootServer, timestamp) {
 
         d3.select('#result-common-comp-v4shorter')
             .selectAll('span')
-            .data(ipv4Shorter)
+            .data(data['peers_v4_shorter'])
             .enter()
             .append('code')
             .text(function (d) {
                 return d + " ";
             });
+
+        // stack bar
+        // var peers_identical = {
+        //     x: [data['peers_identical'].length],
+        //     y: ['peers'],
+        //     name: 'identical AS path',
+        //     orientation: 'h',
+        //     type: 'bar',
+        //     marker: {
+        //         width: 0.1
+        //     }
+        // };
+        //
+        // var peers_diff_path = {
+        //     x: [data['peers_diff_path'].length],
+        //     y: ['peers'],
+        //     name: 'same AS path length, different path',
+        //     orientation: 'h',
+        //     type: 'bar',
+        //     marker: {
+        //         width: 0.1
+        //     }
+        // };
+        //
+        // var peers_v4_longer = {
+        //     x: [data['peers_v4_longer'].length],
+        //     y: ['peers'],
+        //     name: 'longer IPv4 AS path',
+        //     orientation: 'h',
+        //     type: 'bar',
+        //     marker: {
+        //         width: 0.1
+        //     }
+        // };
+        //
+        // var peers_v4_shorter = {
+        //     x: [data['peers_v4_shorter'].length],
+        //     y: ['peers'],
+        //     name: 'shorter IPv4 AS path',
+        //     orientation: 'h',
+        //     type: 'bar',
+        //     marker: {
+        //         width: 0.1
+        //     }
+        // };
+
+        // var chartData = [peers_identical, peers_diff_path, peers_v4_longer, peers_v4_shorter];
+        var chartData = [{
+            values: [data['peers_identical'].length, data['peers_diff_path'].length, data['peers_v4_longer'].length, data['peers_v4_shorter'].length],
+            labels: ['identical AS path', 'different AS path', 'longer IPv4 AS path', 'shorter IPv4 AS path'],
+            type: 'pie'
+        }];
+        var layout = {height: 500};
+        Plotly.newPlot('result-common-bar', chartData, layout);
     });
 }
 

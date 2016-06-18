@@ -23,13 +23,28 @@ peer_data = anycast.peer_data
 def index():
     """
     default page route
-    :return:
+    :return: index.html
     """
     return render_template('index.html')
+
+@app.route('/for_science/')
+def scientific_stuff():
+    """
+    return page dedicated for anything needed for scientific stuff in my thesis
+    :return:
+    """
+    return render_template('thesis.html')
 
 
 @app.route('/graph/<string:root>/<string:version>/<ts>')
 def get_graph(root, version, ts):
+    """
+    get data required to draw main graph
+    :param root:
+    :param version:
+    :param ts:
+    :return: array of nodes and links
+    """
     timestamp = convert_timestamp(ts)
 
     if version == '4':
@@ -102,6 +117,13 @@ def get_graph(root, version, ts):
 
 @app.route('/mutual_peers/<string:root>/<ts>')
 def get_mutual_peers(root, ts):
+    """
+    get mutual peers statistics for a given timestamp and a Root Server
+    :param root:
+    :param ts:
+    :return: array of mutual peers, mutual peers with identical AS path, mutual peers with same AS path length but
+    different AS path, mutual peers with longer IPv4 path, mutual peers with shorter IPv4 path
+    """
     timestamp = convert_timestamp(ts)
     prefix4 = root_prefix(root, timestamp)
     prefix6 = root_prefix6(root, timestamp)
@@ -111,9 +133,15 @@ def get_mutual_peers(root, ts):
 
     mutual_peers = list(set(peer4) & set(peer6))
 
-    mutual_peers_stat = get_peers_stat(mutual_peers, bgp_state4, bgp_state6)
+    peers_mutual, peers_identical, peers_diff_path, peers_v4_longer, peers_v4_shorter = \
+        get_peers_stat(mutual_peers, bgp_state4, bgp_state6)
 
-    return jsonify({'peers': mutual_peers_stat})
+    return jsonify({'peers_mutual': peers_mutual,
+                    'peers_identical': peers_identical,
+                    'peers_diff_path': peers_diff_path,
+                    'peers_v4_longer': peers_v4_longer,
+                    'peers_v4_shorter': peers_v4_shorter
+                    })
 
 ########################################################################################################################
 # Helper methods
@@ -168,10 +196,18 @@ def get_peers_stat(peers, bgp_state4, bgp_state6):
     :param bgp_state6:
     :return:
     """
-    result = []
+    container = []
     for peer in sorted(peers):
-        path4 = [d['as_path'] for d in bgp_state4 if d['peer'] == peer][0]
-        path6 = [d['as_path'] for d in bgp_state6 if d['peer'] == peer][0]
+        try:
+            path4 = [d['as_path'] for d in bgp_state4 if d['peer'] == peer][0]
+        except KeyError:
+            print('[!] no result from RIS. path4 is empty')
+            path4 = []
+        try:
+            path6 = [d['as_path'] for d in bgp_state6 if d['peer'] == peer][0]
+        except KeyError:
+            print('[!] no result from RIS. path6 is empty')
+            path6 = []
         similar = 1 if path4 == path6 else 0
         temp_res = {
             'peer': peer,
@@ -179,9 +215,15 @@ def get_peers_stat(peers, bgp_state4, bgp_state6):
             'path4': path4,
             'path6': path6
         }
-        result.append(temp_res)
+        container.append(temp_res)
 
-    return result
+    result_all = sorted([i['peer'] for i in container])
+    result_identical = sorted([i['peer'] for i in container if i['similar'] == 1])
+    result_diff = sorted([i['peer'] for i in container if len(i['path4']) == len(i['path6']) and i['similar'] == 0])
+    result_v4_longer = sorted([i['peer'] for i in container if len(i['path4']) > len(i['path6'])])
+    result_v4_shorter = sorted([i['peer'] for i in container if len(i['path4']) < len(i['path6'])])
+
+    return result_all, result_identical, result_diff, result_v4_longer, result_v4_shorter
 
 
 def deduplicate(items):
