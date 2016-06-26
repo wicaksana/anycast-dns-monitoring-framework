@@ -7,8 +7,14 @@ from pymongo import MongoClient
 import time
 import pytz
 import requests
+import os
+from collections import defaultdict
+from datetime import datetime
+import pandas as pd
+from pandas import DataFrame
 
 from anycast_dns_monitoring.data_processing.params import root_prefix, root_prefix6
+
 
 # graph initialization
 graph = Graph(password='neo4jneo4j')
@@ -142,6 +148,151 @@ def get_mutual_peers(root, ts):
                     'peers_v4_longer': peers_v4_longer,
                     'peers_v4_shorter': peers_v4_shorter
                     })
+
+###################################
+# For 'scientific' part
+###################################
+
+
+@app.route('/boxplot/<string:root>')
+def get_boxplot(root):
+    """
+    get boxplot data
+    :param root: Root Server (in alphabet)
+    :return:
+    """
+    container4 = {}
+    container6 = {}
+
+    for file in sorted(os.listdir('datasets/{}/'.format(root))):
+        timestamp = int(file.split('-')[0])
+        filename = 'datasets/{0}/{1}'.format(root, file)
+        opened_file = DataFrame.from_csv(filename, sep='\t')
+        if not opened_file.empty:
+            res4 = opened_file['len4']
+            container4[timestamp] = res4
+            res6 = opened_file['len6']
+            container6[timestamp] = res6
+        else:
+            container4[timestamp] = pd.Series()
+            container6[timestamp] = pd.Series()
+
+    df4 = DataFrame.from_dict(container4)
+    df6 = DataFrame.from_dict(container6)
+
+    dict4 = defaultdict()
+    dict6 = defaultdict()
+
+    #######
+    # IPv4
+    #######
+    for ts in df4:
+        dict4[ts] = {
+            'name': datetime.fromtimestamp(ts).strftime('%Y-%m-%d'),
+            'type': 'box',
+            'y': [int(i) for i in df4[ts].dropna()]
+        }
+    result4 = [dict4[i] for i in dict4]
+
+    #######
+    # IPv6
+    #######
+    for ts in df6:
+        dict6[ts] = {
+            'name': datetime.fromtimestamp(ts).strftime('%Y-%m-%d'),
+            'type': 'box',
+            'y': [int(i) for i in df6[ts].dropna()]
+        }
+    result6 = [dict6[i] for i in dict6]
+
+    return jsonify({'ipv4': result4, 'ipv6': result6})
+
+
+@app.route('/stacked-bar/<string:root>')
+def get_stacked_bar(root):
+    """
+    get required data for stacked bar visualization
+    :param root:
+    :return:
+    """
+    container4 = {}
+    container6 = {}
+
+    for file in sorted(os.listdir('datasets/{}/'.format(root))):
+        timestamp = int(file.split('-')[0])
+        filename = 'datasets/{0}/{1}'.format(root, file)
+        opened_file = DataFrame.from_csv(filename, sep='\t')
+        if not opened_file.empty:
+            res4 = opened_file['len4'].value_counts()
+            container4[timestamp] = res4
+            res6 = opened_file['len6'].value_counts()
+            container6[timestamp] = res6
+        else:
+            container4[timestamp] = pd.Series()
+            container6[timestamp] = pd.Series()
+
+    # print(container4)
+    dict4 = defaultdict()
+    dict6 = defaultdict()
+
+    ts = [datetime.fromtimestamp(i).strftime('%Y-%m-%d') for i in sorted(container4)]
+
+    ###
+    # IPv4
+    ##
+    # get maximum hop
+    max4 = 0
+    for item in container4:
+        for i in container4[item].iteritems():
+            max4 = max(max4, int(i[0]))
+
+    # initialize returned result
+    for hop in range(1, max4 + 1):
+        dict4[hop] = {'x': ts, 'y': [], 'name': hop, 'type': 'bar'}
+
+    # appending the result
+    for res in sorted(container4):
+        temp_res = dict()
+        for item in container4[res].iteritems():
+            temp_res[int(item[0])] = int(item[1])
+
+        for res_item in dict4.items():
+            if res_item[1]['name'] in temp_res:
+                res_item[1]['y'].append(temp_res[res_item[1]['name']])
+            else:
+                res_item[1]['y'].append(0)
+
+    result4 = [dict4[i] for i in dict4]
+
+    ###
+    # IPv6
+    ##
+    # get maximum hop
+    max6 = 0
+    for item in container6:
+        for i in container6[item].iteritems():
+            max6 = max(max6, int(i[0]))
+
+    # initialize returned result
+    for hop in range(1, max6 + 1):
+        dict6[hop] = {'x': ts, 'y': [], 'name': hop, 'type': 'bar'}
+
+    # appending the result
+    for res in sorted(container6):
+        temp_res = dict()
+        for item in container6[res].iteritems():
+            temp_res[int(item[0])] = int(item[1])
+
+        for res_item in dict6.items():
+            if res_item[1]['name'] in temp_res:
+                res_item[1]['y'].append(temp_res[res_item[1]['name']])
+            else:
+                res_item[1]['y'].append(0)
+
+    result6 = [dict6[i] for i in dict6]
+
+    return jsonify({'ipv4': result4, 'ipv6': result6})
+
 
 ########################################################################################################################
 # Helper methods

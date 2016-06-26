@@ -201,52 +201,6 @@ function mutualPeers(rootServer, timestamp) {
                 return d + " ";
             });
 
-        // stack bar
-        // var peers_identical = {
-        //     x: [data['peers_identical'].length],
-        //     y: ['peers'],
-        //     name: 'identical AS path',
-        //     orientation: 'h',
-        //     type: 'bar',
-        //     marker: {
-        //         width: 0.1
-        //     }
-        // };
-        //
-        // var peers_diff_path = {
-        //     x: [data['peers_diff_path'].length],
-        //     y: ['peers'],
-        //     name: 'same AS path length, different path',
-        //     orientation: 'h',
-        //     type: 'bar',
-        //     marker: {
-        //         width: 0.1
-        //     }
-        // };
-        //
-        // var peers_v4_longer = {
-        //     x: [data['peers_v4_longer'].length],
-        //     y: ['peers'],
-        //     name: 'longer IPv4 AS path',
-        //     orientation: 'h',
-        //     type: 'bar',
-        //     marker: {
-        //         width: 0.1
-        //     }
-        // };
-        //
-        // var peers_v4_shorter = {
-        //     x: [data['peers_v4_shorter'].length],
-        //     y: ['peers'],
-        //     name: 'shorter IPv4 AS path',
-        //     orientation: 'h',
-        //     type: 'bar',
-        //     marker: {
-        //         width: 0.1
-        //     }
-        // };
-
-        // var chartData = [peers_identical, peers_diff_path, peers_v4_longer, peers_v4_shorter];
         var chartData = [{
             values: [data['peers_identical'].length, data['peers_diff_path'].length, data['peers_v4_longer'].length, data['peers_v4_shorter'].length],
             labels: ['identical AS path', 'different AS path', 'longer IPv4 AS path', 'shorter IPv4 AS path'],

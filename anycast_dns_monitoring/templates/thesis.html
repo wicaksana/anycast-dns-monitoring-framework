@@ -1,10 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-Anything related to my thesis
-</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        <span id="title-thesis-main"></span>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-thesis-main-ipv4"></div>
+                        <div id="chart-thesis-main-ipv6"></div>
+                        <form class="form-inline" role="form">
+                            <div class="col-md-6">
+                                <div class="form-group pull-right">
+{#                                           <label for="select-root-servers">Root servers: </label>#}
+                                    <select name="select-thesis-main-root" class="form-control" id="select-thesis-main-root">
+                                        <option value="a">A</option>
+                                        <option value="c">C</option>
+                                        <option value="d">D</option>
+                                        <option value="f">F</option>
+                                        <option value="i">I</option>
+                                        <option value="j">J</option>
+                                        <option value="k">K</option>
+                                        <option value="l">L</option>
+                                        <option value="m">M</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group pull-left">
+{#                                           <label for="select-root-servers">Root servers: </label>#}
+                                    <select name="select-thesis-main-type" class="form-control" id="select-thesis-main-type">
+                                        <option value="peer-degree">Peer degree</option>
+                                        <option value="peer-avg">Peer average</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <span class="pull-left">
+                                    <button type="button" class="btn btn-primary" id="btn-thesis-main">Update</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        pageviews
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-04"></div>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        pageviews
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-05"></div>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        pageviews
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-06"></div>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        pageviews
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-07"></div>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <img data-src="holder.js/100%x150/white">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <img data-src="holder.js/100%x150/white">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <img data-src="holder.js/100%x150/white">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <img data-src="holder.js/100%x150/white">
+                </div>
+            </div>
+        </div>
+        <p class="small text-muted">Template: <a href="https://github.com/keen/dashboards">KeenIO</a></p>
+    </div>
+{% endblock %}
