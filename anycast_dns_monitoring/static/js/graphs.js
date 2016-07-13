@@ -124,8 +124,8 @@ function updateGraph(rootServer, version, timestamp) {
             .style('stroke', 'none')
             .text(function(d) { return d.title; })
             .style('font-size', function (d) {
-                if(d.degree == 0) { return 14; }
-                else { return 12; }
+                if(d.degree == 0) { return 20; }
+                else { return 18; }
             });
 
         node.exit().remove();
@@ -258,4 +258,15 @@ $(document).ready(function () {
             mutualPeers(rootServer, timestamp);
         });
 
+    // SVG download button
+    // var svgData = $("#svg-main-graph")[0].outerHTML;
+    // var svgBlob = new Blob([svgData], {type:"image/svg+xml;charset=utf-8"});
+    // var svgUrl = URL.createObjectURL(svgBlob);
+    // var downloadLink = document.createElement("a");
+    // downloadLink.href = svgUrl;
+    // downloadLink.download = "newesttree.svg";
+    // document.body.appendChild(downloadLink);
+    // downloadLink.click();
+    // document.body.removeChild(downloadLink);
 });
+

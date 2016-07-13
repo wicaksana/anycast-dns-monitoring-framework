@@ -93,3 +93,7 @@ $('#btn-thesis-main')
             updateThesisMainAvg(root);
         }
     });
+
+// d3.slider().on("slide", function(evt, value) {
+//   d3.select('#chart-04').text(value);
+// })
