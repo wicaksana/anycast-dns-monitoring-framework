@@ -17,6 +17,11 @@ also develop visualization tool to help operator assess their catchment
 areas. While we specifically study DNS Root Server, our methodology can be 
 applied to other anycast services as well.
 
+## Configuration
+
+![config](img/configuration.png)
+
+
 ## Files
 
 - [Visualization tool](anycast_dns_monitoring/)
