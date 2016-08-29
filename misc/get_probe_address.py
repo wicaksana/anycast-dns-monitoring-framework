@@ -29,13 +29,13 @@ def main():
                         sys.exit(1)
                     except IndexError:
                         address = addr[0].__str__()
-                    except TypeError, e:
+                    except TypeError as e:
                         print('TypeError lat:{}  lon:{} ==> {}'.format(probe['latitude'], probe['longitude'], e))
                         address = None
                     # addr = unicode(addr, 'utf-8')
                     # print(addr)
                     probes.update({'prb_id': probe['prb_id']}, {'$set': {'address': address}})
-                except GeocoderServiceError, e:
+                except GeocoderServiceError as e:
                     print('stopped at {} ==> {}'.format(probe['prb_id'], e))
                     sys.exit(1)
                 time.sleep(0.1)

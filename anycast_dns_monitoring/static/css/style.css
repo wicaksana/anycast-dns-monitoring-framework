@@ -1,255 +1,67 @@
-/*body {*/
-    /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);*/
-/*}*/
-.node circle {
-    fill: #fff;
-    stroke: steelblue;
-    stroke-width: 1.5px;
+#div-main-graph {
+    left: 34%;
+    position: fixed;
 }
 
+/* temporary */
 .node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .8;
+}
+
+.node text {
     font: 10px sans-serif;
-}
-
-.link {
-    fill: none;
-    stroke: #ccc;
-    stroke-width: 1.5px;
-}
-
-.node circle {
-    fill: #fff;
-    opacity: 1;
-    stroke: grey;
-    stroke-width: 1.5px;
-}
-
-
-.node circle.active {
-    stroke: black;
-    stroke-width: 2px;
-    stroke: black;
-}
-
-.node circle.tr_results_ok {
-    fill: green;
-}
-
-.node circle.tr_results_fail {
-    fill: red;
-}
-
-.node circle.tr_results_mix {
-    fill: orange;
-}
-
-.centernode circle {
-    fill: blue;
-    stroke: black;
-    opacity: 0;
-}
-
-.rootnode circle {
-    fill: red;
-    stroke: black;
-    opacity: 1;
-    stroke-width: 1.5px;
-}
-
-.node {
-    font: 12px sans-serif;
-}
-
-.rootnode {
-    font: 14px sans-serif;
-    fill: black;
-}
-
-.link {
-    fill: none;
-    stroke: #ddd;
-    stroke-width: 1px;
-}
-
-.link.active {
-    stroke: black;
-    stroke-width: 2px;
-    stroke-opacity: 1;
-}
-
-.rootlink_undefined {
-    opacity: 0;
-}
-
-.rootlink_fail {
-    stroke-dasharray: 5,5;
-}
-
-.hovertext {
-    stroke: purple;
-    font: 20px sans-serif;
-    overflow-y: scroll;
-    max-height:50%;
-}
-
-.tooltip {
-    position: absolute;
-    background: white;
-    border: 1px black solid
-}
-
-.linktext {
-    color:red;
-    text-decoration:underline;
-}
-
-pre.tracedetail {
-    font-size: 60%;
-}
-
-.title {
-    text-align: center;
-}
-
-svg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-}
-
-/* hide centernode */
-g.node.centernode {
-    display: none;
-}
-
-/* circle hover */
-circle.hover {
-    fill: yellow;
-    r: 6px;
-}
-
-/* selected path */
-path.selected {
-    stroke: teal;
-    fill: none;
-    stroke-width: 5px;
-}
-
-/* tooltip */
-div.tooltip {
-    position: absolute;
-    width: 160px;
-    height: 46px;
-    padding: 3px 3px 3px 3px;
-    font: 12px sans-serif;
-    background: lightsteelblue;
-    border: 0px;
-    -webkit-border-radius:8px;
-    -moz-border-radius:8px;
-    border-radius: 8px;
     pointer-events: none;
 }
 
-/* hide direct path to center */
-.path-to-center {
-    /*display: none; */
-    stroke: yellow;
+.node circle {
+      fill: #ccc;
+  stroke: #fff;
+  stroke-width: 1.5px;
 }
 
-.graph {
-    margin-bottom: 10px;
-    height: 75vh;
-    background-color: #eee;
-}
-
-div.input-group.date {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-circle.comparison-clicked {
-    fill: green;
-    stroke: green;
-    r: 8px;
-}
-
-div#graph-compare-1, div#graph-compare-2 {
-    border: 2px solid white;
-    padding: 0px;
-}
-
-div.stats-container {
-    height: 200px;
-    overflow: auto;
-}
-
-.container {
-    pointer-events: all;
-}
-
-/*labels for comparison*/
 code {
     margin: 2px;
 }
 
-/*--------------------------------------------------------------------*/
-/*taken from https://getbootstrap.com/examples/dashboard/dashboard.css*/
-/*--------------------------------------------------------------------*/
-/*
- * Sidebar
- */
-
-/* Hide for mobile, show later */
-.sidebar {
-  display: none;
-}
-@media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
-  }
+.badge {
+    /*background: #668B8B;*/
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    margin: 2px 2px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 10px;
 }
 
-/* Sidebar navigation */
-.nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
-}
-.nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
-}
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: #428bca;
+.popover {
+    color: #000000;
+    font-size: 8pt;
 }
 
-/*
- * Main content
- */
+.highlighted {
+    stroke: #FF0000;
+    stroke-opacity: 1;
+    stroke-width: 10;
+}
 
-.main {
-  padding: 20px;
+.dimmed {
+    stroke-opacity: 0.2;
 }
-@media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
+
+.emphasized {
+    stroke-opacity: 1;
+    stroke: #000000;
+    stroke-width: 15;
 }
-.main .page-header {
-  margin-top: 0;
+
+.blackened {
+    fill: #000000;
 }

@@ -85,13 +85,18 @@ def get_data(timestamp):
                             counter_as_prepend = 0  # reset
                     else:  # AS prepending
                         counter_as_prepend += 1
+                # else:  # origin AS
+                #     graph.run('MATCH (s:asn)'
+                #               'WHERE s.name="{0}"'
+                #               'SET s.origin="{1}_{2}"'
+                #               'RETURN s'.format(asn, prefix, rec_time))
                 prev_node = cur_node
 
 
 def main():
     utc = pytz.utc
-    for year in range(2010, 2016):
-        for month in range(1, 13):
+    for year in range(2015, 2016):
+        for month in range(1, 3):
             dt = datetime(year, month, 1, 1, 0, 0)  # I use 1:00 AM because my local time is UTC+1. Adjust it to your TZ
             utc_dt = utc.localize(dt)
             timestamp = int(time.mktime(utc_dt.timetuple()))

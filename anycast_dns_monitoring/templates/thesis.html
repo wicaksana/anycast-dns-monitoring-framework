@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        <span id="title-thesis-main"></span>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-thesis-main-ipv4"></div>
+                        <div id="chart-thesis-main-ipv6"></div>
+                        <form class="form-inline" role="form">
+                            <div class="col-md-6">
+                                <div class="form-group pull-right">
+{#                                           <label for="select-root-servers">Root servers: </label>#}
+                                    <select name="select-thesis-main-root" class="form-control" id="select-thesis-main-root">
+                                        <option value="a">A</option>
+                                        <option value="c">C</option>
+                                        <option value="d">D</option>
+                                        <option value="f">F</option>
+                                        <option value="i">I</option>
+                                        <option value="j">J</option>
+                                        <option value="k">K</option>
+                                        <option value="l">L</option>
+                                        <option value="m">M</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group pull-left">
+{#                                           <label for="select-root-servers">Root servers: </label>#}
+                                    <select name="select-thesis-main-type" class="form-control" id="select-thesis-main-type">
+                                        <option value="peer-degree">Peer degree</option>
+                                        <option value="peer-avg">Peer average</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <span class="pull-left">
+                                    <button type="button" class="btn btn-primary" id="btn-thesis-main">Update</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        pageviews 2
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-04"></div>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        pageviews
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-05"></div>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        pageviews
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-06"></div>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        pageviews
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-07"></div>
+                    </div>
+                    <div class="chart-notes">
+                        This is a sample of text region
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <img data-src="holder.js/100%x150/white">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <img data-src="holder.js/100%x150/white">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <img data-src="holder.js/100%x150/white">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <img data-src="holder.js/100%x150/white">
+                </div>
+            </div>
+        </div>
+        <p class="small text-muted">Template: <a href="https://github.com/keen/dashboards">KeenIO</a></p>
+    </div>
+
+
+    <!--put javascript here-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="https://cdn.plot.ly/plotly-1.8.0.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/holder.js') }}"></script>
+    <script>
+        Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/keen.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/meta.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/thesis.js') }}"></script>
+
+{% endblock %}
