@@ -1,1 +1,0 @@
-{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"anycast_monitoring.as_info"},{"v":1,"key":{"asn":1},"name":"asn_1","ns":"anycast_monitoring.as_info"}]}
