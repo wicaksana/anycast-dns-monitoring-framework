@@ -66,46 +66,8 @@
                     <!--Statistics #2-->
                     <div class="col-sm-12">
                         <div class="chart-wrapper">
-                            <div class="chart-title">
+                            <div class="chart-title" id="common-peers-title">
                                 Mutual Peers (IPv4/IPv6)
-                            </div>
-                            <div class="chart-stage">
-                                <form class="form-inline" role="form">
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-{#                                            <label for="select-root-servers">Root servers: </label>#}
-                                            <select name="select-root-servers" class="form-control" id="select-root-servers-common">
-                                                <option value="a">A</option>
-                                                <option value="c">C</option>
-                                                <option value="d">D</option>
-                                                <option value="f">F</option>
-                                                <option value="i">I</option>
-                                                <option value="j">J</option>
-                                                <option value="k">K</option>
-                                                <option value="l">L</option>
-                                                <option value="m">M</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3"></div>
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-{#                                            <label for="select-time">Time: </label>#}
-                                                <div class="input-group date" data-provide="datepicker" id="datepicker-common-peers">
-                                                    <input type="text" class="form-control" name="date" id="select-time-common-peers"/>
-                                                    <div class="input-group-addon">
-                                                        <span class="glyphicon glyphicon-th"></span>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <span class="pull-right">
-                                            <button type="button" class="btn btn-primary" id="btn-common-peers">Update</button>
-                                        </span>
-                                    </div>
-                                </form>
                             </div>
                             <div class="chart-notes">
                                 <div class="chart-stage"></div>
@@ -114,113 +76,16 @@
                                 <div class="chart-stage"><span>Mutual peers</span></div>
                                 <div id="result-common-peers">
                                 </div>
-                                <div class="chart-stage"><span>Mutual peers with identical AS path</span></div>
-                                <div id="result-common-comp-similar">
+                                <div class="chart-wrapper" align="center" style="padding: 8px 5px;">
+                                    <span class="badge" style="background: #668B8B">identical</span>
+                                    <span class="badge" style="background: #EF6F6C">different path</span>
+                                    <span class="badge" style="background: #F79744">shorter IPv6</span>
+                                    <span class="badge" style="background: #1ABC9C">shorter IPv4</span>
                                 </div>
-                                <div class="chart-stage"><span>Mutual peers with equal AS path length but different path</span></div>
-                                <div id="result-common-comp-inequal">
-                                </div>
-                                <div class="chart-stage"><span>Mutual peers with longer IPv4 AS path</span></div>
-                                <div id="result-common-comp-v4longer">
-                                </div>
-                                <div class="chart-stage"><span>Mutual peers with shorter IPv4 AS path</span></div>
-                                <div id="result-common-comp-v4shorter">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Statistics #3-->
-                    <div class="col-sm-12">
-                        <div class="chart-wrapper">
-                            <div class="chart-title">
-                                Statistics#3
-                            </div>
-                            <div class="chart-stage">
-                                <div id="chart-01">
-                                    <!--TBA-->
-                                </div>
-                            </div>
-                            <div class="chart-notes">
-                                This is for statistics #3
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-12">
-                        <div class="chart-wrapper">
-                            <div class="chart-title">
-                                Statistics#3
-                            </div>
-                            <div class="chart-stage">
-                                <div id="chart-01">
-                                    <!--TBA-->
-                                </div>
-                            </div>
-                            <div class="chart-notes">
-                                This is for statistics #3
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="chart-wrapper">
-                            <div class="chart-title">
-                                Statistics#3
-                            </div>
-                            <div class="chart-stage">
-                                <div id="chart-01">
-                                    <!--TBA-->
-                                </div>
-                            </div>
-                            <div class="chart-notes">
-                                This is for statistics #3
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="chart-wrapper">
-                            <div class="chart-title">
-                                Statistics#3
-                            </div>
-                            <div class="chart-stage">
-                                <div id="chart-01">
-                                    <!--TBA-->
-                                </div>
-                            </div>
-                            <div class="chart-notes">
-                                This is for statistics #3
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="chart-wrapper">
-                            <div class="chart-title">
-                                Statistics#3
-                            </div>
-                            <div class="chart-stage">
-                                <div id="chart-01">
-                                    <!--TBA-->
-                                </div>
-                            </div>
-                            <div class="chart-notes">
-                                This is for statistics #3
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="chart-wrapper">
-                            <div class="chart-title">
-                                Statistics#3
-                            </div>
-                            <div class="chart-stage">
-                                <div id="chart-01">
-                                    <!--TBA-->
-                                </div>
-                            </div>
-                            <div class="chart-notes">
-                                This is for statistics #3
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div> <!--End of statistics-->
 
@@ -243,4 +108,21 @@
         <hr>
         <p class="small text-muted">Template: <a href="https://github.com/keen/dashboards">KeenIO</a></p>
     </div>
+
+
+    <!-- put required javascript here -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="https://cdn.plot.ly/plotly-1.8.0.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/holder.js') }}"></script>
+    <script>
+        Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/keen.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/meta.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/graphs.js') }}"></script>
 {% endblock %}

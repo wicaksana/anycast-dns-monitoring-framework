@@ -1,10 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <!--IPv4 chart-->
+            <div class="col-sm-6">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        IPv4
+                    </div>
+                    <div class="chart-stage" style="height: 500px;">
+                        <div class="graph" id="graph-comparison-ipv4"></div>
+                    </div>
+                    <div class="chart-notes"></div>
+                </div>
+            </div>
+            <!--IPv6 chart-->
+            <div class="col-sm-6">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        IPv6
+                    </div>
+                    <div class="chart-stage" style="height: 500px;">
+                        <div class="graph" id="graph-comparison-ipv6"></div>
+                    </div>
+                    <div class="chart-notes"></div>
+                </div>
+            </div>
+        </div> <!--end of row-->
 
-</body>
-</html>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="chart-wrapper">
+                    <div class="chart-stage">
+                        <form class="form-inline" role="form">
+                            <div class="col-md-1">
+                                <div class="form-group pull-right">
+                                    <select name="select-root-servers" class="form-control" id="select-root-servers">
+                                        <option value="a">A</option>
+                                        <option value="c">C</option>
+                                        <option value="d">D</option>
+                                        <option value="f">F</option>
+                                        <option value="i">I</option>
+                                        <option value="j">J</option>
+                                        <option value="k">K</option>
+                                        <option value="l">L</option>
+                                        <option value="m">M</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <div class="input-group date" data-provide="datepicker" id="datepicker">
+                                        <input type="text" class="form-control" name="date" id="select-time"/>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <span>
+                                    <button type="button" class="btn btn-primary" id="btn-comparison">Update</button>
+                                </span>
+                            </div>
+                            <div class="col-md-6" id="title" style="padding-top: 10px;">
+                            </div>
+                        </form>
+                    </div> <!--end of chart-stage-->
+                    <div class="chart-notes" id="result-comparison">
+
+                    </div><!-- end of chart-notes -->
+                </div>
+
+                <div class="chart-notes"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--put javascript here-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="https://cdn.plot.ly/plotly-1.8.0.min.js" charset="utf-8"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/holder.js') }}"></script>
+    <script>
+        Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/libs/keen.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/meta.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/comparison.js') }}"></script>
+{% endblock %}

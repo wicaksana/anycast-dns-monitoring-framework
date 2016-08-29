@@ -21,39 +21,30 @@ map4 = 'prefix_asn_mapping'
 map6 = 'prefix_asn_mapping6'
 probes = 'probes'
 
-# root-server to its prefixes
-# root_prefix = {
-#     'a': '198.41.0.0/24',
-#     'b': '192.228.79.0/24',
-#     'c': '192.33.4.0/24',
-#     'd': '199.7.91.0/24',
-#     'e': '192.203.230.0/24',
-#     'f': '192.5.5.0/24',
-#     'g': '192.112.36.0/24',
-#     'h': '198.97.190.0/24',
-#     'i': '192.36.148.0/24',
-#     'j': '192.58.128.0/24',
-#     'k': '193.0.14.0/24',
-#     'l': '199.7.83.0/24',
-#     'm': '202.12.27.0/24'
-# }
-
-# root_prefix6 = {
-#     'a': '2001:503:ba3e::/48',
-#     'b': '2001:500:84::/48',
-#     'c': '2001:500:2::/48',
-#     'd': '2001:500:2d::/48',
-#     'e': '',
-#     'f': '2001:500:2f::/48',
-#     'g': '',
-#     'h': '2001:500:1::/48',
-#     'i': '2001:7fe::/33',
-#     'j': '2001:503:c27::/48',
-#     'k': '2001:7fd::/48',
-#     'l': '2001:500:9f::/48',
-#     'm': '2001:dc3::/32'
-# }
-
+# mapping collector code to its description
+col_map = {
+    '00': 'RIPE NCC (Ams)',
+    '01': 'LINX, London',
+    '02': 'SFINX, Paris',
+    '03': 'AMS-IX & NL-IX',
+    '04': 'CIXP, Geneva',
+    '05': 'VIX, Vienna',
+    '06': 'Otemachi, Japan',
+    '07': 'Stockholm, Sweden',
+    '08': 'San Jose (CA), USA',
+    '09': 'Zurich, Switzerland',
+    '10': 'Milan, Italy',
+    '11': 'New York (NY), USA',
+    '12': 'Frankfurt, Germany',
+    '13': 'Moscow, Russia',
+    '14': 'Palo Alto, USA',
+    '15': 'Sao Paulo, Brazil',
+    '16': 'Miami, USA',
+    '18': 'CATNIX, Barcelona',
+    '19': 'NAP Africa Johannesburg',
+    '20': 'SwissIX, Zurich',
+    '21': 'France-IX, Paris',
+}
 
 def root_prefix(root, timestamp):
     if root == 'a':

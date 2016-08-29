@@ -138,7 +138,7 @@ function updateGraph(rootServer, version, timestamp) {
 }
 
 /**
- *
+ * Get mutual peers
  * @param rootServer
  * @param timestamp
  */
@@ -148,57 +148,88 @@ function mutualPeers(rootServer, timestamp) {
     d3.json(url, function (error, data) {
         if(error) throw error;
 
-        // console.log(data);
-        
-        d3.select('#result-common-peers').selectAll('code').remove();
-        d3.select('#result-common-comp-similar').selectAll('code').remove();
-        d3.select('#result-common-comp-inequal').selectAll('code').remove();
-        d3.select('#result-common-comp-v4longer').selectAll('code').remove();
-        d3.select('#result-common-comp-v4shorter').selectAll('code').remove();
-
         d3.select('#result-common-peers')
             .selectAll('span')
             .data(data['peers_mutual'])
             .enter()
-            .append('code')
-            .text(function (d) {
-                return d + " ";
-            });
+            .append('span')
+            .attr('class', 'badge')
+            .style('background', function (d) {
+                for(var i = 0; i < data['peers_diff_path'].length; i++) {
+                    if(data['peers_diff_path'][i] == d) {
+                        return '#EF6F6C';
+                    }
+                }
+                for(var i = 0; i < data['peers_identical'].length; i++) {
+                    if(data['peers_identical'][i] == d) {
+                        return '#668B8B';
+                    }
+                }
+                for(var i = 0; i < data['peers_v4_longer'].length; i++) {
+                    if(data['peers_v4_longer'][i] == d) {
+                        return '#F79744';
+                    }
+                }
+                for(var i = 0; i < data['peers_v4_shorter'].length; i++) {
+                    if(data['peers_v4_shorter'][i] == d) {
+                        return '#1ABC9C';
+                    }
+                }
+            })
+            .on('mouseover', function (d) {
+                // enlarge the circle
+                d3.select('#container').selectAll('g.node')
+                    .filter(function (e) {
+                        return e.title == d.toString();
+                    })
+                    .select('circle').transition()
+                    .duration(300)
+                    .attr('r', 16);
 
-        d3.select('#result-common-comp-similar')
-            .selectAll('span')
-            .data(data['peers_identical'])
-            .enter()
-            .append('code')
-            .text(function (d) {
-                return d + " ";
-            });
+                // get path data
+                $.getJSON('/path/json',
+                    {
+                        timestamp: timestamp,
+                        asn: d,
+                        root: rootServer
+                    },
+                    function (data) {
+                        console.log('AS ' + d + ': ' + data.path4);
+                        var path4 = data.path4;
+                        var path6 = data.path6;
 
-        d3.select('#result-common-comp-inequal')
-            .selectAll('span')
-            .data(data['peers_diff_path'])
-            .enter()
-            .append('code')
-            .text(function (d) {
-                return d + " ";
-            });
+                        for(var i = 0; i < path4.length - 1; i++) {
+                            var source = path4[i];
+                            var target = path4[i + 1];
+                            d3.select('#container').selectAll('.link')
+                                .filter(function (e) {
+                                    // console.log(e);
+                                    return e.source.title == source.toString() && e.target.title == target.toString();
+                                })
+                                .classed("highlighted", true);
+                        }
+                });
+            })
+            .on('mouseout', function (d) {
+                d3.select('#container').selectAll('g.node')
+                    .filter(function (e) {
+                        return e.title == d.toString();
+                    })
+                    .select('circle').transition()
+                    .duration(300)
+                    .attr('r', function (d) {
+                        if(d.degree == 0) { return 12; }
+                        else { return 8; }});
 
-        d3.select('#result-common-comp-v4longer')
-            .selectAll('span')
-            .data(data['peers_v4_longer'])
-            .enter()
-            .append('code')
+                d3.select('#container').selectAll('.link')
+                    .classed('highlighted', false);
+            })
+            .attr('data-placement', 'top')
+            .attr('data-poload', function (d) {
+                return '/as/' + d;
+            })
             .text(function (d) {
-                return d + " ";
-            });
-
-        d3.select('#result-common-comp-v4shorter')
-            .selectAll('span')
-            .data(data['peers_v4_shorter'])
-            .enter()
-            .append('code')
-            .text(function (d) {
-                return d + " ";
+                return d;
             });
 
         var chartData = [{
@@ -208,6 +239,26 @@ function mutualPeers(rootServer, timestamp) {
         }];
         var layout = {height: 500};
         Plotly.newPlot('result-common-bar', chartData, layout);
+
+        // display title
+        $('#common-peers-title').text('Mutual peers (IPv4/IPv6) of ' + rootServer.toUpperCase() + '-Root Server: 01-' + timestamp);
+
+        // display AS information on hover
+        $('*[data-poload]')
+            .mouseenter(function() {
+                var e=$(this);
+                e.off('hover');
+                $.get(e.data('poload'),function(d) {
+                    e.popover({content: d.result}).popover('show');
+                });
+                setTimeout(function () {
+                    $(e[0]).popover('hide');
+                }, 2000);
+            })
+            .mouseleave(function() {
+                $(this).popover('hide');
+            }
+        );
     });
 }
 
@@ -215,7 +266,8 @@ function mutualPeers(rootServer, timestamp) {
  * sort of main function :|
  **********************************************************************************************************************/
 $(document).ready(function () {
-    updateGraph('i', '6', '02-2015');
+    updateGraph('k', '6', '06-2016');
+    mutualPeers('k', '06-2016');
 
     //****************************************************
     // Main graph
@@ -236,37 +288,7 @@ $(document).ready(function () {
             var version = $('#select-ip-version').val();
             var timestamp = $('#select-time').val();
             updateGraph(rootServer, version, timestamp);
-        });
-
-    //****************************************************
-    // common peers
-    //****************************************************
-    $('#datepicker-common-peers')
-        .datepicker({
-            format: "mm-yyyy",
-            startView: "months",
-            minViewMode: "months",
-            startDate: new Date(2004, 12),
-            endDate: new Date(2016, 7)
-        });
-    
-    // event listener for btn-common-peers
-    $('#btn-common-peers')
-        .click(function () {
-            var rootServer = $('#select-root-servers-common').val();
-            var timestamp = $('#select-time-common-peers').val();
             mutualPeers(rootServer, timestamp);
         });
-
-    // SVG download button
-    // var svgData = $("#svg-main-graph")[0].outerHTML;
-    // var svgBlob = new Blob([svgData], {type:"image/svg+xml;charset=utf-8"});
-    // var svgUrl = URL.createObjectURL(svgBlob);
-    // var downloadLink = document.createElement("a");
-    // downloadLink.href = svgUrl;
-    // downloadLink.download = "newesttree.svg";
-    // document.body.appendChild(downloadLink);
-    // downloadLink.click();
-    // document.body.removeChild(downloadLink);
 });
 

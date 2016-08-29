@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 
+<div id="hover1" class="btn" data-content="popover with data-trigger" rel="popover" data-placement="bottom" data-trigger="hover">
+    Hover me
+</div>
+<div>
+    <a href="#" title="blabla" data-poload="http://localhost:8080/as/7500">blabla</a>
+</div>
+<div>
+    <a href="#" title="blabla" data-toggle="tooltip" data-placement="left" id="mast">Mastura</a>
+</div>
+
+<script>
+    $('#hover1').popover();
+{#    $('*[data-poload]').hover(function() {#}
+{#        var e=$(this);#}
+{#        e.off('hover');#}
+{#        $.get(e.data('poload'),function(d) {#}
+{#            console.log('called!');#}
+{#            e.popover({content: d.result}).popover('show');#}
+{#        });#}
+{#    });#}
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+})
+</script>
 </body>
 </html>

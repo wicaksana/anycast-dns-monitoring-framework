@@ -1,20 +1,22 @@
-from datetime import datetime
 from anycast_dns_monitoring import app
-from flask import render_template
-from flask import jsonify
-from py2neo import Graph
-from pymongo import MongoClient
+from anycast_dns_monitoring.data_processing.params import root_prefix, root_prefix6, col_map
+
 import time
 import pytz
 import requests
 import os
 from collections import defaultdict
 from datetime import datetime
+
+from flask import render_template
+from flask import jsonify
+from flask import request
+
+from py2neo import Graph
+from pymongo import MongoClient
+
 import pandas as pd
 from pandas import DataFrame
-
-from anycast_dns_monitoring.data_processing.params import root_prefix, root_prefix6
-
 
 # graph initialization
 graph = Graph(password='neo4jneo4j')
@@ -25,6 +27,11 @@ anycast = client.anycast_monitoring
 peer_data = anycast.peer_data
 
 
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
+
 @app.route('/')
 def index():
     """
@@ -33,6 +40,7 @@ def index():
     """
     return render_template('index.html')
 
+
 @app.route('/for_science/')
 def scientific_stuff():
     """
@@ -40,6 +48,24 @@ def scientific_stuff():
     :return:
     """
     return render_template('thesis.html')
+
+
+@app.route('/evolution/')
+def evolution():
+    """
+    return page dedicated for anything needed for scientific stuff in my thesis
+    :return:
+    """
+    return render_template('evolution.html')
+
+
+@app.route('/comparison/')
+def comparison():
+    """
+    return page dedicated for anything needed for scientific stuff in my thesis
+    :return:
+    """
+    return render_template('comparison.html')
 
 
 @app.route('/graph/<string:root>/<string:version>/<ts>')
@@ -134,6 +160,7 @@ def get_mutual_peers(root, ts):
     prefix4 = root_prefix(root, timestamp)
     prefix6 = root_prefix6(root, timestamp)
 
+    # Todo: should refactor get_peers() to only use data from mongodb
     bgp_state4, peer4 = get_peers(prefix4, timestamp)
     bgp_state6, peer6 = get_peers(prefix6, timestamp)
 
@@ -148,6 +175,46 @@ def get_mutual_peers(root, ts):
                     'peers_v4_longer': peers_v4_longer,
                     'peers_v4_shorter': peers_v4_shorter
                     })
+
+
+@app.route('/as_info/json', methods=['GET'])
+def get_as_info():
+    """
+    Get AS information from Cymru via Whois and its paths from mongodb
+    :param asn:
+    :return:
+    """
+    args = request.args
+    ts = args['timestamp']
+    asn = int(args['asn'])
+    root = args['root']
+
+    timestamp = convert_timestamp(ts)
+    data = anycast['{}_root'.format(root)].find_one({'timestamp': timestamp, 'peer': asn})
+    collector = col_map[data['collector']]
+    as_info = anycast['as_info'].find_one({'asn': asn})
+
+    return jsonify({'as_info': as_info['info'],  'path4': data['path4'], 'path6': data['path6'], 'collector': collector})
+
+
+@app.route('/path/json', methods=['GET'])
+def get_as_path():
+    """
+    get AS path for a given timestamp from MongoDB
+    :param asn:
+    :param ts:
+    :return: AS path
+    """
+    args = request.args
+    ts = args['timestamp']
+    asn = int(args['asn'])
+    root = args['root']
+
+    timestamp = convert_timestamp(ts)
+    res = anycast['{}_root'.format(root)].find_one({'timestamp': timestamp, 'peer': asn})
+    print('res: {}'.format(res))
+
+    return jsonify({'path4': res['path4'], 'path6': res['path6']})
 
 ###################################
 # For 'scientific' part
@@ -292,7 +359,6 @@ def get_stacked_bar(root):
     result6 = [dict6[i] for i in dict6]
 
     return jsonify({'ipv4': result4, 'ipv6': result6})
-
 
 ########################################################################################################################
 # Helper methods

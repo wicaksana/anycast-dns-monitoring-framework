@@ -11,7 +11,7 @@
 
 .link {
   stroke: #999;
-  stroke-opacity: .6;
+  stroke-opacity: .8;
 }
 
 .node text {
@@ -27,4 +27,41 @@
 
 code {
     margin: 2px;
+}
+
+.badge {
+    /*background: #668B8B;*/
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    margin: 2px 2px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 10px;
+}
+
+.popover {
+    color: #000000;
+    font-size: 8pt;
+}
+
+.highlighted {
+    stroke: #FF0000;
+    stroke-opacity: 1;
+    stroke-width: 10;
+}
+
+.dimmed {
+    stroke-opacity: 0.2;
+}
+
+.emphasized {
+    stroke-opacity: 1;
+    stroke: #000000;
+    stroke-width: 15;
+}
+
+.blackened {
+    fill: #000000;
 }
