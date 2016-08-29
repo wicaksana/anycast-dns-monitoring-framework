@@ -1,0 +1,4 @@
+ATT-INTERNET4 - AT&T Services, Inc., US
+Bulk mode; whois.cymru.com [2016-07-21 20:27:50 +0000]
+CGTLD - VeriSign Global Registry Services, US
+VERISIGN-AS - VeriSign Infrastructure & Operations, US

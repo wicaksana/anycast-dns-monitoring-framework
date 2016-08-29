@@ -1,0 +1,913 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AAPT AAPT Limited, AU
+AARNET-AS-AP Australian Academic and Reasearch Network (AARNet), AU
+ABILENE - Internet2, US
+ABTME-AS , GB
+ACCELERATED-IT , DE
+ACCOM , DE
+ACONET ACOnet Backbone, AT
+ADAMOEU-AS Catalonia Neutral Internet Exchange (CAT-IX), ES
+ADC-AS , AM
+Administracion Nacional de Telecomunicaciones, UY
+AGTLD - VeriSign Global Registry Services, US
+AGTLD - VeriSign Global Registry Services, US
+AKAMAI-ASN1 , US
+ALGAR TELECOM S/A, BR
+ALIONIS , FR
+ALLIED-TELECOM - Allied Telecom Group, LLC, US
+ALLST-15290 - Allstream Corp., CA
+ALPINEDC , CH
+ALSK-7782 - Alaska Communications Systems Group, Inc., US
+Americana Digital Ltda., BR
+AMISHR , HR
+AM-NIC-AS , AM
+AMPATH - Florida International University, US
+AM-TLD-AS , AM
+ANDERS-AS Anders Telecom Ltd., RU
+ANEXIA-AS A-9020 Klagenfurt, AT
+ANISP-ROMANIA , RO
+ANKABUT , AE
+AOL-ATDN - AOL Transit Data Network, US
+AOL-DTC - AOL Inc., US
+APAN-JP Asia Pacific Advanced Network - Japan, JP
+APAN-KR-AS National Infomation Society Agency, KR
+APNIC-NSPIXP2-AS Asia Pacific Network Information Centre, JP
+APNIC-SERVICES Asia Pacific Network Information Centre, AU
+APNIC-UNI4-AP UNICAST AS of ANYCAST node(Other location), AU
+APOLLO-AS Latvia, LV
+AQL , GB
+ARNES-NET Academic and Research Network of Slovenia, SI
+AROOT - VeriSign Global Registry Services, US
+AS15645 DE _Ukrainian Internet Exchange_ (UA-IX), UA
+AS1755 Svensk Teleutveckling & Produktinnovation, STUPI AB, SE
+AS2493-RTI - Rogers Cable Communications Inc., CA
+AS297 - National Aeronautics and Space Administration, US
+AS34288 EDU-ZG-CH - Public Schools in the Canton of Zug, CH
+AS3602-RTI - Rogers Cable Communications Inc., CA
+AS5413 , GB
+AS6453 - TATA COMMUNICATIONS (AMERICA) INC, US
+AS8784 Managed Services Provider, FR
+AS_ARSYS-EURO-1 ============================================================, ES
+ASDASD-AS , IT
+ASGHOSTNET , DE
+AS-GITS , LU
+AS-GTT-4436 - nLayer Communications, Inc., US
+ASILK =======================================================, DE
+AS_INTERACTIVE , IT
+ASN852 - TELUS Communications Inc., CA
+ASN-AVANTEL-MSK Located in Moscow, Russia., RU
+ASN-BICS , BE
+ASN-CATCHCOM , NO
+ASN-CLOUDITALIA , IT
+ASN-CUHKNET 
+ASN-CXA-ALL-CCI-22773-RDC - Cox Communications Inc., US
+ASN-EQIX-MLPE Equinix, HK
+ASN-EQUINIX-AP Equinix Asia Pacific, SG
+ASNET Academic Sinica Network, TW
+ASN-IBSNAZ , IT
+ASN-IEXEC-AP Level 27, 123 Eagle Street, AU
+ASN-IS , NL
+ASN-LNC , FR
+ASN-MARKLEY - Markley Boston LLC, US
+ASN-NETHOLDING Autonomous System for Netholding., NL
+ASN-NEUTRAL-DATA - Neutral Data Centers Corp., CA
+ASN-NEXTWEB-R1 - Nextweb, Inc, US
+ASN-ROUTIT , NL
+ASN-SSC , NO
+ASN-TANGO Tango S.A., LU
+ASN-TELSTRA-GLOBAL Telstra Global, HK
+ASN-TELSTRA Telstra Pty Ltd, AU
+ASN-WBS-01 - GTT, US
+ASN-WIND IUNET, IT
+AS-SAFFRON - Saffron Solutions Inc, US
+Associação Rede Nacional de Ensino e Pesquisa, BR
+AS-SSI - Netflix Streaming Services Inc., US
+AS-TORIX - Toronto Internet Exchange Community, CA
+ASTUTIUM-AS Astutium Limited, GB
+AT2 , RU
+ATINET , NL
+ATOM86-AS Schuberg Philis B.V. trading as atom86, NL
+ATT-INTERNET4 - AT&T Services, Inc., US
+AVIRA-AS , NL
+AVVID , NO
+AWANTI-AS , RU
+Axtel, S.A.B. de C.V., MX
+BACOM - Bell Canada, CA
+BAHNHOF http://www.bahnhof.net/, SE
+BALTCOM-FIBER-AS ----upstreams---, LV
+BBIL-AP BHARTI Airtel Ltd., IN
+BCNET-AS - BCnet, CA
+BELNET , BE
+BELWUE BelWue-Koordination, DE
+BH-INFONAS-ASN , BH
+BIGLOBE BIGLOBE Inc., JP
+BIX-AS , BH
+BIZNET-AS-AP BIZNET NETWORKS, ID
+BLIX , NO
+BLUENET-TECH-AS , FR
+BLUETONE-AS The Czech Republic, CZ
+Brasil Telecom S/A - Filial Distrito Federal, BR
+BREDBAND2 , SE
+BROADBANDONE - BroadbandONE, Inc., US
+BROAD-RUN-BORDER-AS - VeriSign Infrastructure & Operations, US
+BSKYB-BROADBAND-AS , GB
+BTC-AS BULGARIA, BG
+BTESPANA BT ES Datacenter and hosting ASN, ES
+BT , GB
+BT LATAM Venezuela, S.A., VE
+BTN-ASN - Beyond The Network America, Inc., US
+BT , NL
+Bulk mode; whois.cymru.com [2016-07-21 20:43:26 +0000]
+BURSTFIRE-EU European Peering and Transit AS, GB
+BURSTFIRE Internet Solutions Provider, GB
+BYTEMARK-AS , GB
+C4L-AS , GB
+CABLECOM , CH
+CABLEINET , GB
+CABO SERVICOS DE TELECOMUNICACOES LTDA, BR
+CANARIE-NTN - Canarie Inc, CA
+CANMOS-AS CANMOS, RU
+CARAVAN , RU
+CARIBE-NET - Caribbean Internet Service, Corp., US
+CARRIER1-AS , NL
+CASABLANCA-AS Internet & Collocation Provider, CZ
+CATALYST2-AS , IE
+CAT-AP The Communication Authoity of Thailand, CAT, TH
+CATNIX , ES
+CAUCASUS-CABLE-SYSTEM CCS Autonomous System, GE
+CCI-NET01-HAWAII - Pacxa Holding, US
+CDT-AS The Czech Republic, CZ
+CELESTE-AS CELESTE - Internet services provider, FR
+CENTRALNIC CentralNic Registry AS Number, GB
+CENTROSET-AS ISP CentroSet, RU
+CENTURYLINK-ASIA-LEGACY-QWEST - Qwest Communications Company, LLC, US
+CENTURYLINK-EUROPE-LEGACY-QWEST - Qwest Communications Company, LLC, US
+CENTURYLINK-LEGACY-SAVVIS - Savvis, US
+CENTURYLINK-US-LEGACY-QWEST - Qwest Communications Company, LLC, US
+CERBERUSNETWORKS-AS , GB
+CERN , CH
+CESNET2 , CZ
+CGTLD - VeriSign Global Registry Services, US
+CHINANET-BACKBONE No.31,Jin-rong Street, CN
+CHINATELECOM-CORE-WAN-CN2 China Telecom Next Generation Carrier Network, CN
+CIREX , RU
+CITelecom-AS, CI
+CITYTELECOM-AS Filanco LTD, RU
+CLARANET-AS ClaraNET LTD, GB
+CLARO S.A., BR
+CLT-NIC - VeriSign Infrastructure & Operations, US
+CMCS - Comcast Cable Communications, Inc., US
+CNCGROUP-BACKBONE-NORTH USED IN NORTH CHINANET BACKBONE, CN
+CNGI-BJIX-AS-AP China Next Generation Internet Beijing IX, CN
+CNH-AS , AT
+CNIX-AP China Networks Inter-Exchange, CN
+CNNIC-CRITICAL-AP China Internet Network Infomation Center, CN
+CNNIC-CSTNET-AP CHINA SCIENCE AND TECHNOLOGY NETWORK, CN
+COGENT-16631 - Cogent Communications, US
+COGENT-174 - Cogent Communications, US
+COGENT-2149 - Cogent Communications, US
+COGENT-2649 - PSINet, Inc., US
+COGENT-4200 - AGIS, US
+COLOCLUE-AS Netwerkvereniging Coloclue, Amsterdam, Netherlands, NL
+COLT , GB
+COLUMBUS-NETWORKS - Columbus Networks USA, Inc., US
+COMCAST-33491 - Comcast Cable Communications, Inc., US
+COMCAST-7922 - Comcast Cable Communications, Inc., US
+COMINDICO-AP SOUL Converged Communications Australia, AU
+COMMCORP COMUNICACOES LTDA, BR
+COMMUNITYRACK , CH
+Comteco Ltda, BO
+CONNECTPLUS-AP Singapore Telecom, SG
+CONNETU , GB
+CONVERGENZE-AS ISP services in Italy, IT
+CONXION-A - ConXioN Corporation, US
+Cooperación Latino Americana de Redes Avanzadas, UY
+CORBINA-AS Russia, RU
+CORE-BACKBONE , DE
+CRITICALHUBNET - Critical Hub Networks, PR
+CSTNET-AS-AP Computer Network Information Center, CN
+CTBC MULTIMIDIA DATA NET S/A, BR
+CTC Transmisiones Regionales S.A., CL
+CTSTELECOM - CTS Communications Corp, US
+CUSAE-AS , FR
+CUSTDC , GB
+CW Vodafone Ltd, GB
+CYBERLINK Bellerivestrasse 241, CH
+CYBERMESA-ASN - Cyber Mesa Computer Systems, Incorporated, US
+CZNIC-AS , CZ
+DATAFIBER-AS , NL
+DATAGROUP , UA
+DATAGRUPA - - - - - - - - - - - - -, LV
+DATAHOP Datahop - International IP Backbone, GB
+DATAPHONE , SE
+DCLUX-AS 2, rue L?on Laval, LU
+DCS1-02-AS-AP DCS1 Pte Ltd, at DC02, SG
+DCSNET-AS , SE
+DCSNET-GLOBAL-TRANSIT-AS , SE
+DECIX-AS DE-CIX Management GmbH, DE
+DELTANET-NET Caucasus-Peering, GE
+DELTA-TELECOM-AS International Communication Operator, AZ
+DEMON-INTERNET Now maintained by Cable & Wireless Worldwide, GB
+DEMON-NL Amsterdam, NL
+DENIC-AS Kaiserstr. 75-77, DE
+DFN Verein zur Foerderung eines Deutschen Forschungsnetzes e.V., DE
+DGTLD - VeriSign Global Registry Services, US
+DIALTELECOM-AS AMS-IX, LINX, SK
+DIGITALOCEAN-ASN - Digital Ocean, Inc., US
+DIGITALOCEAN-ASN-NY2 - Digital Ocean, Inc., US
+DIGIWEB-AS , IE
+DINET-AS , RU
+Directnet Prestacao de Servicos Ltda., BR
+DK-EUROTRUST , DK
+DNA , FI
+DNEO-OSP7 - Comcast Cable Communications, Inc., US
+DNIC-AS-00013 - Headquarters, USAISC, US
+DNIC-AS-00213 - Headquarters, USAISC, US
+DNIC-AS-00568 - DoD Network Information Center, US
+DNIC-AS-00668 - DoD Network Information Center, US
+DNIC-AS-00768 - Navy Network Information Center (NNIC), US
+DNIC-ASBLK-00721-00726 - DoD Network Information Center, US
+DNIC-ASBLK-01467-01468 - Headquarters, USAISC, US
+DNIC-ASBLK-05800-06055 - DoD Network Information Center, US
+DNIC-ASBLK-05800-06055 - DoD Network Information Center, US
+DNIC-ASBLK-27032-27159 - DoD Network Information Center, US
+DNIC-ASBLK-27032-27159 - DoD Network Information Center, US
+DNIC-ASBLK-27032-27159 - DoD Network Information Center, US
+DOTRO , RO
+DRF-IXNET-HI - DR Fortress, LLC, US
+DTAG Internet service provider operations, DE
+DTS-AS , IT
+DUOCAST-AS , NL
+Durand do Brasil Ltda, BR
+E4A-AS , IT
+E-ARENA , RU
+EASYHOST-COLO-AS , BE
+EASYNET Easynet Global Services, GB
+EASYNET-FRANCE , FR
+EASYNET-NL , GB
+EASYNET-US The Easynet US Network, EU
+EBT Eastern Broadband Telecom Co.,Ltd, TW
+EDSI-TECH EDSI-Tech Sàrl, CH
+E-GATE-COMMUNICATIONS - E-Gate Communications Inc., CA
+EGOV-AS-TH Ministry of Infomation Communication Technology, TH
+EGTLD - VeriSign Global Registry Services, US
+Ejmnet Tecnologia ltda, BR
+ELBRACHT-COMPUTER-AS , DE
+ELITE-AS , GB
+ENERGIS-IP , CH
+ENTANET ENTANET International Limited, GB
+ENTEL CHILE S.A., CL
+ENTEL CHILE S.A., CL
+EPT-LU Entreprise des P. et T. Luxembourg, LU
+EQUINIX BRASIL RJ, BR
+EQUINIX BRASIL SP, BR
+EQUINIX-CH-ASN , CH
+EQUINIX-FR-ASN Equinix France Autonomous System, FR
+EQUINIX-UK-ASN , GB
+ERX-CERNET-BKB China Education and Research Network Center, CN
+ESNET - ESnet, US
+ESPANIX Neutral Interconect Exchange for Spain, ES
+ESPIRECOMM - Xspedius Communications Co., US
+ETELAT , AT
+ETISALAT-AS P.O. Box 1150, Dubai, UAE, AE
+ETT-AS , UA
+EUNETAT-AS , AT
+EUNET-FINLAND , FI
+EUROCOM 141407, Russia, RU
+EVERYWARE-NET , CH
+EZRI-36323 - Ezri Inc, US
+FAELIX-AS , GB
+FASTHOST-AS , NO
+FASTWEB , IT
+FBRX-AS , GB
+FG-CORE , RU
+FGTLD - VeriSign Global Registry Services, US
+FIBERNET , AM
+FIBERRING Amsterdam, Netherlands, NL
+FIBRENOIRE-INTERNET - Fibrenoire Inc., CA
+FINECOM-MPLS IP Services Backbone, CH
+FINECOM Quickline AG (former Finecom Telecommunications AG), CH
+FIORD-AS Fiord is an ISP in Moscow and Moscow region, offering, RU
+FLAG-AS Flag Telecom Global Internet AS, GB
+FLORIDANET - FloridaNet, US
+FNUTT , NO
+FORTEX-AS , RU
+FORTH-AS , GR
+FOTONTELECOM Website: http://www.fotontel.ru, RU
+FOURD-AS , GB
+FR-BCELU-AS BCE pop in France, FR
+FREE-NET-AS FREEnet, RU
+FREENETDE freenet Datenkommunikations GmbH, DE
+FREESTONE FreeStone Systems, CH
+FR-LAREUNION Ile de la Reunion Departement d_Outre-Mer, EU
+FRONTIER-FRTR - Frontier Communications of America, Inc., US
+FR-RENATER Reseau National de telecommunications pour la Technologie, FR
+FUNDAÇÃO DE AMPARO À PESQUISA DO ESTADO SÃO PAULO, BR
+Fundación Centro Nacional de Innovación Tecnológica (CENIT), VE
+Fundación Centro Nacional de Innovación Tecnológica (CENIT), VE
+FUSEDNETWORKS-AS , GB
+G8 NETWORKS LTDA, BR
+GAT-AS , DE
+, GB
+, GB
+GB Informática Ltda, BR
+GCAP-AS , GB
+GEANT_IAS_VRF , EU
+GEANT The GEANT IP Service, GB
+GE-CIX-AS , DE
+GGAMAUR , CH
+GGTLD - VeriSign Global Registry Services, US
+GIEUROPE , EU
+GIGAINFRA Softbank BB Corp., JP
+GIGAPIX GigaPix - Portuguese Internet eXchange, PT
+GIN Czech Republic, EU, CZ
+GLOBALNET-AS , RU
+GLOBALNOC-AS equada network GmbH, DE
+GLOBAL-TRANSIT-TOT-IIG-TH TOT Public Company Limited, TH
+Global Village Telecom, BR
+GlobeNet Cabos Submarinos VZLA, S.A., VE
+GLOBUS-AS , RU
+GNC-ALFA -=BioNet=-, AM
+GNC-ALFA -=GNC1=-, AM
+GOLINE Switzerland, CH
+GREEN green.ch AG Autonomous System, CH
+GR-NET http://www.grnet.gr, GR
+GRT-AS , GE
+GTA-AP Teleguam Holdings, LLC, GU
+GT-BELL - Bell Canada, CA
+GTC-MY-PIP-AS Global Transit Communications - Malaysia, MY
+Gtd Internet S.A., CL
+GTSCE GTS Central Europe / Antel Germany, CZ
+GTT-BACKBONE GTT, DE
+GUIFINET-AS Fundacio guifi.net, ES
+HANABI NTT Communications Corporation, JP
+HAWAIIAN-TELCOM - Hawaiian Telcom Services Company, Inc., US
+HGTLD - VeriSign Global Registry Services, US
+HIBERNIA , NL
+HIVANE , FR
+HKIX-RS1 Hong Kong Internet Exchange--Route Server 1, HK
+HOPONE-GLOBAL - HopOne Internet Corporation, US
+HOSTSERVER-AS Hostserver GmbH, DE
+HOTCHILLI , GB
+HOTLINKS-AS Hotlinks European Backbone, GB
+HOTZE-AS , AT
+HSO-GROUP , GB
+HTC-AS Magyar Telekom Nyrt., HU
+HURRICANE-ELEC - Hurricane Electric, Inc., US
+HURRICANE - Hurricane Electric, Inc., US
+HUTCHISON-AS-AP Hutchison Global Communications, HK
+HWNG , NL
+HYPNO-NTT - NTT Software, CA
+I3B-AS , AT
+IAG-AS IAG-AS, DE
+IBL-JC - Interactive Brokers LLC, US
+ICM-ATLANTIC - Sprint, US
+ICTVALLEUMBRA-AS Via IV Novembre 12 Foligno (PG), IT
+IDC Yahoo Japan Corporation, JP
+IELO IELO Main Network, FR
+IGTLD - VeriSign Global Registry Services, US
+IHOME-AS iHome LLC, RU
+IIJ Internet Initiative Japan Inc., JP
+IMPNET-AS , CH
+INES Bucharest / ROMANIA, RO
+INETBONE-AS , DE
+INFOMANIAK-AS , CH
+INFOTECH-AT-AS Schaerdingerstr. 35, AT
+INFRACOM-NETWORK-APPLICATION-AS , IT
+INIT7 , CH
+Instituto Costarricense de Electricidad y Telecom., CR
+INTEGRATELECOM - Integra Telecom, Inc., US
+Intelig Telecomunicações Ltda., BR
+INTERFIBER-AS , CZ
+INTERLAN-AS , RO
+INTERNAP-2BLK - Internap Network Services Corporation, US
+INTERNAP-BLK - Internap Network Services Corporation, US
+INTERNAP-BLK - Internap Network Services Corporation, US
+INTERNAP-BLOCK-4 - Internap Network Services Corporation, US
+INTERNAP-BLOCK-4 - Internap Network Services Corporation, US
+INTERNAP-PEERING-NETWORK - Internap Network Services Corporation, US
+Internet2, EG
+INTERNET2-TRANSITRAIL-CPS - Internet2, US
+Internet Service Provider, IT
+Internet Systems Consortium, UY
+Internet Systems Consortium, UY
+INTERNET-TECHNOLOGY-ADVISORS , SE
+INTERNEXA Brasil Operadora de Telecomunicações S.A, BR
+INTEROUTE 25 Canada Square, Canary Wharf, 31st Floor, GB
+INTERSCHOLZ-AS , DE
+INTOUCH-AS Science Park Watergraafsmeer, NL
+INVITEL , HU
+IONIP , SE
+IPERCAST-AS Ipercast Internet Backbone, FR
+IPHH IPHH Internet Port Hamburg GmbH, DE
+IPIFONY-AS - IPiFony Systems, Inc., US
+IP-MAX , CH
+IPO-EU , SE
+IPTP , NL
+IQNETWORKS , IQ
+IRANET-IPM Tehran, Iran, IR
+I-ROOT DNS root name server i.root-servers.net., SE
+ISC-AS-1280 - Internet Systems Consortium, Inc., US
+ISC-AS - Internet Systems Consortium, Inc., US
+ISC-BNE1 Internet Systems Consortium, AU
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-F-AS - Internet Systems Consortium, Inc., US
+ISC-HKG1 Internet Systems Consortium, Inc., HK
+ISC-KIX1 Internet Systems Consortium, Inc., JP
+ISC-MAD1 , ES
+ISC-PEK2 Internet Systems Consortium, (Beijing, China), CN
+ISC-SEL1 Internet Systems Consortium, Inc., KR
+ISC-SIN1 Internet Systems Consortium, Inc., SG
+ISICONNEXION , NL
+ISPNET-1 - ISPnet, Inc., US
+ISP-SOLUTIONS-AS Geneva, Switzerland, CH
+IS, ZA
+ITGATE , IT
+ITLAS , UA
+Itnet ltda, BR
+ITNET SoftBank Mobile Corp., JP
+ITSELF Backbone for IPTV network operators and internet service provider., CZ
+IWAY , CH
+IXEUROPE-DE-FRANKFURT-ASN Equinix Germany (Previously IX Europe Germany AS), DE
+IXREACH , GB
+JAGUAR-AS , FR
+JANET Jisc Services Limited, GB
+JASTEL-NETWORK-TH-AP JasTel Network International Gateway, TH
+JASTEL-NETWORK-TH-IDC-AP JasTel Network, TH
+JAZZNET Global Spanish ISP, ES
+JGTLD - VeriSign Global Registry Services, US
+JOINTTRANSIT-AS Open Peering BV trading as Joint Transit, NL
+JST Japan Science and Technology Agency, JP
+JUMP , GB
+KABELFOON CAIW Autonomous System, NL
+KAIAGLOBAL-AS Kaia Global Networks Ltd., GB
+KAZNIC-AS Internet Service Provider, KZ
+KAZTELECOM-AS , KZ
+KCOM-SPN (Service-Provider Network) (ex-Mistral), GB
+KDDI KDDI CORPORATION, JP
+KEME Timico Ltd (Legacy KeConnect ASN), GB
+KEYADE-AS , FR
+KGT-AS Moellendorffstr. 108-109, DE
+KGTLD - VeriSign Global Registry Services, US
+KINX-AS KINX, Inc., KR
+KIXS-AS-KR Korea Telecom, KR
+KMS-DE_AS , DE
+KPN , NL
+KPN This macro reflects our filtering-policy on, NL
+KQRO Bucharest ROMANIA, RO
+KRC-AS-KR Korea Rural Community Corporation, KR
+K-ROOT-SERVER Reseaux IP Europeens Network Coordination Centre (RIPE NCC), EU
+KVANT-TELECOM , RU
+KWAOO , FR
+LACNIC - Latin American and Caribbean IP address, UY
+LAGIS-AS , AT
+LAHAI-SG NREN ASN for Misc. Root Servers and Community, NP
+LAMBDANET-AS European Backbone of AS13237, DE
+LANCK-AS , RU
+LASOTEL , FR
+LEASEWEB-NETWORK Amsterdam, Netherlands, NL
+LEIVO IP service provider, RU
+LEVEL3 , GB
+LEVEL3 - Level 3 Communications, Inc., US
+LGI-UPC formerly known as UPC Broadband Holding B.V., AT
+LGTLD - VeriSign Global Registry Services, US
+LIGHTOWER - Lightower Fiber Networks I, LLC, US
+LINK11 Link11 GmbH, DE
+LINKEY-AS , RU
+LINX-AS London interconnection point, GB
+LINXTELECOM , EE
+LIQUID-AS , GB
+LITECOM Litecom AG, CH
+LLNW - Limelight Networks, Inc., US
+L-ROOT - ICANN, US
+LVLT-1 - Level 3 Communications, Inc., US
+LVLT-3549 - Level 3 Communications, Inc., US
+LVLT-7911 - Level 3 Communications, Inc., US
+LYONIX , FR
+M247 , GB
+MACOMNET , RU
+MAGNET-AS , IE
+MAGWIEN , AT
+MAINSOFT-AS NOC - Milan - Italy, IT
+MANDA , DE
+MANHA-20 - Manhattan West, LLC, US
+MAP Moscow Network Access Point, RU
+MAX-GIGAPOP - University of Maryland, US
+MCKAYCOM , GB
+MC-LINK , IT
+MEANIE Meanie 
+METROCOM-AS North-West Branch of PJSC MegaFon Network, RU
+MF-MGSM-AS PJSC MegaFon, RU
+MGTLD - VeriSign Global Registry Services, US
+MICRON21-AS-AU-AP Micron21 Melbourne Australia Datacentre. Co-Location Dedicated Servers Web Hosting, AU
+MICROSOFT-CORP-MSN-AS-BLOCK - Microsoft Corporation, US
+MIXITA-AS Milan (Italy) interconnection point, IT
+MMTS-AS SCTS, RU
+MOBIFONEGLOBAL-AS-VN Mobifone Global JSC, VN
+MREN - Metropolitan Research and Education Network, US
+M-ROOT-DNS WIDE Project, JP
+MSK-IX-RS , RU
+MTS former CJSC COMSTAR-Direct, RU
+MYLOC-AS , DE
+MYNET-AS myNET gmbh, AT
+MYREN-MY Malaysian Research & Education Network, MY
+MZRTA-AS , RU
+NAP-THREE - RA-NAP, US
+NARC-EROOT - NASA Ames Research Center, US
+NASK-COMMERCIAL , PL
+NASK-TRANSIT , PL
+NAYATEL-PK Nayatel (Pvt) Ltd, PK
+NCORE-AS Hochstadenstr. 5, DE
+NEO-ASN legacy Neotelecoms, FR
+NEOCARRIER Allee du Quartz 9, CH
+NERDNET-AS Research platform for Nerds, NL
+NET-ACCESS-CORP - Net Access Corporation, US
+NETCOLOGNE , DE
+NETCONNEX , GB
+NETERRA-AS , BG
+NETHINKS-AS Bahnhofstr. 16, D-36037 Fulda, Germany, DE
+NETINFO 12 _Emil Bersinski_ Str, BG
+NETIX , BG
+NETLOGICS-AS , NL
+NETNOD-IX (former D-GIX), SE
+NETPLACE Munich, Germany, DE
+NETPLUS , CH
+NETPLUS-LEGACY , CH
+NETSCAPE-AS - Netscape Communications Corp., US
+NETSTREAM-CH , CH
+NETVISION-AS , RO
+NETVOICE , AT
+Network Information Center México S.C., MX
+Network Information Center México S.C., MX
+NETWORK-SOLUTIONS - InterNIC Registration Services, US
+NEXELLENT-AS AS31424 is operated by:, CH
+NEXTLAYER-AS , AT
+NEXUM-ASN - Nexum, Inc., US
+NFSI , PT
+NFX_ZSPO , CZ
+NGDC , DK
+NIC Chile, CL
+NICPR - Gauss Research Laboratory, Inc., PR
+NINE , CH
+NIXCZ NIX.CZ z.s.p.o., CZ
+NL-BIT BIT BV, NL
+NL-CONCEPTS , NL
+NL-IO , NL
+NODEX-AS NODEX Fiber Optic Network Saint-Petersburg, Russia, RU
+NOGUEIRA & DANTAS LTDA, BR
+NO_NAME
+NO_NAME
+NONATTACHED-AS , DE
+NORDUNET , NO
+NOVANETWORKS , IT
+NOVATEL-AS 2 Kukush str., floor 1, office 102, BG
+NRCNET-AS - National Research Council of Canada, CA
+NSK-IX-RS , RU
+NTCOM-AS , RU
+NTL , GB
+NTS , CH
+NTT-COMMUNICATIONS-2914 - NTT America, Inc., US
+Núcleo de Inf. e Coord. do Ponto BR - NIC.BR, BR
+Núcleo de Inf. e Coord. do Ponto BR - NIC.BR, BR
+OBIT-AS _OBIT_ Ltd., RU
+OCCAID - TowardEX Technologies International, Inc., US
+OCN NTT Communications Corporation, JP
+ODN SoftBank Mobile Corp., JP
+OGT-AS - Oso Grande Technologies, Inc., US
+OMANTEL-AS Sultanate of Oman, OM
+OMNIX-PEERING-AS , BG
+OndaNet Ltda, BR
+ONEANDONE-AS Brauerstrasse 48, DE
+ONYX Onyx Group, GB
+OPALTELECOM-AS Northbank Industrial Estate, GB
+OPENAP-WIRELESS-NETWORKS-AS , DE
+OPENCARRIER-AS , PL
+OPENHOSTING , GB
+OPEN-PEERING-AS Open Peering Initiative, Amsterdam, The Netherlands, NL
+OPENTRANSIT , FR
+OPTICAL TECHNOLOGIES S.A.C., PE
+OptiTel Ltda, BR
+OPT-NC-AS-AP Office des Postes et Telecommunications New-Caledonia, NC
+OPTUSCOM-AS01-AU SingTel Optus Pty Ltd, AU
+ORG-UL31-RIPE , AM
+OTEGLOBE 6-8 Agisilaou Str., 15123 Maroussi, Hellas, GR
+OTRADNOE-AS , RU
+PACNET Pacnet Global Ltd, HK
+PACTEL-AS-AP Pacific Teleports., AU
+PCEXTREME , NL
+PCH-AS - Packet Clearing House, US
+PETERSTAR-AS Saint-Petersburg, RU
+PIPELINE Internet Pipeline AG, CH
+PLUSLINE , DE
+PLUSSERVER-AS , DE
+PORT80-GLOBALTRANSIT , SE
+PORTLANE www.portlane.com, SE
+POWERNET-AS , BG
+PREVIDER-AS , NL
+PROBENETWORKS-AS , DE
+PROFINET-AT Vienna, Austria, AT
+PROLOCATION Transit policy pref 100, NL
+PX-MRP , GB
+QSC-AG-IPX , DE
+QUASINETWORKS , NL
+RACK LODGE S.A., CR
+RADIOGRAFICA COSTARRICENSE, CR
+RAPIDSWITCH-AS , GB
+RAS-AS Joint SuperComputer Center of the Russian Academy of Sciences, RU
+RASCOM-AS CJSC Rascom, St.Petersburg, Russia, RU
+RBNET , RU
+RCCN Fundacao para a Ciencia e a Tecnologia, I.P., PT
+RCS-RDS 73-75 Dr. Staicovici, RO
+REASONNET-AS Amsterdam, the Netherlands, NL
+Red Cientifica Peruana, PE
+REDSTATION European Network, GB
+RELIANCE-COMMUNICATIONS-IN Reliance Communications Ltd.DAKC MUMBAI, IN
+RELIANCEGLOBALCOM - Reliance Globalcom Services, Inc, US
+REPUBLICTELECOM-SG MyRepublic Ltd., SG
+-Reserved AS-, ZZ
+-Reserved AS-, ZZ
+-Reserved AS-, ZZ
+-Reserved AS-, ZZ
+RESILANS , SE
+RESTENA Reseau Teleinformatique de l_Education Nationale, LU
+RETN-AS , UA
+RETN-UA-AS , RU
+REZOPOLE , FR
+RHTEC-AS rh-tec IP Backbone, DE
+RINET-AS Cronyx Plus Ltd, RU
+RIPE-NCC-AS , NL
+RIPN-RU-RND RND RU services AS, RU
+RLP-NET , DE
+RMI-FITECH , FR
+Rodrigo Orlandeli Sanches, BR
+ROLLERNETWORK - Roller Network LLC, US
+ROMTELECOM Balcan-IX, RO
+ROOT , LU
+ROSPRINT-AS , RU
+ROSTELECOM-AS , RU
+RTCOMM-AS , RU
+RTD Bucharest, Romania, RO
+RUNNET-AS , RU
+RUNNET , RU
+RU-SERVICE-AS , RU
+RUSNET-AS , RU
+RUSSMEDIA-IT , AT
+SAITIS-NETWORK , CH
+SAIX-NET, ZA
+SALZBURG-AG-AS , AT
+SANET Bratislava, Slovakia,, SK
+SATELCOM-AS 2DAy Telcom Kazakhstan, KZ
+SCAN-PLUS-AS ScanPlus GmbH, DE
+SCW Telecom, BR
+SEABONE-NET TELECOM ITALIA SPARKLE S.p.A., IT
+SEEWEB Web hosting, colocation and cloud services, IT
+SELECTEL , RU
+SERVERCENTRAL - Server Central Network, US
+SERVERIUS-AS , NL
+SERVERROOM - Data Room, Inc, US
+SGGS-AS-AP SG.GS, SG
+SHAW - Shaw Communications Inc., CA
+SIGMANET-NIC , LV
+SIG-ST Service Telecom, CH
+SIL-CITYCABLE-AS , CH
+SIMOBIL http://www.simobil.si/, SI
+SINGAREN-GIX-AS-AP Singapore Advanced Research and Education Network, SG
+SINGTEL-AS-AP Singapore Telecommunications Ltd, SG
+SINGTEL-JP NF Park Bldg.3F, 9-15, Futaba 2-Chome, JP
+S-I-S - Storm Internet Services, CA
+SIXNGIX-AS-KR Korea Internet Security Agency, KR
+SKADI-AS , CZ
+SKIF-AS , UA
+SMITCOMS N.V., SX
+SNOWFLAKE , CH
+SOFIA-CONNECT-AS , BG
+SOFTDADOS CONECTIVIDADE, BR
+SOLIDO-NET , DK
+SOLNET , CH
+SONATEL-AS Autonomous System, SN
+SOVAM-AS , RU
+SOX , RS
+SPACENET SpaceNET AG, DE
+SPEEDPARTNER , DE
+SPRINTLINK9 - Sprint, US
+SPRINTLINK - Sprint, US
+SPRITELINK , SE
+STARHUBINTERNET-AS StarHub Internet Exchange, SG
+STARTAP - National Center for Supercomputing Applications, US
+STIXLITE-AS-AP STIXLITE Transit Service Provider Singapore, SG
+STPI-NOIDA Software Technology Parks of India,Block-IV, IN
+STUPI , SE
+SUNET SUNET Swedish University Network, SE
+SUNRISE , CH
+SUPERINTERNET-AS-AP SuperInternet ACCESS Pte Ltd, SG
+SUPPORT-SERVICES-GROUP - Support Services Group, US
+SURFNET-NL SURFnet, The Netherlands, NL
+SURFNET-NL The Netherlands, NL
+SURFnet Test Network, EU
+SVCOLO-AS - Silicon Valley Colocation, Inc., US
+SVOLS ======Uplinks======, RU
+SVYAZVSD , RU
+SWISSCOM Swisscom (Switzerland) Ltd, CH
+SWISSIX , CH
+SWITCH Peering requests: , CH
+SWOL Neckarstrasse 1-5, DE
+SYNTERRA-AS , RU
+TAL-DE Robertstrasse 6, DE
+TATACOMM-AS TATA Communications formerly VSNL is Leading ISP, IN
+TAZ-AS taz die tageszeitung autonomous system, DE
+TDCSONG Denmark, DK
+TDC TDC A/S, DK
+TDDE-ASN1 , DE
+TE-AS TE-AS, EG
+TEIN2-JP National Institute of Informatics, JP
+TEIN2-NORTH-AP Trans-Eurasia Information Network (TEIN2) - North, CN
+TEIN2-SG-AP Trans-Eurasia Information Network (TEIN2) - SG, CN
+TEKSAVVY - TekSavvy Solutions, Inc., CA
+TELE2, SE
+TELECOM-LI Schaanerstrasse 1, LI
+TELECOM_LUXEMBOURG_PRIVATE_OPERATOR , LU
+Telefonica Data S.A., BR
+Telefonica de Argentina, AR
+TELEFONICA Telefonica Wholesale Network, ES
+TELEHOUSE-AS , BG
+TELEKOM-AT , AT
+Telemar Norte Leste S.A., BR
+TELENOR-NEXTEL Telenor Norge AS, NO
+TELENOR , NO
+TELENOR-SE former Utfors Bredband AB & Telenor AB, SE
+TeleSA Telecomunicacoes S.A, BR
+TELIANET , SE
+TELIANET-SWEDEN , SE
+TELIANET-USA TeliaNet USA, EU
+TELLCOM-AS , TR
+Telmex Servicios Empresariales S.A., CL
+TELNET-ITALY TELNET S.r.l., IT
+TELSTRAGLOBAL-ASNUM Telstra Global - KK, HK
+TENET-1, ZA
+TENNET , RO
+Terremark do Brasil Ltda., BR
+TERREMARK-IST , ES
+TERRENAP - MCI Communications Services, Inc. d/b/a Verizon Business, US
+THAI-GATEWAY The Communications Authority of Thailand(CAT), TH
+THREEUNITED-AS , AT
+TI-AS Moscow, Russia, RU
+TIERA-AS , RU
+Tim Celular S.A., BR
+TIMENET-AS , IT
+TIMICO United Kingdom, GB
+TITAN-NETWORKS Bleichstrasse 1, DE
+TIVIT TERCEIRIZAÇÃO DE PROCESSOS, SERV. E TEC. S/A, BR
+T-LEX WIDE Project, JP
+TMNET-AS-AP TM Net, Internet Service Provider, MY
+TNG-AS Projensdorfer Strasse 324, DE
+TNIB Max-Planck-Str. 1, DE
+TNS , KZ
+TNS-PLUS-CORE , KZ
+TOPIX-PDI-AS Consorzio Topix - Torino e Piemonte Exchange Point, IT
+TOPNET , UA
+TPG-AU TPG Internet Pty Ltd., AU
+TPG-AU TPG Internet Pty Ltd., AU
+TPG-INTERNET-AP TPG Telecom Limited, AU
+TPL-ASN Robert-Bosch-Str. 20, DE
+TRANSPAC - Indiana University, US
+TRANSTELECOM Moscow, Russia, RU
+TRIERA Broadband Access & Carrier Services, SI
+TRUEINTERNET-AS-AP TRUE INTERNET Co.,Ltd., TH
+TRUESERVER-AS TrueServer BV AS number, NL
+TRUNKM , RU
+TSF-IP-CORE http://www.teliasonera.com, looking-glass lg.sonera.net, FI
+T-Systems Telecomunicações e Serviços Ltda., BR
+TTC-AS , KZ
+TTI-NET , RO
+TTNET , TR
+TUCOWS - Tucows.com Co., CA
+TWA-AS-AP Transworld Associates (Pvt.) Ltd., PK
+TWDX - TowardEX Technologies International, Inc., US
+TWGATE-AP Taiwan Internet Gateway, TW
+TWO-P - Two P, US
+TWS-AS , IT
+TWTC - tw telecom holdings, inc., US
+TYPHON-AS , FR
+UA-XAIM , UA
+UBUNTU-UNICAST-AS, ZA
+UCOMINT , AM
+UCOMLINE , UA
+UK2CONNECTUK-AS , GB
+UKGRID-AS The UK Grid Network Ltd, GB
+ULAKNET , TR
+ULI-MAIN Via Mezzera 29/A, IT
+UMDNET - University of Maryland, US
+UMS2-ASN - University of Maryland, US
+UNILOGICNET-AS , NL
+Uninet S.A. de C.V., MX
+UNINETT UNINETT, The Norwegian University & Research Network, NO
+UNITEDNET , RU
+UNIVERSIDADE DE SAO PAULO, BR
+UNIVERSIDADE FEDERAL DE SAO CARLOS, BR
+Universo Online S.A., BR
+Universo Online S.A., BR
+UNIVHAWAII - University of Hawaii, US
+UNNET-AS , RU
+UOL DIVEO S.A., BR
+UPL-TELECOM-AS , CZ
+Uruguay, UY
+UUNET-EMEA-IPV6 Verizon Business EMEA - IPv6 only autonomous System, GB
+UUNET - MCI Communications Services, Inc. d/b/a Verizon Business, US
+UUNET - MCI Communications Services, Inc. d/b/a Verizon Business, US
+UUNET - MCI Communications Services, Inc. d/b/a Verizon Business, US
+Value4Net do Brasil Serviços de Informática Ltda, BR
+VAN_GULIK , CH
+VBNS - MCI Communications Corporation, US
+VDATA , GB
+VELIANET-AS Hanau, DE
+VERISIGN-AS - VeriSign Infrastructure & Operations, US
+VERISIGN-CORP - VeriSign Infrastructure & Operations, US
+VERISIGNGRS - VeriSign Infrastructure & Operations, US
+VERISIGN-ILG1 - VeriSign Infrastructure & Operations, US
+VERISIGN-INC - VeriSign Global Registry Services, US
+VERIZON-BUSINESS-MAE-AS6066 - MCI Communications Services, Inc. d/b/a Verizon Business, US
+VERSATEL , DE
+VERSATEL-NRW servicing all companies of Versatel AG, DE
+VGRS-REGISTRY-AS - VeriSign Infrastructure & Operations, US
+VIANET-ASN - ViaNet Communications, US
+VIDEOBROADCAST-AS , AT
+VIRTUALTEC , CH
+VOCUS-BACKBONE-AS Vocus Connect International Backbone, AU
+VODAFONE-NET-AS-AP C48 Okhla Industrial Estate, New Delhi-110020, IN
+VOIPGATE , LU
+VOL-AS U Nakladoveho nadrazi 8, CZ
+VORBOSS_AS , GB
+VTX-NETWORK , CH
+VZD , LV
+WAIA-AP Western Australian Internet Association, AU
+WAN2MANY-AS , FR
+WanHouse Solucoes em Tecnologia LTDA - EPP, BR
+WARINET_NETWORK NOC - Zurich - Switzerland, IT
+WASH-NSF-AS - University of Washington, US
+WEBFOCO TELECOMUNICACOES LTDA, BR
+WEBPARTNER WEBPARTNER A/S is a Danish Internet Service Provider, DK
+WEBWERKSDATCENTER-AS One Web Werks DataCenter Pvt. Ltd., IN
+WEDARE wd6.NET B.V, NL
+WIDE-BB WIDE Project, JP
+WIREHIVE-AS , GB
+W-IX_LTD W-IX LTD, GB
+WNET Kyiv, Ukraine, UA
+WOODYNET-1 - WoodyNet, US
+Workonline, ZA
+WVFIBER-1 - WV FIBER, US
+WVFIBER-4 - WV FIBER, US
+XCHANGEPOINTMLP , GB
+XEEX-COMMUNICATIONS - Xeex, US
+XGTLD - VeriSign Global Registry Services, US
+XO-AS15 - XO Communications, US
+XS4ALL-NL Amsterdam, NL
+XTRAORDINARY-AS --- Transit providers ---, GB
+YACAST-AS Former YACAST Media AS, FR
+YANDEX , RU
+YGTLD - VeriSign Global Registry Services, US
+YOUR-ORG-INC-EURO - YOUR.ORG, INC., US
+ZAYO-6461 - Zayo Bandwidth Inc, US
+ZGTLD - VeriSign Global Registry Services, US
+ZIGGO Ziggo - tv, internet, telefoon, NL
