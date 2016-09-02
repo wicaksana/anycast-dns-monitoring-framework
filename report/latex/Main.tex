@@ -1,0 +1,203 @@
+%
+%  Vorlage/Template fuer #EBT
+%
+%  Created by Prof. Dr. Detlef Kreuz on 2010-08-14.
+%  Copyright (c) 2010 . All rights reserved.
+%
+\documentclass[12pt,toc=bib,toc=listof]{scrreprt}
+%\usepackage[ngerman]{babel} 
+\usepackage{hhline}
+\usepackage{csquotes}			%% inline quote
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{tgpagella}
+%%\usepackage[sc]{mathpazo}
+\usepackage{setspace}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{multirow}
+\usepackage{caption, subcaption}
+\usepackage[multiple]{footmisc} % multiple footnotes at a single use
+\usepackage{amsmath} % align*
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=blue,
+	citecolor=blue
+}
+\usepackage[backend=bibtex,
+style=numeric,
+bibencoding=ascii
+%style=alphabetic
+%style=reading
+]{biblatex}
+\addbibresource{bibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % (fold)
+% Vom Studierenden zu aendernde Werte
+\newcommand{\ebttopic}{IPv4 vs IPv6 Anycast Catchment: a Root DNS Study}
+\newcommand{\ebtstudentname}{Muhammad Arif Wicaksana}
+\newcommand{\ebtstudentid}{S1507850}
+\newcommand{\faculty}{Faculty of Electrical Engineering, Mathematics and Computer Science (EEMCS)}
+\newcommand{\researchgroup}{Design and Analysis of Communication System (DACS)}
+\newcommand{\examcommittee}{Prof. dr. ir. Aiko Pras \\ Dr. Ricardo de Oliveira Schmidt \\ Wouter B. de Vries, M.Sc.}
+\newcommand{\defensedate}{August 30\textsuperscript{th} 2016}
+\urldef{\ebtstudentmail}{\url}{m.a.wicaksana@student.utwente.nl}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % (end)
+
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+
+\usepackage{pdfpages} % include pdf page (\includepdf)
+%% additional packages from draft
+\usepackage{parskip}
+\usepackage{array} 
+\usepackage{enumitem}
+\usepackage{threeparttable} % table footnote
+\usepackage[toc,page]{appendix}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\renewlist{tablenotes}{enumerate}{1}
+\makeatletter
+\setlist[tablenotes]{label=\tnote{\alph*},ref=\alph*,itemsep=\z@,topsep=\z@skip,partopsep=\z@skip,parsep=\z@,itemindent=\z@,labelindent=\tabcolsep,labelsep=.2em,leftmargin=*,align=left,before={\scriptsize}} % threeparttable
+\makeatother
+
+%%
+\usepackage[headsepline]{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ihead{IPv4 vs IPv6 Anycast Catchment: a Root DNS Study}
+\ohead{\pagemark}
+\renewcommand*{\chapterpagestyle}{scrheadings}
+\renewcommand*{\chapterheadstartvskip}{}
+
+
+%======original=======================================================
+\titlehead{\flushright}
+\subject{MASTER THESIS}
+\title{\ebttopic}
+\author{\ebtstudentname}%\footnote{\ebtstudentid, \ebtstudentmail}}
+\date{August 30\textsuperscript{th} 2016}
+\publishers{Faculty of }
+%======original=======================================================
+
+%\pagestyle{headings}
+
+\usepackage{rotating}
+
+\usepackage{pifont}% checkmark font
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\begin{document}
+\setlength{\parskip}{1em}
+\pagenumbering{roman} 
+%\selectlanguage{ngerman}
+
+%-----------------------MAKE COVER--------------------------------------
+%\maketitle
+\includepdf[pages=1]{cover.pdf}
+%-----------------------/MAKE COVER--------------------------------------
+\newpage\null\thispagestyle{empty}\newpage
+
+% abstract
+\begin{abstract}
+	\begin{center}
+\textbf{Abstract}
+	\end{center}
+	Anycast has been extensively used by DNS Root Server operators to improve performance, resilience, and reliability. In line with the migration towards IPv6 networks, 9 out of 11 anycasted Root Servers are running on both IPv4 and IPv6 (dual-stack mode) today. Ideally, both protocols should provide similar performances. Problem arises since operators may have different peering policies for IPv4 and IPv6 networks, which leads to different catchment areas for the same service and potentially different quality of service. In this thesis, we analyze the IPv4 and IPv6 catchments of anycasted Root Servers from control-plane perspective between February 2008 to June 2016 using BGP data from RIPE RIS. We study the evolution and  the differences of the catchment areas over the time. We also develop visualization tool to help operator assess their catchment areas. While we specifically study DNS Root Server, our methodology can be applied to other anycast services as well.
+	
+	%We find that most Root Servers have relatively high convergence level (50\% to 80\%), except for J- and M-Root. Over the time, the level is increasing in general. Some experience sharp increase, some relatively stagnated, and few experiences temporary decrease. The Root Servers also have different visibility levels, which is influenced by the peering policies rather than the number of instances. 
+	
+\end{abstract}
+
+%% acknowledgements
+\addchap*{Acknowledgements} % (fold)
+\label{ack}
+First and foremost, I would like to express my gratitude to Ricardo de Oliveira Schmidt for giving me the opportunity to work on this subject and providing support, feedback, and suggestions to improve my thesis. I sincerely thank to the other examination committee, Aiko Pras and Wouter de Vries. Additionally, I also would like to thank Jair, Luuk, and Wouter for being really helpful when I was working at the office. In particular for Jair, who greatly helped me preparing my presentation. 
+
+I gratefully acknowledge the MCIT of Indonesia for funding my study, which allows me to make one of my dreams comes true. I am also grateful to all kind people who helped me throughout my master study at University of Twente whom I cannot mention one by one. May God reward you and accept your good deeds.
+
+Last but not least, I would like to thank my family for supporting me, and especially Pamahayu Prawesti for her patience and unconditional love. 
+
+
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % List of abbreviations
+\addchap{List of Abbreviations} % (fold)
+\label{sec:abbr}
+
+\begin{description}
+  \item[AS:] Autonomous System	
+  \item[ASN:] Autonomous System Number
+  \item[BGP:] Border Gateway Protocol
+  \item[BMP:] BGP Message Protocol
+  \item[CDN:] Content Distribution Network 
+  \item[DDoS:] Distributed Denial of Service
+  \item[DNS:] Domain Name Service
+  \item[FQDN:] Fully Qualified Domain Name
+  \item[IP:] Internet Protocol  
+  \item[IPv6:] Internet Protocol version 6
+  \item[MRT:] Multi-threaded Routing Kit  
+  \item[RFC:] Request for Comment
+  \item[RIPE:] Réseaux IP Européens
+  \item[RIS:] Routing Information Service
+  \item[TLD:] Top-level Domain
+\end{description}
+
+% chapter abkuerzungsverzeichnis (end)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % List of figures
+\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % List of tables
+\listoftables
+
+%\onehalfspacing
+
+\newpage
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % Introduction
+\include{Introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % Background & state-of-the-art
+\include{Background}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % Methodologies
+\include{Methodologies}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % Result analysis
+\include{Analysis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % Conclusion and Future work
+\include{Conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % Appendix
+\include{appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% % Bibliography
+%\bibliographystyle{acm}
+%\bibliography{bibliography}
+\medskip
+\printbibliography
+\end{document}
+
+%%% deleted references
+
+%@inproceedings{gill2008flattening,
+%	title={The flattening internet topology: Natural evolution, unsightly barnacles or contrived collapse?},
+%	author={Gill, Phillipa and Arlitt, Martin and Li, Zongpeng and Mahanti, Anirban},
+%	booktitle={International Conference on Passive and Active Network Measurement},
+%	pages={1--10},
+%	year={2008},
+%	organization={Springer}
+%}

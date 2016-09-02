@@ -1,0 +1,23 @@
+Title
+Abstract
+Introduction
+- Goals
+- Structure
+- Contribution
+Background
+- 
+- 
+- 
+- Concluding Remarks
+<Methods>
+- <datasets?>
+- <methods?>
+- Concluding Remarks
+<analysis>
+- <what aspects should be analyzed?>
+- Concluding Remarks
+Conclusions
+- Additional contributions
+- Future Works
+- Limitations
+

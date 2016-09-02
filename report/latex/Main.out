@@ -1,0 +1,44 @@
+\BOOKMARK [0][-]{chapter*.3}{List of Abbreviations}{}% 1
+\BOOKMARK [0][-]{chapter*.4}{List of Figures}{}% 2
+\BOOKMARK [0][-]{chapter*.5}{List of Tables}{}% 3
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 4
+\BOOKMARK [1][-]{section.1.1}{Goals}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Structure}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Background}{}% 7
+\BOOKMARK [1][-]{section.2.1}{DNS}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{IP Anycast}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Anycast Measurement}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.4}{Measuring IPv4 and IPv6 Catchment Areas from Control-Plane Perspective}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.5}{Anycast Visualization}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.6}{Concluding Remarks}{chapter.2}% 13
+\BOOKMARK [0][-]{chapter.3}{Methodology}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Selecting Eligible Root Servers}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{BGP Data Retrieval}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.3}{Data Analysis}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.3.1}{Evolution of Catchment Areas}{section.3.3}% 18
+\BOOKMARK [2][-]{subsection.3.3.2}{The Differences Between IPv4 and IPv6 Catchment Areas}{section.3.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Visualization}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.5}{Concluding Remarks}{chapter.3}% 21
+\BOOKMARK [0][-]{chapter.4}{Result Analysis}{}% 22
+\BOOKMARK [1][-]{section.4.1}{Evolution of Catchment Areas}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.1.1}{Convergence}{section.4.1}% 24
+\BOOKMARK [2][-]{subsection.4.1.2}{The Trends of AS Path Lengths}{section.4.1}% 25
+\BOOKMARK [1][-]{section.4.2}{The Differences Between IPv4 and IPv6 Catchment Areas}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.2.1}{Composition of VPs}{section.4.2}% 27
+\BOOKMARK [2][-]{subsection.4.2.2}{Average Path Length}{section.4.2}% 28
+\BOOKMARK [2][-]{subsection.4.2.3}{How Different Is It?}{section.4.2}% 29
+\BOOKMARK [1][-]{section.4.3}{Visualizing Anycast Catchment Areas}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.4}{Discussion}{chapter.4}% 31
+\BOOKMARK [0][-]{chapter.5}{Conclusions and Future Work}{}% 32
+\BOOKMARK [1][-]{section.5.1}{Conclusions}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.2}{Future Work}{chapter.5}% 34
+\BOOKMARK [0][-]{section*.34}{Appendices}{}% 35
+\BOOKMARK [0][-]{Appendix.1.A}{Convergence}{}% 36
+\BOOKMARK [0][-]{Appendix.1.B}{VPs Composition}{}% 37
+\BOOKMARK [0][-]{Appendix.1.C}{AS Path Length Distribution}{}% 38
+\BOOKMARK [1][-]{section.1.C.1}{All VPs}{Appendix.1.C}% 39
+\BOOKMARK [1][-]{section.1.C.2}{Only for VPs with Diverging IPv4/IPv6 Paths}{Appendix.1.C}% 40
+\BOOKMARK [0][-]{Appendix.1.D}{VP Length Degree}{}% 41
+\BOOKMARK [0][-]{Appendix.1.E}{Average Path Length Differences for VPs with Shorter IPv4 Path}{}% 42
+\BOOKMARK [0][-]{Appendix.1.F}{Average Path Length Differences for VPs with Shorter IPv6 Path}{}% 43
+\BOOKMARK [0][-]{chapter*.90}{Bibliography}{}% 44

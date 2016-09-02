@@ -1,0 +1,163 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Example of DNS database tree\relax }}{5}{figure.caption.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Illustration of anycast (copied from \cite {wiki-anycast})\relax }}{6}{figure.caption.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces BGP update process (reproduced from \cite {thousandeyes})\relax }}{11}{figure.caption.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Visualization of routing impact of adding or removing anycast instances, copied from \cite {github-anycast}\relax }}{15}{figure.caption.11}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Workflow of this study\relax }}{20}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of AS path definition\relax }}{21}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Convergence level of A, F, D, and M-Root. Results for others are available in Appendix \ref {app:convergence}\relax }}{27}{figure.caption.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces M-Root's most dominant upstream providers \relax }}{32}{figure.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces AS path lengths of D, K, and M-Root\relax }}{34}{figure.caption.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Composition of A and D-Root's VPs\relax }}{36}{figure.caption.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces C-Root's VP degree\relax }}{38}{figure.caption.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Visualization of J-Root catchment areas at June I\textsuperscript {st} 2016\relax }}{41}{figure.caption.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces C- and M-Root IPv4 catchment areas (January 1\textsuperscript {st} 2016)\relax }}{42}{figure.caption.33}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Convergence level\relax }}{49}{figure.caption.35}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.1}{\ignorespaces A-Root peers composition\relax }}{50}{figure.caption.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.2}{\ignorespaces C-Root VPs composition\relax }}{50}{figure.caption.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.3}{\ignorespaces D-Root VPs composition\relax }}{50}{figure.caption.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.4}{\ignorespaces F-Root VPs composition\relax }}{50}{figure.caption.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.5}{\ignorespaces I-Root VPs composition\relax }}{51}{figure.caption.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.6}{\ignorespaces J-Root VPs composition\relax }}{51}{figure.caption.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.7}{\ignorespaces K-Root VPs composition\relax }}{51}{figure.caption.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.8}{\ignorespaces L-Root VPs composition\relax }}{51}{figure.caption.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.9}{\ignorespaces M-Root VPs composition\relax }}{51}{figure.caption.44}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Path average length of all peers of A-Root\relax }}{52}{figure.caption.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Path length distribution of all C-Root's VPs\relax }}{52}{figure.caption.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Path length distribution of all D-Root's VPs\relax }}{53}{figure.caption.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Path length distribution of all F-Root's VPs\relax }}{53}{figure.caption.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Path length distribution of all I-Root's VPs\relax }}{53}{figure.caption.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Path length distribution of all J-Root's VPs\relax }}{53}{figure.caption.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Path length distribution of all K-Root's VPs\relax }}{53}{figure.caption.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Path length distribution of all L-Root's VPs\relax }}{54}{figure.caption.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.9}{\ignorespaces Path length distribution of all M-Root's VPs\relax }}{54}{figure.caption.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.10}{\ignorespaces Average path length of A-Root peers that have different IPv4/IPv6 paths\relax }}{55}{figure.caption.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.11}{\ignorespaces Average path length of C-Root peers that have different IPv4/IPv6 paths\relax }}{55}{figure.caption.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.12}{\ignorespaces Average path length of D-Root peers that have different IPv4/IPv6 paths\relax }}{55}{figure.caption.56}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.13}{\ignorespaces Average path length of F-Root peers that have different IPv4/IPv6 paths\relax }}{55}{figure.caption.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.14}{\ignorespaces Average path length of I-Root peers that have different IPv4/IPv6 paths\relax }}{56}{figure.caption.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.15}{\ignorespaces Average path length of J-Root peers that have different IPv4/IPv6 paths\relax }}{56}{figure.caption.59}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.16}{\ignorespaces Average path length of K-Root peers that have different IPv4/IPv6 paths\relax }}{56}{figure.caption.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.17}{\ignorespaces Average path length of L-Root peers that have different IPv4/IPv6 paths\relax }}{56}{figure.caption.61}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.18}{\ignorespaces Average path length of M-Root peers that have different IPv4/IPv6 paths\relax }}{56}{figure.caption.62}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.1}{\ignorespaces VP degree distribution of A-Root\relax }}{57}{figure.caption.63}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.2}{\ignorespaces VP degree distribution of C-Root\relax }}{57}{figure.caption.64}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.3}{\ignorespaces VP degree distribution of D-Root\relax }}{57}{figure.caption.65}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.4}{\ignorespaces VP degree distribution of F-Root\relax }}{58}{figure.caption.66}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.5}{\ignorespaces VP degree distribution of I-Root\relax }}{58}{figure.caption.67}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.6}{\ignorespaces VP degree distribution of J-Root\relax }}{58}{figure.caption.68}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.7}{\ignorespaces VP degree distribution of K-Root\relax }}{58}{figure.caption.69}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.8}{\ignorespaces VP degree distribution of L-Root\relax }}{59}{figure.caption.70}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {D.9}{\ignorespaces VP degree distribution of M-Root\relax }}{59}{figure.caption.71}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Path length differences for A-Root's VPs with shorter IPv4 path\relax }}{60}{figure.caption.72}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {E.2}{\ignorespaces Path length differences for C-Root's VPs with shorter IPv4 path\relax }}{60}{figure.caption.73}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {E.3}{\ignorespaces Path length differences for D-Root's VPs with shorter IPv4 path\relax }}{60}{figure.caption.74}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {E.4}{\ignorespaces Path length differences for F-Root's VPs with shorter IPv4 path\relax }}{60}{figure.caption.75}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {E.5}{\ignorespaces Path length differences for I-Root's VPs with shorter IPv4 path\relax }}{60}{figure.caption.76}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {E.6}{\ignorespaces Path length differences for J-Root's VPs with shorter IPv4 path\relax }}{61}{figure.caption.77}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {E.7}{\ignorespaces Path length differences for K-Root's VPs with shorter IPv4 path\relax }}{61}{figure.caption.78}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {E.8}{\ignorespaces Path length differences for L-Root's VPs with shorter IPv4 path\relax }}{61}{figure.caption.79}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {E.9}{\ignorespaces Path length differences for M-Root's VPs with shorter IPv4 path\relax }}{61}{figure.caption.80}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {F.1}{\ignorespaces Path length differences for A-Root's VPs with shorter IPv6 path\relax }}{62}{figure.caption.81}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {F.2}{\ignorespaces Path length differences for C-Root's VPs with shorter IPv6 path\relax }}{62}{figure.caption.82}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {F.3}{\ignorespaces Path length differences for D-Root's VPs with shorter IPv6 path\relax }}{62}{figure.caption.83}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {F.4}{\ignorespaces Path length differences for F-Root's VPs with shorter IPv6 path\relax }}{62}{figure.caption.84}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {F.5}{\ignorespaces Path length differences for I-Root's VPs with shorter IPv6 path\relax }}{62}{figure.caption.85}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {F.6}{\ignorespaces Path length differences for J-Root's VPs with shorter IPv6 path\relax }}{63}{figure.caption.86}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {F.7}{\ignorespaces Path length differences for K-Root's VPs with shorter IPv6 path\relax }}{63}{figure.caption.87}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {F.8}{\ignorespaces Path length differences for L-Root's VPs with shorter IPv6 path\relax }}{63}{figure.caption.88}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {F.9}{\ignorespaces Path length differences for M-Root's VPs with shorter IPv6 path\relax }}{63}{figure.caption.89}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }

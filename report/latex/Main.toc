@@ -1,0 +1,97 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Abbreviations}{vii}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Figures}{viii}{chapter*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Tables}{x}{chapter*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Goals}{2}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Structure}{2}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Background}{4}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}DNS}{4}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}IP Anycast}{5}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Anycast Measurement}{8}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}Measuring IPv4 and IPv6 Catchment Areas from Control-Plane Perspective}{9}{section.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Anycast Visualization}{14}{section.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.6}Concluding Remarks}{16}{section.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Methodology}{17}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Selecting Eligible Root Servers}{17}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}BGP Data Retrieval}{17}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Data Analysis}{21}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.1}Evolution of Catchment Areas}{22}{subsection.3.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.2}The Differences Between IPv4 and IPv6 Catchment Areas}{23}{subsection.3.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Visualization}{24}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Concluding Remarks}{24}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Result Analysis}{26}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Evolution of Catchment Areas}{26}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}Convergence}{26}{subsection.4.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Dramatic Increase of A- and D-Root}{27}{section*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Convergence Level Drops Experienced By F- and M-Root}{28}{section*.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Why Do M- and J-Root Have The Worst Convergence Level?}{30}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Visibility of Root Servers}{32}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}The Trends of AS Path Lengths}{33}{subsection.4.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}The Differences Between IPv4 and IPv6 Catchment Areas}{35}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.1}Composition of VPs}{36}{subsection.4.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.2}Average Path Length}{37}{subsection.4.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.3}How Different Is It?}{38}{subsection.4.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Visualizing Anycast Catchment Areas}{40}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Discussion}{43}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{45}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Conclusions}{45}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Future Work}{46}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Appendices}{48}{section*.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Convergence}{49}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}VPs Composition}{50}{Appendix.1.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {C}AS Path Length Distribution}{52}{Appendix.1.C}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.1}All VPs}{52}{section.1.C.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.2}Only for VPs with Diverging IPv4/IPv6 Paths}{55}{section.1.C.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {D}VP Length Degree}{57}{Appendix.1.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {E}Average Path Length Differences for VPs with Shorter IPv4 Path}{60}{Appendix.1.E}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {F}Average Path Length Differences for VPs with Shorter IPv6 Path}{62}{Appendix.1.F}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Bibliography}{64}{chapter*.90}

@@ -1,0 +1,1665 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{rfc4271}{misc}{}
+  \field{sortinit}{A}
+  \field{title}{A Border Gateway Protocol 4 (BGP-4)}
+  \verb{url}
+  \verb https://www.ietf.org/rfc/rfc4271.txt
+  \endverb
+\endentry
+
+\entry{rfc4786}{misc}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Abley}{A.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lindqvist}{L.}%
+     {K.}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{AJLK1}
+  \strng{fullhash}{AJLK1}
+  \field{sortinit}{A}
+  \field{title}{Operation of Anycast Services}
+  \verb{url}
+  \verb https://tools.ietf.org/html/rfc4786
+  \endverb
+\endentry
+
+\entry{aminvisualization}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Amin}{A.}%
+     {Christopher}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Candela}{C.}%
+     {Massimo}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Karrenberg}{K.}%
+     {Daniel}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kisteleki}{K.}%
+     {Robert}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Strikos}{S.}%
+     {Andreas}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{AC+1}
+  \strng{fullhash}{ACCMKDKRSA1}
+  \field{sortinit}{A}
+  \field{title}{Visualization and Monitoring for the Identification and
+  Analysis of DNS Issues}
+  \field{journaltitle}{The Tenth International Conference on Internet
+  Monitoring and Protection}
+  \field{year}{2015}
+\endentry
+
+\entry{github-thesis}{misc}{}
+  \field{sortinit}{A}
+  \field{title}{Anycast DNS Monitoring Framework}
+  \verb{url}
+  \verb https://github.com/wicaksana/anycast-dns-monitoring-framework
+  \endverb
+\endentry
+
+\entry{wiki-anycast}{misc}{}
+  \field{sortinit}{A}
+  \field{title}{Anycast illustration}
+  \verb{url}
+  \verb https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Anycast.svg/3
+  \verb 20px-Anycast.svg.png
+  \endverb
+\endentry
+
+\entry{7145323}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bajpai}{B.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schönwälder}{S.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{IP networks;Web sites;computer network performance evaluation;transport
+  protocols;CDN caches;CDN clusters;CDN deployments;IPv4 connectivity;IPv6
+  connectivity;SamKnows probes;TCP connect times distributions;TCP connection
+  establishment time;autonomous systems;content delivery network;dual-stacked
+  Websites;dual-stacked hosts;dual-stacked networks;network policies;service
+  provider networks;transmission control protocol;Current
+  measurement;Google;Internet;Probes;Protocols;Time measurement}
+  \strng{namehash}{BVSJ1}
+  \strng{fullhash}{BVSJ1}
+  \field{sortinit}{B}
+  \field{booktitle}{IFIP Networking Conference (IFIP Networking), 2015}
+  \verb{doi}
+  \verb 10.1109/IFIPNetworking.2015.7145323
+  \endverb
+  \field{pages}{1\bibrangedash 9}
+  \field{title}{IPv4 versus IPv6 - who connects faster?}
+  \field{year}{2015}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{Ballani:2006:MDP:1177080.1177109}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Ballani}{B.}%
+     {Hitesh}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Francis}{F.}%
+     {Paul}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ratnasamy}{R.}%
+     {Sylvia}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \keyw{BGP, IP anycast, affinity, failover, load distribution, proximity}
+  \strng{namehash}{BHFPRS1}
+  \strng{fullhash}{BHFPRS1}
+  \field{sortinit}{B}
+  \field{booktitle}{Proceedings of the 6th ACM SIGCOMM Conference on Internet
+  Measurement}
+  \verb{doi}
+  \verb 10.1145/1177080.1177109
+  \endverb
+  \field{isbn}{1-59593-561-4}
+  \field{pages}{231\bibrangedash 244}
+  \field{series}{IMC '06}
+  \field{title}{A Measurement-based Deployment Proposal for IP Anycast}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/1177080.1177109
+  \endverb
+  \list{location}{1}{%
+    {Rio de Janeriro, Brazil}%
+  }
+  \field{year}{2006}
+  \warn{\item Can't use 'location' + 'address'}
+\endentry
+
+\entry{barber2004life}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Barber}{B.}%
+     {Piet}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Larson}{L.}%
+     {Matt}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kosters}{K.}%
+     {Mark}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Toscano}{T.}%
+     {Pete}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BP+1}
+  \strng{fullhash}{BPLMKMTP1}
+  \field{sortinit}{B}
+  \field{booktitle}{Proceedings of NANOG}
+  \field{title}{Life and times of J-ROOT}
+  \field{volume}{32}
+  \field{year}{2004}
+\endentry
+
+\entry{bgplay}{misc}{}
+  \field{sortinit}{B}
+  \field{title}{BGPlay}
+  \verb{url}
+  \verb http://www.dia.uniroma3.it/~compunet/www/view/tool.php?id=bgplay
+  \endverb
+\endentry
+
+\entry{bgplay.js}{misc}{}
+  \field{sortinit}{B}
+  \field{title}{BGPlay.js}
+  \verb{url}
+  \verb http://bgplayjs.com/
+  \endverb
+\endentry
+
+\entry{bgpmon}{misc}{}
+  \field{sortinit}{B}
+  \field{title}{BGPMon}
+  \verb{url}
+  \verb http://www.bgpmon.io/
+  \endverb
+\endentry
+
+\entry{631176}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Bhattacharjee}{B.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ammar}{A.}%
+     {M.H.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zegura}{Z.}%
+     {E.W.}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Shah}{S.}%
+     {V.}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fei}{F.}%
+     {Zongming}{Z.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Internet;network servers;transport protocols;IP
+  addresses;Internet;anycast domain names;anycast resolvers;anycasting
+  communication paradigm;application-layer anycasting;content-equivalent
+  servers;metric-based filters;network-layer support;performance;policy
+  criteria;policy-based filters;server replication;server response
+  time;Computer networks;Delay;Educational institutions;Information
+  filtering;Information filters;Network servers;Scalability;Telecommunication
+  computing;Web and internet services;Web server}
+  \strng{namehash}{BS+1}
+  \strng{fullhash}{BSAMZESVFZ1}
+  \field{sortinit}{B}
+  \field{booktitle}{INFOCOM '97. Sixteenth Annual Joint Conference of the IEEE
+  Computer and Communications Societies. Driving the Information Revolution.,
+  Proceedings IEEE}
+  \verb{doi}
+  \verb 10.1109/INFCOM.1997.631176
+  \endverb
+  \field{issn}{0743-166X}
+  \field{pages}{1388\bibrangedash 1396 vol.3}
+  \field{title}{Application-layer anycasting}
+  \field{volume}{3}
+  \field{year}{1997}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{boothe2005dns}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Boothe}{B.}%
+     {Peter}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bush}{B.}%
+     {Randy}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BPBR1}
+  \strng{fullhash}{BPBR1}
+  \field{sortinit}{B}
+  \field{title}{DNS Anycast Stability}
+  \field{journaltitle}{19th APNIC,’05}
+  \field{year}{2005}
+\endentry
+
+\entry{caida-bmp}{misc}{}
+  \field{sortinit}{C}
+  \field{title}{Caida OpenBMP}
+  \verb{url}
+  \verb https://bgpstream.caida.org/data#!caida-bmp
+  \endverb
+\endentry
+
+\entry{Calder:2015:APA:2815675.2815717}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Calder}{C.}%
+     {Matt}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Flavel}{F.}%
+     {Ashley}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Katz-Bassett}{K.-B.}%
+     {Ethan}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mahajan}{M.}%
+     {Ratul}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Padhye}{P.}%
+     {Jitendra}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \keyw{anycast, cdn, measurement}
+  \strng{namehash}{CM+1}
+  \strng{fullhash}{CMFAKBEMRPJ1}
+  \field{sortinit}{C}
+  \field{booktitle}{Proceedings of the 2015 ACM Conference on Internet
+  Measurement Conference}
+  \verb{doi}
+  \verb 10.1145/2815675.2815717
+  \endverb
+  \field{isbn}{978-1-4503-3848-6}
+  \field{pages}{531\bibrangedash 537}
+  \field{series}{IMC '15}
+  \field{title}{Analyzing the Performance of an Anycast CDN}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/2815675.2815717
+  \endverb
+  \list{location}{1}{%
+    {Tokyo, Japan}%
+  }
+  \field{year}{2015}
+  \warn{\item Can't use 'location' + 'address'}
+\endentry
+
+\entry{Chiu:2015:WOH:2815675.2815719}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Chiu}{C.}%
+     {Yi-Ching}{Y.-C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schlinker}{S.}%
+     {Brandon}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Radhakrishnan}{R.}%
+     {Abhishek~Balaji}{A.~B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Katz-Bassett}{K.-B.}%
+     {Ethan}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Govindan}{G.}%
+     {Ramesh}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \keyw{internet topology, measurements}
+  \strng{namehash}{CYC+1}
+  \strng{fullhash}{CYCSBRABKBEGR1}
+  \field{sortinit}{C}
+  \field{booktitle}{Proceedings of the 2015 ACM Conference on Internet
+  Measurement Conference}
+  \verb{doi}
+  \verb 10.1145/2815675.2815719
+  \endverb
+  \field{isbn}{978-1-4503-3848-6}
+  \field{pages}{523\bibrangedash 529}
+  \field{series}{IMC '15}
+  \field{title}{Are We One Hop Away from a Better Internet?}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/2815675.2815719
+  \endverb
+  \list{location}{1}{%
+    {Tokyo, Japan}%
+  }
+  \field{year}{2015}
+  \warn{\item Can't use 'location' + 'address'}
+\endentry
+
+\entry{cicalese2015first}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Cicalese}{C.}%
+     {Danilo}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Giordano}{G.}%
+     {Danilo}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Finamore}{F.}%
+     {Alessandro}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mellia}{M.}%
+     {Marco}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Munaf{\`o}}{M.}%
+     {Maurizio}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rossi}{R.}%
+     {Dario}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Joumblatt}{J.}%
+     {Diana}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CD+1}
+  \strng{fullhash}{CDGDFAMMMMRDJD1}
+  \field{sortinit}{C}
+  \field{title}{A First Look at Anycast CDN Traffic}
+  \field{journaltitle}{arXiv preprint arXiv:1505.00946}
+  \field{year}{2015}
+\endentry
+
+\entry{cicalese2015fistful}{inproceedings}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Cicalese}{C.}%
+     {Danilo}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Joumblatt}{J.}%
+     {Diana}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rossi}{R.}%
+     {Dario}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Buob}{B.}%
+     {Marc-Olivier}{M.-O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Aug{\'e}}{A.}%
+     {Jordan}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Friedman}{F.}%
+     {Timur}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{CD+1}
+  \strng{fullhash}{CDJDRDBMOAJFT1}
+  \field{sortinit}{C}
+  \field{booktitle}{Computer Communications (INFOCOM), 2015 IEEE Conference on}
+  \field{pages}{2776\bibrangedash 2784}
+  \field{title}{A fistful of pings: Accurate and lightweight anycast
+  enumeration and geolocation}
+  \field{year}{2015}
+\endentry
+
+\entry{cicalese2015characterizing}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Cicalese}{C.}%
+     {Danilo}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Aug{\'e}}{A.}%
+     {Jordan}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Joumblatt}{J.}%
+     {Diana}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Friedman}{F.}%
+     {Timur}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rossi}{R.}%
+     {Dario}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CD+1}
+  \strng{fullhash}{CDAJJDFTRD1}
+  \field{sortinit}{C}
+  \field{title}{Characterizing IPv4 Anycast Adoption and Deployment}
+  \field{year}{2015}
+\endentry
+
+\entry{cicalese2015latency}{report}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Cicalese}{C.}%
+     {Danilo}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Joumblatt}{J.}%
+     {Diana}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rossi}{R.}%
+     {Dario}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Buob}{B.}%
+     {Marc-Olivier}{M.-O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Aug{\'e}}{A.}%
+     {Jordan}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Friedman}{F.}%
+     {Timur}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CD+1}
+  \strng{fullhash}{CDJDRDBMOAJFT1}
+  \field{sortinit}{C}
+  \field{title}{Latency-Based Anycast Geolocalization: Algorithms, Software and
+  Datasets}
+  \list{institution}{1}{%
+    {Tech. Rep}%
+  }
+  \field{type}{techreport}
+  \field{year}{2015}
+\endentry
+
+\entry{colitti2006evaluating}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Colitti}{C.}%
+     {Lorenzo}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Romijn}{R.}%
+     {Erik}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Uijterwaal}{U.}%
+     {Henk}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Robachevsky}{R.}%
+     {Andrei}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CL+1}
+  \strng{fullhash}{CLREUHRA1}
+  \field{sortinit}{C}
+  \field{title}{Evaluating the effects of anycast on DNS root name servers}
+  \field{volume}{6}
+  \field{journaltitle}{RIPE document RIPE-393}
+  \field{year}{2006}
+\endentry
+
+\entry{computing2003architectural}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Computing}{C.}%
+     {Autonomic}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CA1}
+  \strng{fullhash}{CA1}
+  \field{sortinit}{C}
+  \field{title}{An architectural blueprint for autonomic computing}
+  \field{journaltitle}{IBM Publication}
+  \field{year}{2003}
+\endentry
+
+\entry{Czyz:2014:MIA:2619239.2626295}{inproceedings}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Czyz}{C.}%
+     {Jakub}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Allman}{A.}%
+     {Mark}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhang}{Z.}%
+     {Jing}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Iekel-Johnson}{I.-J.}%
+     {Scott}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Osterweil}{O.}%
+     {Eric}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bailey}{B.}%
+     {Michael}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \keyw{IP, IPv4, IPv6, dns, internet, measurement}
+  \strng{namehash}{CJ+1}
+  \strng{fullhash}{CJAMZJIJSOEBM1}
+  \field{sortinit}{C}
+  \field{booktitle}{Proceedings of the 2014 ACM Conference on SIGCOMM}
+  \verb{doi}
+  \verb 10.1145/2619239.2626295
+  \endverb
+  \field{isbn}{978-1-4503-2836-4}
+  \field{pages}{87\bibrangedash 98}
+  \field{series}{SIGCOMM '14}
+  \field{title}{Measuring IPv6 Adoption}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/2619239.2626295
+  \endverb
+  \list{location}{1}{%
+    {Chicago, Illinois, USA}%
+  }
+  \field{year}{2014}
+  \warn{\item Can't use 'location' + 'address'}
+\endentry
+
+\entry{rfc6382}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {D.~McPherson}{D.~M.}%
+     {F.~Scalszo}{F.~S.}%
+     {}{}%
+     {R.~Donnelly}{R.~D.}}%
+  }
+  \strng{namehash}{DMRDFS1}
+  \strng{fullhash}{DMRDFS1}
+  \field{sortinit}{D}
+  \field{title}{Unique Origin Autonomous System Numbers (ASNs) per Node for
+  Globally Anycasted Services}
+  \verb{url}
+  \verb https://tools.ietf.org/html/rfc6382
+  \endverb
+\endentry
+
+\entry{d3js}{misc}{}
+  \field{sortinit}{D}
+  \field{title}{D3.js}
+  \verb{url}
+  \verb https://d3js.org/
+  \endverb
+\endentry
+
+\entry{6314173}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Deri}{D.}%
+     {L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Trombacchi}{T.}%
+     {L.L.}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Martinelli}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Vannozzi}{V.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Internet;computer network security;distributed databases;statistical
+  analysis;telecommunication traffic;Internet service;anomaly
+  identification;authoritative name server;ccTLD;complex distributed
+  database;country code top level domain;distributed DNS traffic monitoring
+  system;domain name system;statistics;suspicious activity
+  tracking;Databases;Internet;Market research;Monitoring;Probes;Servers;Time
+  series analysis;Domain name system;traffic measurement}
+  \strng{namehash}{DL+1}
+  \strng{fullhash}{DLTLMMVD1}
+  \field{sortinit}{D}
+  \field{booktitle}{Wireless Communications and Mobile Computing Conference
+  (IWCMC), 2012 8th International}
+  \verb{doi}
+  \verb 10.1109/IWCMC.2012.6314173
+  \endverb
+  \field{pages}{30\bibrangedash 35}
+  \field{title}{A distributed DNS traffic monitoring system}
+  \field{year}{2012}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{Dhamdhere:2012:MDI:2398776.2398832}{inproceedings}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Dhamdhere}{D.}%
+     {Amogh}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Luckie}{L.}%
+     {Matthew}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Huffaker}{H.}%
+     {Bradley}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {claffy}{c.}%
+     {kc}{k.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Elmokashfi}{E.}%
+     {Ahmed}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Aben}{A.}%
+     {Emile}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \keyw{IPv6, performance, routing, topology}
+  \strng{namehash}{DA+1}
+  \strng{fullhash}{DALMHBckEAAE1}
+  \field{sortinit}{D}
+  \field{booktitle}{Proceedings of the 2012 ACM Conference on Internet
+  Measurement Conference}
+  \verb{doi}
+  \verb 10.1145/2398776.2398832
+  \endverb
+  \field{isbn}{978-1-4503-1705-4}
+  \field{pages}{537\bibrangedash 550}
+  \field{series}{IMC '12}
+  \field{title}{Measuring the Deployment of IPv6: Topology, Routing and
+  Performance}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/2398776.2398832
+  \endverb
+  \list{location}{1}{%
+    {Boston, Massachusetts, USA}%
+  }
+  \field{year}{2012}
+  \warn{\item Can't use 'location' + 'address'}
+\endentry
+
+\entry{site:icann-fact}{misc}{}
+  \field{sortinit}{F}
+  \field{title}{Factsheet: Root server attack on 6 February 2007}
+  \verb{url}
+  \verb https://www.icann.org/en/system/files/files/factsheet-dns-attack-08mar0
+  \verb 7-en.pdf
+  \endverb
+\endentry
+
+\entry{6566965}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Fan}{F.}%
+     {Xun}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Heidemann}{H.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Govindan}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{IP networks;Internet;CHAOS-class DNS records;DNS proxies;IP
+  anycast;Internet-class DNS records;TLD;abnormal service
+  configurations;anycast evaluation;anycast services;benign masquerading;domain
+  name system;hostile hijacking;production DNS;recursive DNS
+  infrastructure;root DNS anycast node;third-party discovery;top-level
+  domains;Chaos;Extraterrestrial measurements;IP networks;Peer-to-peer
+  computing;Routing;Servers;Standards}
+  \strng{namehash}{FXHJGR1}
+  \strng{fullhash}{FXHJGR1}
+  \field{sortinit}{F}
+  \field{booktitle}{INFOCOM, 2013 Proceedings IEEE}
+  \verb{doi}
+  \verb 10.1109/INFCOM.2013.6566965
+  \endverb
+  \field{issn}{0743-166X}
+  \field{pages}{1681\bibrangedash 1689}
+  \field{title}{Evaluating anycast in the domain name system}
+  \field{year}{2013}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{report:fan2011identifying}{report}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Fan}{F.}%
+     {Xun}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Heidemann}{H.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Govindan}{G.}%
+     {Ramesh}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{FXHJGR2}
+  \strng{fullhash}{FXHJGR2}
+  \field{sortinit}{F}
+  \field{title}{Identifying and characterizing anycast in the domain name
+  system}
+  \list{institution}{1}{%
+    {Tech. rep}%
+  }
+  \field{type}{techreport}
+  \field{year}{2011}
+\endentry
+
+\entry{gibbard2007observations}{report}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Gibbard}{G.}%
+     {Steve}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {House}{H.}%
+     {Packet~Clearing}{P.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GSHPC1}
+  \strng{fullhash}{GSHPC1}
+  \field{sortinit}{G}
+  \field{title}{Observations on anycast topology and performance}
+  \list{institution}{1}{%
+    {Packet Clearing House}%
+  }
+  \field{type}{techreport}
+  \field{year}{2007}
+\endentry
+
+\entry{Gregori:2012:IAG:2398776.2398803}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Gregori}{G.}%
+     {Enrico}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Improta}{I.}%
+     {Alessandro}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lenzini}{L.}%
+     {Luciano}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rossi}{R.}%
+     {Lorenzo}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sani}{S.}%
+     {Luca}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \keyw{BGP, autonomous systems, incompleteness, internet, measurement,
+  topology}
+  \strng{namehash}{GE+1}
+  \strng{fullhash}{GEIALLRLSL1}
+  \field{sortinit}{G}
+  \field{booktitle}{Proceedings of the 2012 ACM Conference on Internet
+  Measurement Conference}
+  \verb{doi}
+  \verb 10.1145/2398776.2398803
+  \endverb
+  \field{isbn}{978-1-4503-1705-4}
+  \field{pages}{253\bibrangedash 264}
+  \field{series}{IMC '12}
+  \field{title}{On the Incompleteness of the AS-level Graph: A Novel
+  Methodology for BGP Route Collector Placement}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/2398776.2398803
+  \endverb
+  \list{location}{1}{%
+    {Boston, Massachusetts, USA}%
+  }
+  \field{year}{2012}
+  \warn{\item Can't use 'location' + 'address'}
+\endentry
+
+\entry{hiebert2006determining}{incollection}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Hiebert}{H.}%
+     {James}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Boothe}{B.}%
+     {Peter}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bush}{B.}%
+     {Randy}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lynch}{L.}%
+     {Lucy}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{HJ+1}
+  \strng{fullhash}{HJBPBRLL1}
+  \field{sortinit}{H}
+  \field{booktitle}{Technologies for Advanced Heterogeneous Networks II}
+  \field{pages}{172\bibrangedash 185}
+  \field{title}{Determining the cause and frequency of routing instability with
+  anycast}
+  \field{year}{2006}
+\endentry
+
+\entry{thousandeyes}{misc}{}
+  \field{sortinit}{H}
+  \field{title}{How BGP Works}
+  \verb{url}
+  \verb http://www.slideshare.net/ThousandEyes/how-bgp-works
+  \endverb
+\endentry
+
+\entry{caida-vis}{misc}{}
+  \field{sortinit}{I}
+  \field{title}{IPv4 and IPv6 AS Core: Visualizing IPv4 and IPv6 Internet
+  Topology at a Macroscopic Scale}
+  \verb{url}
+  \verb http://www.caida.org/research/topology/as_core_network/
+  \endverb
+\endentry
+
+\entry{ietf-bmp}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {J.~Scudder}{J.~S.}%
+     {S.Stuart}{S.}%
+     {}{}%
+     {R.~Fernando}{R.~F.}}%
+  }
+  \strng{namehash}{JSRFS1}
+  \strng{fullhash}{JSRFS1}
+  \field{sortinit}{J}
+  \field{title}{BGP Monitoring Protocol draft-ietf-grow-bmp-17}
+  \verb{url}
+  \verb https://tools.ietf.org/html/draft-ietf-grow-bmp-17
+  \endverb
+\endentry
+
+\entry{karrenberg2005anycast}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Karrenberg}{K.}%
+     {Daniel}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KD1}
+  \strng{fullhash}{KD1}
+  \field{sortinit}{K}
+  \field{title}{Anycast and BGP Stability:A Closer Look at DNSMON Data}
+  \field{volume}{11}
+  \field{journaltitle}{Proceedings of NANOG37}
+  \field{year}{2005}
+\endentry
+
+\entry{analysing-k-root}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Kuipers}{K.}%
+     {J.H.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KJ1}
+  \strng{fullhash}{KJ1}
+  \field{sortinit}{K}
+  \field{title}{Analysing the K-root Anycast Infrastructure}
+  \verb{url}
+  \verb https://labs.ripe.net/Members/jh_kuipers/analyzing-the-k-root-anycast-i
+  \verb nfrastructure
+  \endverb
+\endentry
+
+\entry{update}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Kühne}{K.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KM1}
+  \strng{fullhash}{KM1}
+  \field{sortinit}{K}
+  \field{title}{Update on AS Path Lengths Over Time}
+  \verb{url}
+  \verb https://labs.ripe.net/Members/mirjam/update-on-as-path-lengths-over-tim
+  \verb e
+  \endverb
+\endentry
+
+\entry{rfc6396}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {L.~Blunk}{L.~B.}%
+     {C.~Labovitz}{C.~L.}%
+     {}{}%
+     {M.~Karir}{M.~K.}}%
+  }
+  \strng{namehash}{LBMKCL1}
+  \strng{fullhash}{LBMKCL1}
+  \field{sortinit}{L}
+  \field{title}{Multi-Threaded Routing Toolkit (MRT) Routing Information Export
+  Format}
+  \verb{url}
+  \verb https://tools.ietf.org/html/rfc6396
+  \endverb
+\endentry
+
+\entry{5488355}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Lee}{L.}%
+     {Bu-Sung}{B.-S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tan}{T.}%
+     {Yu~Shyang}{Y.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sekiya}{S.}%
+     {Y.}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Narishige}{N.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Date}{D.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Internet;network servers;DNS hierarchy;Internet;anycast root DNS
+  server;domain name system;loss rate;query response time;top level domain
+  server;unicast server performance;Asia;Delay;Europe;Internet;Network
+  servers;Probes;Query processing;Time measurement;Unicast;Web server;Gulliver
+  project;anycast root DNS server;performance;resilience of root DNS}
+  \strng{namehash}{LBS+1}
+  \strng{fullhash}{LBSTYSSYNADS1}
+  \field{sortinit}{L}
+  \field{booktitle}{Network Operations and Management Symposium (NOMS), 2010
+  IEEE}
+  \verb{doi}
+  \verb 10.1109/NOMS.2010.5488355
+  \endverb
+  \field{issn}{1542-1201}
+  \field{pages}{862\bibrangedash 865}
+  \field{title}{Availability and effectiveness of root DNS servers: A long term
+  study}
+  \field{year}{2010}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{levine2006operational}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Levine}{L.}%
+     {Matt}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lyon}{L.}%
+     {Barrett}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Underwood}{U.}%
+     {Todd}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LMLBUT1}
+  \strng{fullhash}{LMLBUT1}
+  \field{sortinit}{L}
+  \field{title}{Operational experience with TCP and Anycast}
+  \field{volume}{37}
+  \field{journaltitle}{Presentation and Q\&A given at NANOG}
+  \field{year}{2006}
+\endentry
+
+\entry{liu2007two}{incollection}{}
+  \true{moreauthor}
+  \name{author}{4}{}{%
+    {{}%
+     {Liu}{L.}%
+     {Ziqian}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Huffaker}{H.}%
+     {Bradley}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fomenkov}{F.}%
+     {Marina}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Brownlee}{B.}%
+     {Nevil}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{LZ+1}
+  \strng{fullhash}{LZHBFMBN+1}
+  \field{sortinit}{L}
+  \field{booktitle}{Passive and Active Network Measurement}
+  \field{pages}{125\bibrangedash 134}
+  \field{title}{Two days in the life of the DNS anycast root servers}
+  \field{year}{2007}
+\endentry
+
+\entry{madory2013anycasters}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Madory}{M.}%
+     {Doug}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cook}{C.}%
+     {Chris}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Miao}{M.}%
+     {Kevin}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MDCCMK1}
+  \strng{fullhash}{MDCCMK1}
+  \field{sortinit}{M}
+  \field{title}{Who Are the Anycasters?}
+  \field{volume}{10}
+  \field{journaltitle}{Proceedings of NANOG59}
+  \field{year}{2013}
+\endentry
+
+\entry{rfc1034}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Mockapetris}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MP1}
+  \strng{fullhash}{MP1}
+  \field{sortinit}{M}
+  \field{title}{Domain Names - Concepts and Facilities}
+  \verb{url}
+  \verb https://tools.ietf.org/html/rfc1034
+  \endverb
+\endentry
+
+\entry{rfc1035}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Mockapetris}{M.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MP1}
+  \strng{fullhash}{MP1}
+  \field{sortinit}{M}
+  \field{title}{Domain Names - Implementation and Specification}
+  \verb{url}
+  \verb https://tools.ietf.org/html/rfc1035
+  \endverb
+\endentry
+
+\entry{7182788}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Nikkhah}{N.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Guérin}{G.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Ecosystems;Google;IEEE transactions;Internet;Market
+  research;Stakeholders;Web sites;Analytical models;IP
+  networks;IPv6;measurement}
+  \strng{namehash}{NMGR1}
+  \strng{fullhash}{NMGR1}
+  \field{sortinit}{N}
+  \verb{doi}
+  \verb 10.1109/TNET.2015.2453338
+  \endverb
+  \field{issn}{1063-6692}
+  \field{number}{99}
+  \field{pages}{1\bibrangedash 1}
+  \field{title}{Migrating the Internet to IPv6: An Exploration of the When and
+  Why}
+  \field{volume}{PP}
+  \field{journaltitle}{IEEE/ACM Transactions on Networking}
+  \field{year}{2016}
+\endentry
+
+\entry{openbmp}{misc}{}
+  \field{sortinit}{O}
+  \field{title}{Open BGP Monitoring Protocol (OpenBMP) Collection Framework}
+  \verb{url}
+  \verb http://www.openbmp.org/
+  \endverb
+\endentry
+
+\entry{pch}{misc}{}
+  \field{sortinit}{P}
+  \field{title}{Packet Clearing House BGP Routing Resources}
+  \verb{url}
+  \verb https://www.pch.net/resources/
+  \endverb
+\endentry
+
+\entry{rfc1546}{misc}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Partridge}{P.}%
+     {C.}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mendez}{M.}%
+     {T.}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Miliken}{M.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PCMTMW1}
+  \strng{fullhash}{PCMTMW1}
+  \field{sortinit}{P}
+  \field{title}{Host Anycasting Service}
+  \verb{url}
+  \verb https://tools.ietf.org/html/rfc1546
+  \endverb
+\endentry
+
+\entry{peering}{misc}{}
+  \field{sortinit}{P}
+  \field{title}{PEERING - The BGP Testbed}
+  \verb{url}
+  \verb https://peering.usc.edu/about/
+  \endverb
+\endentry
+
+\entry{1702828}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Reingold}{R.}%
+     {E.~M.}{E.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tilford}{T.}%
+     {J.~S.}{J.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Data structures;tree structures;trees;Binary trees;Computer
+  science;Engineering drawings;Printing;Software algorithms;Tree data
+  structures;Data structures;tree structures;trees}
+  \strng{namehash}{REMTJS1}
+  \strng{fullhash}{REMTJS1}
+  \field{sortinit}{R}
+  \verb{doi}
+  \verb 10.1109/TSE.1981.234519
+  \endverb
+  \field{issn}{0098-5589}
+  \field{number}{2}
+  \field{pages}{223\bibrangedash 228}
+  \field{title}{Tidier Drawings of Trees}
+  \field{volume}{SE-7}
+  \field{journaltitle}{IEEE Transactions on Software Engineering}
+  \field{year}{1981}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{ripe-ncc-ris}{misc}{}
+  \field{sortinit}{R}
+  \field{title}{RIPE Routing Information Service (RIS)}
+  \verb{url}
+  \verb https://www.ripe.net/analyse/internet-measurements/routing-information-
+  \verb service-ris
+  \endverb
+\endentry
+
+\entry{ripestat}{misc}{}
+  \field{sortinit}{R}
+  \field{title}{RIPEstat}
+  \verb{url}
+  \verb https://stat.ripe.net/
+  \endverb
+\endentry
+
+\entry{site:root-servers}{misc}{}
+  \field{sortinit}{R}
+  \field{title}{Root nameservers official website}
+  \verb{url}
+  \verb http://www.root-servers.org/
+  \endverb
+\endentry
+
+\entry{6027863}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Roughan}{R.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Willinger}{W.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Maennel}{M.}%
+     {O.}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Perouli}{P.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bush}{B.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Internet;routing protocols;telecommunication network topology;Internet
+  autonomous systems;Internet exchange points;Internet inter-domain routing
+  system;inter-domain routing protocol;inter-domain topology;organizational
+  affiliation;Internet;Monitoring;Network topology;Routing;Routing
+  protocols;Topology;BGP;Internet topology;inference
+  limitations;modeling;routing measurements}
+  \strng{namehash}{RM+1}
+  \strng{fullhash}{RMWWMOPDBR1}
+  \field{sortinit}{R}
+  \verb{doi}
+  \verb 10.1109/JSAC.2011.111006
+  \endverb
+  \field{issn}{0733-8716}
+  \field{number}{9}
+  \field{pages}{1810\bibrangedash 1821}
+  \field{title}{10 Lessons from 10 Years of Measuring and Modeling the
+  Internet's Autonomous Systems}
+  \field{volume}{29}
+  \field{journaltitle}{IEEE Journal on Selected Areas in Communications}
+  \field{year}{2011}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{sarat2006use}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Sarat}{S.}%
+     {Sandeep}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pappas}{P.}%
+     {Vasileios}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Terzis}{T.}%
+     {Andreas}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{SSPVTA1}
+  \strng{fullhash}{SSPVTA1}
+  \field{sortinit}{S}
+  \field{booktitle}{Computer Communications and Networks, 2006. ICCCN 2006.
+  Proceedings. 15th International Conference on}
+  \field{pages}{71\bibrangedash 78}
+  \field{title}{On the use of anycast in DNS}
+  \field{year}{2006}
+\endentry
+
+\entry{github-anycast}{misc}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Schmidt}{S.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Vries}{V.}%
+     {W.}{W.}%
+     {de}{d.}%
+     {}{}}%
+    {{}%
+     {Alsudais}{A.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ensafi}{E.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wolff}{W.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SR+1}
+  \strng{fullhash}{SRVWdAAERWN1}
+  \field{sortinit}{S}
+  \field{title}{IP Anycasting: Understanding routing impact of adding/removing
+  instances}
+  \verb{url}
+  \verb https://github.com/CAIDA/bgp-hackathon/tree/anycast
+  \endverb
+\endentry
+
+\entry{route-views}{misc}{}
+  \field{sortinit}{U}
+  \field{title}{University of Oregon Route Views Project}
+  \verb{url}
+  \verb http://www.routeviews.org/
+  \endverb
+\endentry
+
+\entry{site:21oct}{misc}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Vixie}{V.}%
+     {P.}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sneeringer}{S.}%
+     {G.}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schleifer}{S.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{VPSGSM1}
+  \strng{fullhash}{VPSGSM1}
+  \field{sortinit}{V}
+  \field{title}{Events of 21-Oct-2002}
+  \verb{url}
+  \verb http://c.root-servers.org/october21.txt
+  \endverb
+\endentry
+
+\entry{vizas}{misc}{}
+  \field{sortinit}{V}
+  \field{title}{VizAS}
+  \verb{url}
+  \verb https://labs.apnic.net/vizas/
+  \endverb
+\endentry
+
+\entry{rfc4892}{misc}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Wolf}{W.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Conrad}{C.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WSCD1}
+  \strng{fullhash}{WSCD1}
+  \field{sortinit}{W}
+  \field{title}{Requirements for a Mechanism Identifying a Name Server
+  Instance}
+  \verb{url}
+  \verb https://www.ietf.org/rfc/rfc4892.txt
+  \endverb
+\endentry
+
+\entry{yumeasuring}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Yu}{Y.}%
+     {Yingdi}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cai}{C.}%
+     {Jiwen}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Osterweil}{O.}%
+     {Eric}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhang}{Z.}%
+     {Lixia}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{YY+1}
+  \strng{fullhash}{YYCJOEZL1}
+  \field{sortinit}{Y}
+  \field{title}{Measuring the Placement of DNS Servers in Top-Level-Domain}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
